@@ -2,23 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Component References")]
-    public Rigidbody rb;
-    public CameraController cameraController;
+    private Player thisPlayer;
+    private Rigidbody rb;
 
     [Header("Movement Settings")]
     [SerializeField] private float walkSpeed;
     [SerializeField] private float sprintSpeed;
 
 
+
+    // Main Functions
     void Start()
     {
-        
+        thisPlayer = GetComponent<Player>();
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         

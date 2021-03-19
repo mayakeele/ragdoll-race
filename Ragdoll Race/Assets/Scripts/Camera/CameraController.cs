@@ -6,10 +6,10 @@ public class CameraController : MonoBehaviour
 {
 
     [Header("Component References")]
-    public List<Player> allPlayers;
+    public PlayersManager playersManager;
+    
     public Camera mainCamera;
     
-
 
     [Header("Camera Control Properties")]
     [SerializeField] private float cameraSpeedH;
@@ -35,11 +35,12 @@ public class CameraController : MonoBehaviour
     float camInputV;
 
 
-
     // Camera Variables
     float camAngleH = 0;
     float camAngleV = 0;
     float timeSinceManualCamMove;
+
+    public Transform testCube;
 
 
 
@@ -53,6 +54,35 @@ public class CameraController : MonoBehaviour
 
     void Update(){
 
+        List<Player> allPlayers = playersManager.GetAllPlayers();
+
+        // Get the world space positions of all players' feet and heads, to get full enclosing volume
+        List<Vector3> playerFeetPositions = playersManager.PlayerPositions(allPlayers);
+        List<Vector3> playerHeadPositions = playerFeetPositions.AddVector(new Vector3(0, playersManager.characterHeight, 0));
+
+        List<Vector3> playerVolumeWorld = new List<Vector3>();
+        playerVolumeWorld.AddRange(playerFeetPositions);
+        playerVolumeWorld.AddRange(playerHeadPositions);
+
+        List<Vector3> playerVolumeLocal = mainCamera.transform.InverseTransformPoints(playerVolumeWorld);
+
+        // Find the bounding box surrounding the players
+        Vector3 maxBoundsLocal = playerVolumeLocal.MaxComponents();
+        Vector3 minBoundsLocal = playerVolumeLocal.MinComponents();
+
+        // Find the local and world space center point of the players
+        Vector3 centerPointLocal = (maxBoundsLocal + minBoundsLocal) / 2;
+        Vector3 centerPointWorld = mainCamera.transform.TransformPoint(centerPointLocal);
+
+        // Extract position dimensions of the rectangular prism enclosing the players, 
+        Vector3 enclosingDimensions = (maxBoundsLocal - minBoundsLocal);
+
+        // Increase the enclosing volume's x component to account for the characters' radii
+        //enclosingDimensions += new Vector3(playersManager.characterRadius * 2, 0, 0);
+
+        testCube.position = mainCamera.transform.TransformPoint(centerPointLocal);
+        testCube.rotation = Quaternion.LookRotation(mainCamera.transform.forward, Vector3.up);
+        testCube.localScale = enclosingDimensions;
     }
 
 
@@ -74,14 +104,6 @@ public class CameraController : MonoBehaviour
 
 
     // Private Functions
-
-    private Vector3 CalculateAveragePlayerPosition(){
-        return Vector3.zero;
-    }
-
-
-    
-
 
     private bool IsLineOfSightClear(Vector3 targetPos, Vector3 cameraPos, float castDistance, float sphereRadius, LayerMask obstructingLayers){
         // Casts a sphere from the target to the camera to determine if there are any obstructions directly in the way
