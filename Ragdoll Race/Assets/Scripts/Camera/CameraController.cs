@@ -12,22 +12,22 @@ public class CameraController : MonoBehaviour
     
 
     [Header("Camera Control Properties")]
-    [SerializeField] private float cameraSpeedH;
-    [SerializeField] private float cameraSpeedV;
-    [SerializeField] private float cameraOrbitRadius;
-    [SerializeField] private float minCameraAngleV;
-    [SerializeField] private float maxCameraAngleV;
-    [SerializeField] private bool invertCameraH;
-    [SerializeField] private bool invertCameraV;
+    //[SerializeField] private float cameraSpeedH;
+    //[SerializeField] private float cameraSpeedV;
+    //[SerializeField] private float cameraOrbitRadius;
+    //[SerializeField] private float minCameraAngleV;
+    //[SerializeField] private float maxCameraAngleV;
+    //[SerializeField] private bool invertCameraH;
+    //[SerializeField] private bool invertCameraV;
 
 
     [Header("Smart Camera Settings")]
-    [SerializeField] private LayerMask cameraObstructionLayers;
-    [SerializeField] private LayerMask cameraCollisionLayers;
-    [SerializeField] private float cameraPhysicsRadius;
-    [SerializeField] private float maxCameraFOV;
-    [SerializeField] private float minCameraFOV;
-    [SerializeField] private float playerEdgePaddingRatio;
+    //[SerializeField] private LayerMask cameraObstructionLayers;
+    //[SerializeField] private LayerMask cameraCollisionLayers;
+    //[SerializeField] private float cameraPhysicsRadius;
+    //[SerializeField] private float maxCameraFOV;
+    //[SerializeField] private float minCameraFOV;
+    [SerializeField] private float playerEdgePaddingScale;
 
 
     // Input Variables
@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour
     // Camera Variables
     float camAngleH = 0;
     float camAngleV = 0;
-    float timeSinceManualCamMove;
+    float currFOV;
 
     public Transform testCube;
 
@@ -48,7 +48,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-
+        currFOV = mainCamera.fieldOfView;
     }
 
 
@@ -58,11 +58,11 @@ public class CameraController : MonoBehaviour
 
         // Get the world space positions of all players' feet and heads, to get full enclosing volume
         List<Vector3> playerFeetPositions = playersManager.PlayerPositions(allPlayers);
-        List<Vector3> playerHeadPositions = playerFeetPositions.AddVector(new Vector3(0, playersManager.characterHeight, 0));
+        //List<Vector3> playerHeadPositions = playerFeetPositions.AddVector(new Vector3(0, playersManager.characterHeight, 0));
 
         List<Vector3> playerVolumeWorld = new List<Vector3>();
         playerVolumeWorld.AddRange(playerFeetPositions);
-        playerVolumeWorld.AddRange(playerHeadPositions);
+        //playerVolumeWorld.AddRange(playerHeadPositions);
 
         List<Vector3> playerVolumeLocal = mainCamera.transform.InverseTransformPoints(playerVolumeWorld);
 
@@ -74,11 +74,17 @@ public class CameraController : MonoBehaviour
         Vector3 centerPointLocal = (maxBoundsLocal + minBoundsLocal) / 2;
         Vector3 centerPointWorld = mainCamera.transform.TransformPoint(centerPointLocal);
 
-        // Extract position dimensions of the rectangular prism enclosing the players, 
+        // Calculate the enclosing volumeand increase x to account for the characters' radii
         Vector3 enclosingDimensions = (maxBoundsLocal - minBoundsLocal);
+        enclosingDimensions += new Vector3(playersManager.characterRadius * 2, 0, 0);
 
-        // Increase the enclosing volume's x component to account for the characters' radii
-        //enclosingDimensions += new Vector3(playersManager.characterRadius * 2, 0, 0);
+        // Frame the players within the camera's view
+        float cameraFramingDistance = CalculateFramingDistance(mainCamera, enclosingDimensions, playerEdgePaddingScale);
+        Vector3 newCameraPosition = (-mainCamera.transform.forward * cameraFramingDistance) + centerPointWorld;
+
+
+        // Update camera position
+        transform.position = newCameraPosition;
 
         testCube.position = mainCamera.transform.TransformPoint(centerPointLocal);
         testCube.rotation = Quaternion.LookRotation(mainCamera.transform.forward, Vector3.up);
@@ -104,6 +110,47 @@ public class CameraController : MonoBehaviour
 
 
     // Private Functions
+
+    private Vector2 AltitudeAzimuthBetween(Vector3 startPos, Vector3 endPos, Vector3 perspectivePos){
+        // Returns the horizontal and vertical (azimuth and altitude) angle between two vectors when seen from a perspective postion
+
+        Vector3 startDir = (startPos - perspectivePos).normalized;
+        Vector3 endDir = (endPos = perspectivePos).normalized;
+
+        Vector3 middlePlaneNormal = startPos - endPos;
+
+        float hAngle = Vector3.Angle(startDir.ProjectHorizontal(), endDir.ProjectHorizontal());    
+        float vAngle = Vector3.Angle(Vector3.ProjectOnPlane(startDir, middlePlaneNormal), Vector3.ProjectOnPlane(endDir, middlePlaneNormal));
+        
+        return new Vector2(hAngle, vAngle);
+    }
+
+
+    private float CalculateFramingDistance(Camera camera, Vector3 boundingDimensions, float paddingScale){
+        // Returns the ideal distance to place the camera FROM THE CENTROID to frame all players
+
+        Vector2 frameDimensions = new Vector2(boundingDimensions.x, boundingDimensions.y) * (paddingScale);
+        float dist;
+
+        // Determine whether the constraining dimension is horizontal or vertical
+        if (frameDimensions.x/frameDimensions.y >= camera.aspect){
+            // Constrain by width
+            float hFOV = Camera.VerticalToHorizontalFieldOfView(camera.fieldOfView, camera.aspect);
+            dist = frameDimensions.x / (2 * Mathf.Tan(Mathf.Deg2Rad * hFOV / 2));
+        }
+        else{
+            // Constrain by height
+            float vFOV = camera.fieldOfView;
+            dist = frameDimensions.y / (2 * Mathf.Tan(Mathf.Deg2Rad * vFOV / 2));
+        }
+
+        // Add the distance from the center of the bounding box to the frame (the front face)
+        dist += boundingDimensions.z / 2;
+
+        return dist;
+    }
+
+
 
     private bool IsLineOfSightClear(Vector3 targetPos, Vector3 cameraPos, float castDistance, float sphereRadius, LayerMask obstructingLayers){
         // Casts a sphere from the target to the camera to determine if there are any obstructions directly in the way
