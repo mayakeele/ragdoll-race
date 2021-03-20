@@ -55,7 +55,7 @@ public class CameraController : MonoBehaviour
     }
 
 
-    void Update(){
+    void FixedUpdate(){
 
         List<Player> allPlayers = playersManager.GetAllPlayers();
 
@@ -67,7 +67,7 @@ public class CameraController : MonoBehaviour
 
         List<Vector3> playerVolumeWorld = new List<Vector3>();
         playerVolumeWorld.AddRange(playerFeetPositions);
-        //playerVolumeWorld.AddRange(playerHeadPositions);
+        playerVolumeWorld.AddRange(playerHeadPositions);
 
         List<Vector3> playerVolumeLocal = mainCamera.transform.InverseTransformPoints(playerVolumeWorld);
 
