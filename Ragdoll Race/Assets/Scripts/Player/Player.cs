@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [Header("Component References")]
     
     public PlayersManager playersManager;
+    public Rigidbody rb;
 
 
 

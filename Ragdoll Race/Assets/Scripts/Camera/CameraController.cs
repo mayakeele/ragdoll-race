@@ -7,8 +7,8 @@ public class CameraController : MonoBehaviour
 
     [Header("Component References")]
     public PlayersManager playersManager;
-    
     public Camera mainCamera;
+    public Rigidbody rb;
     
 
     [Header("Camera Control Properties")]
@@ -22,12 +22,15 @@ public class CameraController : MonoBehaviour
 
 
     [Header("Smart Camera Settings")]
+    [SerializeField] private float springFrequency;
+    [SerializeField] private float springDamping;
     //[SerializeField] private LayerMask cameraObstructionLayers;
     //[SerializeField] private LayerMask cameraCollisionLayers;
     //[SerializeField] private float cameraPhysicsRadius;
     //[SerializeField] private float maxCameraFOV;
     //[SerializeField] private float minCameraFOV;
-    [SerializeField] private float playerEdgePaddingScale;
+    [SerializeField] private float horizontalPaddingDistance;
+    [SerializeField] private float verticalPaddingDistance;
 
 
     // Input Variables
@@ -56,15 +59,18 @@ public class CameraController : MonoBehaviour
 
         List<Player> allPlayers = playersManager.GetAllPlayers();
 
+
         // Get the world space positions of all players' feet and heads, to get full enclosing volume
-        List<Vector3> playerFeetPositions = playersManager.PlayerPositions(allPlayers);
-        //List<Vector3> playerHeadPositions = playerFeetPositions.AddVector(new Vector3(0, playersManager.characterHeight, 0));
+        List<Vector3> playerFeetPositions = playersManager.GetPositions(allPlayers);
+        List<Vector3> playerHeadPositions = playerFeetPositions.AddVector(new Vector3(0, playersManager.characterHeight, 0));
+
 
         List<Vector3> playerVolumeWorld = new List<Vector3>();
         playerVolumeWorld.AddRange(playerFeetPositions);
         //playerVolumeWorld.AddRange(playerHeadPositions);
 
         List<Vector3> playerVolumeLocal = mainCamera.transform.InverseTransformPoints(playerVolumeWorld);
+
 
         // Find the bounding box surrounding the players
         Vector3 maxBoundsLocal = playerVolumeLocal.MaxComponents();
@@ -74,21 +80,28 @@ public class CameraController : MonoBehaviour
         Vector3 centerPointLocal = (maxBoundsLocal + minBoundsLocal) / 2;
         Vector3 centerPointWorld = mainCamera.transform.TransformPoint(centerPointLocal);
 
+
         // Calculate the enclosing volumeand increase x to account for the characters' radii
         Vector3 enclosingDimensions = (maxBoundsLocal - minBoundsLocal);
         enclosingDimensions += new Vector3(playersManager.characterRadius * 2, 0, 0);
 
+
         // Frame the players within the camera's view
-        float cameraFramingDistance = CalculateFramingDistance(mainCamera, enclosingDimensions, playerEdgePaddingScale);
-        Vector3 newCameraPosition = (-mainCamera.transform.forward * cameraFramingDistance) + centerPointWorld;
+        float cameraFramingDistance = CalculateFramingDistance(mainCamera, enclosingDimensions, horizontalPaddingDistance, verticalPaddingDistance);
+        Vector3 targetCameraPosition = (-mainCamera.transform.forward * cameraFramingDistance) + centerPointWorld;
 
 
-        // Update camera position
-        transform.position = newCameraPosition;
+        // Calculate spring forces on the camera
+        Vector3 relativePosition = transform.position - targetCameraPosition;
+        Vector3 relativeVelocity = rb.velocity - playersManager.AverageVelocity(allPlayers);
+        
+        Vector3 springAcceleration = DampedSpring.GetDampedSpringAcceleration(relativePosition, relativeVelocity, springFrequency, springDamping);
+        rb.AddForce(springAcceleration, ForceMode.Acceleration);
 
-        testCube.position = mainCamera.transform.TransformPoint(centerPointLocal);
-        testCube.rotation = Quaternion.LookRotation(mainCamera.transform.forward, Vector3.up);
-        testCube.localScale = enclosingDimensions;
+
+        //testCube.position = mainCamera.transform.TransformPoint(centerPointLocal);
+        //testCube.rotation = Quaternion.LookRotation(mainCamera.transform.forward, Vector3.up);
+        //testCube.localScale = enclosingDimensions;
     }
 
 
@@ -126,10 +139,10 @@ public class CameraController : MonoBehaviour
     }
 
 
-    private float CalculateFramingDistance(Camera camera, Vector3 boundingDimensions, float paddingScale){
+    private float CalculateFramingDistance(Camera camera, Vector3 boundingDimensions, float hPadding, float vPadding){
         // Returns the ideal distance to place the camera FROM THE CENTROID to frame all players
 
-        Vector2 frameDimensions = new Vector2(boundingDimensions.x, boundingDimensions.y) * (paddingScale);
+        Vector2 frameDimensions = new Vector2(boundingDimensions.x + hPadding, boundingDimensions.y + vPadding);
         float dist;
 
         // Determine whether the constraining dimension is horizontal or vertical

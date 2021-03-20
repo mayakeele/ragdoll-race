@@ -45,7 +45,7 @@ public class PlayersManager : MonoBehaviour
     }
 
 
-    public List<Vector3> PlayerPositions(List<Player> playersList){
+    public List<Vector3> GetPositions(List<Player> playersList){
         // Returns a list of the positions of the requested players
 
         List<Vector3> positions = new List<Vector3>();
@@ -56,19 +56,31 @@ public class PlayersManager : MonoBehaviour
         return positions;
     }
 
-    public Vector3 AveragePlayersPosition(List<Player> playersList){
+    public List<Vector3> GetVelocities(List<Player> playersList){
+        // Returns a list of the positions of the requested players
+
+        List<Vector3> velocities = new List<Vector3>();
+        foreach(Player player in playersList){
+            velocities.Add(player.rb.velocity);
+        }
+
+        return velocities;
+    }
+
+
+    public Vector3 AveragePosition(List<Player> playersList){
         // Calculates the average position of all of the players (skews towards groups of players)
 
-        List<Vector3> playerPositions = PlayerPositions(playersList);
+        List<Vector3> playerPositions = GetPositions(playersList);
         Vector3 averagePos = playerPositions.Average();
 
         return averagePos;
     }
 
-    public BoundingSphere GetPlayersBoundingSphere(List<Player> playersList){
+    public BoundingSphere GetBoundingSphere(List<Player> playersList){
         // Calculates the radius and position of a sphere enclosing all given players; returns a BoundingSphere struct with pos and rad properties
 
-        List<Vector3> allPositions = PlayerPositions(playersList);
+        List<Vector3> allPositions = GetPositions(playersList);
         List<Vector3> farthestPoints = BoundingVolume.GetFarthestPointPair(allPositions);
 
         Vector3 center = farthestPoints.Average();
@@ -76,10 +88,11 @@ public class PlayersManager : MonoBehaviour
 
         return new BoundingSphere(center, radius);
     }
-    public Vector3 CenterPlayersPosition(List<Player> playersList){
+
+    public Vector3 CenterPosition(List<Player> playersList){
         // Calculates the center position of an axis-aligned bounding box containing the players
 
-        List<Vector3> playerPositions = PlayerPositions(playersList);
+        List<Vector3> playerPositions = GetPositions(playersList);
         
         Vector3 maxBounds = playerPositions.MaxComponents();
         Vector3 minBounds = playerPositions.MinComponents();
@@ -87,6 +100,14 @@ public class PlayersManager : MonoBehaviour
         Vector3 centerPos = (maxBounds + minBounds) / 2;
 
         return centerPos;
+    }
+
+
+    public Vector3 AverageVelocity(List<Player> playersList){
+        // Returns the average velocity of the selected player group
+        List<Vector3> velocityList = GetVelocities(playersList);
+        Vector3 averageVelocity = velocityList.Average();
+        return averageVelocity;
     }
 
 
