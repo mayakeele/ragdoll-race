@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 deltaV = (idealVelocity - currentVelocity);
 
+
         // Stop the player's velocity if their speed is below a certain threshold and they aren't trying to change their velocity
         if(player.rb.velocity.magnitude < stopSpeedThreshold  &&  deltaV.magnitude <= stopSpeedThreshold){
             player.rb.velocity = Vector3.zero;
@@ -72,8 +73,9 @@ public class PlayerController : MonoBehaviour
         }
         
 
+        // Jump if the player is grounded and presses jump
         if(jumpInput && player.isGrounded){
-            player.rb.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
+            player.rb.velocity = new Vector3(player.rb.velocity.x, jumpSpeed, player.rb.velocity.z);
             player.isGrounded = false;
         }
     }

@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 
     [Header("State Variables")]
     public bool isGrounded;
+    private int numCollisions = 0;
     public bool isDizzy;
 
 
@@ -25,15 +26,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
+        isGrounded = (numCollisions > 0);
     }
 
     private void OnCollisionEnter(Collision other)
     {
+        numCollisions++;
         isGrounded = true;
     }
     private void OnCollisionExit(Collision other)
     {
+        numCollisions--;
         isGrounded = false;
     }
 

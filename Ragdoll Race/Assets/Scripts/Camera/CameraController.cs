@@ -43,8 +43,6 @@ public class CameraController : MonoBehaviour
     float camAngleV = 0;
     float currFOV;
 
-    public Transform testCube;
-
 
 
     // Main Functions
@@ -97,11 +95,6 @@ public class CameraController : MonoBehaviour
         
         Vector3 springAcceleration = DampedSpring.GetDampedSpringAcceleration(relativePosition, relativeVelocity, springFrequency, springDamping);
         rb.AddForce(springAcceleration, ForceMode.Acceleration);
-
-
-        //testCube.position = mainCamera.transform.TransformPoint(centerPointLocal);
-        //testCube.rotation = Quaternion.LookRotation(mainCamera.transform.forward, Vector3.up);
-        //testCube.localScale = enclosingDimensions;
     }
 
 
