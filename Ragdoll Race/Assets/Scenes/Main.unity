@@ -306,8 +306,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8ae5b428c384f458bcdd14c478d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersManager: {fileID: 384492417}
+  manager: {fileID: 384492417}
   rb: {fileID: 570550610}
+  coll: {fileID: 0}
+  isGrounded: 0
+  isDizzy: 0
 --- !u!114 &570550609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,11 +323,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2251a23db541da34cb9a4f991cd3f594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisPlayer: {fileID: 0}
-  rb: {fileID: 0}
+  player: {fileID: 570550608}
   walkSpeed: 3
+  walkAcceleration: 0
   runSpeed: 0
+  runAcceleration: 0
   boostSpeed: 0
+  boostAcceleration: 0
   jumpSpeed: 0
 --- !u!54 &570550610
 Rigidbody:
@@ -335,8 +340,8 @@ Rigidbody:
   m_GameObject: {fileID: 570550606}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 1
-  m_AngularDrag: 0.2
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -558,14 +563,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759602382}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -12.19}
+  m_LocalRotation: {x: 0.26605123, y: -0.2513037, z: 0.07206016, w: 0.9278311}
+  m_LocalPosition: {x: 7.57, y: 10.68, z: -13.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1632792821}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 32, y: -30.31, z: 0}
 --- !u!114 &759602384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,8 +765,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8ae5b428c384f458bcdd14c478d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersManager: {fileID: 384492417}
+  manager: {fileID: 384492417}
   rb: {fileID: 1051390005}
+  coll: {fileID: 0}
+  isGrounded: 0
+  isDizzy: 0
 --- !u!114 &1051390004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,11 +782,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2251a23db541da34cb9a4f991cd3f594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisPlayer: {fileID: 0}
-  rb: {fileID: 0}
+  player: {fileID: 1051390003}
   walkSpeed: 3
+  walkAcceleration: 0
   runSpeed: 0
+  runAcceleration: 0
   boostSpeed: 0
+  boostAcceleration: 0
   jumpSpeed: 0
 --- !u!54 &1051390005
 Rigidbody:
@@ -789,8 +799,8 @@ Rigidbody:
   m_GameObject: {fileID: 1051390001}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 1
-  m_AngularDrag: 0.2
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1147,8 +1157,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8ae5b428c384f458bcdd14c478d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersManager: {fileID: 384492417}
+  manager: {fileID: 384492417}
   rb: {fileID: 2128883808}
+  coll: {fileID: 0}
+  isGrounded: 0
+  isDizzy: 0
 --- !u!114 &2128883807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,11 +1174,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2251a23db541da34cb9a4f991cd3f594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisPlayer: {fileID: 0}
-  rb: {fileID: 0}
+  player: {fileID: 2128883806}
   walkSpeed: 3
+  walkAcceleration: 0
   runSpeed: 0
+  runAcceleration: 0
   boostSpeed: 0
+  boostAcceleration: 0
   jumpSpeed: 0
 --- !u!54 &2128883808
 Rigidbody:
@@ -1176,8 +1191,8 @@ Rigidbody:
   m_GameObject: {fileID: 2128883804}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 1
-  m_AngularDrag: 0.2
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1208,6 +1223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3885564679610893942, guid: 273d58bfd7b0b894db693ee245a9e93f, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 384492417}
     - target: {fileID: 3885564679610893942, guid: 273d58bfd7b0b894db693ee245a9e93f, type: 3}
       propertyPath: playersManager
       value: 
@@ -1254,6 +1273,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3885564679610893943, guid: 273d58bfd7b0b894db693ee245a9e93f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885564679610893944, guid: 273d58bfd7b0b894db693ee245a9e93f, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885564679610893944, guid: 273d58bfd7b0b894db693ee245a9e93f, type: 3}
+      propertyPath: m_AngularDrag
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -108,11 +108,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2251a23db541da34cb9a4f991cd3f594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisPlayer: {fileID: 3885564679610893942}
-  rb: {fileID: 3885564679610893944}
+  player: {fileID: 3885564679610893942}
   walkSpeed: 3
   runSpeed: 5
   boostSpeed: 10
+  walkAcceleration: 3
+  runAcceleration: 15
+  boostAcceleration: 40
+  stopSpeedThreshold: 0.02
   jumpSpeed: 5
 --- !u!1 &3885564679587642455
 GameObject:
@@ -242,8 +245,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8ae5b428c384f458bcdd14c478d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersManager: {fileID: 0}
+  manager: {fileID: 0}
   rb: {fileID: 3885564679610893944}
+  coll: {fileID: 3885564679610893947}
+  isGrounded: 0
+  isDizzy: 0
 --- !u!54 &3885564679610893944
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -253,8 +259,8 @@ Rigidbody:
   m_GameObject: {fileID: 3885564679610893940}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 1
-  m_AngularDrag: 0.2
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
