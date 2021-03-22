@@ -61,15 +61,16 @@ public class PlayerController : MonoBehaviour
         Vector3 idealVelocity = ((cameraForward * moveInput.y) + (cameraRight * moveInput.x)) * currMoveSpeedLimit;
         Vector3 currentVelocity = new Vector3(player.rb.velocity.x, 0, player.rb.velocity.z);
 
-        Vector3 deltaV = (idealVelocity - currentVelocity);
+        Vector3 requiredVelocityChange = (idealVelocity - currentVelocity);
+        float perFrameSpeedChange = currMoveAcceleration * Time.fixedDeltaTime;
 
-        // Stop the player's velocity if their speed is below a certain threshold and they aren't trying to change their velocity
-        if(player.rb.velocity.magnitude < stopSpeedThreshold  &&  deltaV.magnitude <= stopSpeedThreshold){
-            player.rb.velocity = Vector3.zero;
+
+        // Apply only enough force to move towards or exactly equal the target velocity without overshoot
+        if(requiredVelocityChange.magnitude > perFrameSpeedChange){
+            player.rb.AddForce(requiredVelocityChange.normalized * currMoveAcceleration, ForceMode.Acceleration);
         }
-        // Otherwise, apply the force
         else{
-            player.rb.AddForce(deltaV.normalized * currMoveAcceleration, ForceMode.Acceleration);
+            player.rb.AddForce(requiredVelocityChange, ForceMode.VelocityChange);
         }
             
     }
