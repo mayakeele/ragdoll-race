@@ -5,9 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Component References")]
-    public PlayersManager manager;
+    [HideInInspector] public PlayersManager manager;
     public Rigidbody rb;
     public Collider coll;
+    [SerializeField] private string managerTag = "PlayersManager";
 
 
     [Header("State Variables")]
@@ -18,6 +19,15 @@ public class Player : MonoBehaviour
 
 
     // Unity Functions
+
+    void Awake()
+    {
+        manager = GameObject.FindGameObjectWithTag(managerTag).GetComponent<PlayersManager>();
+
+        manager.AddPlayer(this);
+    }
+
+
     void Start()
     {
         
@@ -28,6 +38,7 @@ public class Player : MonoBehaviour
     {
         isGrounded = (numCollisions > 0);
     }
+
 
     private void OnCollisionEnter(Collision other)
     {
@@ -42,6 +53,7 @@ public class Player : MonoBehaviour
 
 
     // Public Functions
+
 
     // Private Functions
 }

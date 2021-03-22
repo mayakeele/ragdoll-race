@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2611732237662731075}
-  - component: {fileID: 6816095977433611041}
   - component: {fileID: 238538644725481855}
+  - component: {fileID: 6816095977433611041}
   m_Layer: 0
   m_Name: Control
   m_TagString: Untagged
@@ -32,6 +32,27 @@ Transform:
   m_Father: {fileID: 3885564679610893943}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &238538644725481855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641241422299317346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2251a23db541da34cb9a4f991cd3f594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3885564679610893942}
+  walkSpeed: 3
+  runSpeed: 5
+  boostSpeed: 10
+  walkAcceleration: 3
+  runAcceleration: 20
+  boostAcceleration: 40
+  stopSpeedThreshold: 0.04
+  jumpSpeed: 5
 --- !u!114 &6816095977433611041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,32 +112,16 @@ MonoBehaviour:
     m_ActionId: 292e19af-e09b-4ff3-a744-f9a94a357cde
     m_ActionName: Gameplay/Jump[/PDP CO.,LTD. Faceoff Wired Pro Controller for Nintendo
       Switch/button2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 16b568bd-5d1e-490a-b3cb-ca357131157e
+    m_ActionName: Menu/Join[/PDP CO.,LTD. Faceoff Wired Pro Controller for Nintendo
+      Switch/button10,/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &238538644725481855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2641241422299317346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2251a23db541da34cb9a4f991cd3f594, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3885564679610893942}
-  walkSpeed: 3
-  runSpeed: 5
-  boostSpeed: 10
-  walkAcceleration: 3
-  runAcceleration: 15
-  boostAcceleration: 40
-  stopSpeedThreshold: 0.02
-  jumpSpeed: 5
 --- !u!1 &3885564679587642455
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3885564679610893940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4, y: 0, z: -3.09}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2611732237662731075}
@@ -248,6 +253,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   rb: {fileID: 3885564679610893944}
   coll: {fileID: 3885564679610893947}
+  managerTag: PlayersManager
   isGrounded: 0
   isDizzy: 0
 --- !u!54 &3885564679610893944
@@ -259,13 +265,13 @@ Rigidbody:
   m_GameObject: {fileID: 3885564679610893940}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &3885564679610893947
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -273,7 +279,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3885564679610893940}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5e64fe518b654c94a922f52aeb9a55f2, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5

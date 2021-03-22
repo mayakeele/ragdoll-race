@@ -36,6 +36,12 @@ public class PlayersManager : MonoBehaviour
 
     // Public Functions
 
+    public void AddPlayer(Player player){
+        allPlayers.Add(player);
+        player.transform.SetParent(this.transform);
+    }
+
+
     public List<Player> GetAllPlayers(){
         return allPlayers;
     }

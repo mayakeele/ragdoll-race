@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+
         // Get camera space axes
         Vector3 cameraForward = player.manager.cameraController.GetCameraForwardDirection();
         Vector3 cameraRight = Vector3.Cross(Vector3.up, cameraForward);
@@ -62,7 +63,6 @@ public class PlayerController : MonoBehaviour
 
         Vector3 deltaV = (idealVelocity - currentVelocity);
 
-
         // Stop the player's velocity if their speed is below a certain threshold and they aren't trying to change their velocity
         if(player.rb.velocity.magnitude < stopSpeedThreshold  &&  deltaV.magnitude <= stopSpeedThreshold){
             player.rb.velocity = Vector3.zero;
@@ -71,13 +71,7 @@ public class PlayerController : MonoBehaviour
         else{
             player.rb.AddForce(deltaV.normalized * currMoveAcceleration, ForceMode.Acceleration);
         }
-        
-
-        // Jump if the player is grounded and presses jump
-        if(jumpInput && player.isGrounded){
-            player.rb.velocity = new Vector3(player.rb.velocity.x, jumpSpeed, player.rb.velocity.z);
-            player.isGrounded = false;
-        }
+            
     }
 
 
@@ -90,17 +84,27 @@ public class PlayerController : MonoBehaviour
 
 
 
-    // Public Functions
+    // Input Events
 
     public void OnMove(InputAction.CallbackContext context){
         moveInput = context.action.ReadValue<Vector2>();
     }
 
     public void OnJump(InputAction.CallbackContext context){
-        jumpInput = context.action.triggered;
+        //jumpInput = context.action.triggered;
+        jumpInput = context.started;
+
+        if(jumpInput && player.isGrounded){
+            Jump();
+        }
     }
 
 
     // Private Functions
 
+    private void Jump(){
+        // Add vertical velocity to the player
+        player.rb.velocity = new Vector3(player.rb.velocity.x, jumpSpeed, player.rb.velocity.z);
+        player.isGrounded = false;
+    }
 }

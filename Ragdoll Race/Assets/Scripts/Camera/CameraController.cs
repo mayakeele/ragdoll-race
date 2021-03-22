@@ -56,45 +56,48 @@ public class CameraController : MonoBehaviour
     void FixedUpdate(){
 
         List<Player> allPlayers = playersManager.GetAllPlayers();
+        int numPlayers = allPlayers.Count;
+
+        if(numPlayers > 0){
+            // Get the world space positions of all players' feet and heads, to get full enclosing volume
+            List<Vector3> playerFeetPositions = playersManager.GetPositions(allPlayers);
+            List<Vector3> playerHeadPositions = playerFeetPositions.AddVector(new Vector3(0, playersManager.characterHeight, 0));
 
 
-        // Get the world space positions of all players' feet and heads, to get full enclosing volume
-        List<Vector3> playerFeetPositions = playersManager.GetPositions(allPlayers);
-        List<Vector3> playerHeadPositions = playerFeetPositions.AddVector(new Vector3(0, playersManager.characterHeight, 0));
+            List<Vector3> playerVolumeWorld = new List<Vector3>();
+            playerVolumeWorld.AddRange(playerFeetPositions);
+            playerVolumeWorld.AddRange(playerHeadPositions);
+
+            List<Vector3> playerVolumeLocal = mainCamera.transform.InverseTransformPoints(playerVolumeWorld);
 
 
-        List<Vector3> playerVolumeWorld = new List<Vector3>();
-        playerVolumeWorld.AddRange(playerFeetPositions);
-        playerVolumeWorld.AddRange(playerHeadPositions);
+            // Find the bounding box surrounding the players
+            Vector3 maxBoundsLocal = playerVolumeLocal.MaxComponents();
+            Vector3 minBoundsLocal = playerVolumeLocal.MinComponents();
 
-        List<Vector3> playerVolumeLocal = mainCamera.transform.InverseTransformPoints(playerVolumeWorld);
-
-
-        // Find the bounding box surrounding the players
-        Vector3 maxBoundsLocal = playerVolumeLocal.MaxComponents();
-        Vector3 minBoundsLocal = playerVolumeLocal.MinComponents();
-
-        // Find the local and world space center point of the players
-        Vector3 centerPointLocal = (maxBoundsLocal + minBoundsLocal) / 2;
-        Vector3 centerPointWorld = mainCamera.transform.TransformPoint(centerPointLocal);
+            // Find the local and world space center point of the players
+            Vector3 centerPointLocal = (maxBoundsLocal + minBoundsLocal) / 2;
+            Vector3 centerPointWorld = mainCamera.transform.TransformPoint(centerPointLocal);
 
 
-        // Calculate the enclosing volumeand increase x to account for the characters' radii
-        Vector3 enclosingDimensions = (maxBoundsLocal - minBoundsLocal);
-        enclosingDimensions += new Vector3(playersManager.characterRadius * 2, 0, 0);
+            // Calculate the enclosing volumeand increase x to account for the characters' radii
+            Vector3 enclosingDimensions = (maxBoundsLocal - minBoundsLocal);
+            enclosingDimensions += new Vector3(playersManager.characterRadius * 2, 0, 0);
 
 
-        // Frame the players within the camera's view
-        float cameraFramingDistance = CalculateFramingDistance(mainCamera, enclosingDimensions, horizontalPaddingDistance, verticalPaddingDistance);
-        Vector3 targetCameraPosition = (-mainCamera.transform.forward * cameraFramingDistance) + centerPointWorld;
+            // Frame the players within the camera's view
+            float cameraFramingDistance = CalculateFramingDistance(mainCamera, enclosingDimensions, horizontalPaddingDistance, verticalPaddingDistance);
+            Vector3 targetCameraPosition = (-mainCamera.transform.forward * cameraFramingDistance) + centerPointWorld;
 
 
-        // Calculate spring forces on the camera
-        Vector3 relativePosition = transform.position - targetCameraPosition;
-        Vector3 relativeVelocity = rb.velocity - playersManager.AverageVelocity(allPlayers);
-        
-        Vector3 springAcceleration = DampedSpring.GetDampedSpringAcceleration(relativePosition, relativeVelocity, springFrequency, springDamping);
-        rb.AddForce(springAcceleration, ForceMode.Acceleration);
+            // Calculate spring forces on the camera
+            Vector3 relativePosition = transform.position - targetCameraPosition;
+            Vector3 relativeVelocity = rb.velocity - playersManager.AverageVelocity(allPlayers);
+            
+            Vector3 springAcceleration = DampedSpring.GetDampedSpringAcceleration(relativePosition, relativeVelocity, springFrequency, springDamping);
+            rb.AddForce(springAcceleration, ForceMode.Acceleration);
+        }
+   
     }
 
 
