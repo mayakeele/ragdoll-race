@@ -13,6 +13,13 @@ public static class DampedSpring
 
         return force;
     }
+    public static Vector3 GetDampedSpringForce(Vector3 objectDisplacement, Vector3 relativeVelocity, float mass, float springConstant, float dampingRatio){
+        // Calculates the combined force of a spring and damping force on an object, with object velocity being relative to the target's velocity
+
+        Vector3 force = (-2 * dampingRatio * relativeVelocity * Mathf.Sqrt(mass * springConstant)) - (springConstant * objectDisplacement);
+
+        return force;
+    }
 
 
     public static Vector3 GetDampedSpringAcceleration(Vector3 objectPosition, Vector3 targetPosition, Vector3 relativeVelocity, float naturalFrequency, float dampingRatio){
