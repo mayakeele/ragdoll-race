@@ -55,20 +55,21 @@ public static class DampedSpring
         return dampingTorque + springTorque;
     }
 
-    public static Vector3 GetDampedSpringAngularAcceleration(Quaternion objectRotation, Quaternion targetRotation, Vector3 angularVelocity, float springFrequency, float dampingRatio){
-        // Calculates the combined torque of an angular spring and damping force on an object, with regards to the object's moment of inertia
+    public static Vector3 GetDampedSpringTorque(Vector3 objectForward, Vector3 targetForward, Vector3 angularVelocity, float springConstant, float dampingConstant){
+        // Calculates the combined torque of an angular spring and damping force on an object
         // All rotational vectors are in radians
 
-        Quaternion rotation = targetRotation * Quaternion.Inverse(objectRotation);
-        Vector3 torqueAxis = new Vector3(rotation.x, rotation.y, rotation.z) * rotation.w * -1;
+        Vector3 displacementAxis = Vector3.Cross(objectForward, targetForward).normalized;
+        float displacementAngle = Vector3.Angle(objectForward, targetForward) * Mathf.Deg2Rad;
 
-        float angularDistance = Mathf.Deg2Rad * Quaternion.Angle(targetRotation, objectRotation);
-
-        Vector3 dampingAcceleration = -2 * dampingRatio * springFrequency * angularVelocity;
-        Vector3 springAcceleration = -Mathf.Pow(springFrequency, 2) * angularDistance * torqueAxis;
-
-        return dampingAcceleration + springAcceleration;
+        Vector3 velocityAxis = angularVelocity.normalized;
+        float velocityRate = angularVelocity.magnitude;
+        
+        Vector3 torque = -(dampingConstant * velocityRate * velocityAxis) - (springConstant * displacementAngle * displacementAxis);
+        
+        return torque;
     }
+
 
     public static Vector3 GetUndampedSpringTorque(Quaternion objectRotation, Quaternion targetRotation, float springConstant){
         // Calculates the combined torque of an angular spring on an object, with regards to the object's moment of inertia

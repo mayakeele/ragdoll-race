@@ -60,8 +60,8 @@ public class CameraController : MonoBehaviour
 
         if(numPlayers > 0){
             // Get the world space positions of all players' feet and heads, to get full enclosing volume
-            List<Vector3> playerFeetPositions = playersManager.GetPositions(allPlayers);
-            List<Vector3> playerHeadPositions = playerFeetPositions.AddVector(new Vector3(0, playersManager.characterHeight, 0));
+            List<Vector3> playerFeetPositions = playersManager.GetPositions(allPlayers).AddVector(0, -playersManager.characterPelvisHeight, 0);
+            List<Vector3> playerHeadPositions = playerFeetPositions.AddVector(0, playersManager.characterHeadHeight, 0);
 
 
             List<Vector3> playerVolumeWorld = new List<Vector3>();

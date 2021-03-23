@@ -12,6 +12,14 @@ public static class Vector3Extensions
         }
         return sumVector;
     }
+    public static List<Vector3> AddVector(this List<Vector3> vectorList, float addedX, float addedY, float addedZ){
+        // Adds the given vector to every element in the list
+        List<Vector3> sumVector = new List<Vector3>();
+        foreach(Vector3 vect in vectorList){
+            sumVector.Add(vect + new Vector3(addedX, addedY, addedZ));
+        }
+        return sumVector;
+    }
 
     
     public static Vector3 ProjectHorizontal(this Vector3 inVector){

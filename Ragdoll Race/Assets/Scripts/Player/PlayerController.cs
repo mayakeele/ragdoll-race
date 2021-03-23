@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
         // Calculate and apply movement force to player
         Vector3 idealVelocity = ((cameraForward * moveInput.y) + (cameraRight * moveInput.x)) * currMoveSpeedLimit;
-        Vector3 currentVelocity = new Vector3(player.rb.velocity.x, 0, player.rb.velocity.z);
+        Vector3 currentVelocity = new Vector3(player.rootRigidbody.velocity.x, 0, player.rootRigidbody.velocity.z);
 
         Vector3 requiredVelocityChange = (idealVelocity - currentVelocity);
         float perFrameSpeedChange = currMoveAcceleration * Time.fixedDeltaTime;
@@ -67,10 +67,11 @@ public class PlayerController : MonoBehaviour
 
         // Apply only enough force to move towards or exactly equal the target velocity without overshoot
         if(requiredVelocityChange.magnitude > perFrameSpeedChange){
-            player.rb.AddForce(requiredVelocityChange.normalized * currMoveAcceleration, ForceMode.Acceleration);
+            player.rootRigidbody.AddForce(player.activeRagdoll.GetBodyMass() * currMoveAcceleration * requiredVelocityChange.normalized);
         }
         else{
-            player.rb.AddForce(requiredVelocityChange, ForceMode.VelocityChange);
+            //player.rootRigidbody.AddForce(requiredVelocityChange, ForceMode.VelocityChange);
+            player.rootRigidbody.AddForce(player.activeRagdoll.GetBodyMass() * requiredVelocityChange / Time.fixedDeltaTime);
         }
             
     }
@@ -105,7 +106,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump(){
         // Add vertical velocity to the player
-        player.rb.velocity = new Vector3(player.rb.velocity.x, jumpSpeed, player.rb.velocity.z);
-        player.isGrounded = false;
+        player.rootRigidbody.velocity = new Vector3(player.rootRigidbody.velocity.x, jumpSpeed, player.rootRigidbody.velocity.z);
+        //player.isGrounded = false;
     }
 }

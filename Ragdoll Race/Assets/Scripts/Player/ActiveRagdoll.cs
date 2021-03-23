@@ -18,19 +18,12 @@ public class ActiveRagdoll : MonoBehaviour
 
     [Header("Body Settings")]
     [SerializeField] private float targetLegsLength;
-    [SerializeField] private float targetTorsoHeight;
-    [SerializeField] private float targetHeadHeight;
+    [SerializeField] private float bodyMass;
 
     
     [Header("Force Settings")]
     [SerializeField] private float legsSpringConstant;
     [SerializeField] private float legsSpringDamping;
-    [Space]
-    [SerializeField] private float torsoSpringConstant;
-    [SerializeField] private float torsoSpringDamping;
-    [Space]
-    [SerializeField] private float headSpringConstant;
-    [SerializeField] private float headSpringDamping;
 
 
     //[SerializeField] private float torsoFollowForce;
@@ -48,7 +41,7 @@ public class ActiveRagdoll : MonoBehaviour
 
     void Start()
     {
-        
+        RecalculateBodyMass();
     }
 
     void FixedUpdate()
@@ -65,11 +58,35 @@ public class ActiveRagdoll : MonoBehaviour
 
 
     // Public Functions
+    
+    public float GetBodyMass(){
+        return bodyMass;
+    }
 
+    public void SetPelvisRotationConstraint(bool constrainY){
+        // Constrains pelvis rotation to either the Y axis only, or no rotation at all
+        if(constrainY){
+            pelvisRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
+        }
+        else{
+            pelvisRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        }
+    }
 
+    public void RemoveRotationConstraints(){
+        // Removes all constraints on the pelvis rigidbody's rotation
+        pelvisRigidbody.constraints = RigidbodyConstraints.None;
+    }
 
 
     // Private Functions
+
+    private void RecalculateBodyMass(){
+        bodyMass = 0;
+        foreach(Rigidbody rb in bodyPartRigidbodies){
+            bodyMass += rb.mass;
+        }
+    }
 
     /*private Vector3 CalculateLegsForce(float currentHeight, float targetHeight, float springFrequency, float springDamping){
         // Calculates the upwards force of the legs on the hips based on the legs' compression

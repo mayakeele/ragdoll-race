@@ -6,7 +6,8 @@ public class Player : MonoBehaviour
 {
     [Header("Component References")]
     [HideInInspector] public PlayersManager manager;
-    public Rigidbody rb;
+    public ActiveRagdoll activeRagdoll;
+    public Rigidbody rootRigidbody;
     public Collider coll;
     [SerializeField] private string managerTag = "PlayersManager";
 
@@ -36,19 +37,19 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        isGrounded = (numCollisions > 0);
+        //isGrounded = (numCollisions > 0);
     }
 
 
     private void OnCollisionEnter(Collision other)
     {
-        numCollisions++;
-        isGrounded = true;
+        //numCollisions++;
+        //isGrounded = true;
     }
     private void OnCollisionExit(Collision other)
     {
-        numCollisions--;
-        isGrounded = false;
+        //numCollisions--;
+        //isGrounded = false;
     }
 
 

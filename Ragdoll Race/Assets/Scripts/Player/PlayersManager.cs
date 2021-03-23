@@ -14,7 +14,8 @@ public class PlayersManager : MonoBehaviour
 
 
     [Header("Shared Player Properties")]
-    public float characterHeight;
+    public float characterHeadHeight;
+    public float characterPelvisHeight;
     public float characterRadius;
 
 
@@ -56,7 +57,7 @@ public class PlayersManager : MonoBehaviour
 
         List<Vector3> positions = new List<Vector3>();
         foreach(Player player in playersList){
-            positions.Add(player.transform.position);
+            positions.Add(player.rootRigidbody.worldCenterOfMass);
         }
 
         return positions;
@@ -67,7 +68,7 @@ public class PlayersManager : MonoBehaviour
 
         List<Vector3> velocities = new List<Vector3>();
         foreach(Player player in playersList){
-            velocities.Add(player.rb.velocity);
+            velocities.Add(player.rootRigidbody.velocity);
         }
 
         return velocities;
