@@ -59,7 +59,7 @@ public static class DampedSpring
         // Calculates the combined torque of an angular spring and damping force on an object
         // All rotational vectors are in radians
 
-        Vector3 displacementAxis = Vector3.Cross(objectForward, targetForward).normalized;
+        Vector3 displacementAxis = Vector3.Cross(targetForward, objectForward).normalized;
         float displacementAngle = Vector3.Angle(objectForward, targetForward) * Mathf.Deg2Rad;
 
         Vector3 velocityAxis = angularVelocity.normalized;

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 18631267442619744}
   - component: {fileID: 18631267442619747}
   - component: {fileID: 18631267442619745}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R Inner Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &18631267442619747
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 635029255484149132}
   - component: {fileID: 635029255484149135}
   - component: {fileID: 635029255484149133}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L Upper Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &635029255484149135
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 444662442776749550}
   - component: {fileID: 4295413885712055891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: character_prototype_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 7027105957517166041}
   - component: {fileID: 2184414831758831749}
   - component: {fileID: 3080372044478069690}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,10 +521,12 @@ MonoBehaviour:
   runSpeed: 4.5
   boostSpeed: 10
   walkAcceleration: 3
-  runAcceleration: 7.5
+  runAcceleration: 7
   boostAcceleration: 40
   stopSpeedThreshold: 0.04
-  jumpSpeed: 8
+  jumpSpeed: 20
+  turnSpringConstant: 20
+  turnDampingConstant: 4
 --- !u!114 &3080372044478069690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,7 +607,7 @@ GameObject:
   - component: {fileID: 3808111826654668920}
   - component: {fileID: 4419522701255155165}
   - component: {fileID: 5782152300655497846}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +690,7 @@ GameObject:
   - component: {fileID: 6747078904762467485}
   - component: {fileID: 1606971900624101089}
   - component: {fileID: 1606971900624101102}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pelvis (Root)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -773,7 +775,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1606971900624101102
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -801,7 +803,7 @@ GameObject:
   - component: {fileID: 2094738683410690441}
   - component: {fileID: 2094738683410690440}
   - component: {fileID: 2094738683410690486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torso Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -886,7 +888,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &2094738683410690440
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1010,7 +1012,7 @@ GameObject:
   - component: {fileID: 2382434335541722893}
   - component: {fileID: 2382434335541722892}
   - component: {fileID: 2382434335541722890}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L Outer Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1097,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &2382434335541722892
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1220,7 +1222,7 @@ GameObject:
   - component: {fileID: 2986590612531880103}
   - component: {fileID: 2986590612531880102}
   - component: {fileID: 2986590612531880100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torso Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1305,7 +1307,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &2986590612531880102
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1425,7 +1427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6163613176020864305}
   - component: {fileID: 7548029608441709997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Active Ragdoll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1491,11 +1493,10 @@ MonoBehaviour:
   - {fileID: 8420697588410932864}
   walkableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 384
   targetLegsLength: 0.55
-  bodyMass: 0
-  legsSpringConstant: 3000
-  legsSpringDamping: 1.5
+  legsSpringConstant: 3200
+  legsSpringDamping: 1
 --- !u!1 &3749176530712109681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,7 +1511,7 @@ GameObject:
   - component: {fileID: 3749176530712109695}
   - component: {fileID: 3749176530712109694}
   - component: {fileID: 3749176530712109692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R Upper Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1595,7 +1596,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &3749176530712109694
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1720,7 +1721,7 @@ GameObject:
   - component: {fileID: 6529085500415929036}
   - component: {fileID: 6529085500415929039}
   - component: {fileID: 6529085500415929037}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shoulders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1805,7 +1806,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &6529085500415929039
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1929,7 +1930,7 @@ GameObject:
   - component: {fileID: 6778332067807693258}
   - component: {fileID: 6778332067807693261}
   - component: {fileID: 6778332067807693259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R Outer Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2014,7 +2015,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &6778332067807693261
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -2136,7 +2137,7 @@ GameObject:
   - component: {fileID: 7879374519225706094}
   - component: {fileID: 4282703465204643059}
   - component: {fileID: 5002728984836687956}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2220,7 +2221,7 @@ GameObject:
   - component: {fileID: 7233085959680859037}
   - component: {fileID: 7233085959680859036}
   - component: {fileID: 7233085959680859034}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L Inner Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2305,7 +2306,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &7233085959680859036
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -2430,7 +2431,7 @@ GameObject:
   - component: {fileID: 7281362628470608753}
   - component: {fileID: 7281362628470608752}
   - component: {fileID: 7281362628470608766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L Lower Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2515,7 +2516,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &7281362628470608752
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -2640,7 +2641,7 @@ GameObject:
   - component: {fileID: 8420697588410932864}
   - component: {fileID: 8420697588410932867}
   - component: {fileID: 8420697588410932865}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R Lower Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2725,7 +2726,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &8420697588410932867
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -2850,7 +2851,7 @@ GameObject:
   - component: {fileID: 9062684928987690711}
   - component: {fileID: 9062684928987690710}
   - component: {fileID: 9062684928987690708}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2937,7 +2938,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &9062684928987690710
 ConfigurableJoint:
   m_ObjectHideFlags: 0

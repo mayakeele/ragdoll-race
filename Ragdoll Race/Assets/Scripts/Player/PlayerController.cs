@@ -25,6 +25,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpSpeed;
 
 
+    [Header("Turning Settings")]
+    [SerializeField] private float turnSpringConstant;
+    [SerializeField] private float turnDampingConstant;
+
+
 
     // Input Variables
     Vector2 moveInput = Vector2.zero;
@@ -73,7 +78,14 @@ public class PlayerController : MonoBehaviour
             //player.rootRigidbody.AddForce(requiredVelocityChange, ForceMode.VelocityChange);
             player.rootRigidbody.AddForce(player.activeRagdoll.GetBodyMass() * requiredVelocityChange / Time.fixedDeltaTime);
         }
-            
+
+
+        // Turn the ragdoll towards the current movement direction by applying torque
+        Vector3 currLookDirection = player.rootRigidbody.transform.forward.ProjectHorizontal();
+        Vector3 idealLookDirection = idealVelocity.ProjectHorizontal();
+        Vector3 turningTorque = DampedSpring.GetDampedSpringTorque(currLookDirection, idealLookDirection, player.rootRigidbody.angularVelocity, turnSpringConstant, turnDampingConstant);
+
+        player.rootRigidbody.AddTorque(turningTorque);
     }
 
 
