@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
         // Calculate and apply movement force to player
         Vector3 idealVelocity = ((cameraForward * moveInput.y) + (cameraRight * moveInput.x)) * currMoveSpeedLimit;
-        Vector3 currentVelocity = new Vector3(player.rootRigidbody.velocity.x, 0, player.rootRigidbody.velocity.z);
+        Vector3 currentVelocity = player.rootRigidbody.velocity.ProjectHorizontal();
 
         Vector3 requiredVelocityChange = (idealVelocity - currentVelocity);
         float perFrameSpeedChange = currMoveAcceleration * Time.fixedDeltaTime;
@@ -112,6 +112,20 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
     }
+
+    public void OnToggleRagdoll(InputAction.CallbackContext context){
+        // Begin ragdoll state if the button has just been pressed, end ragdoll state if the button is released
+        if(context.started){
+            //player.SetRagdollState(true);
+            player.SetRagdollState(!player.isRagdoll);
+            
+        }
+        //else if(context.canceled){
+            //player.SetRagdollState(false);
+            //Debug.Log("upright");
+        //}
+    }
+
 
 
     // Private Functions

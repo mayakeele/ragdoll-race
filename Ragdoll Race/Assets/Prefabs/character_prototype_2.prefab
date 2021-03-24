@@ -468,9 +468,9 @@ MonoBehaviour:
   manager: {fileID: 0}
   activeRagdoll: {fileID: 7548029608441709997}
   rootRigidbody: {fileID: 1606971900624101089}
-  coll: {fileID: 8420697588410932865}
   managerTag: PlayersManager
   isGrounded: 1
+  isRagdoll: 0
   isDizzy: 0
 --- !u!1 &1022532015515448786
 GameObject:
@@ -525,7 +525,7 @@ MonoBehaviour:
   boostAcceleration: 40
   stopSpeedThreshold: 0.04
   jumpSpeed: 20
-  turnSpringConstant: 20
+  turnSpringConstant: 21
   turnDampingConstant: 4
 --- !u!114 &3080372044478069690
 MonoBehaviour:
@@ -591,6 +591,22 @@ MonoBehaviour:
     m_ActionId: 16b568bd-5d1e-490a-b3cb-ca357131157e
     m_ActionName: Menu/Join[/PDP CO.,LTD. Faceoff Wired Pro Controller for Nintendo
       Switch/button10,/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2184414831758831749}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnToggleRagdoll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d6f4568c-3e42-4989-9495-beef443fb5db
+    m_ActionName: Gameplay/Toggle Ragdoll[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -1497,6 +1513,9 @@ MonoBehaviour:
   targetLegsLength: 0.55
   legsSpringConstant: 3200
   legsSpringDamping: 1
+  pelvisRotationSpringConstant: 160
+  pelvisRotationDampingConstant: 8
+  pelvisRotationSnapAngle: 5
 --- !u!1 &3749176530712109681
 GameObject:
   m_ObjectHideFlags: 0

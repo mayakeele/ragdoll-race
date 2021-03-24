@@ -9,27 +9,29 @@ public class ActiveRagdoll : MonoBehaviour
     [SerializeField] private Rigidbody pelvisRigidbody;
     [SerializeField] private Rigidbody torsoRigidbody;
     [SerializeField] private Rigidbody headRigidbody;
-    [SerializeField] private List<Rigidbody> bodyPartRigidbodies;
+    [SerializeField] private List<Rigidbody> bodyPartRigidbodies;    
 
 
     [Header("Detection Settings")]
     [SerializeField] private LayerMask walkableLayers;
 
-
-    [Header("Body Settings")]
-    [SerializeField] private float targetLegsLength;
-    private float bodyMass;
-
     
-    [Header("Force Settings")]
+    [Header("Legs Settings")]
+    [SerializeField] private float targetLegsLength;
     [SerializeField] private float legsSpringConstant;
     [SerializeField] private float legsSpringDamping;
 
 
-    //[SerializeField] private float torsoFollowForce;
-    //[SerializeField] private float headFollowForce;
-    //[SerializeField] private float armsFollowForce;
-    //[SerializeField] private float legsFollowForce;
+    [Header("Pelvis Settings")]
+    [SerializeField] private float pelvisRotationSpringConstant;
+    [SerializeField] private float pelvisRotationDampingConstant;
+    [SerializeField] private float pelvisRotationSnapAngle;
+
+
+
+    // Private Variables
+    private float bodyMass;
+    private bool isGettingUp;
 
 
 
@@ -39,27 +41,24 @@ public class ActiveRagdoll : MonoBehaviour
         
     }
 
+
     void Start()
     {
         RecalculateBodyMass();
+        SetJointMotorsState(true);
     }
+
 
     void FixedUpdate()
     {   
-        // Cast a ray downwards to determine the floor height
-        if(Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, targetLegsLength, walkableLayers)){
+        // Apply an upward spring force on the pelvis if it is near the floor, and is not in ragdoll mode
+        if(!player.isRagdoll && Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, targetLegsLength, walkableLayers)){
 
-            // Apply an upward spring force on the pelvis if it is near the floor
             float targetHeight = hitInfo.point.y + targetLegsLength;
             Vector3 pelvisForce = CalculateUpwardForce(pelvisRigidbody.worldCenterOfMass.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping);    
             
             pelvisRigidbody.AddForce(pelvisForce);
-
-            //player.isGrounded = true;
         }
-        //else{
-        //    player.isGrounded = false;
-        //}
     }
 
 
@@ -70,7 +69,8 @@ public class ActiveRagdoll : MonoBehaviour
         return bodyMass;
     }
 
-    public void SetPelvisRotationConstraint(bool constrainY){
+
+    public void SetPelvisRotationConstraint(bool constrainY = false){
         // Constrains pelvis rotation to either the Y axis only, or no rotation at all
         if(constrainY){
             pelvisRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
@@ -80,10 +80,33 @@ public class ActiveRagdoll : MonoBehaviour
         }
     }
 
-    public void RemoveRotationConstraints(){
+    public void RemovePelvisRotationConstraints(){
         // Removes all constraints on the pelvis rigidbody's rotation
         pelvisRigidbody.constraints = RigidbodyConstraints.None;
     }
+
+
+    public void SetJointMotorsState(bool motorsState){
+        // Enables or disables all joint motors, (active vs. passive ragdoll)
+        foreach(Rigidbody bodyPart in bodyPartRigidbodies){
+            ConfigurableJoint joint = bodyPart.GetComponent<ConfigurableJoint>();
+            if(joint){
+                // Sets the angular drive mode to X and YZ to activate, or Slerp (which is unused) to passivate
+                joint.rotationDriveMode = motorsState ? RotationDriveMode.XYAndZ : RotationDriveMode.Slerp;
+            }
+        }
+
+        // Updates pelvis rotation constraints
+        if(motorsState == false){
+            RemovePelvisRotationConstraints();
+        }
+        else{
+            if(!isGettingUp){
+                StartCoroutine(ResetPelvisRotation(pelvisRotationSpringConstant, pelvisRotationDampingConstant, pelvisRotationSnapAngle));
+            }  
+        }
+    }
+
 
 
     // Private Functions
@@ -95,24 +118,6 @@ public class ActiveRagdoll : MonoBehaviour
         }
     }
 
-    /*private Vector3 CalculateLegsForce(float currentHeight, float targetHeight, float springFrequency, float springDamping){
-        // Calculates the upwards force of the legs on the hips based on the legs' compression
-
-        Vector3 legsForce;
-
-        if(currentHeight > targetHeight){
-            // Legs are fully extended, no force
-            legsForce = Vector3.zero;
-        }
-        else{
-            // Legs are partially compressed, acting as a damped spring
-            Vector3 relativePosition = new Vector3(0, currentHeight - targetHeight, 0);
-            Vector3 relativeVelocity = new Vector3(0, pelvisRigidbody.velocity.y, 0);
-            legsForce = DampedSpring.GetDampedSpringForce(relativePosition, relativeVelocity, springFrequency, springDamping);
-        }
-
-        return legsForce;
-    }*/
 
     private Vector3 BodyCenterOfMass(){
         // Calculates the world space center of mass of the ragdoll's body parts
@@ -166,4 +171,36 @@ public class ActiveRagdoll : MonoBehaviour
         return upwardForce;
     }
 
+
+    private IEnumerator ResetPelvisRotation(float springConstant, float springDamping, float snapAngleThreshold){
+        // Applies a torque on the hips towards an upright orientation, with its y-axis facing upwards
+        // Once within a certain angular distance, snaps to target and locks in place
+
+        isGettingUp = true;
+
+        Vector3 currentPelvisDirection = pelvisRigidbody.transform.up;
+        Vector3 targetPelvisDirection = Vector3.up;
+   
+        float currentAngle = Vector3.Angle(currentPelvisDirection, targetPelvisDirection);
+
+        while(currentAngle > snapAngleThreshold){
+            // Apply torque towards the target
+            Vector3 pelvisTorque = DampedSpring.GetDampedSpringTorque(currentPelvisDirection, targetPelvisDirection, pelvisRigidbody.angularVelocity, springConstant, springDamping);
+            pelvisRigidbody.AddTorque(pelvisTorque);
+
+            // Update rotation tracking variables
+            currentPelvisDirection = pelvisRigidbody.transform.up;
+            currentAngle = Vector3.Angle(currentPelvisDirection, targetPelvisDirection);
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        // Snap to target once the pelvis is close enough to upright and lock it in place
+        Quaternion snapRotation = Quaternion.LookRotation(pelvisRigidbody.transform.forward.ProjectHorizontal(), Vector3.up);
+        pelvisRigidbody.MoveRotation(snapRotation);
+
+        SetPelvisRotationConstraint();
+        
+        isGettingUp = false;
+    }
 }

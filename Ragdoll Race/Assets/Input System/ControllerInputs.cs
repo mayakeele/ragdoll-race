@@ -33,6 +33,14 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Toggle Ragdoll"",
+                    ""type"": ""Button"",
+                    ""id"": ""d6f4568c-3e42-4989-9495-beef443fb5db"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -104,6 +112,17 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""fad9366d-ba9d-41e8-9aee-02aa9ad06bf9"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""72eb7243-725d-490a-8f72-f4c9a5a01046"",
                     ""path"": ""<HID::PDP CO.,LTD. Faceoff Wired Pro Controller for Nintendo Switch>/button2"",
                     ""interactions"": """",
@@ -132,6 +151,28 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""406df89e-6949-4adb-bab8-19ff86b8e3e2"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle Ragdoll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""368ae289-73fb-4040-bc43-b8ba51e1698a"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle Ragdoll"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -193,6 +234,7 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
+        m_Gameplay_ToggleRagdoll = m_Gameplay.FindAction("Toggle Ragdoll", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Join = m_Menu.FindAction("Join", throwIfNotFound: true);
@@ -247,12 +289,14 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
     private IGameplayActions m_GameplayActionsCallbackInterface;
     private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_Jump;
+    private readonly InputAction m_Gameplay_ToggleRagdoll;
     public struct GameplayActions
     {
         private @ControllerInputs m_Wrapper;
         public GameplayActions(@ControllerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
+        public InputAction @ToggleRagdoll => m_Wrapper.m_Gameplay_ToggleRagdoll;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -268,6 +312,9 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
+                @ToggleRagdoll.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleRagdoll;
+                @ToggleRagdoll.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleRagdoll;
+                @ToggleRagdoll.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleRagdoll;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -278,6 +325,9 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @ToggleRagdoll.started += instance.OnToggleRagdoll;
+                @ToggleRagdoll.performed += instance.OnToggleRagdoll;
+                @ToggleRagdoll.canceled += instance.OnToggleRagdoll;
             }
         }
     }
@@ -319,6 +369,7 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnToggleRagdoll(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {

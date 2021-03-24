@@ -8,12 +8,12 @@ public class Player : MonoBehaviour
     [HideInInspector] public PlayersManager manager;
     public ActiveRagdoll activeRagdoll;
     public Rigidbody rootRigidbody;
-    public Collider coll;
     [SerializeField] private string managerTag = "PlayersManager";
 
 
     [Header("State Variables")]
     public bool isGrounded;
+    public bool isRagdoll;
     private int numCollisions = 0;
     public bool isDizzy;
 
@@ -41,9 +41,13 @@ public class Player : MonoBehaviour
     }
 
 
-
-
     // Public Functions
+    
+    public void SetRagdollState(bool ragdollState){
+        // Triggers the ActiveRagdoll to go limp, updates this player's state variable
+        activeRagdoll.SetJointMotorsState(!ragdollState);
+        isRagdoll = ragdollState;
+    }
 
 
     // Private Functions
