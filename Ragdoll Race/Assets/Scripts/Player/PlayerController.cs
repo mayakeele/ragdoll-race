@@ -15,14 +15,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
     [SerializeField] private float boostSpeed;
+    [SerializeField] private float airSpeed;
+    [SerializeField] private float dizzySpeed;
     [Space]
     [SerializeField] private float walkAcceleration;
     [SerializeField] private float runAcceleration;
     [SerializeField] private float boostAcceleration;
-    [Space]
-    [SerializeField] private float stopSpeedThreshold;
-    [Space]
+    [SerializeField] private float airAcceleration;
+    [SerializeField] private float dizzyAcceleration;
+    
+
+    [Header("Jump Settings")]
     [SerializeField] private float jumpSpeed;
+    [SerializeField] private float jumpSpringDisableTime;
+    [SerializeField] private int jumpPhysicsFrames;
 
 
     [Header("Turning Settings")]
@@ -57,12 +63,14 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Update current speed and acceleration limits 
+        UpdateMovementSpeed();
 
-        // Get camera space axes
+
+        // Get camera space player velocity info
         Vector3 cameraForward = player.manager.cameraController.GetCameraForwardDirection();
         Vector3 cameraRight = Vector3.Cross(Vector3.up, cameraForward);
 
-        // Calculate and apply movement force to player
         Vector3 idealVelocity = ((cameraForward * moveInput.y) + (cameraRight * moveInput.x)) * currMoveSpeedLimit;
         Vector3 currentVelocity = player.rootRigidbody.velocity.ProjectHorizontal();
 
@@ -70,22 +78,30 @@ public class PlayerController : MonoBehaviour
         float perFrameSpeedChange = currMoveAcceleration * Time.fixedDeltaTime;
 
 
-        // Apply only enough force to move towards or exactly equal the target velocity without overshoot
-        if(requiredVelocityChange.magnitude > perFrameSpeedChange){
-            player.rootRigidbody.AddForce(player.activeRagdoll.GetBodyMass() * currMoveAcceleration * requiredVelocityChange.normalized);
-        }
-        else{
-            //player.rootRigidbody.AddForce(requiredVelocityChange, ForceMode.VelocityChange);
-            player.rootRigidbody.AddForce(player.activeRagdoll.GetBodyMass() * requiredVelocityChange / Time.fixedDeltaTime);
+        // Disables player movement if they are in the ragdoll state
+        if(!player.isRagdoll){
+
+            // Apply only enough force to move towards or exactly equal the target velocity without overshoot
+            if(requiredVelocityChange.magnitude > perFrameSpeedChange){
+                player.rootRigidbody.AddForce(player.activeRagdoll.GetBodyMass() * currMoveAcceleration * requiredVelocityChange.normalized);
+            }
+            else{
+                player.rootRigidbody.AddForce(player.activeRagdoll.GetBodyMass() * requiredVelocityChange / Time.fixedDeltaTime);
+            }
         }
 
 
         // Turn the ragdoll towards the current movement direction by applying torque
-        Vector3 currLookDirection = player.rootRigidbody.transform.forward.ProjectHorizontal();
-        Vector3 idealLookDirection = idealVelocity.ProjectHorizontal();
-        Vector3 turningTorque = DampedSpring.GetDampedSpringTorque(currLookDirection, idealLookDirection, player.rootRigidbody.angularVelocity, turnSpringConstant, turnDampingConstant);
+        if(!player.isRagdoll){     
+            Vector3 currLookDirection = player.rootRigidbody.transform.forward.ProjectHorizontal();
+            Vector3 idealLookDirection = idealVelocity.ProjectHorizontal();
+            Vector3 turningTorque = DampedSpring.GetDampedSpringTorque(currLookDirection, idealLookDirection, player.rootRigidbody.angularVelocity, turnSpringConstant, turnDampingConstant);
 
-        player.rootRigidbody.AddTorque(turningTorque);
+            player.rootRigidbody.AddTorque(turningTorque);
+        }
+       
+
+        
     }
 
 
@@ -109,7 +125,7 @@ public class PlayerController : MonoBehaviour
         jumpInput = context.started;
 
         if(jumpInput && player.isGrounded){
-            Jump();
+            StartCoroutine(player.activeRagdoll.PerformJump(jumpSpeed, jumpPhysicsFrames, jumpSpringDisableTime));
         }
     }
 
@@ -130,9 +146,23 @@ public class PlayerController : MonoBehaviour
 
     // Private Functions
 
-    private void Jump(){
-        // Add vertical velocity to the player
-        player.rootRigidbody.velocity = new Vector3(player.rootRigidbody.velocity.x, jumpSpeed, player.rootRigidbody.velocity.z);
-        //player.isGrounded = false;
+    private void UpdateMovementSpeed(){
+        // Updates the current speed and acceleration limit
+        
+        if(player.isDizzy){
+            // Dizzy state overrides other states
+            currMoveSpeedLimit = dizzySpeed;
+            currMoveAcceleration = dizzyAcceleration;
+        }
+        else if(player.isGrounded){
+            // Grounded movement
+            currMoveSpeedLimit = runSpeed;
+            currMoveAcceleration = runAcceleration;
+        }
+        else{
+            // Air movement
+            currMoveSpeedLimit = airSpeed;
+            currMoveAcceleration = airAcceleration;
+        }
     }
 }

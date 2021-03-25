@@ -157,7 +157,7 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""406df89e-6949-4adb-bab8-19ff86b8e3e2"",
-                    ""path"": ""<Keyboard>/leftShift"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

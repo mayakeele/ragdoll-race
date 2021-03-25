@@ -7,13 +7,15 @@ public class ActiveRagdoll : MonoBehaviour
     [Header("Component References")]
     [SerializeField] private Player player;
     [SerializeField] private Rigidbody pelvisRigidbody;
-    [SerializeField] private Rigidbody torsoRigidbody;
+    [SerializeField] private Rigidbody lowerTorsoRigidbody;
+    [SerializeField] private Rigidbody upperTorsoRigidbody;
     [SerializeField] private Rigidbody headRigidbody;
     [SerializeField] private List<Rigidbody> bodyPartRigidbodies;    
 
 
     [Header("Detection Settings")]
     [SerializeField] private LayerMask walkableLayers;
+
 
     
     [Header("Legs Settings")]
@@ -31,7 +33,8 @@ public class ActiveRagdoll : MonoBehaviour
 
     // Private Variables
     private float bodyMass;
-    private bool isGettingUp;
+    private bool isPerformingGetup;
+    private bool isPerformingJump;
 
 
 
@@ -52,12 +55,17 @@ public class ActiveRagdoll : MonoBehaviour
     void FixedUpdate()
     {   
         // Apply an upward spring force on the pelvis if it is near the floor, and is not in ragdoll mode
-        if(!player.isRagdoll && Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, targetLegsLength, walkableLayers)){
+        if(!isPerformingJump && !player.isRagdoll && Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, targetLegsLength, walkableLayers)){
 
             float targetHeight = hitInfo.point.y + targetLegsLength;
             Vector3 pelvisForce = CalculateUpwardForce(pelvisRigidbody.worldCenterOfMass.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping);    
             
             pelvisRigidbody.AddForce(pelvisForce);
+
+            player.isGrounded = true;
+        }
+        else{
+            player.isGrounded = false;
         }
     }
 
@@ -101,10 +109,26 @@ public class ActiveRagdoll : MonoBehaviour
             RemovePelvisRotationConstraints();
         }
         else{
-            if(!isGettingUp){
+            if(!isPerformingGetup){
                 StartCoroutine(ResetPelvisRotation(pelvisRotationSpringConstant, pelvisRotationDampingConstant, pelvisRotationSnapAngle));
             }  
         }
+    }
+
+
+    public IEnumerator PerformJump(float finalSpeed, int numPhysicsFrames, float jumpSpringDisableTime){
+        // Sets the 'performing jump' flag true for a bit to prevent the damping spring from stopping jump momentum
+        isPerformingJump = true;
+
+        float jumpForce = GetBodyMass() * finalSpeed / (Time.fixedDeltaTime * numPhysicsFrames);
+        
+        for(int i = 0; i < numPhysicsFrames; i++){
+            pelvisRigidbody.AddForce(jumpForce * Vector3.up);
+            yield return new WaitForFixedUpdate();
+        }       
+
+        yield return new WaitForSeconds(jumpSpringDisableTime - (numPhysicsFrames * Time.fixedDeltaTime));
+        isPerformingJump = false;
     }
 
 
@@ -152,31 +176,13 @@ public class ActiveRagdoll : MonoBehaviour
 
         return upwardForce;
     }
-    private Vector3 CalculateUpwardForce(float displacementHeight, float verticalSpeed, float liftedMass, float springConstant, float dampingConstant){
-        // Calculates the upwards force of a virtual spring, like a marionette doll
-
-        Vector3 upwardForce;
-
-        if(displacementHeight > 0){
-            // Legs are fully extended, no force
-            upwardForce = Vector3.zero;
-        }
-        else{
-            // Legs are partially compressed, acting as a damped spring
-            Vector3 relativePosition = new Vector3(0, displacementHeight, 0);
-            Vector3 relativeVelocity = new Vector3(0, verticalSpeed, 0);
-            upwardForce = DampedSpring.GetDampedSpringForce(relativePosition, relativeVelocity, liftedMass, springConstant, dampingConstant);
-        }
-
-        return upwardForce;
-    }
 
 
     private IEnumerator ResetPelvisRotation(float springConstant, float springDamping, float snapAngleThreshold){
         // Applies a torque on the hips towards an upright orientation, with its y-axis facing upwards
         // Once within a certain angular distance, snaps to target and locks in place
 
-        isGettingUp = true;
+        isPerformingGetup = true;
 
         Vector3 currentPelvisDirection = pelvisRigidbody.transform.up;
         Vector3 targetPelvisDirection = Vector3.up;
@@ -200,7 +206,7 @@ public class ActiveRagdoll : MonoBehaviour
         pelvisRigidbody.MoveRotation(snapRotation);
 
         SetPelvisRotationConstraint();
-        
-        isGettingUp = false;
+
+        isPerformingGetup = false;
     }
 }

@@ -520,11 +520,16 @@ MonoBehaviour:
   walkSpeed: 2
   runSpeed: 4.5
   boostSpeed: 10
+  airSpeed: 10
+  dizzySpeed: 0
   walkAcceleration: 3
   runAcceleration: 7
   boostAcceleration: 40
-  stopSpeedThreshold: 0.04
-  jumpSpeed: 20
+  airAcceleration: 2.2
+  dizzyAcceleration: 0
+  jumpSpeed: 5
+  jumpSpringDisableTime: 0.1
+  jumpPhysicsFrames: 5
   turnSpringConstant: 21
   turnDampingConstant: 4
 --- !u!114 &3080372044478069690
@@ -1491,8 +1496,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 4295413885712055891}
   pelvisRigidbody: {fileID: 1606971900624101089}
-  torsoRigidbody: {fileID: 2986590612531880103}
-  headRigidbody: {fileID: 0}
+  lowerTorsoRigidbody: {fileID: 2986590612531880103}
+  upperTorsoRigidbody: {fileID: 2094738683410690441}
+  headRigidbody: {fileID: 9062684928987690711}
   bodyPartRigidbodies:
   - {fileID: 1606971900624101089}
   - {fileID: 2986590612531880103}
@@ -1511,7 +1517,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 384
   targetLegsLength: 0.55
-  legsSpringConstant: 3200
+  legsSpringConstant: 3000
   legsSpringDamping: 1
   pelvisRotationSpringConstant: 160
   pelvisRotationDampingConstant: 8
