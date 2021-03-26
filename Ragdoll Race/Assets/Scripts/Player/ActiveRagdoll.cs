@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActiveRagdoll : MonoBehaviour
 {
     [Header("Component References")]
-    [SerializeField] private Player player;
+    public Player player;
     [SerializeField] private Rigidbody pelvisRigidbody;
     [SerializeField] private Rigidbody lowerTorsoRigidbody;
     [SerializeField] private Rigidbody upperTorsoRigidbody;
@@ -48,7 +48,7 @@ public class ActiveRagdoll : MonoBehaviour
     void Start()
     {
         RecalculateBodyMass();
-        SetJointMotorsState(true);
+        //SetJointMotorsState(true);
     }
 
 
@@ -67,6 +67,16 @@ public class ActiveRagdoll : MonoBehaviour
         else{
             player.isGrounded = false;
         }
+
+        // Attempt to correct pelvis rotation by applying torque if not in ragdoll state
+        if(!player.isRagdoll){
+            Vector3 currentPelvisDirection = pelvisRigidbody.transform.up;
+            Vector3 targetPelvisDirection = Vector3.up;
+
+            Vector3 pelvisTorque = DampedSpring.GetDampedSpringTorque(currentPelvisDirection, targetPelvisDirection, pelvisRigidbody.angularVelocity, pelvisRotationSpringConstant, pelvisRotationDampingConstant);
+            pelvisRigidbody.AddTorque(pelvisTorque);
+        }
+        
     }
 
 
@@ -106,11 +116,11 @@ public class ActiveRagdoll : MonoBehaviour
 
         // Updates pelvis rotation constraints
         if(motorsState == false){
-            RemovePelvisRotationConstraints();
+            //RemovePelvisRotationConstraints();
         }
         else{
             if(!isPerformingGetup){
-                StartCoroutine(ResetPelvisRotation(pelvisRotationSpringConstant, pelvisRotationDampingConstant, pelvisRotationSnapAngle));
+                //StartCoroutine(ResetPelvisRotation(pelvisRotationSpringConstant, pelvisRotationDampingConstant, pelvisRotationSnapAngle));
             }  
         }
     }
