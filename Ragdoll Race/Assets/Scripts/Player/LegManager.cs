@@ -45,13 +45,21 @@ public class LegManager : MonoBehaviour
     private float timeSinceLastStep;
     private bool leftLegMoving;
 
+    private Quaternion leftUpperRotation;
+    private Quaternion rightUpperRotation;
+    private Quaternion leftLowerRotation;
+    private Quaternion rightLowerRotation;
+
 
 
     // Unity Functions
     
     void Start()
     {
-
+        leftLowerRotation = leftLowerJoint.transform.localRotation;
+        leftUpperRotation = leftUpperJoint.transform.localRotation;
+        rightLowerRotation = rightUpperJoint.transform.localRotation;
+        rightUpperRotation = rightUpperJoint.transform.localRotation;
     }
 
 
@@ -79,13 +87,40 @@ public class LegManager : MonoBehaviour
         
         // Update position and rotation targets for the physical legs
         // save for later:  poseTarget = Quaternion.Inverse(leftLowerJoint.transform.parent.rotation) * GetLegJointTargetRotation(true, true);
+        Quaternion localRotation;
 
-        leftLowerJoint.SetTargetRotation(GetLegJointTargetRotation(true, true), Quaternion.identity);
-        leftUpperJoint.SetTargetRotation(GetLegJointTargetRotation(true, false), Quaternion.identity);
+        localRotation = Quaternion.Inverse(leftLowerJoint.transform.parent.rotation) * GetLegJointTargetRotation(true, true);
+        leftLowerJoint.SetTargetRotationLocal(localRotation, leftLowerRotation);
 
-        rightLowerJoint.SetTargetRotation(GetLegJointTargetRotation(false, true), Quaternion.identity);
-        rightUpperJoint.SetTargetRotation(GetLegJointTargetRotation(false, false), Quaternion.identity);
+        localRotation = Quaternion.Inverse(leftUpperJoint.transform.parent.rotation) * GetLegJointTargetRotation(true, false);
+        leftUpperJoint.SetTargetRotationLocal(localRotation, leftUpperRotation);
+
+        localRotation = Quaternion.Inverse(rightLowerJoint.transform.parent.rotation) * GetLegJointTargetRotation(false, true);
+        rightLowerJoint.SetTargetRotationLocal(localRotation, rightLowerRotation);
+
+        localRotation = Quaternion.Inverse(rightUpperJoint.transform.parent.rotation) * GetLegJointTargetRotation(false, false);
+        rightUpperJoint.SetTargetRotationLocal(localRotation, rightUpperRotation);
+
+        //leftLowerJoint.targetRotation = GetLegJointTargetRotation(true, true) * Quaternion.Inverse(leftLowerJoint.transform.parent.rotation);
+        //leftUpperJoint.targetRotation = GetLegJointTargetRotation(true, false) * Quaternion.Inverse(leftUpperJoint.transform.parent.rotation);
+        //rightLowerJoint.targetRotation = GetLegJointTargetRotation(false, true) * Quaternion.Inverse(rightLowerJoint.transform.parent.rotation);
+        //rightUpperJoint.targetRotation = GetLegJointTargetRotation(false, false) * Quaternion.Inverse(rightUpperJoint.transform.parent.rotation);
+
+        /*leftLowerJoint.targetRotation = GetLegJointTargetRotation(true, true) * Quaternion.Inverse(leftLowerJoint.connectedBody.transform.rotation);
+        leftUpperJoint.targetRotation = GetLegJointTargetRotation(true, false) * Quaternion.Inverse(leftUpperJoint.connectedBody.transform.rotation) ;
+        rightLowerJoint.targetRotation = GetLegJointTargetRotation(false, true) * Quaternion.Inverse(rightLowerJoint.connectedBody.transform.rotation);
+        rightUpperJoint.targetRotation = GetLegJointTargetRotation(false, false) * Quaternion.Inverse(rightUpperJoint.connectedBody.transform.rotation);*/
         
+        //leftLowerJoint.targetRotation = Quaternion.Inverse(leftLowerRotation) * GetLegJointTargetRotation(true, true);
+        //leftUpperJoint.targetRotation = Quaternion.Inverse(leftUpperRotation) * GetLegJointTargetRotation(true, false);
+        //rightLowerJoint.targetRotation = Quaternion.Inverse(rightLowerRotation) * GetLegJointTargetRotation(false, true);
+        //rightUpperJoint.targetRotation = Quaternion.Inverse(rightUpperRotation) * GetLegJointTargetRotation(false, false);
+
+        //leftLowerJoint.transform.rotation = GetLegJointTargetRotation(true, true);
+        //leftUpperJoint.transform.rotation = GetLegJointTargetRotation(true, false);
+        //rightLowerJoint.transform.rotation = GetLegJointTargetRotation(false, true);
+        //rightUpperJoint.transform.rotation = GetLegJointTargetRotation(false, false);
+
     }
 
 
@@ -151,16 +186,20 @@ public class LegManager : MonoBehaviour
 
 
     private Quaternion GetLegJointTargetRotation(bool isLeft, bool isLowerLeg){
-        // Calculates the target position and rotation of a lower leg rigidbody using two IK bones
+        // Calculates the target position and rotation of a leg segment rigidbody using two IK bones
         
         FastIKFabric leg = GetLeg(isLeft);
 
         Vector3 outerBonePosition = isLowerLeg ? leg.transform.position : leg.transform.parent.position;
         Vector3 innerBonePosition = isLowerLeg ? leg.transform.parent.position : leg.transform.parent.parent.position;
 
-        Quaternion targetRotation = Quaternion.FromToRotation(Vector3.up, innerBonePosition - outerBonePosition);
-        
-        return targetRotation;
+        Vector3 jointPosition = (outerBonePosition + innerBonePosition) / 2;
+        Vector3 jointDirectionHorizontal = leg.Pole.position.ProjectHorizontal() - jointPosition.ProjectHorizontal();
+
+        Quaternion yawRotation = Quaternion.FromToRotation(Vector3.forward, jointDirectionHorizontal);
+        Quaternion pitchRotation = Quaternion.FromToRotation(Vector3.up, innerBonePosition - outerBonePosition);
+
+        return pitchRotation * yawRotation;
     }
 
 }
