@@ -9,8 +9,14 @@ public class LegManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private ActiveRagdoll activeRagdoll;
     [SerializeField] private Rigidbody pelvisRigidbody;
+    [Space]
     [SerializeField] private FastIKFabric leftLegIK;
     [SerializeField] private FastIKFabric rightLegIK;
+    [Space]
+    [SerializeField] private ConfigurableJoint leftUpperJoint;
+    [SerializeField] private ConfigurableJoint rightUpperJoint;
+    [SerializeField] private ConfigurableJoint leftLowerJoint;
+    [SerializeField] private ConfigurableJoint rightLowerJoint;
 
 
     [Header("Movement Properties")]
@@ -49,11 +55,11 @@ public class LegManager : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
-        timeSinceLastStep += Time.deltaTime;
+        timeSinceLastStep += Time.fixedDeltaTime;
 
-        // Move the current leg after its alotted time
+        // Move the current leg IK bones after its alotted time
         if(timeSinceLastStep >= stepCycleLength / 2){
             timeSinceLastStep = 0;
 
@@ -65,12 +71,21 @@ public class LegManager : MonoBehaviour
 
             if(displacementFromDefault >= minDisplacementToMove){
                 StartCoroutine(MoveLeg(currentLeg, desiredPosition, groundNormal));
-                //currentTarget.position = desiredPosition;
-                //currentLeg.Target = currentTarget;
             }
 
             leftLegMoving = !leftLegMoving;
         }
+
+        
+        // Update position and rotation targets for the physical legs
+        // save for later:  poseTarget = Quaternion.Inverse(leftLowerJoint.transform.parent.rotation) * GetLegJointTargetRotation(true, true);
+
+        leftLowerJoint.SetTargetRotation(GetLegJointTargetRotation(true, true), Quaternion.identity);
+        leftUpperJoint.SetTargetRotation(GetLegJointTargetRotation(true, false), Quaternion.identity);
+
+        rightLowerJoint.SetTargetRotation(GetLegJointTargetRotation(false, true), Quaternion.identity);
+        rightUpperJoint.SetTargetRotation(GetLegJointTargetRotation(false, false), Quaternion.identity);
+        
     }
 
 
@@ -83,7 +98,7 @@ public class LegManager : MonoBehaviour
         // Calculate the horizontal and max possible vertical position of the foot
         Vector3 rayOrigin = pelvisRigidbody.worldCenterOfMass;
         rayOrigin += (pelvisRigidbody.transform.right.ProjectHorizontal() * (standingFeetWidth/2) * (isLeft ? -1 : 1));
-        rayOrigin += pelvisRigidbody.velocity * movingStepOffset;
+        rayOrigin += pelvisRigidbody.velocity.ProjectHorizontal() * movingStepOffset;
         rayOrigin += Vector3.down * minLegLength;
 
 
@@ -133,4 +148,19 @@ public class LegManager : MonoBehaviour
     private FastIKFabric GetLeg(bool isLeft){
         return isLeft ? leftLegIK : rightLegIK;
     }
+
+
+    private Quaternion GetLegJointTargetRotation(bool isLeft, bool isLowerLeg){
+        // Calculates the target position and rotation of a lower leg rigidbody using two IK bones
+        
+        FastIKFabric leg = GetLeg(isLeft);
+
+        Vector3 outerBonePosition = isLowerLeg ? leg.transform.position : leg.transform.parent.position;
+        Vector3 innerBonePosition = isLowerLeg ? leg.transform.parent.position : leg.transform.parent.parent.position;
+
+        Quaternion targetRotation = Quaternion.FromToRotation(Vector3.up, innerBonePosition - outerBonePosition);
+        
+        return targetRotation;
+    }
+
 }
