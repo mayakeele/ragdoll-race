@@ -1571,11 +1571,11 @@ MonoBehaviour:
   rightUpperJoint: {fileID: 5703493299141661759}
   leftLowerJoint: {fileID: 2174596936029496625}
   rightLowerJoint: {fileID: 1152203561048975554}
-  movingStepOffset: 0.5
-  minDisplacementToMove: 0.2
-  stepCycleLength: 0.72
+  movingStepOffset: 0.65
+  minDisplacementToMove: 0.1
+  stepCycleLength: 0.95
   stepAnimationDuration: 0.5
-  stepAnimationHeight: 0.25
+  stepAnimationHeight: 0.12
   stepDistanceCurve:
     serializedVersion: 2
     m_Curve:
@@ -2136,6 +2136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4664956210009524242}
+  legManager: {fileID: 912781111713256721}
   pelvisRigidbody: {fileID: 7884743786306250912}
   lowerTorsoRigidbody: {fileID: 5932261647098959590}
   upperTorsoRigidbody: {fileID: 7364266532459628488}
@@ -3128,7 +3129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 4664956210009524242}
   walkSpeed: 2
-  runSpeed: 1.5
+  runSpeed: 4
   boostSpeed: 10
   airSpeed: 10
   dizzySpeed: 0

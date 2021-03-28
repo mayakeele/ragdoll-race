@@ -6,6 +6,7 @@ public class ActiveRagdoll : MonoBehaviour
 {
     [Header("Component References")]
     public Player player;
+    public LegManager legManager;
     [SerializeField] private Rigidbody pelvisRigidbody;
     [SerializeField] private Rigidbody lowerTorsoRigidbody;
     [SerializeField] private Rigidbody upperTorsoRigidbody;
@@ -54,10 +55,13 @@ public class ActiveRagdoll : MonoBehaviour
 
     void FixedUpdate()
     {   
+
         // Apply an upward spring force on the pelvis if it is near the floor, and is not in ragdoll mode
+
         if(!isPerformingJump && !player.isRagdoll && Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, targetLegsLength, walkableLayers)){
 
-            float targetHeight = hitInfo.point.y + targetLegsLength;
+            //float targetHeight = hitInfo.point.y + targetLegsLength;
+            float targetHeight = legManager.GetFootAnchors().Average().y + targetLegsLength;
             Vector3 pelvisForce = CalculateUpwardForce(pelvisRigidbody.worldCenterOfMass.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping);    
             
             pelvisRigidbody.AddForce(pelvisForce);
@@ -68,7 +72,9 @@ public class ActiveRagdoll : MonoBehaviour
             player.isGrounded = false;
         }
 
+
         // Attempt to correct pelvis rotation by applying torque if not in ragdoll state
+
         if(!player.isRagdoll){
             Vector3 currentPelvisDirection = pelvisRigidbody.transform.up;
             Vector3 targetPelvisDirection = Vector3.up;
