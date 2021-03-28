@@ -28,6 +28,7 @@ public class LegManager : MonoBehaviour
     [SerializeField] private float stepCycleLength;
     [SerializeField] private float stepAnimationDuration;
     [SerializeField] private float stepAnimationHeight;
+    [SerializeField] private AnimationCurve stepDistanceCurve;
     [SerializeField] private AnimationCurve stepHeightCurve;
 
 
@@ -159,19 +160,21 @@ public class LegManager : MonoBehaviour
 
         newNormal.Normalize();
 
-        float percent = 0;
-        while (percent <= 1){
-            percent = Mathf.Clamp01(percent);
+        float timeGradient = 0;
+        while (timeGradient <= 1){
+            timeGradient = Mathf.Clamp01(timeGradient);
 
-            Vector3 currentHeight = stepHeightCurve.Evaluate(percent) * stepAnimationHeight * newNormal;
-            Vector3 currentDirection = percent * totalDisplacement;
+            float spaceGradient = stepDistanceCurve.Evaluate(timeGradient);
+
+            Vector3 currentHeight = stepHeightCurve.Evaluate(spaceGradient) * stepAnimationHeight * newNormal;
+            Vector3 currentDirection = spaceGradient * totalDisplacement;
 
             Vector3 currentPosition = oldPosition + currentDirection + currentHeight;
-
             leg.Target.position = currentPosition;
 
-            percent += Time.deltaTime / stepAnimationDuration;
-            yield return null;
+            timeGradient += Time.fixedDeltaTime / stepAnimationDuration;
+
+            yield return new WaitForFixedUpdate();
         }
 
         leg.Target.position = newPosition;

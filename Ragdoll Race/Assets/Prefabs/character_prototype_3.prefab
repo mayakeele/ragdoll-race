@@ -383,13 +383,13 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 100
-    positionDamper: 1
+    positionSpring: 90
+    positionDamper: 8
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 100
-    positionDamper: 1
+    positionSpring: 90
+    positionDamper: 8
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
@@ -414,7 +414,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152203561048975555}
-  m_Material: {fileID: 13400000, guid: af41a90f01375c4488c6843b793f6e41, type: 2}
+  m_Material: {fileID: 13400000, guid: e9bd788bc80ff0c4bb1dda045f121325, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.06
@@ -736,13 +736,13 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 100
-    positionDamper: 1
+    positionSpring: 90
+    positionDamper: 8
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 100
-    positionDamper: 1
+    positionSpring: 90
+    positionDamper: 8
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
@@ -767,7 +767,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2174596936029496626}
-  m_Material: {fileID: 13400000, guid: af41a90f01375c4488c6843b793f6e41, type: 2}
+  m_Material: {fileID: 13400000, guid: e9bd788bc80ff0c4bb1dda045f121325, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.06
@@ -1571,11 +1571,35 @@ MonoBehaviour:
   rightUpperJoint: {fileID: 5703493299141661759}
   leftLowerJoint: {fileID: 2174596936029496625}
   rightLowerJoint: {fileID: 1152203561048975554}
-  movingStepOffset: 0.35
-  minDisplacementToMove: 0.25
-  stepCycleLength: 0.5
-  stepAnimationDuration: 0.4
-  stepAnimationHeight: 0.22
+  movingStepOffset: 0.5
+  minDisplacementToMove: 0.2
+  stepCycleLength: 0.72
+  stepAnimationDuration: 0.5
+  stepAnimationHeight: 0.25
+  stepDistanceCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.0023498535
+      inSlope: 0.9846445
+      outSlope: 0.9846445
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.067058824
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.08309725
+      outSlope: 0.08309725
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.056764722
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   stepHeightCurve:
     serializedVersion: 2
     m_Curve:
@@ -1583,33 +1607,33 @@ MonoBehaviour:
       time: 0
       value: 0
       inSlope: 3.6427896
-      outSlope: 3.585968
+      outSlope: 3.3018868
       tangentMode: 5
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.081698485
+      outWeight: 0.34756097
     - serializedVersion: 3
-      time: 0.65
+      time: 0.82
       value: 1
       inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      outSlope: -0.09489811
+      tangentMode: 1
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.18545055
+      outWeight: 0.099411726
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -7.8519797
+      inSlope: -11.735765
       outSlope: 0
       tangentMode: 1
       weightedMode: 0
-      inWeight: 0.069931574
+      inWeight: 0.7614381
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  standingFeetWidth: 0.2
+  standingFeetWidth: 0.25
   minLegLength: 0.1
   maxLegLength: 0.45
   walkableLayers:
@@ -1819,13 +1843,13 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 100
-    positionDamper: 1
+    positionSpring: 90
+    positionDamper: 8
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 100
-    positionDamper: 1
+    positionSpring: 90
+    positionDamper: 8
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
@@ -2134,7 +2158,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 384
   targetLegsLength: 0.55
-  legsSpringConstant: 3000
+  legsSpringConstant: 3500
   legsSpringDamping: 0.8
   pelvisRotationSpringConstant: 320
   pelvisRotationDampingConstant: 1.5
@@ -3020,13 +3044,13 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 100
-    positionDamper: 1
+    positionSpring: 90
+    positionDamper: 8
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 100
-    positionDamper: 1
+    positionSpring: 90
+    positionDamper: 8
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
@@ -3104,7 +3128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 4664956210009524242}
   walkSpeed: 2
-  runSpeed: 4.5
+  runSpeed: 1.5
   boostSpeed: 10
   airSpeed: 10
   dizzySpeed: 0
