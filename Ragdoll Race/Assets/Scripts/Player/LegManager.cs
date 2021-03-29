@@ -34,8 +34,8 @@ public class LegManager : MonoBehaviour
 
     [Header("Step Calculation Properties")]
     [SerializeField] private float standingFeetWidth;
-    [SerializeField] private float minLegLength;
-    [SerializeField] private float maxLegLength;
+    [SerializeField] private float minLegExtension;
+    [SerializeField] private float maxLegExtension;
     [SerializeField] private LayerMask walkableLayers;
     
 
@@ -80,45 +80,50 @@ public class LegManager : MonoBehaviour
 
         stepCycleLength = 1.86f - (0.912f * speed) + (0.269f * speedSquared) - (0.0303f * speedCubed);
         movingStepOffset = 1.13f - (0.546f * speed) + (0.208f * speedSquared) - (0.0282f * speedCubed);
-        stepAnimationHeight = 0.0349f + (0.0554f * speed);
+        stepAnimationHeight = 0.0788f + (0.0459f * speed);
 
 
-        // Move the current leg's IK bone if enough time has passed
+        // Only articulate legs if the player is grounded and not ragdolled
+        if(activeRagdoll.player.isGrounded && !activeRagdoll.player.isRagdoll){
 
-        if(timeSinceLastStep >= stepCycleLength / 2){
-            timeSinceLastStep = 0;
+            // Move the current leg's IK bone if enough time has passed
 
-            FastIKFabric currentLeg = leftLegMoving ? leftLegIK : rightLegIK;
-            Transform currentTarget = currentLeg.Target;
+            if(timeSinceLastStep >= stepCycleLength / 2){
+                timeSinceLastStep = 0;
 
-            Vector3 desiredPosition = CastToGround(leftLegMoving, out Vector3 groundNormal);
-            float displacementFromDefault = Vector3.Distance(currentTarget.position, desiredPosition);
+                FastIKFabric currentLeg = leftLegMoving ? leftLegIK : rightLegIK;
+                Transform currentTarget = currentLeg.Target;
 
-            if(displacementFromDefault >= minDisplacementToMove){
-                StartCoroutine(MoveLeg(currentLeg, desiredPosition, groundNormal));
-                if(leftLegMoving){ leftFootAnchor = desiredPosition; }  else{ rightFootAnchor = desiredPosition; }
+                Vector3 desiredPosition = CastToGround(leftLegMoving, out Vector3 groundNormal);
+                float displacementFromDefault = Vector3.Distance(currentTarget.position, desiredPosition);
+
+                if(displacementFromDefault >= minDisplacementToMove){
+                    StartCoroutine(MoveLeg(currentLeg, desiredPosition, groundNormal));
+                    if(leftLegMoving){ leftFootAnchor = desiredPosition; }  else{ rightFootAnchor = desiredPosition; }
+                }
+
+                leftLegMoving = !leftLegMoving;
             }
 
-            leftLegMoving = !leftLegMoving;
+            
+            // Update position and rotation targets for the physical legs
+
+            Quaternion localRotation;
+
+            localRotation = Quaternion.Inverse(leftLowerJoint.transform.parent.rotation) * GetLegJointTargetRotation(true, true);
+            leftLowerJoint.SetTargetRotationLocal(localRotation, leftLowerRotation);
+
+            localRotation = Quaternion.Inverse(leftUpperJoint.transform.parent.rotation) * GetLegJointTargetRotation(true, false);
+            leftUpperJoint.SetTargetRotationLocal(localRotation, leftUpperRotation);
+
+            localRotation = Quaternion.Inverse(rightLowerJoint.transform.parent.rotation) * GetLegJointTargetRotation(false, true);
+            rightLowerJoint.SetTargetRotationLocal(localRotation, rightLowerRotation);
+
+            localRotation = Quaternion.Inverse(rightUpperJoint.transform.parent.rotation) * GetLegJointTargetRotation(false, false);
+            rightUpperJoint.SetTargetRotationLocal(localRotation, rightUpperRotation);
+
         }
-
         
-        // Update position and rotation targets for the physical legs
-
-        Quaternion localRotation;
-
-        localRotation = Quaternion.Inverse(leftLowerJoint.transform.parent.rotation) * GetLegJointTargetRotation(true, true);
-        leftLowerJoint.SetTargetRotationLocal(localRotation, leftLowerRotation);
-
-        localRotation = Quaternion.Inverse(leftUpperJoint.transform.parent.rotation) * GetLegJointTargetRotation(true, false);
-        leftUpperJoint.SetTargetRotationLocal(localRotation, leftUpperRotation);
-
-        localRotation = Quaternion.Inverse(rightLowerJoint.transform.parent.rotation) * GetLegJointTargetRotation(false, true);
-        rightLowerJoint.SetTargetRotationLocal(localRotation, rightLowerRotation);
-
-        localRotation = Quaternion.Inverse(rightUpperJoint.transform.parent.rotation) * GetLegJointTargetRotation(false, false);
-        rightUpperJoint.SetTargetRotationLocal(localRotation, rightUpperRotation);
-
     }
 
 
@@ -143,19 +148,28 @@ public class LegManager : MonoBehaviour
         Vector3 rayOrigin = pelvisRigidbody.worldCenterOfMass;
         rayOrigin += (pelvisRigidbody.transform.right.ProjectHorizontal() * (standingFeetWidth/2) * (isLeft ? -1 : 1));
         rayOrigin += pelvisRigidbody.velocity.ProjectHorizontal() * movingStepOffset;
-        rayOrigin += Vector3.down * minLegLength;
+        //rayOrigin += Vector3.down * minLegExtension;
 
 
         // Cast a ray down from above the desired position to find solid ground
-        if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit groundHitInfo, maxLegLength - minLegLength, walkableLayers)){
-            // If solid ground is detected, return the hit point
-            groundNormal = groundHitInfo.normal;
-            return groundHitInfo.point;
+        if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit groundHitInfo, maxLegExtension, walkableLayers)){
+
+            // If solid ground is detected between the maximum and minimum leg extension, return the hit point
+            if(groundHitInfo.distance > minLegExtension){
+                groundNormal = groundHitInfo.normal;
+                return groundHitInfo.point;
+            }
+            // If it is above the minimum leg extension, return the height of minimum leg extension
+            else{
+                groundNormal = groundHitInfo.normal;
+                return rayOrigin + (Vector3.down * minLegExtension);
+            }
+            
         }
         else{
             // If no ground is detected, fully extend leg
             groundNormal = Vector3.up;
-            return rayOrigin + (Vector3.down * (maxLegLength - minLegLength));
+            return rayOrigin + (Vector3.down * maxLegExtension);
         }     
     }
 

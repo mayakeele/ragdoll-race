@@ -383,13 +383,13 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 90
-    positionDamper: 8
+    positionSpring: 60
+    positionDamper: 4
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 90
-    positionDamper: 8
+    positionSpring: 60
+    positionDamper: 4
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
@@ -736,13 +736,13 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 90
-    positionDamper: 8
+    positionSpring: 60
+    positionDamper: 4
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 90
-    positionDamper: 8
+    positionSpring: 60
+    positionDamper: 4
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
@@ -1633,9 +1633,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  standingFeetWidth: 0.25
-  minLegLength: 0.1
-  maxLegLength: 0.45
+  standingFeetWidth: 0.23
+  minLegExtension: 0.05
+  maxLegExtension: 0.48
   walkableLayers:
     serializedVersion: 2
     m_Bits: 384
@@ -1843,13 +1843,13 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 90
-    positionDamper: 8
+    positionSpring: 60
+    positionDamper: 4
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 90
-    positionDamper: 8
+    positionSpring: 60
+    positionDamper: 4
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
@@ -2158,11 +2158,11 @@ MonoBehaviour:
   walkableLayers:
     serializedVersion: 2
     m_Bits: 384
-  targetLegsLength: 0.55
-  legsSpringConstant: 3500
+  targetLegsLength: 0.5
+  legsSpringConstant: 3800
   legsSpringDamping: 0.8
-  pelvisRotationSpringConstant: 320
-  pelvisRotationDampingConstant: 1.5
+  pelvisRotationSpringConstant: 750
+  pelvisRotationDampingConstant: 20
   pelvisRotationSnapAngle: 5
 --- !u!1 &6499041402856606030
 GameObject:
@@ -3045,13 +3045,13 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 90
-    positionDamper: 8
+    positionSpring: 60
+    positionDamper: 4
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 90
-    positionDamper: 8
+    positionSpring: 60
+    positionDamper: 4
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3

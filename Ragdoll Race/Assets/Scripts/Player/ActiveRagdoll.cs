@@ -61,7 +61,7 @@ public class ActiveRagdoll : MonoBehaviour
         if(!isPerformingJump && !player.isRagdoll && Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, targetLegsLength, walkableLayers)){
 
             //float targetHeight = hitInfo.point.y + targetLegsLength;
-            float targetHeight = legManager.GetFootAnchors().Average().y + targetLegsLength;
+            float targetHeight = legManager.GetFootAnchors().MaxComponents().y + targetLegsLength;
             Vector3 pelvisForce = CalculateUpwardForce(pelvisRigidbody.worldCenterOfMass.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping);    
             
             pelvisRigidbody.AddForce(pelvisForce);
@@ -78,8 +78,9 @@ public class ActiveRagdoll : MonoBehaviour
         if(!player.isRagdoll){
             Vector3 currentPelvisDirection = pelvisRigidbody.transform.up;
             Vector3 targetPelvisDirection = Vector3.up;
+            Vector3 angularVelocity = new Vector3(pelvisRigidbody.angularVelocity.x, 0, pelvisRigidbody.angularVelocity.z);
 
-            Vector3 pelvisTorque = DampedSpring.GetDampedSpringTorque(currentPelvisDirection, targetPelvisDirection, pelvisRigidbody.angularVelocity, pelvisRotationSpringConstant, pelvisRotationDampingConstant);
+            Vector3 pelvisTorque = DampedSpring.GetDampedSpringTorque(currentPelvisDirection, targetPelvisDirection, angularVelocity, pelvisRotationSpringConstant, pelvisRotationDampingConstant);
             pelvisRigidbody.AddTorque(pelvisTorque);
         }
         
