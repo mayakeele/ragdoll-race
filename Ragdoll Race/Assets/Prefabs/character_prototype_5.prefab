@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1121321718870833776}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: character_prototype_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 622215080718869397}
   - component: {fileID: 622215080718869482}
   - component: {fileID: 5318346458268489447}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arm Outer.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -163,8 +163,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 7369042854116694927}
   - component: {fileID: 862759476682571849}
   - component: {fileID: 862759476682571848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pelvis.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -322,8 +322,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -347,7 +347,8 @@ GameObject:
   - component: {fileID: 950391314494120467}
   - component: {fileID: 1631317394147680008}
   - component: {fileID: 1631317394147680011}
-  m_Layer: 0
+  - component: {fileID: 8910693467943748449}
+  m_Layer: 6
   m_Name: SpineLower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,22 +418,22 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LowAngularXLimit:
-    limit: 0
+    limit: -10
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 0
+    limit: 27
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
     spring: 0
     damper: 0
   m_AngularYLimit:
-    limit: 0
+    limit: 40
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 0
+    limit: 12
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -454,7 +455,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -467,8 +468,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -481,6 +482,19 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!65 &8910693467943748449
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631317394147680009}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49, y: 0.1897789, z: 0.32686853}
+  m_Center: {x: 0, y: 0.08585121, z: -0.012247419}
 --- !u!1 &1701914237914753508
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +507,7 @@ GameObject:
   - component: {fileID: 1701914237914753510}
   - component: {fileID: 1701914237914753511}
   - component: {fileID: 6265187987613146258}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arm Outer.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,7 +613,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -612,8 +626,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -651,7 +665,8 @@ GameObject:
   - component: {fileID: 7074530767959210540}
   - component: {fileID: 2215533081896350631}
   - component: {fileID: 2215533081896350630}
-  m_Layer: 0
+  - component: {fileID: 4896568345423242097}
+  m_Layer: 6
   m_Name: UpperLeg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,11 +736,11 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LowAngularXLimit:
-    limit: 0
+    limit: -80
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 0
+    limit: 35
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
@@ -736,7 +751,7 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 0
+    limit: 27
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -758,7 +773,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -771,8 +786,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -785,6 +800,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!136 &4896568345423242097
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215533081896350628}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.08889077
+  m_Height: 0.23271641
+  m_Direction: 1
+  m_Center: {x: 0.0070098117, y: 0.036013357, z: -0.0042128395}
 --- !u!1 &2479165823800619587
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,7 +825,8 @@ GameObject:
   - component: {fileID: 2900649650939020827}
   - component: {fileID: 2479165823800619586}
   - component: {fileID: 2479165823800619597}
-  m_Layer: 0
+  - component: {fileID: 6498723300631484426}
+  m_Layer: 6
   m_Name: SpineMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -866,22 +896,22 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LowAngularXLimit:
-    limit: 0
+    limit: -13
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 0
+    limit: 53
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
     spring: 0
     damper: 0
   m_AngularYLimit:
-    limit: 0
+    limit: 25
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 0
+    limit: 22
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -903,7 +933,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -916,8 +946,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -930,6 +960,19 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!65 &6498723300631484426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2479165823800619587}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.45, y: 0.18122, z: 0.29147196}
+  m_Center: {x: 0, y: 0.087192595, z: 0.0013414569}
 --- !u!1 &2559919170206092539
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +984,8 @@ GameObject:
   - component: {fileID: 8855991024770718278}
   - component: {fileID: 2559919170206092538}
   - component: {fileID: 2559919170206092517}
-  m_Layer: 0
+  - component: {fileID: 1476363253613669396}
+  m_Layer: 6
   m_Name: Arm Inner.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1048,7 +1092,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -1061,8 +1105,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -1075,6 +1119,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!136 &1476363253613669396
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559919170206092539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.07332631
+  m_Height: 0.27679184
+  m_Direction: 1
+  m_Center: {x: -0.007373135, y: 0.12338847, z: 0.01412486}
 --- !u!1 &2859407633730351773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,7 +1144,8 @@ GameObject:
   - component: {fileID: 7503550235738573222}
   - component: {fileID: 2859407633730351775}
   - component: {fileID: 2859407633730351772}
-  m_Layer: 0
+  - component: {fileID: 5777025272728063903}
+  m_Layer: 6
   m_Name: LowerLeg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1159,7 +1218,7 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 0
+    limit: 120
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
@@ -1192,7 +1251,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -1205,8 +1264,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -1219,6 +1278,19 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!135 &5777025272728063903
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2859407633730351773}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.06691501
+  m_Center: {x: 0.006938613, y: 0.061502475, z: 0.000018999262}
 --- !u!1 &4461321739838356278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,7 +1302,7 @@ GameObject:
   - component: {fileID: 4437873759607215503}
   - component: {fileID: 4461321739838356273}
   - component: {fileID: 4461321739838356272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pelvis.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1337,7 +1409,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -1350,8 +1422,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -1374,7 +1446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5290909471116892973}
   - component: {fileID: 4661580775540585530}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1425,7 +1497,8 @@ GameObject:
   - component: {fileID: 8700730402837818926}
   - component: {fileID: 4811111629436388684}
   - component: {fileID: 4811111629436388687}
-  m_Layer: 0
+  - component: {fileID: 3986573669569699292}
+  m_Layer: 6
   m_Name: Arm Inner.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1532,7 +1605,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -1545,8 +1618,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -1559,6 +1632,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!136 &3986573669569699292
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4811111629436388685}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.07332631
+  m_Height: 0.27679184
+  m_Direction: 1
+  m_Center: {x: 0.007373135, y: 0.12338847, z: 0.01412486}
 --- !u!1 &6724600830411274997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,7 +1657,7 @@ GameObject:
   - component: {fileID: 2058753043624051597}
   - component: {fileID: 6724600830411274996}
   - component: {fileID: 6724600830411274999}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shoulder.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1677,7 +1764,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -1690,8 +1777,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -1715,7 +1802,8 @@ GameObject:
   - component: {fileID: 8502075522921601462}
   - component: {fileID: 6731793946835847145}
   - component: {fileID: 6731793946835847150}
-  m_Layer: 0
+  - component: {fileID: 6835817729174892073}
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1784,22 +1872,22 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LowAngularXLimit:
-    limit: 0
+    limit: -45
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 0
+    limit: 45
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
     spring: 0
     damper: 0
   m_AngularYLimit:
-    limit: 0
+    limit: 80
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 0
+    limit: 40
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -1821,7 +1909,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -1834,8 +1922,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -1848,6 +1936,19 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!135 &6835817729174892073
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731793946835847151}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.20079367
+  m_Center: {x: 0, y: 0.1954143, z: -0.0162885}
 --- !u!1 &7290816738914044097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,7 +1959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3480036356828148909}
   - component: {fileID: 5804403427678821753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Skinned Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1957,7 +2058,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8304472216952777454}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1990,7 +2091,8 @@ GameObject:
   - component: {fileID: 5274855373370711496}
   - component: {fileID: 8013968689626403460}
   - component: {fileID: 8013968689626403461}
-  m_Layer: 0
+  - component: {fileID: 2771833753989446284}
+  m_Layer: 6
   m_Name: LowerLeg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2063,7 +2165,7 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 0
+    limit: 120
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
@@ -2096,7 +2198,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -2109,8 +2211,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -2123,6 +2225,19 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!135 &2771833753989446284
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013968689626403482}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.06691501
+  m_Center: {x: -0.006938613, y: 0.061502475, z: 0.000018999262}
 --- !u!1 &8295026070948943921
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,7 +2249,7 @@ GameObject:
   - component: {fileID: 134800398021576634}
   - component: {fileID: 8295026070948943920}
   - component: {fileID: 8295026070948943923}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shoulder.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2241,7 +2356,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -2254,8 +2369,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -2279,7 +2394,8 @@ GameObject:
   - component: {fileID: 5297792952367820472}
   - component: {fileID: 8303786980578074049}
   - component: {fileID: 8303786980578074048}
-  m_Layer: 0
+  - component: {fileID: 8120054403801222163}
+  m_Layer: 6
   m_Name: UpperLeg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2349,11 +2465,11 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LowAngularXLimit:
-    limit: 0
+    limit: -80
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 0
+    limit: 35
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
@@ -2364,7 +2480,7 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 0
+    limit: 27
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -2386,7 +2502,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -2399,8 +2515,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -2413,6 +2529,20 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!136 &8120054403801222163
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8303786980578074054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.08889077
+  m_Height: 0.23271641
+  m_Direction: 1
+  m_Center: {x: -0.007009812, y: 0.036013357, z: -0.0042128395}
 --- !u!1 &8666473851824884713
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,7 +2554,8 @@ GameObject:
   - component: {fileID: 2029225389583452554}
   - component: {fileID: 8666473851824884712}
   - component: {fileID: 8666473851824884715}
-  m_Layer: 0
+  - component: {fileID: 8652324198778742050}
+  m_Layer: 6
   m_Name: SpineUpper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2482,7 +2613,7 @@ ConfigurableJoint:
   m_XMotion: 0
   m_YMotion: 0
   m_ZMotion: 0
-  m_AngularXMotion: 1
+  m_AngularXMotion: 0
   m_AngularYMotion: 1
   m_AngularZMotion: 1
   m_LinearLimitSpring:
@@ -2507,11 +2638,11 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_AngularYLimit:
-    limit: 0
+    limit: 17
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 0
+    limit: 15
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -2533,7 +2664,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
-  m_RotationDriveMode: 0
+  m_RotationDriveMode: 1
   m_AngularXDrive:
     serializedVersion: 3
     positionSpring: 0
@@ -2546,8 +2677,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 0
-    positionDamper: 0
+    positionSpring: 100
+    positionDamper: 0.5
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -2560,3 +2691,16 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!65 &8652324198778742050
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666473851824884713}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.45, y: 0.13027698, z: 0.2391572}
+  m_Center: {x: 0, y: 0.06274173, z: 0.015553564}
