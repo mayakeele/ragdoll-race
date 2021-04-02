@@ -37,15 +37,20 @@ public class LegManager : MonoBehaviour
     [SerializeField] private float minLegExtension;
     [SerializeField] private float maxLegExtension;
     [SerializeField] private LayerMask walkableLayers;
+    [SerializeField] private bool boneTransformOnJoint;
     
 
     
     // Private Variables
 
-    private Quaternion leftUpperRotation;
-    private Quaternion rightUpperRotation;
-    private Quaternion leftLowerRotation;
-    private Quaternion rightLowerRotation;
+    private Quaternion leftUpperRotLocal;
+    private Quaternion rightUpperRotLocal;
+    private Quaternion leftLowerRotLocal;
+    private Quaternion rightLowerRotLocal;
+    private Quaternion leftUpperRotGlobal;
+    private Quaternion rightUpperRotGlobal;
+    private Quaternion leftLowerRotGlobal;
+    private Quaternion rightLowerRotGlobal;
 
     private bool useDynamicGait;
     private float timeSinceLastStep;
@@ -60,10 +65,15 @@ public class LegManager : MonoBehaviour
     
     void Start()
     {
-        leftLowerRotation = leftLowerJoint.transform.localRotation;
-        leftUpperRotation = leftUpperJoint.transform.localRotation;
-        rightLowerRotation = rightUpperJoint.transform.localRotation;
-        rightUpperRotation = rightUpperJoint.transform.localRotation;
+        leftLowerRotLocal = leftLowerJoint.transform.localRotation;
+        leftUpperRotLocal = leftUpperJoint.transform.localRotation;
+        rightLowerRotLocal = rightUpperJoint.transform.localRotation;
+        rightUpperRotLocal = rightUpperJoint.transform.localRotation;
+
+        leftLowerRotGlobal = leftLowerJoint.transform.rotation;
+        leftUpperRotGlobal = leftUpperJoint.transform.rotation;
+        rightLowerRotGlobal = rightUpperJoint.transform.rotation;
+        rightUpperRotGlobal = rightUpperJoint.transform.rotation;
     }
 
 
@@ -110,17 +120,17 @@ public class LegManager : MonoBehaviour
 
             Quaternion localRotation;
 
-            localRotation = Quaternion.Inverse(leftLowerJoint.transform.parent.rotation) * GetLegJointTargetRotation(true, true);
-            leftLowerJoint.SetTargetRotationLocal(localRotation, leftLowerRotation);
+            localRotation = Quaternion.Inverse(leftLowerJoint.transform.parent.rotation) * GetLegJointTargetRotation(true, true , leftLowerRotGlobal);
+            leftLowerJoint.SetTargetRotationLocal(localRotation, leftLowerRotLocal);
 
-            localRotation = Quaternion.Inverse(leftUpperJoint.transform.parent.rotation) * GetLegJointTargetRotation(true, false);
-            leftUpperJoint.SetTargetRotationLocal(localRotation, leftUpperRotation);
+            localRotation = Quaternion.Inverse(leftUpperJoint.transform.parent.rotation) * GetLegJointTargetRotation(true, false, leftUpperRotGlobal);
+            leftUpperJoint.SetTargetRotationLocal(localRotation, leftUpperRotLocal);
 
-            localRotation = Quaternion.Inverse(rightLowerJoint.transform.parent.rotation) * GetLegJointTargetRotation(false, true);
-            rightLowerJoint.SetTargetRotationLocal(localRotation, rightLowerRotation);
+            localRotation = Quaternion.Inverse(rightLowerJoint.transform.parent.rotation) * GetLegJointTargetRotation(false, true, rightLowerRotGlobal);
+            rightLowerJoint.SetTargetRotationLocal(localRotation, rightLowerRotLocal);
 
-            localRotation = Quaternion.Inverse(rightUpperJoint.transform.parent.rotation) * GetLegJointTargetRotation(false, false);
-            rightUpperJoint.SetTargetRotationLocal(localRotation, rightUpperRotation);
+            localRotation = Quaternion.Inverse(rightUpperJoint.transform.parent.rotation) * GetLegJointTargetRotation(false, false, rightUpperRotGlobal);
+            rightUpperJoint.SetTargetRotationLocal(localRotation, rightUpperRotLocal);
 
         }
         
@@ -146,7 +156,7 @@ public class LegManager : MonoBehaviour
 
         // Calculate the horizontal and max possible vertical position of the foot
         Vector3 rayOrigin = pelvisRigidbody.worldCenterOfMass;
-        rayOrigin += (pelvisRigidbody.transform.right.ProjectHorizontal() * (standingFeetWidth/2) * (isLeft ? -1 : 1));
+        rayOrigin += (activeRagdoll.player.rootForward.right.ProjectHorizontal() * (standingFeetWidth/2) * (isLeft ? -1 : 1));
         rayOrigin += pelvisRigidbody.velocity.ProjectHorizontal() * movingStepOffset;
         //rayOrigin += Vector3.down * minLegExtension;
 
@@ -210,7 +220,7 @@ public class LegManager : MonoBehaviour
     }
 
 
-    private Quaternion GetLegJointTargetRotation(bool isLeft, bool isLowerLeg){
+    private Quaternion GetLegJointTargetRotation(bool isLeft, bool isLowerLeg, Quaternion initialRotation){
         // Calculates the target position and rotation of a leg segment rigidbody using two IK bones
         
         FastIKFabric leg = GetLeg(isLeft);
@@ -218,13 +228,14 @@ public class LegManager : MonoBehaviour
         Vector3 outerBonePosition = isLowerLeg ? leg.transform.position : leg.transform.parent.position;
         Vector3 innerBonePosition = isLowerLeg ? leg.transform.parent.position : leg.transform.parent.parent.position;
 
-        Vector3 jointPosition = (outerBonePosition + innerBonePosition) / 2;
+        Vector3 jointPosition = boneTransformOnJoint ? innerBonePosition : (outerBonePosition + innerBonePosition) / 2;
         Vector3 jointDirectionHorizontal = leg.Pole.position.ProjectHorizontal() - jointPosition.ProjectHorizontal();
 
         Quaternion yawRotation = Quaternion.FromToRotation(Vector3.forward, jointDirectionHorizontal);
-        Quaternion pitchRotation = Quaternion.FromToRotation(Vector3.up, innerBonePosition - outerBonePosition);
+        Quaternion pitchRotation = Quaternion.FromToRotation(Vector3.down, outerBonePosition - innerBonePosition);
 
-        return pitchRotation * yawRotation;
+        Quaternion worldRotation = pitchRotation * yawRotation;
+        return worldRotation * initialRotation;
     }
 
 }

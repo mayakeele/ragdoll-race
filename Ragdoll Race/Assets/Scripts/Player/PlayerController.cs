@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
         // Turn the ragdoll towards the current movement direction by applying torque
         if(!player.isRagdoll){     
-            Vector3 currLookDirection = player.rootRigidbody.transform.forward.ProjectHorizontal();
+            Vector3 currLookDirection = player.rootForward.transform.forward.ProjectHorizontal();
             Vector3 idealLookDirection = idealVelocity.ProjectHorizontal();
             Vector3 turningTorque = DampedSpring.GetDampedSpringTorque(currLookDirection, idealLookDirection, player.rootRigidbody.angularVelocity, turnSpringConstant, turnDampingConstant);
 

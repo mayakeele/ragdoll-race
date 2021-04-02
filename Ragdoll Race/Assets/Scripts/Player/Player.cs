@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public PlayersManager manager;
     public ActiveRagdoll activeRagdoll;
     public Rigidbody rootRigidbody;
+    public Transform rootForward;
     [SerializeField] private string managerTag = "PlayersManager";
 
 

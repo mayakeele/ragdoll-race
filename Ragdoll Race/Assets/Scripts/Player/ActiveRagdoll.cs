@@ -8,9 +8,6 @@ public class ActiveRagdoll : MonoBehaviour
     public Player player;
     public LegManager legManager;
     [SerializeField] private Rigidbody pelvisRigidbody;
-    [SerializeField] private Rigidbody lowerTorsoRigidbody;
-    [SerializeField] private Rigidbody upperTorsoRigidbody;
-    [SerializeField] private Rigidbody headRigidbody;
     [SerializeField] private List<Rigidbody> bodyPartRigidbodies;    
 
 
@@ -116,19 +113,9 @@ public class ActiveRagdoll : MonoBehaviour
         foreach(Rigidbody bodyPart in bodyPartRigidbodies){
             ConfigurableJoint joint = bodyPart.GetComponent<ConfigurableJoint>();
             if(joint){
-                // Sets the angular drive mode to X and YZ to activate, or Slerp (which is unused) to passivate
-                joint.rotationDriveMode = motorsState ? RotationDriveMode.XYAndZ : RotationDriveMode.Slerp;
+                // Sets the angular drive mode to Slerp to activate, or XYandZ (which is unused) to passivate
+                joint.rotationDriveMode = motorsState ? RotationDriveMode.Slerp : RotationDriveMode.XYAndZ;
             }
-        }
-
-        // Updates pelvis rotation constraints
-        if(motorsState == false){
-            //RemovePelvisRotationConstraints();
-        }
-        else{
-            if(!isPerformingGetup){
-                //StartCoroutine(ResetPelvisRotation(pelvisRotationSpringConstant, pelvisRotationDampingConstant, pelvisRotationSnapAngle));
-            }  
         }
     }
 
