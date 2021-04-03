@@ -20,14 +20,17 @@ public class LegManager : MonoBehaviour
 
 
     [Header("Movement Properties")]
-    [SerializeField] private float movingStepOffset;
-    [SerializeField] private float minDisplacementToMove;
+    
+    
 
 
     [Header("Step Animation Properties")]
-    [SerializeField] private float stepCycleLength;
-    [SerializeField] private float stepAnimationDuration;
-    [SerializeField] private float stepAnimationHeight;
+    [SerializeField] private float minDisplacementToMove;
+    [SerializeField] private AnimationCurve stepVelocityOffset;
+    [SerializeField] private AnimationCurve stepCycleLength;
+    [SerializeField] private AnimationCurve stepAnimationDuration;
+    [SerializeField] private AnimationCurve stepAnimationMaxHeight;
+    [Space]
     [SerializeField] private AnimationCurve stepDistanceCurve;
     [SerializeField] private AnimationCurve stepHeightCurve;
 
@@ -42,6 +45,11 @@ public class LegManager : MonoBehaviour
 
     
     // Private Variables
+
+    private float currStepCycleLength;
+    private float currStepVelocityOffset;
+    private float currStepAnimationDuration;
+    private float currStepAnimationMaxHeight;
 
     private Quaternion leftUpperRotLocal;
     private Quaternion rightUpperRotLocal;
@@ -82,23 +90,22 @@ public class LegManager : MonoBehaviour
         timeSinceLastStep += Time.fixedDeltaTime;
 
 
-        // Update leg movement variables based on the player's speed, using empirically-derived curves
+        // Update leg movement parameters based on the player's speed
 
-        float speed = pelvisRigidbody.velocity.magnitude;
-        float speedSquared = Mathf.Pow(speed, 2);
-        float speedCubed = Mathf.Pow(speed, 3);
+        float currSpeed = pelvisRigidbody.velocity.magnitude;
 
-        stepCycleLength = 1.86f - (0.912f * speed) + (0.269f * speedSquared) - (0.0303f * speedCubed);
-        movingStepOffset = 1.13f - (0.546f * speed) + (0.208f * speedSquared) - (0.0282f * speedCubed);
-        stepAnimationHeight = 0.0788f + (0.0459f * speed);
+        currStepCycleLength = stepCycleLength.Evaluate(currSpeed);
+        currStepVelocityOffset = stepVelocityOffset.Evaluate(currSpeed);
+        currStepAnimationDuration = stepAnimationDuration.Evaluate(currSpeed);
+        currStepAnimationMaxHeight = stepAnimationMaxHeight.Evaluate(currSpeed);
 
 
-        // Only articulate legs if the player is grounded and not ragdolled
-        if(activeRagdoll.player.isGrounded && !activeRagdoll.player.isRagdoll){
+        // Only articulate legs if the player is not ragdolled
+        if(!activeRagdoll.player.isRagdoll){
 
             // Move the current leg's IK bone if enough time has passed
 
-            if(timeSinceLastStep >= stepCycleLength / 2){
+            if(timeSinceLastStep >= currStepCycleLength / 2){
                 timeSinceLastStep = 0;
 
                 FastIKFabric currentLeg = leftLegMoving ? leftLegIK : rightLegIK;
@@ -156,30 +163,23 @@ public class LegManager : MonoBehaviour
 
         // Calculate the horizontal and max possible vertical position of the foot
         Vector3 rayOrigin = pelvisRigidbody.worldCenterOfMass;
+        rayOrigin += Vector3.down * minLegExtension;
         rayOrigin += (activeRagdoll.player.rootForward.right.ProjectHorizontal() * (standingFeetWidth/2) * (isLeft ? -1 : 1));
-        rayOrigin += pelvisRigidbody.velocity.ProjectHorizontal() * movingStepOffset;
-        //rayOrigin += Vector3.down * minLegExtension;
+        rayOrigin += pelvisRigidbody.velocity.ProjectHorizontal() * currStepVelocityOffset;
+
+        float legExtensionRange = maxLegExtension - minLegExtension;
 
 
         // Cast a ray down from above the desired position to find solid ground
-        if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit groundHitInfo, maxLegExtension, walkableLayers)){
-
+        if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit groundHitInfo, legExtensionRange, walkableLayers)){
             // If solid ground is detected between the maximum and minimum leg extension, return the hit point
-            if(groundHitInfo.distance > minLegExtension){
-                groundNormal = groundHitInfo.normal;
-                return groundHitInfo.point;
-            }
-            // If it is above the minimum leg extension, return the height of minimum leg extension
-            else{
-                groundNormal = groundHitInfo.normal;
-                return rayOrigin + (Vector3.down * minLegExtension);
-            }
-            
+            groundNormal = groundHitInfo.normal;
+            return groundHitInfo.point;           
         }
         else{
             // If no ground is detected, fully extend leg
             groundNormal = Vector3.up;
-            return rayOrigin + (Vector3.down * maxLegExtension);
+            return rayOrigin + (Vector3.down * legExtensionRange);
         }     
     }
 
@@ -198,13 +198,13 @@ public class LegManager : MonoBehaviour
 
             float spaceGradient = stepDistanceCurve.Evaluate(timeGradient);
 
-            Vector3 currentHeight = stepHeightCurve.Evaluate(spaceGradient) * stepAnimationHeight * newNormal;
+            Vector3 currentHeight = stepHeightCurve.Evaluate(spaceGradient) * currStepAnimationMaxHeight * newNormal;
             Vector3 currentDirection = spaceGradient * totalDisplacement;
 
             Vector3 currentPosition = oldPosition + currentDirection + currentHeight;
             leg.Target.position = currentPosition;
 
-            timeGradient += Time.fixedDeltaTime / stepAnimationDuration;
+            timeGradient += Time.fixedDeltaTime / currStepAnimationDuration;
 
             yield return new WaitForFixedUpdate();
         }

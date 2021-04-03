@@ -17,7 +17,7 @@ public class ActiveRagdoll : MonoBehaviour
 
     
     [Header("Legs Settings")]
-    [SerializeField] private float targetLegsLength;
+    [SerializeField] private float targetPelvisHeight;
     [SerializeField] private float legsSpringConstant;
     [SerializeField] private float legsSpringDamping;
 
@@ -53,13 +53,17 @@ public class ActiveRagdoll : MonoBehaviour
     void FixedUpdate()
     {   
 
-        // Apply an upward spring force on the pelvis if it is near the floor, and is not in ragdoll mode
+        // Apply an upward constant force plus an extra spring force on the pelvis if it is near the floor, and is not in ragdoll mode
 
-        if(!isPerformingJump && !player.isRagdoll && Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, targetLegsLength, walkableLayers)){
+        if(!isPerformingJump && !player.isRagdoll && Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, targetPelvisHeight, walkableLayers)){
 
             //float targetHeight = hitInfo.point.y + targetLegsLength;
-            float targetHeight = legManager.GetFootAnchors().MaxComponents().y + targetLegsLength;
-            Vector3 pelvisForce = CalculateUpwardForce(pelvisRigidbody.worldCenterOfMass.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping);    
+            // Base force, equal to the total body mass to provide "neutral buoyancy"
+            Vector3 pelvisForce = bodyMass * 9.81f * Vector3.up;
+
+            // Extra spring force which increases as legs compress, also has damping
+            float targetHeight = legManager.GetFootAnchors().MaxComponents().y + targetPelvisHeight;
+            pelvisForce += CalculateUpwardForce(pelvisRigidbody.worldCenterOfMass.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping);    
             
             pelvisRigidbody.AddForce(pelvisForce);
 

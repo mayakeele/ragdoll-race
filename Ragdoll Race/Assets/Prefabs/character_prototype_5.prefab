@@ -23,8 +23,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194931344015801632}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.125, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0038134307, y: -0.13419648, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3702269510401035166}
@@ -901,8 +901,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 150
-    positionDamper: 10
+    positionSpring: 120
+    positionDamper: 12
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -1005,20 +1005,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1146630454572903015}
   walkSpeed: 2
-  runSpeed: 4
+  runSpeed: 3.7
   boostSpeed: 10
   airSpeed: 10
   dizzySpeed: 0
   walkAcceleration: 3
-  runAcceleration: 7
+  runAcceleration: 6.7
   boostAcceleration: 40
   airAcceleration: 2.2
   dizzyAcceleration: 0
   jumpSpeed: 5
-  jumpSpringDisableTime: 0.1
-  jumpPhysicsFrames: 5
-  turnSpringConstant: 100
-  turnDampingConstant: 20
+  jumpSpringDisableTime: 0.11
+  jumpPhysicsFrames: 10
+  turnSpringConstant: 106
+  turnDampingConstant: 30
 --- !u!114 &1687905941848008982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1584,8 +1584,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 150
-    positionDamper: 10
+    positionSpring: 240
+    positionDamper: 24
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -1893,11 +1893,121 @@ MonoBehaviour:
   rightUpperJoint: {fileID: 8303786980578074048}
   leftLowerJoint: {fileID: 8013968689626403461}
   rightLowerJoint: {fileID: 2859407633730351772}
-  movingStepOffset: 0.65
-  minDisplacementToMove: 0.1
-  stepCycleLength: 0.95
-  stepAnimationDuration: 0.5
-  stepAnimationHeight: 0.12
+  minDisplacementToMove: 0.07
+  stepVelocityOffset:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.069721
+      inSlope: -0.11714285
+      outSlope: -0.44369707
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.2682353
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.9
+      inSlope: -0.28127456
+      outSlope: -0.28127456
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.043697476
+    - serializedVersion: 3
+      time: 4
+      value: 0.44
+      inSlope: -0.055512026
+      outSlope: -0.11976627
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.40058485
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  stepCycleLength:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 2.0135877
+      inSlope: -1.3537567
+      outSlope: -1.3537567
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.24615313
+    - serializedVersion: 3
+      time: 0.5
+      value: 1.45
+      inSlope: -0.8494217
+      outSlope: -0.8494217
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.043249387
+    - serializedVersion: 3
+      time: 4
+      value: 0.58
+      inSlope: -0.08828392
+      outSlope: -0.08828392
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09393767
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  stepAnimationDuration:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.48024857
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.48024857
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  stepAnimationMaxHeight:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.1
+      inSlope: 0.016666668
+      outSlope: 0.016666668
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 3.5
+      value: 0.15
+      inSlope: 0.016666668
+      outSlope: 0.016666668
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   stepDistanceCurve:
     serializedVersion: 2
     m_Curve:
@@ -1929,35 +2039,35 @@ MonoBehaviour:
       time: 0
       value: 0
       inSlope: 3.6427896
-      outSlope: 3.3018868
+      outSlope: 3.723046
       tangentMode: 5
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.34756097
+      outWeight: 0.030129123
     - serializedVersion: 3
-      time: 0.82
+      time: 0.7
       value: 1
       inSlope: 0
-      outSlope: -0.09489811
-      tangentMode: 1
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.099411726
+      outWeight: 0.14607847
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -11.735765
+      inSlope: -7.1440597
       outSlope: 0
       tangentMode: 1
       weightedMode: 0
-      inWeight: 0.7614381
+      inWeight: 0.053921737
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   standingFeetWidth: 0.32
-  minLegExtension: 0.05
-  maxLegExtension: 0.48
+  minLegExtension: -0.05
+  maxLegExtension: 0.32
   walkableLayers:
     serializedVersion: 2
     m_Bits: 384
@@ -2398,7 +2508,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 500
+    positionSpring: 200
     positionDamper: 2
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
@@ -2480,7 +2590,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7272917711370891233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.125, z: 0}
+  m_LocalPosition: {x: 0.0038134307, y: -0.13419648, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6981701171745038063}
@@ -2685,11 +2795,11 @@ MonoBehaviour:
   walkableLayers:
     serializedVersion: 2
     m_Bits: 384
-  targetLegsLength: 0.37
-  legsSpringConstant: 4500
-  legsSpringDamping: 1
+  targetPelvisHeight: 0.32
+  legsSpringConstant: 1000
+  legsSpringDamping: 1.5
   pelvisRotationSpringConstant: 750
-  pelvisRotationDampingConstant: 20
+  pelvisRotationDampingConstant: 25
   pelvisRotationSnapAngle: 5
 --- !u!1 &8013968689626403482
 GameObject:
@@ -2822,8 +2932,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 150
-    positionDamper: 10
+    positionSpring: 240
+    positionDamper: 24
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -2874,7 +2984,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8179674720534656639}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1401, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1306, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4575777127632098710}
@@ -2893,7 +3003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChainLength: 2
-  Target: {fileID: 0}
+  Target: {fileID: 3051902190544631363}
   Pole: {fileID: 3275457921447769006}
   Iterations: 10
   Delta: 0.001
@@ -3175,8 +3285,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 150
-    positionDamper: 10
+    positionSpring: 120
+    positionDamper: 12
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -3228,7 +3338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8375965367739438814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.1054274e-15, y: -0.14009999, z: 0.000000059604645}
+  m_LocalPosition: {x: -7.1054274e-15, y: -0.13060002, z: 0.000000059604645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8820923204781681376}
@@ -3247,7 +3357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChainLength: 2
-  Target: {fileID: 0}
+  Target: {fileID: 1564797017027049950}
   Pole: {fileID: 6224987365400023586}
   Iterations: 10
   Delta: 0.001
