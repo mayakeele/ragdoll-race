@@ -13,16 +13,17 @@ public class ActiveRagdoll : MonoBehaviour
 
     [Header("Detection Settings")]
     [SerializeField] private LayerMask walkableLayers;
-
+    [SerializeField] private float groundedRayLength;
 
     
-    [Header("Legs Settings")]
+    [Header("Buoyancy Settings")]
     [SerializeField] private float targetPelvisHeight;
+    [SerializeField] private float buoyancyMultiplier;
     [SerializeField] private float legsSpringConstant;
     [SerializeField] private float legsSpringDamping;
 
 
-    [Header("Pelvis Settings")]
+    [Header("Pelvis Torque Settings")]
     [SerializeField] private float pelvisRotationSpringConstant;
     [SerializeField] private float pelvisRotationDampingConstant;
     [SerializeField] private float pelvisRotationSnapAngle;
@@ -55,14 +56,15 @@ public class ActiveRagdoll : MonoBehaviour
 
         // Apply an upward constant force plus an extra spring force on the pelvis if it is near the floor, and is not in ragdoll mode
 
-        if(!isPerformingJump && !player.isRagdoll && Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, targetPelvisHeight, walkableLayers)){
+        if(!isPerformingJump && !player.isRagdoll && Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, groundedRayLength, walkableLayers)){
 
-            //float targetHeight = hitInfo.point.y + targetLegsLength;
             // Base force, equal to the total body mass to provide "neutral buoyancy"
-            Vector3 pelvisForce = bodyMass * 9.81f * Vector3.up;
+            Vector3 pelvisForce = bodyMass * Physics.gravity.magnitude * buoyancyMultiplier * Vector3.up;
 
             // Extra spring force which increases as legs compress, also has damping
-            float targetHeight = legManager.GetFootAnchors().MaxComponents().y + targetPelvisHeight;
+
+            float targetHeight = hitInfo.point.y + targetPelvisHeight;
+            //float targetHeight = legManager.GetFootAnchors().MaxComponents().y + targetPelvisHeight;
             pelvisForce += CalculateUpwardForce(pelvisRigidbody.worldCenterOfMass.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping);    
             
             pelvisRigidbody.AddForce(pelvisForce);

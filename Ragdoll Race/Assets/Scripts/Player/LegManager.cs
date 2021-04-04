@@ -111,11 +111,11 @@ public class LegManager : MonoBehaviour
                 FastIKFabric currentLeg = leftLegMoving ? leftLegIK : rightLegIK;
                 Transform currentTarget = currentLeg.Target;
 
-                Vector3 desiredPosition = CastToGround(leftLegMoving, out Vector3 groundNormal);
+                Vector3 desiredPosition = CastToGround(leftLegMoving);
                 float displacementFromDefault = Vector3.Distance(currentTarget.position, desiredPosition);
 
                 if(displacementFromDefault >= minDisplacementToMove){
-                    StartCoroutine(MoveLeg(currentLeg, desiredPosition, groundNormal));
+                    StartCoroutine(MoveLegRelative(currentLeg, desiredPosition));
                     if(leftLegMoving){ leftFootAnchor = desiredPosition; }  else{ rightFootAnchor = desiredPosition; }
                 }
 
@@ -158,39 +158,39 @@ public class LegManager : MonoBehaviour
 
     // Private Functions
 
-    private Vector3 CastToGround(bool isLeft, out Vector3 groundNormal){
+    private Vector3 CastToGround(bool isLeft){
         // Casts a ray down and through the desired position to find solid ground
 
         // Calculate the horizontal and max possible vertical position of the foot
-        Vector3 rayOrigin = pelvisRigidbody.worldCenterOfMass;
+        Vector3 rayOrigin = isLeft ? leftUpperJoint.transform.position : rightUpperJoint.transform.position;
+
+        //Vector3 rayOrigin = pelvisRigidbody.worldCenterOfMass;
+        //rayOrigin += (activeRagdoll.player.rootForward.right.ProjectHorizontal() * (standingFeetWidth/2) * (isLeft ? -1 : 1));
+
         rayOrigin += Vector3.down * minLegExtension;
-        rayOrigin += (activeRagdoll.player.rootForward.right.ProjectHorizontal() * (standingFeetWidth/2) * (isLeft ? -1 : 1));
+        
         rayOrigin += pelvisRigidbody.velocity.ProjectHorizontal() * currStepVelocityOffset;
 
-        float legExtensionRange = maxLegExtension - minLegExtension;
 
+        float legExtensionRange = maxLegExtension - minLegExtension;
 
         // Cast a ray down from above the desired position to find solid ground
         if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit groundHitInfo, legExtensionRange, walkableLayers)){
             // If solid ground is detected between the maximum and minimum leg extension, return the hit point
-            groundNormal = groundHitInfo.normal;
             return groundHitInfo.point;           
         }
         else{
             // If no ground is detected, fully extend leg
-            groundNormal = Vector3.up;
             return rayOrigin + (Vector3.down * legExtensionRange);
         }     
     }
 
 
-    private IEnumerator MoveLeg(FastIKFabric leg, Vector3 newPosition, Vector3 newNormal){
+    private IEnumerator MoveLeg(FastIKFabric leg, Vector3 newPosition){
         // Moves the given leg along a path defined by direction to the new target and the step animation curve
 
         Vector3 oldPosition = leg.Target.position;
         Vector3 totalDisplacement = newPosition - oldPosition;
-
-        newNormal.Normalize();
 
         float timeGradient = 0;
         while (timeGradient <= 1){
@@ -198,7 +198,7 @@ public class LegManager : MonoBehaviour
 
             float spaceGradient = stepDistanceCurve.Evaluate(timeGradient);
 
-            Vector3 currentHeight = stepHeightCurve.Evaluate(spaceGradient) * currStepAnimationMaxHeight * newNormal;
+            Vector3 currentHeight = stepHeightCurve.Evaluate(spaceGradient) * currStepAnimationMaxHeight * Vector3.up;
             Vector3 currentDirection = spaceGradient * totalDisplacement;
 
             Vector3 currentPosition = oldPosition + currentDirection + currentHeight;
@@ -210,6 +210,39 @@ public class LegManager : MonoBehaviour
         }
 
         leg.Target.position = newPosition;
+
+        yield break;
+    }
+
+    private IEnumerator MoveLegRelative(FastIKFabric leg, Vector3 newWorldPosition){
+        // Moves the given leg from its old target position to a new target position, which moves and rotates with the player root
+
+        Transform playerTransform = activeRagdoll.player.rootForward;
+
+        Vector3 oldRelativePosition = leg.Target.position - playerTransform.position;
+        Vector3 newRelativePosition = newWorldPosition - playerTransform.position;
+
+        Vector3 totalDisplacement = newRelativePosition - oldRelativePosition;
+
+        float timeGradient = 0;
+        while (timeGradient <= 1){
+            timeGradient = Mathf.Clamp01(timeGradient);
+
+            float spaceGradient = stepDistanceCurve.Evaluate(timeGradient);
+
+            Vector3 currentVertical = stepHeightCurve.Evaluate(spaceGradient) * currStepAnimationMaxHeight * Vector3.up;
+            Vector3 currentHorizontal = spaceGradient * totalDisplacement;
+
+            Vector3 currentRelativePosition = oldRelativePosition + currentHorizontal + currentVertical;
+
+            leg.Target.position = playerTransform.position + currentRelativePosition;
+
+            timeGradient += Time.fixedDeltaTime / currStepAnimationDuration;
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        //leg.Target.position = newPosition;
 
         yield break;
     }
