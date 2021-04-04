@@ -6,17 +6,17 @@ public class ActiveRagdoll : MonoBehaviour
 {
     [Header("Component References")]
     public Player player;
-    public LegManager legManager;
+    public LegsIKCalculator legManager;
     [SerializeField] private Rigidbody pelvisRigidbody;
-    [SerializeField] private List<Rigidbody> bodyPartRigidbodies;    
+    [SerializeField] private List<Rigidbody> bodyPartRigidbodies;
 
 
     [Header("Detection Settings")]
-    [SerializeField] private LayerMask walkableLayers;
+    [SerializeField] private LayerMask standableLayers;
     [SerializeField] private float groundedRayLength;
 
     
-    [Header("Buoyancy Settings")]
+    [Header("Pelvis Buoyancy Settings")]
     [SerializeField] private float targetPelvisHeight;
     [SerializeField] private float buoyancyMultiplier;
     [SerializeField] private float legsSpringConstant;
@@ -29,11 +29,13 @@ public class ActiveRagdoll : MonoBehaviour
     [SerializeField] private float pelvisRotationSnapAngle;
 
 
-    [Header("Leg Physic Materials")]
-    [SerializeField] private PhysicMaterial legPhysicMaterialRagdoll;
-    [SerializeField] private PhysicMaterial legPhysicMaterialWalking;
+    [Header("Leg Settings")]
+    [SerializeField] private List<JointTargetFollower> legJointTargetFollowers;
     [Space]
     [SerializeField] private List<Collider> legColliders;
+    [Space]
+    [SerializeField] private PhysicMaterial legPhysicMaterialRagdoll;
+    [SerializeField] private PhysicMaterial legPhysicMaterialWalking;
 
 
 
@@ -63,7 +65,7 @@ public class ActiveRagdoll : MonoBehaviour
 
         // Apply an upward constant force plus an extra spring force on the pelvis if it is near the floor, and is not in ragdoll mode
 
-        if(!isPerformingJump && !player.isRagdoll && Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, groundedRayLength, walkableLayers)){
+        if(!isPerformingJump && !player.isRagdoll && Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, groundedRayLength, standableLayers)){
 
             // Base force, equal to the total body mass to provide "neutral buoyancy"
             Vector3 pelvisForce = bodyMass * Physics.gravity.magnitude * buoyancyMultiplier * Vector3.up;
