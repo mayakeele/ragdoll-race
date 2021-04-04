@@ -45,9 +45,14 @@ public class Player : MonoBehaviour
     // Public Functions
     
     public void SetRagdollState(bool ragdollState){
-        // Triggers the ActiveRagdoll to go limp, updates this player's state variable
-        activeRagdoll.SetJointMotorsState(!ragdollState);
+        // Update ragdoll flag state
         isRagdoll = ragdollState;
+
+        // Triggers the ActiveRagdoll to go limp
+        activeRagdoll.SetJointMotorsState(!ragdollState);
+        
+        // Change leg physic materials
+        activeRagdoll.SetLegPhysicMaterial(ragdollState);
     }
 
 

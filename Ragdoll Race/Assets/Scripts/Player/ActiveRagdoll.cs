@@ -29,6 +29,13 @@ public class ActiveRagdoll : MonoBehaviour
     [SerializeField] private float pelvisRotationSnapAngle;
 
 
+    [Header("Leg Physic Materials")]
+    [SerializeField] private PhysicMaterial legPhysicMaterialRagdoll;
+    [SerializeField] private PhysicMaterial legPhysicMaterialWalking;
+    [Space]
+    [SerializeField] private List<Collider> legColliders;
+
+
 
     // Private Variables
     private float bodyMass;
@@ -63,9 +70,9 @@ public class ActiveRagdoll : MonoBehaviour
 
             // Extra spring force which increases as legs compress, also has damping
 
-            float targetHeight = hitInfo.point.y + targetPelvisHeight;
-            //float targetHeight = legManager.GetFootAnchors().MaxComponents().y + targetPelvisHeight;
-            pelvisForce += CalculateUpwardForce(pelvisRigidbody.worldCenterOfMass.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping);    
+            //float targetHeight = hitInfo.point.y + targetPelvisHeight;
+            float targetHeight = legManager.GetFootAnchors().MaxComponents().y + targetPelvisHeight;
+            pelvisForce += CalculateUpwardForce(pelvisRigidbody.worldCenterOfMass.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping, false);    
             
             pelvisRigidbody.AddForce(pelvisForce);
 
@@ -126,6 +133,16 @@ public class ActiveRagdoll : MonoBehaviour
     }
 
 
+    public void SetLegPhysicMaterial(bool ragdollState){
+        // Changes the leg collider physic materials based on whether the player is in ragdoll state or not
+        PhysicMaterial currentMaterial = ragdollState ? legPhysicMaterialRagdoll : legPhysicMaterialWalking;
+
+        foreach(Collider collider in legColliders){
+            collider.material = currentMaterial;
+        }
+    }
+
+
     public IEnumerator PerformJump(float finalSpeed, int numPhysicsFrames, float jumpSpringDisableTime){
         // Sets the 'performing jump' flag true for a bit to prevent the damping spring from stopping jump momentum
         isPerformingJump = true;
@@ -168,12 +185,12 @@ public class ActiveRagdoll : MonoBehaviour
     }
 
 
-    private Vector3 CalculateUpwardForce(float currentHeight, float targetHeight, float verticalSpeed, float liftedMass, float springConstant, float dampingConstant){
+    private Vector3 CalculateUpwardForce(float currentHeight, float targetHeight, float verticalSpeed, float liftedMass, float springConstant, float dampingConstant, bool ignoreAboveTarget){
         // Calculates the upwards force of a virtual spring, like a marionette doll
 
         Vector3 upwardForce;
 
-        if(currentHeight > targetHeight){
+        if(ignoreAboveTarget && currentHeight > targetHeight){
             // Legs are fully extended, no force
             upwardForce = Vector3.zero;
         }
