@@ -9,6 +9,6 @@ PhysicMaterial:
   m_Name: Head
   dynamicFriction: 0.45
   staticFriction: 0.5
-  bounciness: 0.25
+  bounciness: 0.45
   frictionCombine: 0
   bounceCombine: 0

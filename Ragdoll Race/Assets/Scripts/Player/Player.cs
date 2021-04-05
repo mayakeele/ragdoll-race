@@ -12,10 +12,15 @@ public class Player : MonoBehaviour
     [SerializeField] private string managerTag = "PlayersManager";
 
 
+    [Header("Damage & Knockback Properties")]
+    [SerializeField] private float knockbackMultiplierAt0;
+    [SerializeField] private float knockbackMultiplierAt100;
+
+
     [Header("State Variables")]
+    public float currentDamage;
     public bool isGrounded;
     public bool isRagdoll;
-    private int numCollisions = 0;
     public bool isDizzy;
 
 
@@ -32,7 +37,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        
+        currentDamage = 0;
     }
 
 
@@ -56,5 +61,18 @@ public class Player : MonoBehaviour
     }
 
 
+    public void OnBodyPartHit(Hittable bodyPart, Vector3 hitLocation, Vector3 hitImpulse, float hitDamage, float hitKnockbackMultiplier){
+        // Apply damage to the player, then apply knockback to the body part that was hit
+        currentDamage += hitDamage;
+
+        float damageKnockbackMultiplier = currentDamage.Map(0, 100, knockbackMultiplierAt0, knockbackMultiplierAt100);
+        
+        Vector3 knockbackImpulse = damageKnockbackMultiplier * hitKnockbackMultiplier * hitImpulse;
+        bodyPart.GetComponent<Rigidbody>().AddForceAtPosition(knockbackImpulse, hitLocation, ForceMode.Impulse);
+    }
+
+
+
     // Private Functions
+
 }

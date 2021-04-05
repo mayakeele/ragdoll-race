@@ -9,6 +9,6 @@ PhysicMaterial:
   m_Name: Leg (Ragdoll)
   dynamicFriction: 0.45
   staticFriction: 0.65
-  bounciness: 1
+  bounciness: 0.55
   frictionCombine: 0
   bounceCombine: 0
