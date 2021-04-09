@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public ActiveRagdoll activeRagdoll;
     public Rigidbody rootRigidbody;
     public Transform rootForward;
+    public AudioSource audioSource;
     [SerializeField] private string managerTag = "PlayersManager";
 
 
@@ -18,7 +19,7 @@ public class Player : MonoBehaviour
 
 
     [Header("State Variables")]
-    public float currentDamage;
+    public float currentDamage = 0;
     public bool isGrounded;
     public bool isRagdoll;
     public bool isDizzy;
@@ -37,7 +38,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        currentDamage = 0;
+        //currentDamage = 0;
     }
 
 
