@@ -11,7 +11,7 @@ public class Hittable : MonoBehaviour
 
 
     [Header("Sound Effects")]
-    [SerializeField] private AudioClip hitSoundClip;
+    [SerializeField] private List<AudioClip> hitSoundClips;
     [Range(0,1)] [SerializeField] private float hitVolume;
     [SerializeField] private float hitPitchMin;
     [SerializeField] private float hitPitchMax;
@@ -44,8 +44,8 @@ public class Hittable : MonoBehaviour
         player.OnBodyPartHit(this, hitLocation, hitImpulse, hitDamage * bodyPartDamageMultiplier, hitKnockbackMultiplier * bodyPartKnockbackMultiplier);
 
         // Play impact sound at hit location
-        if(hitSoundClip){
-            audioSource.PlayClipPitchShifted(hitSoundClip, hitVolume, hitPitchMin, hitPitchMax);
+        if(hitSoundClips.Count > 0){
+            audioSource.PlayClipPitchShifted(RandomExtensions.RandomChoice(hitSoundClips), hitVolume, hitPitchMin, hitPitchMax);
         }
     }
 

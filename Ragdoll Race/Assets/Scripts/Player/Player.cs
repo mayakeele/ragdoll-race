@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     [Header("Damage & Knockback Properties")]
     [SerializeField] private float knockbackMultiplierAt0;
     [SerializeField] private float knockbackMultiplierAt100;
+    [Space]
+    [SerializeField] private float maxDamage;
 
 
     [Header("State Variables")]
@@ -44,7 +46,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
+        if(currentDamage > maxDamage){
+            currentDamage = maxDamage;
+        }
     }
 
 
