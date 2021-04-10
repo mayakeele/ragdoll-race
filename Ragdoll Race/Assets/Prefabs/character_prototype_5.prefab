@@ -84,7 +84,7 @@ MonoBehaviour:
   rootForward: {fileID: 3304757144567379501}
   audioSource: {fileID: 7919443795128758726}
   managerTag: PlayersManager
-  knockbackMultiplierAt0: 0
+  knockbackMultiplierAt0: 1
   knockbackMultiplierAt100: 2
   maxDamage: 300
   hitImmunityDuration: 0.2
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minHitSpeed: 2
   maxHitSpeed: 6
-  knockbackMultiplier: 1.5
+  knockbackMultiplier: 2
   baseDamage: 2
   maxScaledDamage: 10
   audioSource: {fileID: 7919443795128758726}
@@ -171,13 +171,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 0.5
-  bodyPartKnockbackMultiplier: 0.5
+  bodyPartKnockbackMultiplier: 1
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
   hitPitchMin: 0.95
   hitPitchMax: 1.15
   player: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!54 &622215080718869397
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -488,6 +489,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 950391314494120467}
+  - component: {fileID: 3560199828958809668}
   - component: {fileID: 7060235014154592088}
   - component: {fileID: 1631317394147680008}
   - component: {fileID: 1631317394147680011}
@@ -514,6 +516,36 @@ Transform:
   m_Father: {fileID: 5290909471116892973}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3560199828958809668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631317394147680009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHitSpeed: 3.5
+  maxHitSpeed: 8
+  knockbackMultiplier: 1
+  baseDamage: 4
+  maxScaledDamage: 20
+  audioSource: {fileID: 7919443795128758726}
+  playerHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  playerHitVolume: 1
+  playerHitPitchMin: 0.9
+  playerHitPitchMax: 1.1
+  groundHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  groundHitVolume: 0.735
+  groundHitPitchMin: 0.92
+  groundHitPitchMax: 1.08
+  playerHitParticlePrefab: {fileID: 0}
+  groundHitParticlePrefab: {fileID: 0}
 --- !u!114 &7060235014154592088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,7 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
-  bodyPartKnockbackMultiplier: 1
+  bodyPartKnockbackMultiplier: 1.5
   hitSoundClips:
   - {fileID: 8300000, guid: 41e4349e58c40974391d454950933504, type: 3}
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
@@ -535,6 +567,7 @@ MonoBehaviour:
   hitPitchMin: 0.9
   hitPitchMax: 1.1
   player: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!54 &1631317394147680008
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -709,7 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minHitSpeed: 2
   maxHitSpeed: 6
-  knockbackMultiplier: 1.5
+  knockbackMultiplier: 2
   baseDamage: 2
   maxScaledDamage: 10
   audioSource: {fileID: 7919443795128758726}
@@ -738,13 +771,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 0.5
-  bodyPartKnockbackMultiplier: 0.5
+  bodyPartKnockbackMultiplier: 1
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
   hitPitchMin: 0.95
   hitPitchMax: 1.15
   player: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!54 &1701914237914753510
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -911,6 +945,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7074530767959210540}
+  - component: {fileID: 8991020365571203641}
   - component: {fileID: 2412979775753649421}
   - component: {fileID: 3183162087892567172}
   - component: {fileID: 2215533081896350631}
@@ -938,6 +973,36 @@ Transform:
   m_Father: {fileID: 7369042854116694927}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8991020365571203641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215533081896350628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHitSpeed: 2
+  maxHitSpeed: 6
+  knockbackMultiplier: 1.8
+  baseDamage: 4
+  maxScaledDamage: 14
+  audioSource: {fileID: 7919443795128758726}
+  playerHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  playerHitVolume: 1
+  playerHitPitchMin: 0.9
+  playerHitPitchMax: 1.1
+  groundHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  groundHitVolume: 0.735
+  groundHitPitchMin: 0.92
+  groundHitPitchMax: 1.08
+  playerHitParticlePrefab: {fileID: 0}
+  groundHitParticlePrefab: {fileID: 0}
 --- !u!114 &2412979775753649421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -959,6 +1024,7 @@ MonoBehaviour:
   hitPitchMin: 0.9
   hitPitchMax: 1.1
   player: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!114 &3183162087892567172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,6 +1349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2900649650939020827}
+  - component: {fileID: 8338556577827842333}
   - component: {fileID: 2499185267752252161}
   - component: {fileID: 2479165823800619586}
   - component: {fileID: 2479165823800619597}
@@ -1309,6 +1376,36 @@ Transform:
   m_Father: {fileID: 950391314494120467}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8338556577827842333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2479165823800619587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHitSpeed: 3.5
+  maxHitSpeed: 8
+  knockbackMultiplier: 1
+  baseDamage: 4
+  maxScaledDamage: 20
+  audioSource: {fileID: 7919443795128758726}
+  playerHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  playerHitVolume: 1
+  playerHitPitchMin: 0.9
+  playerHitPitchMax: 1.1
+  groundHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  groundHitVolume: 0.735
+  groundHitPitchMin: 0.92
+  groundHitPitchMax: 1.08
+  playerHitParticlePrefab: {fileID: 0}
+  groundHitParticlePrefab: {fileID: 0}
 --- !u!114 &2499185267752252161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1322,7 +1419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
-  bodyPartKnockbackMultiplier: 1
+  bodyPartKnockbackMultiplier: 1.5
   hitSoundClips:
   - {fileID: 8300000, guid: 41e4349e58c40974391d454950933504, type: 3}
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
@@ -1330,6 +1427,7 @@ MonoBehaviour:
   hitPitchMin: 0.9
   hitPitchMax: 1.1
   player: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!54 &2479165823800619586
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1464,6 +1562,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8855991024770718278}
+  - component: {fileID: 3573380968350770332}
   - component: {fileID: 4197564292165739393}
   - component: {fileID: 2559919170206092538}
   - component: {fileID: 2559919170206092517}
@@ -1490,6 +1589,36 @@ Transform:
   m_Father: {fileID: 134800398021576634}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3573380968350770332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559919170206092539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHitSpeed: 2
+  maxHitSpeed: 6
+  knockbackMultiplier: 1.5
+  baseDamage: 4
+  maxScaledDamage: 12
+  audioSource: {fileID: 7919443795128758726}
+  playerHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  playerHitVolume: 1
+  playerHitPitchMin: 0.9
+  playerHitPitchMax: 1.1
+  groundHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  groundHitVolume: 0.735
+  groundHitPitchMin: 0.92
+  groundHitPitchMax: 1.08
+  playerHitParticlePrefab: {fileID: 0}
+  groundHitParticlePrefab: {fileID: 0}
 --- !u!114 &4197564292165739393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1503,13 +1632,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 0.5
-  bodyPartKnockbackMultiplier: 0.5
+  bodyPartKnockbackMultiplier: 1
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
   hitPitchMin: 0.95
   hitPitchMax: 1.15
   player: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!54 &2559919170206092538
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1675,6 +1805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7503550235738573222}
+  - component: {fileID: 6415815068915065270}
   - component: {fileID: 8636939358833210125}
   - component: {fileID: 211537974565807727}
   - component: {fileID: 2859407633730351775}
@@ -1701,6 +1832,36 @@ Transform:
   m_Father: {fileID: 5297792952367820472}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6415815068915065270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2859407633730351773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHitSpeed: 2.5
+  maxHitSpeed: 8
+  knockbackMultiplier: 1.5
+  baseDamage: 2
+  maxScaledDamage: 10
+  audioSource: {fileID: 7919443795128758726}
+  playerHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  playerHitVolume: 1
+  playerHitPitchMin: 0.9
+  playerHitPitchMax: 1.1
+  groundHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  groundHitVolume: 0.735
+  groundHitPitchMin: 0.92
+  groundHitPitchMax: 1.08
+  playerHitParticlePrefab: {fileID: 0}
+  groundHitParticlePrefab: {fileID: 0}
 --- !u!114 &8636939358833210125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1722,6 +1883,7 @@ MonoBehaviour:
   hitPitchMin: 0.9
   hitPitchMax: 1.1
   player: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!114 &211537974565807727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2329,6 +2491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8700730402837818926}
+  - component: {fileID: 7818357401649593706}
   - component: {fileID: 6762283670330289722}
   - component: {fileID: 4811111629436388684}
   - component: {fileID: 4811111629436388687}
@@ -2355,6 +2518,36 @@ Transform:
   m_Father: {fileID: 2058753043624051597}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7818357401649593706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4811111629436388685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHitSpeed: 2
+  maxHitSpeed: 6
+  knockbackMultiplier: 1.5
+  baseDamage: 4
+  maxScaledDamage: 12
+  audioSource: {fileID: 7919443795128758726}
+  playerHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  playerHitVolume: 1
+  playerHitPitchMin: 0.9
+  playerHitPitchMax: 1.1
+  groundHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  groundHitVolume: 0.735
+  groundHitPitchMin: 0.92
+  groundHitPitchMax: 1.08
+  playerHitParticlePrefab: {fileID: 0}
+  groundHitParticlePrefab: {fileID: 0}
 --- !u!114 &6762283670330289722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2368,13 +2561,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 0.5
-  bodyPartKnockbackMultiplier: 0.5
+  bodyPartKnockbackMultiplier: 1
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
   hitPitchMin: 0.95
   hitPitchMax: 1.15
   player: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!54 &4811111629436388684
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2782,6 +2976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8502075522921601462}
+  - component: {fileID: 6764694875694343819}
   - component: {fileID: 9082341620577733230}
   - component: {fileID: 6731793946835847145}
   - component: {fileID: 6731793946835847150}
@@ -2807,6 +3002,36 @@ Transform:
   m_Father: {fileID: 2029225389583452554}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6764694875694343819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731793946835847151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHitSpeed: 2
+  maxHitSpeed: 5
+  knockbackMultiplier: 2
+  baseDamage: 6
+  maxScaledDamage: 16
+  audioSource: {fileID: 7919443795128758726}
+  playerHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  playerHitVolume: 1
+  playerHitPitchMin: 0.9
+  playerHitPitchMax: 1.1
+  groundHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  groundHitVolume: 0.735
+  groundHitPitchMin: 0.92
+  groundHitPitchMax: 1.08
+  playerHitParticlePrefab: {fileID: 0}
+  groundHitParticlePrefab: {fileID: 0}
 --- !u!114 &9082341620577733230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2819,8 +3044,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941c34b81666a154b981663da5e05157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bodyPartDamageMultiplier: 1
-  bodyPartKnockbackMultiplier: 1
+  bodyPartDamageMultiplier: 1.5
+  bodyPartKnockbackMultiplier: 2
   hitSoundClips:
   - {fileID: 8300000, guid: 3a7d5be78970be14c9a1aad23f559fa2, type: 3}
   - {fileID: 8300000, guid: c25a5d1e01945aa4f9992924d9555c88, type: 3}
@@ -2828,6 +3053,7 @@ MonoBehaviour:
   hitPitchMin: 0.95
   hitPitchMax: 1.05
   player: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!54 &6731793946835847145
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3213,7 +3439,7 @@ MonoBehaviour:
   standableLayers:
     serializedVersion: 2
     m_Bits: 384
-  groundedRayLength: 0.35
+  groundedRayLength: 0.37
   targetPelvisHeight: 0.315
   buoyancyMultiplier: 1
   legsSpringConstant: 500
@@ -3242,6 +3468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5274855373370711496}
+  - component: {fileID: 1883189166399520730}
   - component: {fileID: 4586951563654889070}
   - component: {fileID: 2614584355847437}
   - component: {fileID: 8013968689626403460}
@@ -3268,6 +3495,36 @@ Transform:
   m_Father: {fileID: 7074530767959210540}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1883189166399520730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013968689626403482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHitSpeed: 2.5
+  maxHitSpeed: 8
+  knockbackMultiplier: 1.5
+  baseDamage: 2
+  maxScaledDamage: 10
+  audioSource: {fileID: 7919443795128758726}
+  playerHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  playerHitVolume: 1
+  playerHitPitchMin: 0.9
+  playerHitPitchMax: 1.1
+  groundHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  groundHitVolume: 0.735
+  groundHitPitchMin: 0.92
+  groundHitPitchMax: 1.08
+  playerHitParticlePrefab: {fileID: 0}
+  groundHitParticlePrefab: {fileID: 0}
 --- !u!114 &4586951563654889070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3289,6 +3546,7 @@ MonoBehaviour:
   hitPitchMin: 0.9
   hitPitchMax: 1.1
   player: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!114 &2614584355847437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3631,6 +3889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5297792952367820472}
+  - component: {fileID: 6942716794241457836}
   - component: {fileID: 4442852975887202963}
   - component: {fileID: 1246801987603994244}
   - component: {fileID: 8303786980578074049}
@@ -3658,6 +3917,36 @@ Transform:
   m_Father: {fileID: 4437873759607215503}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6942716794241457836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8303786980578074054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHitSpeed: 2
+  maxHitSpeed: 6
+  knockbackMultiplier: 1.8
+  baseDamage: 4
+  maxScaledDamage: 14
+  audioSource: {fileID: 7919443795128758726}
+  playerHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  playerHitVolume: 1
+  playerHitPitchMin: 0.9
+  playerHitPitchMax: 1.1
+  groundHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  groundHitVolume: 0.735
+  groundHitPitchMin: 0.92
+  groundHitPitchMax: 1.08
+  playerHitParticlePrefab: {fileID: 0}
+  groundHitParticlePrefab: {fileID: 0}
 --- !u!114 &4442852975887202963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3679,6 +3968,7 @@ MonoBehaviour:
   hitPitchMin: 0.9
   hitPitchMax: 1.1
   player: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!114 &1246801987603994244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3909,6 +4199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2029225389583452554}
+  - component: {fileID: 6593311324892241325}
   - component: {fileID: 3926405576710398937}
   - component: {fileID: 8666473851824884712}
   - component: {fileID: 8666473851824884715}
@@ -3937,6 +4228,36 @@ Transform:
   m_Father: {fileID: 2900649650939020827}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6593311324892241325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666473851824884713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHitSpeed: 3.5
+  maxHitSpeed: 8
+  knockbackMultiplier: 1
+  baseDamage: 4
+  maxScaledDamage: 20
+  audioSource: {fileID: 7919443795128758726}
+  playerHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  playerHitVolume: 1
+  playerHitPitchMin: 0.9
+  playerHitPitchMax: 1.1
+  groundHitSounds:
+  - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
+  groundHitVolume: 0.735
+  groundHitPitchMin: 0.92
+  groundHitPitchMax: 1.08
+  playerHitParticlePrefab: {fileID: 0}
+  groundHitParticlePrefab: {fileID: 0}
 --- !u!114 &3926405576710398937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3950,7 +4271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
-  bodyPartKnockbackMultiplier: 1
+  bodyPartKnockbackMultiplier: 1.5
   hitSoundClips:
   - {fileID: 8300000, guid: 41e4349e58c40974391d454950933504, type: 3}
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
@@ -3958,6 +4279,7 @@ MonoBehaviour:
   hitPitchMin: 0.9
   hitPitchMax: 1.1
   player: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!54 &8666473851824884712
 Rigidbody:
   m_ObjectHideFlags: 0

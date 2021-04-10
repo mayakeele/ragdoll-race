@@ -20,6 +20,7 @@ public class Hittable : MonoBehaviour
 
     // Private variables
     [HideInInspector] public Player player;
+    [HideInInspector] public Rigidbody rigidbody;
     private AudioSource audioSource;
 
 
@@ -28,6 +29,8 @@ public class Hittable : MonoBehaviour
     {
         player = GetComponentInParent<Player>();
         audioSource = player.audioSource;
+
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -39,11 +42,11 @@ public class Hittable : MonoBehaviour
 
     // Public functions
 
-    public bool Hit(Vector3 hitLocation, Vector3 hitImpulse, float hitDamage, float hitKnockbackMultiplier){
+    public bool Hit(Vector3 hitLocation, Vector3 hitRelativeVelocity, float hitDamage, float hitKnockbackMultiplier){
         // Tells the attached player that this limb has been hit, and passes on the hit's damage and knockback multiplier
         // Returns whether the hit was successful (if the player is not immune)
 
-        bool hitSuccessful = player.OnBodyPartHit(this, hitLocation, hitImpulse, hitDamage * bodyPartDamageMultiplier, hitKnockbackMultiplier * bodyPartKnockbackMultiplier);
+        bool hitSuccessful = player.OnBodyPartHit(this, hitLocation, hitRelativeVelocity, hitDamage * bodyPartDamageMultiplier, hitKnockbackMultiplier * bodyPartKnockbackMultiplier);
 
         
         if(hitSuccessful){

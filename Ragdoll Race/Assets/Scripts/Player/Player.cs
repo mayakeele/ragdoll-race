@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public bool isRagdoll;
     public bool isDizzy;
     public bool isImmune;
+    private float immunityTimer;
 
 
 
@@ -48,8 +49,19 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        // Clamp damage below max
         if(currentDamage > maxDamage){
             currentDamage = maxDamage;
+        }
+
+        // Update immunity timer
+        if(immunityTimer > 0){
+            isImmune = true;
+            immunityTimer -= Time.deltaTime;
+        }
+        else{
+            isImmune = false;
+            immunityTimer = 0;
         }
     }
 
@@ -68,19 +80,21 @@ public class Player : MonoBehaviour
     }
 
 
-    public bool OnBodyPartHit(Hittable bodyPart, Vector3 hitLocation, Vector3 hitImpulse, float hitDamage, float hitKnockbackMultiplier){
+    public bool OnBodyPartHit(Hittable bodyPart, Vector3 hitLocation, Vector3 hitRelativeVelocity, float hitDamage, float hitKnockbackMultiplier){
         // Apply damage to the player, then apply knockback to the body part that was hit
         // Returns whether the hit was successful (if player is not immune)
 
         if(!isImmune){
             currentDamage += hitDamage;
 
-            float damageKnockbackMultiplier = currentDamage.Map(0, 100, knockbackMultiplierAt0, knockbackMultiplierAt100);
-            
-            Vector3 knockbackImpulse = damageKnockbackMultiplier * hitKnockbackMultiplier * hitImpulse;
-            bodyPart.GetComponent<Rigidbody>().AddForceAtPosition(knockbackImpulse, hitLocation, ForceMode.Impulse);
+            float totalKnockbackMultiplier = hitKnockbackMultiplier * currentDamage.Map(0, 100, knockbackMultiplierAt0, knockbackMultiplierAt100);
 
-            StartCoroutine(TriggerImmunityTimer(hitImmunityDuration));
+            // Calculate the force required to set the new velocity, and multiply it by the total knockback multiplier
+            Vector3 velocityChange = hitRelativeVelocity;
+            bodyPart.rigidbody.AddForceAtPosition(velocityChange * totalKnockbackMultiplier, hitLocation, ForceMode.VelocityChange);
+            //bodyPart.rigidbody.AddForce(velocityChange * totalKnockbackMultiplier, ForceMode.VelocityChange);
+
+            TriggerImmunity();
 
             return true;
         }
@@ -91,13 +105,15 @@ public class Player : MonoBehaviour
     }
 
 
+    public void TriggerImmunity(){
+        // Makes player immune to damage and knockback for a set time, then makes them un-immune
+        immunityTimer = hitImmunityDuration;
+        isImmune = true;
+    }
+
+
 
     // Private Functions
 
-    private IEnumerator TriggerImmunityTimer(float immuneDuration){
-        // Makes player immune to damage and knockback for a set time, then makes them un-immune
-        isImmune = true;
-        yield return new WaitForSeconds(immuneDuration);
-        isImmune = false;
-    }
+    
 }
