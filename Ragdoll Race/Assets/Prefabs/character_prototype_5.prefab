@@ -87,10 +87,12 @@ MonoBehaviour:
   knockbackMultiplierAt0: 0
   knockbackMultiplierAt100: 2
   maxDamage: 300
+  hitImmunityDuration: 0.2
   currentDamage: 0
   isGrounded: 1
   isRagdoll: 0
   isDizzy: 0
+  isImmune: 0
 --- !u!1 &622215080718869483
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minHitSpeed: 1
+  minHitSpeed: 2
   maxHitSpeed: 6
   knockbackMultiplier: 1.5
   baseDamage: 2
@@ -169,12 +171,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 0.5
-  bodyPartKnockbackMultiplier: 1
+  bodyPartKnockbackMultiplier: 0.5
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
   hitPitchMin: 0.95
   hitPitchMax: 1.15
+  player: {fileID: 0}
 --- !u!54 &622215080718869397
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -531,6 +534,7 @@ MonoBehaviour:
   hitVolume: 1
   hitPitchMin: 0.9
   hitPitchMax: 1.1
+  player: {fileID: 0}
 --- !u!54 &1631317394147680008
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -703,7 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minHitSpeed: 1
+  minHitSpeed: 2
   maxHitSpeed: 6
   knockbackMultiplier: 1.5
   baseDamage: 2
@@ -734,12 +738,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 0.5
-  bodyPartKnockbackMultiplier: 1
+  bodyPartKnockbackMultiplier: 0.5
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
   hitPitchMin: 0.95
   hitPitchMax: 1.15
+  player: {fileID: 0}
 --- !u!54 &1701914237914753510
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -953,6 +958,7 @@ MonoBehaviour:
   hitVolume: 1
   hitPitchMin: 0.9
   hitPitchMax: 1.1
+  player: {fileID: 0}
 --- !u!114 &3183162087892567172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1323,6 +1329,7 @@ MonoBehaviour:
   hitVolume: 1
   hitPitchMin: 0.9
   hitPitchMax: 1.1
+  player: {fileID: 0}
 --- !u!54 &2479165823800619586
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1496,12 +1503,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 0.5
-  bodyPartKnockbackMultiplier: 1
+  bodyPartKnockbackMultiplier: 0.5
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
   hitPitchMin: 0.95
   hitPitchMax: 1.15
+  player: {fileID: 0}
 --- !u!54 &2559919170206092538
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1713,6 +1721,7 @@ MonoBehaviour:
   hitVolume: 1
   hitPitchMin: 0.9
   hitPitchMax: 1.1
+  player: {fileID: 0}
 --- !u!114 &211537974565807727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2359,12 +2368,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 0.5
-  bodyPartKnockbackMultiplier: 1
+  bodyPartKnockbackMultiplier: 0.5
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
   hitPitchMin: 0.95
   hitPitchMax: 1.15
+  player: {fileID: 0}
 --- !u!54 &4811111629436388684
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2817,6 +2827,7 @@ MonoBehaviour:
   hitVolume: 1
   hitPitchMin: 0.95
   hitPitchMax: 1.05
+  player: {fileID: 0}
 --- !u!54 &6731793946835847145
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3277,6 +3288,7 @@ MonoBehaviour:
   hitVolume: 1
   hitPitchMin: 0.9
   hitPitchMax: 1.1
+  player: {fileID: 0}
 --- !u!114 &2614584355847437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3666,6 +3678,7 @@ MonoBehaviour:
   hitVolume: 1
   hitPitchMin: 0.9
   hitPitchMax: 1.1
+  player: {fileID: 0}
 --- !u!114 &1246801987603994244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3944,6 +3957,7 @@ MonoBehaviour:
   hitVolume: 1
   hitPitchMin: 0.9
   hitPitchMax: 1.1
+  player: {fileID: 0}
 --- !u!54 &8666473851824884712
 Rigidbody:
   m_ObjectHideFlags: 0

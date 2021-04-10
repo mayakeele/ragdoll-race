@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float knockbackMultiplierAt100;
     [Space]
     [SerializeField] private float maxDamage;
+    [SerializeField] private float hitImmunityDuration;
 
 
     [Header("State Variables")]
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     public bool isGrounded;
     public bool isRagdoll;
     public bool isDizzy;
+    public bool isImmune;
 
 
 
@@ -66,18 +68,36 @@ public class Player : MonoBehaviour
     }
 
 
-    public void OnBodyPartHit(Hittable bodyPart, Vector3 hitLocation, Vector3 hitImpulse, float hitDamage, float hitKnockbackMultiplier){
+    public bool OnBodyPartHit(Hittable bodyPart, Vector3 hitLocation, Vector3 hitImpulse, float hitDamage, float hitKnockbackMultiplier){
         // Apply damage to the player, then apply knockback to the body part that was hit
-        currentDamage += hitDamage;
+        // Returns whether the hit was successful (if player is not immune)
 
-        float damageKnockbackMultiplier = currentDamage.Map(0, 100, knockbackMultiplierAt0, knockbackMultiplierAt100);
-        
-        Vector3 knockbackImpulse = damageKnockbackMultiplier * hitKnockbackMultiplier * hitImpulse;
-        bodyPart.GetComponent<Rigidbody>().AddForceAtPosition(knockbackImpulse, hitLocation, ForceMode.Impulse);
+        if(!isImmune){
+            currentDamage += hitDamage;
+
+            float damageKnockbackMultiplier = currentDamage.Map(0, 100, knockbackMultiplierAt0, knockbackMultiplierAt100);
+            
+            Vector3 knockbackImpulse = damageKnockbackMultiplier * hitKnockbackMultiplier * hitImpulse;
+            bodyPart.GetComponent<Rigidbody>().AddForceAtPosition(knockbackImpulse, hitLocation, ForceMode.Impulse);
+
+            StartCoroutine(TriggerImmunityTimer(hitImmunityDuration));
+
+            return true;
+        }
+
+        else{
+            return false;
+        }
     }
 
 
 
     // Private Functions
 
+    private IEnumerator TriggerImmunityTimer(float immuneDuration){
+        // Makes player immune to damage and knockback for a set time, then makes them un-immune
+        isImmune = true;
+        yield return new WaitForSeconds(immuneDuration);
+        isImmune = false;
+    }
 }

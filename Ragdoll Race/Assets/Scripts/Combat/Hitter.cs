@@ -7,6 +7,7 @@ public class Hitter : MonoBehaviour
     
     [Header("References")]
     private Rigidbody rigidbody;
+    private Player attachedPlayer;
 
 
     [Header("Hit Criteria")]
@@ -45,6 +46,16 @@ public class Hitter : MonoBehaviour
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
+  
+    }
+
+    private void Start()
+    {
+        // If this hitter also has a hittable attached (meaning it is a player's body part) take note of the parent player
+        Hittable hittable = GetComponent<Hittable>();
+        if(hittable){
+            attachedPlayer = hittable.player;
+        }
     }
 
     
@@ -56,7 +67,8 @@ public class Hitter : MonoBehaviour
         float relativeSpeed = other.relativeVelocity.magnitude;
 
         // If other object has component Hittable, it is a player
-        if(hitObject){
+        // Make sure the player isn't hitting themself
+        if(hitObject && hitObject.player != attachedPlayer){
 
             // Register hit if the RELATIVE speed is fast enough and THIS speed is fast enough (hitter is active, not passive)
             if(thisSpeed >= minHitSpeed && relativeSpeed >= minHitSpeed){
@@ -64,15 +76,18 @@ public class Hitter : MonoBehaviour
                 // Scale damage by the gradient between the speed floor and ceiling
                 float hitDamage = relativeSpeed.MapClamped(minHitSpeed, maxHitSpeed, baseDamage, maxScaledDamage);
 
-                // Tell the hit Hittable that it has been hit. hit hit hit
-                hitObject.Hit(other.GetContact(0).point, other.impulse, hitDamage, knockbackMultiplier);
+                // Tell the hit Hittable that it has been hit, receive whether the hit was successful
+                bool hitSuccessful = hitObject.Hit(other.GetContact(0).point, other.impulse, hitDamage, knockbackMultiplier);
 
-                // Play impact sound at hit location
-                if(playerHitSounds.Count > 0){
-                    audioSource.PlayClipPitchShifted(RandomExtensions.RandomChoice(playerHitSounds), playerHitVolume, playerHitPitchMin, playerHitPitchMax);
+                if(hitSuccessful){
+                    // Play impact sound at hit location
+                    if(playerHitSounds.Count > 0){
+                        audioSource.PlayClipPitchShifted(RandomExtensions.RandomChoice(playerHitSounds), playerHitVolume, playerHitPitchMin, playerHitPitchMax);
+                    }
+
+                    // Create hit particle effects
                 }
-
-                // Create hit particle effects
+                
             }
             
         }
