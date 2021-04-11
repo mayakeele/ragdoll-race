@@ -161,6 +161,20 @@ public class ActiveRagdoll : MonoBehaviour
     }
 
 
+    public void MoveToPosition(Vector3 newRootPosition){
+        // Teleports the ragdoll's root to a specified position, bringing along the rest of the body and removing all velocity
+
+        // Negate all body part velocities
+        foreach(Rigidbody bodyPart in bodyPartRigidbodies){
+            bodyPart.velocity = Vector3.zero;
+            bodyPart.angularVelocity = Vector3.zero;
+        }
+
+        // Move the root to position. All other body parts of children of root and will follow along automatically
+        pelvisRigidbody.transform.position = newRootPosition;
+    }
+
+
 
     // Private Functions
 

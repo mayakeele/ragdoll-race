@@ -148,9 +148,9 @@ MonoBehaviour:
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
-  playerHitVolume: 1
-  playerHitPitchMin: 0.9
-  playerHitPitchMax: 1.1
+  playerHitVolume: 0.481
+  playerHitPitchMin: 0.85
+  playerHitPitchMax: 1.07
   groundHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
   groundHitVolume: 0.735
@@ -172,6 +172,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 0.5
   bodyPartKnockbackMultiplier: 1
+  canForceRagdollOnHit: 0
+  forceRagdollDurationMin: 0
+  forceRagdollDurationMax: 0
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
@@ -536,9 +539,9 @@ MonoBehaviour:
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
-  playerHitVolume: 1
-  playerHitPitchMin: 0.9
-  playerHitPitchMax: 1.1
+  playerHitVolume: 0.481
+  playerHitPitchMin: 0.85
+  playerHitPitchMax: 1.07
   groundHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
   groundHitVolume: 0.735
@@ -560,6 +563,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
   bodyPartKnockbackMultiplier: 1.5
+  canForceRagdollOnHit: 1
+  forceRagdollDurationMin: 0.15
+  forceRagdollDurationMax: 0.6
   hitSoundClips:
   - {fileID: 8300000, guid: 41e4349e58c40974391d454950933504, type: 3}
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
@@ -748,9 +754,9 @@ MonoBehaviour:
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
-  playerHitVolume: 1
-  playerHitPitchMin: 0.9
-  playerHitPitchMax: 1.1
+  playerHitVolume: 0.481
+  playerHitPitchMin: 0.85
+  playerHitPitchMax: 1.07
   groundHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
   groundHitVolume: 0.735
@@ -772,6 +778,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 0.5
   bodyPartKnockbackMultiplier: 1
+  canForceRagdollOnHit: 0
+  forceRagdollDurationMin: 0
+  forceRagdollDurationMax: 0
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
@@ -993,9 +1002,9 @@ MonoBehaviour:
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
-  playerHitVolume: 1
-  playerHitPitchMin: 0.9
-  playerHitPitchMax: 1.1
+  playerHitVolume: 0.481
+  playerHitPitchMin: 0.85
+  playerHitPitchMax: 1.07
   groundHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
   groundHitVolume: 0.735
@@ -1017,6 +1026,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
   bodyPartKnockbackMultiplier: 1
+  canForceRagdollOnHit: 0
+  forceRagdollDurationMin: 0
+  forceRagdollDurationMax: 0
   hitSoundClips:
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
   - {fileID: 8300000, guid: c25a5d1e01945aa4f9992924d9555c88, type: 3}
@@ -1255,6 +1267,7 @@ MonoBehaviour:
   jumpPhysicsFrames: 10
   turnSpringConstant: 120
   turnDampingConstant: 23
+  ragdollGetupStickThreshold: 0.8
 --- !u!114 &1687905941848008982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1396,9 +1409,9 @@ MonoBehaviour:
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
-  playerHitVolume: 1
-  playerHitPitchMin: 0.9
-  playerHitPitchMax: 1.1
+  playerHitVolume: 0.481
+  playerHitPitchMin: 0.85
+  playerHitPitchMax: 1.07
   groundHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
   groundHitVolume: 0.735
@@ -1420,6 +1433,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
   bodyPartKnockbackMultiplier: 1.5
+  canForceRagdollOnHit: 1
+  forceRagdollDurationMin: 0.1
+  forceRagdollDurationMax: 0.5
   hitSoundClips:
   - {fileID: 8300000, guid: 41e4349e58c40974391d454950933504, type: 3}
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
@@ -1609,9 +1625,9 @@ MonoBehaviour:
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
-  playerHitVolume: 1
-  playerHitPitchMin: 0.9
-  playerHitPitchMax: 1.1
+  playerHitVolume: 0.481
+  playerHitPitchMin: 0.85
+  playerHitPitchMax: 1.07
   groundHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
   groundHitVolume: 0.735
@@ -1633,6 +1649,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 0.5
   bodyPartKnockbackMultiplier: 1
+  canForceRagdollOnHit: 0
+  forceRagdollDurationMin: 0
+  forceRagdollDurationMax: 0
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
@@ -1852,9 +1871,9 @@ MonoBehaviour:
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
-  playerHitVolume: 1
-  playerHitPitchMin: 0.9
-  playerHitPitchMax: 1.1
+  playerHitVolume: 0.481
+  playerHitPitchMin: 0.85
+  playerHitPitchMax: 1.07
   groundHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
   groundHitVolume: 0.735
@@ -1876,6 +1895,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
   bodyPartKnockbackMultiplier: 1
+  canForceRagdollOnHit: 0
+  forceRagdollDurationMin: 0
+  forceRagdollDurationMax: 0
   hitSoundClips:
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
   - {fileID: 8300000, guid: c25a5d1e01945aa4f9992924d9555c88, type: 3}
@@ -2538,9 +2560,9 @@ MonoBehaviour:
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
-  playerHitVolume: 1
-  playerHitPitchMin: 0.9
-  playerHitPitchMax: 1.1
+  playerHitVolume: 0.481
+  playerHitPitchMin: 0.85
+  playerHitPitchMax: 1.07
   groundHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
   groundHitVolume: 0.735
@@ -2562,6 +2584,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 0.5
   bodyPartKnockbackMultiplier: 1
+  canForceRagdollOnHit: 0
+  forceRagdollDurationMin: 0
+  forceRagdollDurationMax: 0
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
@@ -3022,9 +3047,9 @@ MonoBehaviour:
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
-  playerHitVolume: 1
-  playerHitPitchMin: 0.9
-  playerHitPitchMax: 1.1
+  playerHitVolume: 0.481
+  playerHitPitchMin: 0.85
+  playerHitPitchMax: 1.07
   groundHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
   groundHitVolume: 0.735
@@ -3046,9 +3071,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1.5
   bodyPartKnockbackMultiplier: 2
+  canForceRagdollOnHit: 1
+  forceRagdollDurationMin: 0.5
+  forceRagdollDurationMax: 2
   hitSoundClips:
   - {fileID: 8300000, guid: 3a7d5be78970be14c9a1aad23f559fa2, type: 3}
-  - {fileID: 8300000, guid: c25a5d1e01945aa4f9992924d9555c88, type: 3}
   hitVolume: 1
   hitPitchMin: 0.95
   hitPitchMax: 1.05
@@ -3515,9 +3542,9 @@ MonoBehaviour:
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
-  playerHitVolume: 1
-  playerHitPitchMin: 0.9
-  playerHitPitchMax: 1.1
+  playerHitVolume: 0.481
+  playerHitPitchMin: 0.85
+  playerHitPitchMax: 1.07
   groundHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
   groundHitVolume: 0.735
@@ -3539,6 +3566,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
   bodyPartKnockbackMultiplier: 1
+  canForceRagdollOnHit: 0
+  forceRagdollDurationMin: 0
+  forceRagdollDurationMax: 0
   hitSoundClips:
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
   - {fileID: 8300000, guid: c25a5d1e01945aa4f9992924d9555c88, type: 3}
@@ -3937,9 +3967,9 @@ MonoBehaviour:
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
-  playerHitVolume: 1
-  playerHitPitchMin: 0.9
-  playerHitPitchMax: 1.1
+  playerHitVolume: 0.481
+  playerHitPitchMin: 0.85
+  playerHitPitchMax: 1.07
   groundHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
   groundHitVolume: 0.735
@@ -3961,6 +3991,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
   bodyPartKnockbackMultiplier: 1
+  canForceRagdollOnHit: 0
+  forceRagdollDurationMin: 0
+  forceRagdollDurationMax: 0
   hitSoundClips:
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
   - {fileID: 8300000, guid: c25a5d1e01945aa4f9992924d9555c88, type: 3}
@@ -4248,9 +4281,9 @@ MonoBehaviour:
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
-  playerHitVolume: 1
-  playerHitPitchMin: 0.9
-  playerHitPitchMax: 1.1
+  playerHitVolume: 0.481
+  playerHitPitchMin: 0.85
+  playerHitPitchMax: 1.07
   groundHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
   groundHitVolume: 0.735
@@ -4272,6 +4305,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
   bodyPartKnockbackMultiplier: 1.5
+  canForceRagdollOnHit: 1
+  forceRagdollDurationMin: 0.05
+  forceRagdollDurationMax: 0.4
   hitSoundClips:
   - {fileID: 8300000, guid: 41e4349e58c40974391d454950933504, type: 3}
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}

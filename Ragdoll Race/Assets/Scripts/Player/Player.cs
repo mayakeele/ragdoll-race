@@ -23,9 +23,15 @@ public class Player : MonoBehaviour
 
     [Header("State Variables")]
     public float currentDamage = 0;
+
     public bool isGrounded;
+
     public bool isRagdoll;
+    private bool forceRagdollState;
+    private float forceRagdollTimer;
+
     public bool isDizzy;
+
     public bool isImmune;
     private float immunityTimer;
 
@@ -63,24 +69,43 @@ public class Player : MonoBehaviour
             isImmune = false;
             immunityTimer = 0;
         }
+
+
+        // Update forced ragdoll timer
+        if(forceRagdollTimer > 0){
+            forceRagdollState = true;
+            forceRagdollTimer -= Time.deltaTime;
+        }
+        else{
+            // Re-enable control on the first frame the force timer runs out. Otherwise 
+            if(forceRagdollState == true){
+                SetRagdollState(false);
+            }
+
+            forceRagdollState = false;
+            forceRagdollTimer = 0;
+        }
+
+
+        // Respawn if below y -10
+        if(rootRigidbody.transform.position.y < -6){
+            Respawn(new Vector3(0,6,0));
+        }
     }
 
 
     // Public Functions
     
-    public void SetRagdollState(bool ragdollState){
-        // Update ragdoll flag state
-        isRagdoll = ragdollState;
-
-        // Triggers the ActiveRagdoll to go limp
-        activeRagdoll.SetJointMotorsState(!ragdollState);
-        
-        // Change leg physic materials
-        activeRagdoll.SetLegPhysicMaterial(ragdollState);
+    public void TrySetRagdollState(bool ragdollState){
+        // Will attempt to set the ragdoll state to the given value, but will only do so successfully if the ragdoll state is not currently forced
+        if(forceRagdollState == false){
+            SetRagdollState(ragdollState);
+        }
     }
+    
 
 
-    public bool OnBodyPartHit(Hittable bodyPart, Vector3 hitLocation, Vector3 hitRelativeVelocity, float hitDamage, float hitKnockbackMultiplier){
+    public bool OnBodyPartHit(Hittable bodyPart, Vector3 hitLocation, Vector3 hitRelativeVelocity, float hitDamage, float hitKnockbackMultiplier, float ragdollDuration){
         // Apply damage to the player, then apply knockback to the body part that was hit
         // Returns whether the hit was successful (if player is not immune)
 
@@ -96,6 +121,8 @@ public class Player : MonoBehaviour
 
             TriggerImmunity();
 
+            ForceRagdoll(ragdollDuration);
+
             return true;
         }
 
@@ -106,14 +133,42 @@ public class Player : MonoBehaviour
 
 
     public void TriggerImmunity(){
-        // Makes player immune to damage and knockback for a set time, then makes them un-immune
+        // Makes player immune to damage and knockback for a set time
         immunityTimer = hitImmunityDuration;
         isImmune = true;
+    }
+
+    public void ForceRagdoll(float forceRagdollDuration){
+        // Force player into ragdoll state for a set time
+        forceRagdollTimer = forceRagdollDuration;
+        forceRagdollState = true;
+        SetRagdollState(true);
+    }
+
+
+    public void Respawn(Vector3 spawnPosition){
+        // Respawns the player in the given position, resetting their damage, status, and physics
+
+        currentDamage = 0;
+        TriggerImmunity();
+
+        SetRagdollState(false);
+        activeRagdoll.MoveToPosition(spawnPosition);
+        
     }
 
 
 
     // Private Functions
 
-    
+    private void SetRagdollState(bool ragdollState){
+        // Update ragdoll flag state
+        isRagdoll = ragdollState;
+
+        // Triggers the ActiveRagdoll to go limp
+        activeRagdoll.SetJointMotorsState(!ragdollState);
+        
+        // Change leg physic materials
+        activeRagdoll.SetLegPhysicMaterial(ragdollState);
+    }
 }

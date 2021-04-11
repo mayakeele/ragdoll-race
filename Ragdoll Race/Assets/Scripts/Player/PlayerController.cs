@@ -36,6 +36,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float turnDampingConstant;
 
 
+    [Header("Ragdoll Getup Settings")]
+    [SerializeField] private float ragdollGetupStickThreshold;
+
+
 
     // Input Variables
     Vector2 moveInput = Vector2.zero;
@@ -118,28 +122,32 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context){
         moveInput = context.action.ReadValue<Vector2>();
+
+        // If the stick input exceeds a threshold, try to make player stand upright if they are ragdolled
+        if(player.isRagdoll && moveInput.magnitude > ragdollGetupStickThreshold){
+            player.TrySetRagdollState(false);
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context){
+
+        // Try to make player stand upright if they are ragdolled
+        player.TrySetRagdollState(false);
+
         //jumpInput = context.action.triggered;
         jumpInput = context.started;
 
-        if(jumpInput && player.isGrounded){
+        if(jumpInput && player.isGrounded && !player.isRagdoll){
             StartCoroutine(player.activeRagdoll.PerformJump(jumpSpeed, jumpPhysicsFrames, jumpSpringDisableTime));
         }
+
     }
 
     public void OnToggleRagdoll(InputAction.CallbackContext context){
-        // Begin ragdoll state if the button has just been pressed, end ragdoll state if the button is released
+        // Tell the player script that the user wants to toggle ragdoll mode
         if(context.started){
-            //player.SetRagdollState(true);
-            player.SetRagdollState(!player.isRagdoll);
-            
+            player.TrySetRagdollState(!player.isRagdoll);
         }
-        //else if(context.canceled){
-            //player.SetRagdollState(false);
-            //Debug.Log("upright");
-        //}
     }
 
 

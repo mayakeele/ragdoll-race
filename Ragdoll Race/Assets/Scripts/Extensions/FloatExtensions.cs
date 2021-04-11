@@ -7,15 +7,22 @@ public static class FloatExtensions
 
     // Scalar float functions
 
-    public static float GradientBetween(this float value, float rangeStart, float rangeEnd){
+    public static float Gradient(this float value, float rangeStart, float rangeEnd){
         // Returns the percentage of the way the value is between the start and end values
         return (value - rangeStart) / (rangeEnd - rangeStart);
+    }
+
+    public static float GradientClamped(this float value, float rangeStart, float rangeEnd){
+        // Returns the percentage of the way the value is between the start and end values
+        float gradient = (value - rangeStart) / (rangeEnd - rangeStart);
+        
+        return Mathf.Clamp01(gradient);
     }
 
     public static float Map(this float value, float originalStart, float originalEnd, float newStart, float newEnd){
         // Returns a value that is the same percentage of the way between the new bounds as value is between the original bounds
         
-        float gradient = value.GradientBetween(originalStart, originalEnd);
+        float gradient = value.Gradient(originalStart, originalEnd);
         float newValue = newStart + (gradient * (newEnd - newStart));
         
         return newValue;
@@ -24,7 +31,7 @@ public static class FloatExtensions
     public static float MapClamped(this float value, float originalStart, float originalEnd, float newStart, float newEnd){
         // Returns a value that is the same percentage of the way between the new bounds as value is between the original bounds, clamped between min and max ends
         
-        float gradient = value.GradientBetween(originalStart, originalEnd);
+        float gradient = value.Gradient(originalStart, originalEnd);
         float newValue = newStart + (gradient * (newEnd - newStart));
 
         newValue = Mathf.Clamp(newValue, newStart, newEnd);

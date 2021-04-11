@@ -10,6 +10,12 @@ public class Hittable : MonoBehaviour
     [SerializeField] private float bodyPartKnockbackMultiplier;
 
 
+    [Header("Hitstun (Forced Ragdoll) Properties")]
+    [SerializeField] private bool canForceRagdollOnHit;
+    [SerializeField] private float forceRagdollDurationMin;
+    [SerializeField] private float forceRagdollDurationMax;
+
+
     [Header("Sound Effects")]
     [SerializeField] private List<AudioClip> hitSoundClips;
     [Range(0,1)] [SerializeField] private float hitVolume;
@@ -42,11 +48,13 @@ public class Hittable : MonoBehaviour
 
     // Public functions
 
-    public bool Hit(Vector3 hitLocation, Vector3 hitRelativeVelocity, float hitDamage, float hitKnockbackMultiplier){
+    public bool Hit(Vector3 hitLocation, Vector3 hitRelativeVelocity, float hitDamage, float hitKnockbackMultiplier, float hitSpeedGradient){
         // Tells the attached player that this limb has been hit, and passes on the hit's damage and knockback multiplier
         // Returns whether the hit was successful (if the player is not immune)
 
-        bool hitSuccessful = player.OnBodyPartHit(this, hitLocation, hitRelativeVelocity, hitDamage * bodyPartDamageMultiplier, hitKnockbackMultiplier * bodyPartKnockbackMultiplier);
+        float ragdollDuration = canForceRagdollOnHit ? hitSpeedGradient.MapClamped(0,1, forceRagdollDurationMin, forceRagdollDurationMax) : 0;
+
+        bool hitSuccessful = player.OnBodyPartHit(this, hitLocation, hitRelativeVelocity, hitDamage * bodyPartDamageMultiplier, hitKnockbackMultiplier * bodyPartKnockbackMultiplier, ragdollDuration);
 
         
         if(hitSuccessful){

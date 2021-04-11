@@ -88,10 +88,11 @@ public class Hitter : MonoBehaviour
                 // Scale damage by the gradient between the speed floor and ceiling
                 float hitDamage = relativeVelocity.magnitude.MapClamped(minHitSpeed, maxHitSpeed, baseDamage, maxScaledDamage);
 
-                // Tell the hit Hittable that it has been hit, receive whether the hit was successful
                 Vector3 hitLocation = other.GetContact(0).point;
-                bool hitSuccessful = hitObject.Hit(hitLocation, relativeVelocity, hitDamage, knockbackMultiplier);
+                float hitSpeedGradient = relativeVelocity.magnitude.GradientClamped(minHitSpeed, maxHitSpeed);
 
+                // Tell the hit Hittable that it has been hit, receive whether the hit was successful
+                bool hitSuccessful = hitObject.Hit(hitLocation, relativeVelocity, hitDamage, knockbackMultiplier, hitSpeedGradient);
                 if(hitSuccessful){
                     // Play impact sound at hit location
                     if(playerHitSounds.Count > 0){
