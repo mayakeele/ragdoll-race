@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     [Space]
     [SerializeField] private float maxDamage;
     [SerializeField] private float hitImmunityDuration;
+    [Space]
+    [SerializeField] private AnimationCurve knockbackAngleCurve;
 
 
     [Header("State Variables")]
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
     public bool isRagdoll;
     private bool forceRagdollState;
     private float forceRagdollTimer;
+    public bool autoGetup;
 
     public bool isDizzy;
 
@@ -78,7 +81,7 @@ public class Player : MonoBehaviour
         }
         else{
             // Re-enable control on the first frame the force timer runs out. Otherwise 
-            if(forceRagdollState == true){
+            if(forceRagdollState == true && autoGetup){
                 SetRagdollState(false);
             }
 
