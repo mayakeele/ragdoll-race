@@ -95,4 +95,25 @@ public static class Vector3Extensions
 
         return localVectors;
     }
+
+
+    public static bool IsNaN(this Vector3 v){
+        // Returns true if any component of the vector is NaN, otherwise return false
+        if(float.IsNaN(v.x) || float.IsNaN(v.y) || float.IsNaN(v.z)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public static bool IsRealNumber(this Vector3 v){
+        // Returns false if the any components are NaN, positive infinity, or negative infinity
+        if(v.x.IsRealNumber() && v.y.IsRealNumber() && v.z.IsRealNumber()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

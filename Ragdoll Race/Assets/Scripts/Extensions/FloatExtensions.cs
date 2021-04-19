@@ -79,4 +79,14 @@ public static class FloatExtensions
         return min;
     }
 
+
+    public static bool IsRealNumber(this float f){
+        // Returns false if the float is NaN, positive infinity, or negative infinity
+        if(float.IsNaN(f) || float.IsNegativeInfinity(f) || float.IsPositiveInfinity(f)){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 }

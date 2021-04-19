@@ -70,6 +70,37 @@ public static class DampedSpring
         return torque;
     }
 
+    public static Vector3 GetDampedSpringTorque(Transform currentTransform, Transform targetTransform, Vector3 angularVelocityRadian, float springConstant, float dampingConstant){
+        // Calculates the combined torque of an angular spring and damping force on an object
+        // All rotational vectors are in radians
+
+        //Quaternion displacementQuaternion = targetTransform.rotation * Quaternion.Inverse(currentTransform.rotation);
+        //float displacementAngle = Quaternion.Angle(currentTransform.rotation, targetTransform.rotation) * Mathf.Deg2Rad;
+        //displacementQuaternion.ToAngleAxis(out float displacementAngle, out Vector3 displacementAxis);
+        //displacementAngle *= Mathf.Deg2Rad;
+
+        currentTransform.rotation.ToAngleAxis(out float currAngle, out Vector3 currAxis);
+        targetTransform.rotation.ToAngleAxis(out float targetAngle, out Vector3 targetAxis);
+
+        // Make sure calculated angles and axes are not NaN or infinity
+        //currAxis = currAxis.IsRealNumber() ? currAxis : Vector3.zero;
+        //targetAxis = targetAxis.IsRealNumber() ? targetAxis : Vector3.zero;
+        //currAngle = currAngle.IsRealNumber() ? currAngle : 0;
+        //targetAngle = targetAngle.IsRealNumber() ? targetAngle : 0;
+
+        Vector3 displacementAxis = (targetAxis * targetAngle * Mathf.Deg2Rad) - (currAxis * currAngle * Mathf.Deg2Rad);
+        displacementAxis.Normalize();
+
+        float displacementAngle = Quaternion.Angle(currentTransform.rotation, targetTransform.rotation) * Mathf.Deg2Rad;
+
+        Vector3 velocityAxis = angularVelocityRadian.normalized;
+        float velocityRate = angularVelocityRadian.magnitude;
+        
+        Vector3 torque = -(dampingConstant * velocityRate * velocityAxis) - (springConstant * displacementAngle * displacementAxis);
+        
+        return torque;
+    }
+
 
     public static Vector3 GetUndampedSpringTorque(Quaternion objectRotation, Quaternion targetRotation, float springConstant){
         // Calculates the combined torque of an angular spring on an object, with regards to the object's moment of inertia

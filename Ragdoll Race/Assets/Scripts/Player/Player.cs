@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
 
 
         // Respawn if below y -10
-        if(rootRigidbody.transform.position.y < -6){
+        if(rootRigidbody.transform.position.y < -8){
             Respawn(new Vector3(0,6,0));
         }
     }
