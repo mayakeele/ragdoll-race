@@ -33,7 +33,9 @@ public class AirplaneTargetFollower : MonoBehaviour
         rigidbody.AddForce(springForce, ForceMode.Acceleration);
 
         // Angular spring
-        Vector3 pitchRollTorque = DampedSpring.GetDampedSpringTorque(transform.up, targetTransform.up, rigidbody.angularVelocity, angularSpringConstant, angularSpringDampingConstant);
-        rigidbody.AddTorque(pitchRollTorque, ForceMode.Force);
+        //Vector3 pitchRollTorque = DampedSpring.GetDampedSpringTorque(transform.up, targetTransform.up, rigidbody.angularVelocity, angularSpringConstant, angularSpringDampingConstant);
+        //rigidbody.AddTorque(pitchRollTorque, ForceMode.Force);
+        Vector3 torque = DampedSpring.GetDampedSpringTorque(this.transform, targetTransform, rigidbody.angularVelocity, angularSpringConstant, angularSpringDampingConstant);
+        rigidbody.AddTorque(torque, ForceMode.Force);
     }
 }

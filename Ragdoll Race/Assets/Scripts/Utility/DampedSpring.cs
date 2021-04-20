@@ -40,24 +40,10 @@ public static class DampedSpring
     }
 
 
-    public static Vector3 GetDampedSpringTorque(Quaternion objectRotation, Quaternion targetRotation, Vector3 angularVelocity, float momentOfInertia, float springConstant, float dampingRatio){
-        // Calculates the combined torque of an angular spring and damping force on an object, with regards to the object's moment of inertia
-        // All rotational vectors are in radians
-
-        Quaternion rotation = targetRotation * Quaternion.Inverse(objectRotation);
-        Vector3 torqueAxis = new Vector3(rotation.x, rotation.y, rotation.z) * rotation.w * -1;
-
-        float angularDistance = Mathf.Deg2Rad * Quaternion.Angle(targetRotation, objectRotation);
-
-        Vector3 dampingTorque = -2 * dampingRatio * angularVelocity * Mathf.Sqrt(momentOfInertia * springConstant);
-        Vector3 springTorque = -springConstant * angularDistance * torqueAxis;
-
-        return dampingTorque + springTorque;
-    }
-
     public static Vector3 GetDampedSpringTorque(Vector3 objectForward, Vector3 targetForward, Vector3 angularVelocity, float springConstant, float dampingConstant){
         // Calculates the combined torque of an angular spring and damping force on an object
         // All rotational vectors are in radians
+        // NOTE: only applies torque along axes perpendicular to the forward axis - does not apply roll along given axis. Use overload instead
 
         Vector3 displacementAxis = Vector3.Cross(targetForward, objectForward).normalized;
         float displacementAngle = Vector3.Angle(objectForward, targetForward) * Mathf.Deg2Rad;
@@ -74,24 +60,15 @@ public static class DampedSpring
         // Calculates the combined torque of an angular spring and damping force on an object
         // All rotational vectors are in radians
 
-        //Quaternion displacementQuaternion = targetTransform.rotation * Quaternion.Inverse(currentTransform.rotation);
-        //float displacementAngle = Quaternion.Angle(currentTransform.rotation, targetTransform.rotation) * Mathf.Deg2Rad;
-        //displacementQuaternion.ToAngleAxis(out float displacementAngle, out Vector3 displacementAxis);
-        //displacementAngle *= Mathf.Deg2Rad;
-
-        currentTransform.rotation.ToAngleAxis(out float currAngle, out Vector3 currAxis);
-        targetTransform.rotation.ToAngleAxis(out float targetAngle, out Vector3 targetAxis);
+        Quaternion displacementQuaternion = currentTransform.rotation * Quaternion.Inverse(targetTransform.rotation);
+        displacementQuaternion.ToAngleAxis(out float displacementAngle, out Vector3 displacementAxis);
+        displacementAngle *= Mathf.Deg2Rad;
 
         // Make sure calculated angles and axes are not NaN or infinity
         //currAxis = currAxis.IsRealNumber() ? currAxis : Vector3.zero;
         //targetAxis = targetAxis.IsRealNumber() ? targetAxis : Vector3.zero;
         //currAngle = currAngle.IsRealNumber() ? currAngle : 0;
         //targetAngle = targetAngle.IsRealNumber() ? targetAngle : 0;
-
-        Vector3 displacementAxis = (targetAxis * targetAngle * Mathf.Deg2Rad) - (currAxis * currAngle * Mathf.Deg2Rad);
-        displacementAxis.Normalize();
-
-        float displacementAngle = Quaternion.Angle(currentTransform.rotation, targetTransform.rotation) * Mathf.Deg2Rad;
 
         Vector3 velocityAxis = angularVelocityRadian.normalized;
         float velocityRate = angularVelocityRadian.magnitude;
@@ -101,18 +78,4 @@ public static class DampedSpring
         return torque;
     }
 
-
-    public static Vector3 GetUndampedSpringTorque(Quaternion objectRotation, Quaternion targetRotation, float springConstant){
-        // Calculates the combined torque of an angular spring on an object, with regards to the object's moment of inertia
-        // All rotational vectors are in radians
-        
-        Quaternion rotation = targetRotation * Quaternion.Inverse(objectRotation);
-        Vector3 torqueAxis = new Vector3(rotation.x, rotation.y, rotation.z) * rotation.w * -1;
-
-        float angularDistance = Mathf.Deg2Rad * Quaternion.Angle(targetRotation, objectRotation);
-
-        Vector3 springTorque = -springConstant * angularDistance * torqueAxis;
-
-        return springTorque;
-    }
 }
