@@ -3476,8 +3476,8 @@ MonoBehaviour:
   groundedRayLength: 0.37
   targetPelvisHeight: 0.315
   buoyancyMultiplier: 1
-  legsSpringConstant: 500
-  legsSpringDamping: 1
+  legsSpringConstant: 100
+  legsSpringDamping: 0.8
   pelvisRotationSpringConstant: 900
   pelvisRotationDampingConstant: 33
   pelvisRotationSnapAngle: 5

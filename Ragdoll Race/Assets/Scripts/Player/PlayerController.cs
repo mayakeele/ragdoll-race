@@ -85,12 +85,21 @@ public class PlayerController : MonoBehaviour
         // Disables player movement if they are in the ragdoll state
         if(!player.isRagdoll){
 
-            // Apply only enough force to move towards or exactly equal the target velocity without overshoot
+            // Calculate force required to move towards or exactly equal the target velocity without overshoot
+            Vector3 movementForce = Vector3.zero;
             if(requiredVelocityChange.magnitude > perFrameSpeedChange){
-                player.rootRigidbody.AddForce(player.activeRagdoll.GetBodyMass() * currMoveAcceleration * requiredVelocityChange.normalized);
+                movementForce = player.activeRagdoll.GetBodyMass() * currMoveAcceleration * requiredVelocityChange.normalized;
             }
             else{
-                player.rootRigidbody.AddForce(player.activeRagdoll.GetBodyMass() * requiredVelocityChange / Time.fixedDeltaTime);
+                movementForce = player.activeRagdoll.GetBodyMass() * requiredVelocityChange / Time.fixedDeltaTime;
+            }
+
+            // Apply movement force to player
+            player.rootRigidbody.AddForce(player.activeRagdoll.GetBodyMass() * currMoveAcceleration * requiredVelocityChange.normalized);
+
+            // If the player is standing on an object with a rigidbody, apply equal and opposite force
+            if(player.activeRagdoll.groundRigidbody){
+                player.activeRagdoll.groundRigidbody.AddForceAtPosition(-movementForce, player.activeRagdoll.groundPosition);
             }
         }
 

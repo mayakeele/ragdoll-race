@@ -39,10 +39,12 @@ public class ActiveRagdoll : MonoBehaviour
 
 
 
-    // Private Variables
+    // Variables
     private float bodyMass;
     private bool isPerformingGetup;
     private bool isPerformingJump;
+    public Rigidbody groundRigidbody = null;
+    public Vector3 groundPosition = Vector3.zero;
 
 
 
@@ -65,20 +67,39 @@ public class ActiveRagdoll : MonoBehaviour
 
         // Apply an upward constant force plus an extra spring force on the pelvis if it is near the floor, and is not in ragdoll mode
 
-        if(!isPerformingJump && !player.isRagdoll && Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, groundedRayLength, standableLayers)){
+        if(!isPerformingJump && !player.isRagdoll){
 
-            // Base force, equal to the total body mass to provide "neutral buoyancy"
-            Vector3 pelvisForce = bodyMass * Physics.gravity.magnitude * buoyancyMultiplier * Vector3.up;
+            if(Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, groundedRayLength, standableLayers)){
+                // Calculate buoyancy force, as a fraction of the total body mass to provide "neutral buoyancy"
+                Vector3 pelvisForce = bodyMass * Physics.gravity.magnitude * buoyancyMultiplier * Vector3.up;
 
-            // Extra spring force which increases as legs compress, also has damping
+                // Add an extra spring force which increases as legs compress, also provides damping
+                float targetHeight = hitInfo.point.y + targetPelvisHeight;
+                //float targetHeight = legManager.GetFootAnchors().MaxComponents().y + targetPelvisHeight;
+                pelvisForce += CalculateUpwardForce(pelvisRigidbody.worldCenterOfMass.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping, false);    
+                
 
-            //float targetHeight = hitInfo.point.y + targetPelvisHeight;
-            float targetHeight = legManager.GetFootAnchors().MaxComponents().y + targetPelvisHeight;
-            pelvisForce += CalculateUpwardForce(pelvisRigidbody.worldCenterOfMass.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping, false);    
-            
-            pelvisRigidbody.AddForce(pelvisForce);
+                // Apply the total upwards force to the pelvis
+                pelvisRigidbody.AddForce(pelvisForce);
 
-            player.isGrounded = true;
+
+                // If the player is standing on an object with a rigidbody, record which object that is and apply an equal and opposite force to it
+                if(hitInfo.rigidbody){
+                    groundRigidbody = hitInfo.rigidbody;
+                    groundPosition = hitInfo.point;
+                    groundRigidbody.AddForceAtPosition(-pelvisForce, groundPosition);
+                }
+                else{
+                    groundRigidbody = null;
+                    groundPosition = Vector3.zero;
+                }
+
+
+                player.isGrounded = true;
+            }
+            else{
+                player.isGrounded = false;
+            }      
         }
         else{
             player.isGrounded = false;
