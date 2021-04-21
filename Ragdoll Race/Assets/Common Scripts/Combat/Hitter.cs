@@ -11,28 +11,29 @@ public class Hitter : MonoBehaviour
 
 
     [Header("Hit Criteria")]
+    [SerializeField] private bool scaleDamageBySpeed = true;
     public float minHitSpeed;
     public float maxHitSpeed;
 
     
     [Header("Knockback & Damage Properties")]
     public float knockbackMultiplier;
-    public float baseDamage;
-    public float maxScaledDamage;
+    public float minDamage;
+    public float maxDamage;
 
 
     [Header("Sound Effects")]
     [SerializeField] private AudioSource audioSource;
     [Space]
     [SerializeField] private List<AudioClip> playerHitSounds;
-    [Range(0,1)] [SerializeField] private float playerHitVolume;
-    [SerializeField] private float playerHitPitchMin;
-    [SerializeField] private float playerHitPitchMax;
+    [Range(0,1)] [SerializeField] private float playerHitVolume = 1;
+    [SerializeField] private float playerHitPitchMin = 1;
+    [SerializeField] private float playerHitPitchMax = 1;
     [Space]
     [SerializeField] private List<AudioClip> groundHitSounds;
-    [Range(0,1)] [SerializeField] private float groundHitVolume;
-    [SerializeField] private float groundHitPitchMin;
-    [SerializeField] private float groundHitPitchMax;
+    [Range(0,1)] [SerializeField] private float groundHitVolume = 1;
+    [SerializeField] private float groundHitPitchMin = 1;
+    [SerializeField] private float groundHitPitchMax = 1;
 
 
     [Header("Particle Prefabs")]
@@ -84,13 +85,24 @@ public class Hitter : MonoBehaviour
 
             // Register hit if the RELATIVE speed is fast enough and THIS speed is fast enough (hitter is active, not passive)
             if(preCollisionVelocity.magnitude >= minHitSpeed && relativeVelocity.magnitude >= minHitSpeed){
+                
+                Vector3 hitLocation = other.GetContact(0).point;
+                float hitDamage;
+                float hitSpeedGradient;
 
                 // Scale damage by the gradient between the speed floor and ceiling
-                float hitDamage = relativeVelocity.magnitude.MapClamped(minHitSpeed, maxHitSpeed, baseDamage, maxScaledDamage);
-
-                Vector3 hitLocation = other.GetContact(0).point;
-                float hitSpeedGradient = relativeVelocity.magnitude.GradientClamped(minHitSpeed, maxHitSpeed);
-
+                if(scaleDamageBySpeed){
+                    
+                    hitDamage = relativeVelocity.magnitude.MapClamped(minHitSpeed, maxHitSpeed, minDamage, maxDamage);     
+                    hitSpeedGradient = relativeVelocity.magnitude.GradientClamped(minHitSpeed, maxHitSpeed);
+                }
+                // Otherwise, assume speed and damage are maximum
+                else{  
+                    hitDamage = maxDamage;
+                    hitSpeedGradient = 1;
+                }
+                
+                
                 // Tell the hit Hittable that it has been hit, receive whether the hit was successful
                 bool hitSuccessful = hitObject.Hit(hitLocation, relativeVelocity, hitDamage, knockbackMultiplier, hitSpeedGradient);
                 if(hitSuccessful){

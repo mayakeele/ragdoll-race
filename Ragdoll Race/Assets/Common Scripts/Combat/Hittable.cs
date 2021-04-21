@@ -18,9 +18,9 @@ public class Hittable : MonoBehaviour
 
     [Header("Sound Effects")]
     [SerializeField] private List<AudioClip> hitSoundClips;
-    [Range(0,1)] [SerializeField] private float hitVolume;
-    [SerializeField] private float hitPitchMin;
-    [SerializeField] private float hitPitchMax;
+    [Range(0,1)] [SerializeField] private float hitVolume = 1;
+    [SerializeField] private float hitPitchMin = 1;
+    [SerializeField] private float hitPitchMax = 1;
 
 
 

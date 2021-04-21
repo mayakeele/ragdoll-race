@@ -147,11 +147,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleDamageBySpeed: 1
   minHitSpeed: 2
-  maxHitSpeed: 6
+  maxHitSpeed: 8
   knockbackMultiplier: 2
-  baseDamage: 2
-  maxScaledDamage: 10
+  minDamage: 2
+  maxDamage: 12
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -538,11 +539,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleDamageBySpeed: 1
   minHitSpeed: 3.5
   maxHitSpeed: 8
   knockbackMultiplier: 1
-  baseDamage: 4
-  maxScaledDamage: 20
+  minDamage: 5
+  maxDamage: 13
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -753,11 +755,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleDamageBySpeed: 1
   minHitSpeed: 2
-  maxHitSpeed: 6
+  maxHitSpeed: 8
   knockbackMultiplier: 2
-  baseDamage: 2
-  maxScaledDamage: 10
+  minDamage: 2
+  maxDamage: 12
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -1001,11 +1004,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleDamageBySpeed: 1
   minHitSpeed: 2
   maxHitSpeed: 6
   knockbackMultiplier: 1.8
-  baseDamage: 4
-  maxScaledDamage: 14
+  minDamage: 4
+  maxDamage: 12
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -1262,16 +1266,16 @@ MonoBehaviour:
   walkSpeed: 2
   runSpeed: 3.7
   boostSpeed: 10
-  airSpeed: 10
+  airSpeed: 8
   dizzySpeed: 0
   walkAcceleration: 3
-  runAcceleration: 8
+  runAcceleration: 9
   boostAcceleration: 40
-  airAcceleration: 2.2
+  airAcceleration: 2.5
   dizzyAcceleration: 0
-  jumpSpeed: 5
+  jumpSpeed: 5.5
   jumpSpringDisableTime: 0.11
-  jumpPhysicsFrames: 10
+  jumpPhysicsFrames: 8
   turnSpringConstant: 120
   turnDampingConstant: 23
   ragdollGetupStickThreshold: 0.8
@@ -1408,11 +1412,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleDamageBySpeed: 1
   minHitSpeed: 3.5
   maxHitSpeed: 8
   knockbackMultiplier: 1
-  baseDamage: 4
-  maxScaledDamage: 20
+  minDamage: 5
+  maxDamage: 13
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -1624,11 +1629,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleDamageBySpeed: 1
   minHitSpeed: 2
-  maxHitSpeed: 6
+  maxHitSpeed: 7
   knockbackMultiplier: 1.5
-  baseDamage: 4
-  maxScaledDamage: 12
+  minDamage: 2
+  maxDamage: 10
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -1870,11 +1876,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleDamageBySpeed: 1
   minHitSpeed: 2.5
   maxHitSpeed: 8
   knockbackMultiplier: 1.5
-  baseDamage: 2
-  maxScaledDamage: 10
+  minDamage: 2
+  maxDamage: 10
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -2559,11 +2566,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleDamageBySpeed: 1
   minHitSpeed: 2
-  maxHitSpeed: 6
+  maxHitSpeed: 7
   knockbackMultiplier: 1.5
-  baseDamage: 4
-  maxScaledDamage: 12
+  minDamage: 2
+  maxDamage: 10
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -3046,11 +3054,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleDamageBySpeed: 1
   minHitSpeed: 2
-  maxHitSpeed: 5
+  maxHitSpeed: 6
   knockbackMultiplier: 2
-  baseDamage: 6
-  maxScaledDamage: 16
+  minDamage: 5
+  maxDamage: 15
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -3493,6 +3502,8 @@ MonoBehaviour:
   - {fileID: 5777025272728063903}
   legPhysicMaterialRagdoll: {fileID: 13400000, guid: af41a90f01375c4488c6843b793f6e41, type: 2}
   legPhysicMaterialWalking: {fileID: 13400000, guid: e9bd788bc80ff0c4bb1dda045f121325, type: 2}
+  groundRigidbody: {fileID: 0}
+  groundPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &8013968689626403482
 GameObject:
   m_ObjectHideFlags: 0
@@ -3541,11 +3552,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleDamageBySpeed: 1
   minHitSpeed: 2.5
   maxHitSpeed: 8
   knockbackMultiplier: 1.5
-  baseDamage: 2
-  maxScaledDamage: 10
+  minDamage: 2
+  maxDamage: 10
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -3966,11 +3978,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleDamageBySpeed: 1
   minHitSpeed: 2
   maxHitSpeed: 6
   knockbackMultiplier: 1.8
-  baseDamage: 4
-  maxScaledDamage: 14
+  minDamage: 4
+  maxDamage: 12
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -4280,11 +4293,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleDamageBySpeed: 1
   minHitSpeed: 3.5
   maxHitSpeed: 8
   knockbackMultiplier: 1
-  baseDamage: 4
-  maxScaledDamage: 20
+  minDamage: 5
+  maxDamage: 13
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
