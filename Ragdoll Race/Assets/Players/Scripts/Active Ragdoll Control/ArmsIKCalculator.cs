@@ -8,7 +8,6 @@ public class ArmsIKCalculator : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private ActiveRagdoll activeRagdoll;
-    [SerializeField] private Rigidbody pelvisRigidbody;
     [Space]
     [SerializeField] private FastIKFabric leftArmIK;
     [SerializeField] private FastIKFabric rightArmIK;
@@ -22,7 +21,7 @@ public class ArmsIKCalculator : MonoBehaviour
     [Header("Climbing Properties")]
     [SerializeField] private LayerMask climbableLayers;
 
-    
+
 
     // Unity Functions
     void Start()

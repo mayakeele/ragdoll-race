@@ -57,7 +57,7 @@ public class JointTargetFollower : MonoBehaviour
 
         isFollowingTarget = followState;
 
-        JointDrive drive = new JointDrive();
+        JointDrive drive = joint.slerpDrive;
         drive.positionSpring = followState ? defaultJointSpring : 0;
         drive.positionDamper = followState ? defaultJointDamping : 0;
 

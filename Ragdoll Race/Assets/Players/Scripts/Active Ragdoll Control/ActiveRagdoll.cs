@@ -11,10 +11,10 @@ public class ActiveRagdoll : MonoBehaviour
     [SerializeField] private List<Rigidbody> bodyPartRigidbodies;
 
 
-    [Header("Detection Settings")]
+    [Header("Ground Detection Settings")]
     [SerializeField] private LayerMask standableLayers;
     [SerializeField] private float groundedRayLength;
-
+    
     
     [Header("Pelvis Buoyancy Settings")]
     [SerializeField] private float targetPelvisHeight;
@@ -38,20 +38,36 @@ public class ActiveRagdoll : MonoBehaviour
     [SerializeField] private PhysicMaterial legPhysicMaterialWalking;
 
 
+    [Header("Arm Settings")]
+    [SerializeField] private List<JointTargetFollower> armJointTargetFollowers;
+
+
 
     // Variables
     private float bodyMass;
+    private List<JointDrive> bodyPartDefaultJointMotors = new List<JointDrive>();
     private bool isPerformingGetup;
     private bool isPerformingJump;
-    public Rigidbody groundRigidbody = null;
-    public Vector3 groundPosition = Vector3.zero;
+    [HideInInspector] public Rigidbody groundRigidbody = null;
+    [HideInInspector] public Vector3 groundPosition = Vector3.zero;
 
 
 
     // Unity Functions
     void Awake()
     {
-        
+        // Store initial angular joint motor values
+        foreach(Rigidbody bodyPart in bodyPartRigidbodies){
+            ConfigurableJoint joint = bodyPart.GetComponent<ConfigurableJoint>();
+            if(joint){
+                // Store joint motor value
+                bodyPartDefaultJointMotors.Add(joint.slerpDrive);
+            }
+            else{
+                // Store an empty joint motor to maintain same number of indices
+                bodyPartDefaultJointMotors.Add(new JointDrive());
+            }
+        }
     }
 
 
@@ -128,29 +144,27 @@ public class ActiveRagdoll : MonoBehaviour
     }
 
 
-    public void SetPelvisRotationConstraint(bool constrainY = false){
-        // Constrains pelvis rotation to either the Y axis only, or no rotation at all
-        if(constrainY){
-            pelvisRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
-        }
-        else{
-            pelvisRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-        }
-    }
-
-    public void RemovePelvisRotationConstraints(){
-        // Removes all constraints on the pelvis rigidbody's rotation
-        pelvisRigidbody.constraints = RigidbodyConstraints.None;
-    }
-
-
     public void SetJointMotorsState(bool motorsState){
         // Enables or disables all joint motors, (active vs. passive ragdoll)
-        foreach(Rigidbody bodyPart in bodyPartRigidbodies){
+        for(int i = 0; i < bodyPartRigidbodies.Count; i++){
+
+            Rigidbody bodyPart = bodyPartRigidbodies[i];
             ConfigurableJoint joint = bodyPart.GetComponent<ConfigurableJoint>();
+
             if(joint){
-                // Sets the angular drive mode to Slerp to activate, or XYandZ (which is unused) to passivate
-                joint.rotationDriveMode = motorsState ? RotationDriveMode.Slerp : RotationDriveMode.XYAndZ;
+
+                // Sets the slerp drive values to their default strength if true, zero if false
+                if(motorsState == true){
+                    joint.slerpDrive = bodyPartDefaultJointMotors[i];
+                }
+                else{
+                    JointDrive zeroDrive = new JointDrive();
+                    zeroDrive.positionSpring = 0;
+                    zeroDrive.positionDamper = 0;
+                    zeroDrive.maximumForce = 0;
+
+                    joint.slerpDrive = zeroDrive;
+                }
             }
         }
     }
@@ -241,36 +255,4 @@ public class ActiveRagdoll : MonoBehaviour
         return upwardForce;
     }
 
-
-    private IEnumerator ResetPelvisRotation(float springConstant, float springDamping, float snapAngleThreshold){
-        // Applies a torque on the hips towards an upright orientation, with its y-axis facing upwards
-        // Once within a certain angular distance, snaps to target and locks in place
-
-        isPerformingGetup = true;
-
-        Vector3 currentPelvisDirection = pelvisRigidbody.transform.up;
-        Vector3 targetPelvisDirection = Vector3.up;
-   
-        float currentAngle = Vector3.Angle(currentPelvisDirection, targetPelvisDirection);
-
-        while(currentAngle > snapAngleThreshold){
-            // Apply torque towards the target
-            Vector3 pelvisTorque = DampedSpring.GetDampedSpringTorque(currentPelvisDirection, targetPelvisDirection, pelvisRigidbody.angularVelocity, springConstant, springDamping);
-            pelvisRigidbody.AddTorque(pelvisTorque);
-
-            // Update rotation tracking variables
-            currentPelvisDirection = pelvisRigidbody.transform.up;
-            currentAngle = Vector3.Angle(currentPelvisDirection, targetPelvisDirection);
-
-            yield return new WaitForFixedUpdate();
-        }
-
-        // Snap to target once the pelvis is close enough to upright and lock it in place
-        Quaternion snapRotation = Quaternion.LookRotation(pelvisRigidbody.transform.forward.ProjectHorizontal(), Vector3.up);
-        pelvisRigidbody.MoveRotation(snapRotation);
-
-        SetPelvisRotationConstraint();
-
-        isPerformingGetup = false;
-    }
 }
