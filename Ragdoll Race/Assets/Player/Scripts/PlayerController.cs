@@ -165,6 +165,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnLeftArmAction(InputAction.CallbackContext context){
+        // Tell the Arms Action Coordinator that the user wants to use the left arm
+        if(context.started){
+            player.activeRagdoll.armsActionCoordinator.OnLActionButtonPressed();
+        }
+        else if(context.canceled){
+            player.activeRagdoll.armsActionCoordinator.OnLActionButtonReleased();
+        }
+    }
+    public void OnRightArmAction(InputAction.CallbackContext context){
+        // Tell the Arms Action Coordinator that the user wants to use the left arm
+        if(context.started){
+            player.activeRagdoll.armsActionCoordinator.OnRActionButtonPressed();
+        }
+        else if(context.canceled){
+            player.activeRagdoll.armsActionCoordinator.OnRActionButtonReleased();
+        }
+    }
+
 
 
     // Private Functions

@@ -6,7 +6,8 @@ public class ActiveRagdoll : MonoBehaviour
 {
     [Header("Component References")]
     public Player player;
-    public LegsIKCalculator legManager;
+    public LegsIKCalculator legsIKCalculator;
+    public ArmsActionCoordinator armsActionCoordinator;
     [SerializeField] private Rigidbody pelvisRigidbody;
     [SerializeField] private List<Rigidbody> bodyPartRigidbodies;
 
@@ -91,7 +92,7 @@ public class ActiveRagdoll : MonoBehaviour
 
                 // Add an extra spring force which increases as legs compress, also provides damping
                 float targetHeight = hitInfo.point.y + targetPelvisHeight;
-                //float targetHeight = legManager.GetFootAnchors().MaxComponents().y + targetPelvisHeight;
+                //float targetHeight = legsIKCalculator.GetFootAnchors().MaxComponents().y + targetPelvisHeight;
                 pelvisForce += CalculateUpwardForce(pelvisRigidbody.worldCenterOfMass.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping, false);    
                 
 

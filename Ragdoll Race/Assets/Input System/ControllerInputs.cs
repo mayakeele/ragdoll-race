@@ -41,6 +41,22 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Left Arm Action"",
+                    ""type"": ""Button"",
+                    ""id"": ""f1b94437-ebc5-4d68-9722-29d8850073a7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Right Arm Action"",
+                    ""type"": ""Button"",
+                    ""id"": ""44e01421-e931-4457-9694-7e0de237e309"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -175,6 +191,50 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                     ""action"": ""Toggle Ragdoll"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ffb6a7ff-d1ee-4f53-8e1d-256a09df9394"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left Arm Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a2b9da77-d336-41f4-8156-61cc2a864cff"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left Arm Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3b6a85ec-be23-478c-9f21-dd18fd79a0fe"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right Arm Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab4ac892-9384-480c-80e9-8ef2e311c2f9"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right Arm Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -235,6 +295,8 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_ToggleRagdoll = m_Gameplay.FindAction("Toggle Ragdoll", throwIfNotFound: true);
+        m_Gameplay_LeftArmAction = m_Gameplay.FindAction("Left Arm Action", throwIfNotFound: true);
+        m_Gameplay_RightArmAction = m_Gameplay.FindAction("Right Arm Action", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Join = m_Menu.FindAction("Join", throwIfNotFound: true);
@@ -290,6 +352,8 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_ToggleRagdoll;
+    private readonly InputAction m_Gameplay_LeftArmAction;
+    private readonly InputAction m_Gameplay_RightArmAction;
     public struct GameplayActions
     {
         private @ControllerInputs m_Wrapper;
@@ -297,6 +361,8 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
         public InputAction @ToggleRagdoll => m_Wrapper.m_Gameplay_ToggleRagdoll;
+        public InputAction @LeftArmAction => m_Wrapper.m_Gameplay_LeftArmAction;
+        public InputAction @RightArmAction => m_Wrapper.m_Gameplay_RightArmAction;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -315,6 +381,12 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                 @ToggleRagdoll.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleRagdoll;
                 @ToggleRagdoll.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleRagdoll;
                 @ToggleRagdoll.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleRagdoll;
+                @LeftArmAction.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLeftArmAction;
+                @LeftArmAction.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLeftArmAction;
+                @LeftArmAction.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLeftArmAction;
+                @RightArmAction.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRightArmAction;
+                @RightArmAction.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRightArmAction;
+                @RightArmAction.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRightArmAction;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -328,6 +400,12 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                 @ToggleRagdoll.started += instance.OnToggleRagdoll;
                 @ToggleRagdoll.performed += instance.OnToggleRagdoll;
                 @ToggleRagdoll.canceled += instance.OnToggleRagdoll;
+                @LeftArmAction.started += instance.OnLeftArmAction;
+                @LeftArmAction.performed += instance.OnLeftArmAction;
+                @LeftArmAction.canceled += instance.OnLeftArmAction;
+                @RightArmAction.started += instance.OnRightArmAction;
+                @RightArmAction.performed += instance.OnRightArmAction;
+                @RightArmAction.canceled += instance.OnRightArmAction;
             }
         }
     }
@@ -370,6 +448,8 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnToggleRagdoll(InputAction.CallbackContext context);
+        void OnLeftArmAction(InputAction.CallbackContext context);
+        void OnRightArmAction(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {
