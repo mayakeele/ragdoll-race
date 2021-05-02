@@ -152,8 +152,8 @@ MonoBehaviour:
   armIK: {fileID: 0}
   idlePositionRelativeToPelvis: {x: -0.231, y: 0.418, z: 0.307}
   armLength: 0.53
-  punchDuration: 0.8
-  punchRecoveryDuration: 0.6
+  punchDuration: 0.4
+  punchRecoveryDuration: 0.8
   punchCurveForward:
     serializedVersion: 2
     m_Curve:
@@ -434,8 +434,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 100
-    positionDamper: 0.45
+    positionSpring: 400
+    positionDamper: 0.6
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -661,7 +661,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905355413209889082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.44, y: 0.17699999, z: 0.339}
+  m_LocalPosition: {x: 0.44, y: 0.17699999, z: 0.267}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1706665622459968776}
@@ -1087,8 +1087,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 100
-    positionDamper: 0.45
+    positionSpring: 400
+    positionDamper: 0.6
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -1584,7 +1584,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8450690294800486267}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnLeftArmAction
+        m_MethodName: OnArmAction
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1596,22 +1596,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f1b94437-ebc5-4d68-9722-29d8850073a7
     m_ActionName: Gameplay/Left Arm Action[/XInputControllerWindows/leftTrigger,/XInputControllerWindows/leftShoulder]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8450690294800486267}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnRightArmAction
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 44e01421-e931-4457-9694-7e0de237e309
-    m_ActionName: Gameplay/Right Arm Action[/XInputControllerWindows/rightTrigger,/XInputControllerWindows/rightShoulder]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -2038,8 +2022,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 100
-    positionDamper: 0.45
+    positionSpring: 400
+    positionDamper: 0.6
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -2114,7 +2098,9 @@ MonoBehaviour:
   activeRagdoll: {fileID: 5327272404548169525}
   leftArm: {fileID: 349094510911649001}
   rightArm: {fileID: 1670027791477007730}
+  arms: []
   punchDetectionRange: 1.5
+  punchDetectionAngularRange: 180
 --- !u!1 &2801381557178443521
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,8 +3058,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 100
-    positionDamper: 0.45
+    positionSpring: 400
+    positionDamper: 0.6
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -3291,8 +3277,8 @@ MonoBehaviour:
   armIK: {fileID: 0}
   idlePositionRelativeToPelvis: {x: 0.231, y: 0.418, z: 0.307}
   armLength: 0.53
-  punchDuration: 0.5
-  punchRecoveryDuration: 0.5
+  punchDuration: 0.4
+  punchRecoveryDuration: 0.8
   punchCurveForward:
     serializedVersion: 2
     m_Curve:
@@ -4196,6 +4182,8 @@ MonoBehaviour:
   - {fileID: 6724600830411274996}
   - {fileID: 4811111629436388684}
   - {fileID: 1701914237914753510}
+  headTransform: {fileID: 8502075522921601462}
+  torsoTransform: {fileID: 2900649650939020827}
   standableLayers:
     serializedVersion: 2
     m_Bits: 384
@@ -4250,7 +4238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7834562500198404689}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.44, y: 0.17699999, z: 0.339}
+  m_LocalPosition: {x: -0.44, y: 0.17699999, z: 0.267}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8622090830548961070}

@@ -10,6 +10,8 @@ public class ActiveRagdoll : MonoBehaviour
     public ArmsActionCoordinator armsActionCoordinator;
     [SerializeField] private Rigidbody pelvisRigidbody;
     [SerializeField] private List<Rigidbody> bodyPartRigidbodies;
+    public Transform headTransform;
+    public Transform torsoTransform;
 
 
     [Header("Ground Detection Settings")]

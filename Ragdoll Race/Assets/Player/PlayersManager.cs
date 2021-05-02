@@ -19,6 +19,10 @@ public class PlayersManager : MonoBehaviour
     public float characterRadius;
 
 
+    [Header("Variables")]
+    public Transform spawnTransform;
+
+
 
     // Main Functions
 
