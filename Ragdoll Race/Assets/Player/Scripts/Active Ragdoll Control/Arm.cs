@@ -13,6 +13,7 @@ public class Arm : MonoBehaviour
     public Transform armRootTransform;
     public Transform armEndTransform;
     [HideInInspector] public FastIKFabric armIK;
+    public List<ConfigurableJoint> joints;
 
 
     [Header("Idle Properties")]
@@ -21,7 +22,7 @@ public class Arm : MonoBehaviour
 
     [Header("Punch Properties")]
     [SerializeField] private float armLength;
-    [SerializeField] private float punchDuration;
+    [SerializeField] private float punchSpeed;
     [SerializeField] private float punchRecoveryDuration;
     [SerializeField] private AnimationCurve punchCurveForward;
     [SerializeField] private AnimationCurve punchCurveVertical;
@@ -84,13 +85,11 @@ public class Arm : MonoBehaviour
     public bool Punch(Vector3 worldTarget){
         // Continually updates arm IK target over a period of time, using curves relative to the initial arm position
 
-        bool canAct = TrySetActionTimer(punchDuration + punchRecoveryDuration);
-
-        if(canAct){
+        if(!isActing){
             StartCoroutine(PunchCoroutine(worldTarget));
         }
 
-        return canAct;
+        return !isActing;
     }
 
     public IEnumerator PunchCoroutine(Vector3 finalTargetWorld){
@@ -104,6 +103,10 @@ public class Arm : MonoBehaviour
         Vector3 finalTargetLocal = pelvisTransform.InverseTransformPoint(finalTargetWorld);
         Vector3 totalDisplacementLocal = finalTargetLocal - initialTargetLocal;
 
+        float punchDuration = totalDisplacementLocal.magnitude / punchSpeed;
+        TrySetActionTimer(punchDuration);
+
+
         // Move target locally along curves over time, and calculate corresponding world space IK target
         float elapsedTime = 0;
         while(elapsedTime < punchDuration){
@@ -111,17 +114,19 @@ public class Arm : MonoBehaviour
 
             float timeGradient = elapsedTime.GradientClamped(0, punchDuration);
 
-            Vector3 currentPositionLocal = new Vector3(
+            Vector3 currentDisplacementLocal = new Vector3(
                 totalDisplacementLocal.x * punchCurveSideways.Evaluate(timeGradient),
                 totalDisplacementLocal.y * punchCurveVertical.Evaluate(timeGradient),
                 totalDisplacementLocal.z * punchCurveForward.Evaluate(timeGradient)
             );
 
-            Vector3 currentPositionWorld = pelvisTransform.TransformPoint(currentPositionLocal);
+            Vector3 currentPositionWorld = pelvisTransform.TransformPoint(initialTargetLocal + currentDisplacementLocal);
             SetIKTargetPosition(currentPositionWorld);
 
             yield return new WaitForFixedUpdate();
         }
+
+        TrySetActionTimer(punchRecoveryDuration);
     }
 
 

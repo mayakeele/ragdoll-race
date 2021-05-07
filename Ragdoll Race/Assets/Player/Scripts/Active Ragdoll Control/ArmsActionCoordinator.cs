@@ -82,6 +82,11 @@ public class ArmsActionCoordinator : MonoBehaviour
     }
 
 
+    private void SetArmsStrength(float strength){
+
+    }
+
+
     private Player FindClosestPlayerInRange(float range, float totalAngularRange){
         // Searches through all players and returns the one with the closest root that is also in angular range of this player's forward direction
         // If no players are within angular range, return null
@@ -89,14 +94,15 @@ public class ArmsActionCoordinator : MonoBehaviour
         float closestDist = range;
         Player closestPlayer = null;
 
-        foreach(Player other in activeRagdoll.player.manager.GetAllPlayers()){
-            if(other != activeRagdoll.player){
-                float currDist = Vector3.Distance(activeRagdoll.player.rootForward.position, other.rootForward.position);
-                float currAngle = Vector3.Angle(activeRagdoll.player.rootForward.forward.ProjectHorizontal(), other.rootForward.forward.ProjectHorizontal());
+        foreach(Player otherPlayer in activeRagdoll.player.manager.GetAllPlayers()){
+            if(otherPlayer != activeRagdoll.player){
+                Vector3 displacementToOther = otherPlayer.rootForward.position - activeRagdoll.player.rootForward.position;
+                float currDist = displacementToOther.magnitude;
+                float currAngle = Vector3.Angle(activeRagdoll.player.rootForward.forward.ProjectHorizontal(), displacementToOther.ProjectHorizontal());
 
                 if((currDist <= closestDist) && (currAngle <= totalAngularRange/2)){
                     closestDist = currDist;
-                    closestPlayer = other;
+                    closestPlayer = otherPlayer;
                 }
             }   
         }

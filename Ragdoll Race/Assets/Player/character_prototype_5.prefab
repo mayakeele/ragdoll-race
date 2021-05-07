@@ -150,30 +150,31 @@ MonoBehaviour:
   armRootTransform: {fileID: 4744034241166310228}
   armEndTransform: {fileID: 2794795321915230064}
   armIK: {fileID: 0}
+  joints: []
   idlePositionRelativeToPelvis: {x: -0.231, y: 0.418, z: 0.307}
   armLength: 0.53
-  punchDuration: 0.4
-  punchRecoveryDuration: 0.8
+  punchSpeed: 2
+  punchRecoveryDuration: 1.2
   punchCurveForward:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
+      inSlope: 0.62050766
+      outSlope: 0.62050766
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.049411763
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
+      inSlope: 2.0047133
+      outSlope: 2.0047133
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.03647065
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -184,20 +185,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
+      inSlope: 1.9092544
+      outSlope: 1.9092544
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.04323529
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
+      inSlope: 0.5618313
+      outSlope: 0.5618313
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.046176493
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -434,8 +435,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 400
-    positionDamper: 0.6
+    positionSpring: 600
+    positionDamper: 0.2
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -1087,8 +1088,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 400
-    positionDamper: 0.6
+    positionSpring: 600
+    positionDamper: 0.2
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -2022,8 +2023,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 400
-    positionDamper: 0.6
+    positionSpring: 600
+    positionDamper: 0.2
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -2099,7 +2100,7 @@ MonoBehaviour:
   leftArm: {fileID: 349094510911649001}
   rightArm: {fileID: 1670027791477007730}
   arms: []
-  punchDetectionRange: 1.5
+  punchDetectionRange: 2
   punchDetectionAngularRange: 180
 --- !u!1 &2801381557178443521
 GameObject:
@@ -3058,8 +3059,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 400
-    positionDamper: 0.6
+    positionSpring: 600
+    positionDamper: 0.2
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -3275,30 +3276,31 @@ MonoBehaviour:
   armRootTransform: {fileID: 1706665622459968776}
   armEndTransform: {fileID: 1795188696670970433}
   armIK: {fileID: 0}
+  joints: []
   idlePositionRelativeToPelvis: {x: 0.231, y: 0.418, z: 0.307}
   armLength: 0.53
-  punchDuration: 0.4
-  punchRecoveryDuration: 0.8
+  punchSpeed: 2
+  punchRecoveryDuration: 1.2
   punchCurveForward:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
+      inSlope: 0.62050766
+      outSlope: 0.62050766
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.049411763
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
+      inSlope: 2.0047133
+      outSlope: 2.0047133
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.03647065
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -3309,20 +3311,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
+      inSlope: 1.9092544
+      outSlope: 1.9092544
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.04323529
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
+      inSlope: 0.5618313
+      outSlope: 0.5618313
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.046176493
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
