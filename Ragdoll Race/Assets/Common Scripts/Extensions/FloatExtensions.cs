@@ -89,4 +89,10 @@ public static class FloatExtensions
             return true;
         }
     }
+
+
+    public static float AngleDifference( float angle1, float angle2 ){
+        float diff = ( angle2 - angle1 + 180 ) % 360 - 180;
+        return diff < -180 ? diff + 360 : diff;
+    }
 }
