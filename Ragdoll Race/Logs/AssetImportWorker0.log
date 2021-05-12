@@ -15,11 +15,11 @@ D:/Programming/Unity Projects/ragdoll-race/Ragdoll Race
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52091
+53012
 Successfully changed project path to: D:/Programming/Unity Projects/ragdoll-race/Ragdoll Race
 D:/Programming/Unity Projects/ragdoll-race/Ragdoll Race
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 178.17 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 66.54 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.7f1 (c53830e277f1)
 [Subsystems] Discovering subsystems at path D:/Unity Installs/2020.2.7f1/Editor/Data/Resources/UnitySubsystems
@@ -35,19 +35,228 @@ Initialize mono
 Mono path[0] = 'D:/Unity Installs/2020.2.7f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity Installs/2020.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity Installs/2020.2.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56956
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56580
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity Installs/2020.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003135 seconds.
+Registered in 0.000972 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 148.79 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 50.05 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.161 seconds
+- Completed reload, in  0.809 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003233 seconds.
+Registered in 0.001041 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 52.14 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.121 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3116 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.5 MB.
+System memory in use after: 149.7 MB.
+
+Unloading 126 unused Assets to reduce memory usage. Loaded Objects now: 3538.
+Total: 3.723400 ms (FindLiveObjects: 0.395800 ms CreateObjectMapping: 0.214600 ms MarkObjects: 2.008600 ms  DeleteObjects: 1.103500 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Stages/Tank Canyon/Environment/Level
+  artifactKey: Guid(a48211b0d5e95534f917280618231dae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/Level using Guid(a48211b0d5e95534f917280618231dae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0f6b5f9c11e948fadf9d48656d33bad') in 0.034303 seconds
+  Import took 0.080663 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.141169 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/Models
+  artifactKey: Guid(a48211b0d5e95534f917280618231dae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/Models using Guid(a48211b0d5e95534f917280618231dae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ea9115b5f9818ba7861ef8139758392') in 0.020946 seconds
+  Import took 0.036373 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.465900 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/Models/1 - Start/start_ramp_A.fbx
+  artifactKey: Guid(8bda62e48d8b28c42a04bb4d3c766dda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/Models/1 - Start/start_ramp_A.fbx using Guid(8bda62e48d8b28c42a04bb4d3c766dda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71f566040c23bcc1793c5a3dc882c21b') in 0.810954 seconds
+  Import took 0.844275 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000675 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/Models/1 - Start/start_ramp_B.fbx
+  artifactKey: Guid(9ef35814ea87d7b4aaf4b4553d633e8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/Models/1 - Start/start_ramp_B.fbx using Guid(9ef35814ea87d7b4aaf4b4553d633e8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c00fbc95044c00f96a0e25962f37b9b') in 0.023619 seconds
+  Import took 0.052175 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004157 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/Models/1 - Start/start_ramp_B.fbx
+  artifactKey: Guid(9ef35814ea87d7b4aaf4b4553d633e8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/Models/1 - Start/start_ramp_B.fbx using Guid(9ef35814ea87d7b4aaf4b4553d633e8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c00fbc95044c00f96a0e25962f37b9b') in 0.010972 seconds
+  Import took 0.017310 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.001477 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/Models/1 - Start/start_ramp_A.fbx
+  artifactKey: Guid(8bda62e48d8b28c42a04bb4d3c766dda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/Models/1 - Start/start_ramp_A.fbx using Guid(8bda62e48d8b28c42a04bb4d3c766dda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9525cfa031846070eeb020da6336456d') in 0.012533 seconds
+  Import took 0.027931 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/Models/1 - Start/start_ramp_B.fbx
+  artifactKey: Guid(9ef35814ea87d7b4aaf4b4553d633e8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/Models/1 - Start/start_ramp_B.fbx using Guid(9ef35814ea87d7b4aaf4b4553d633e8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9664383844ef3f7519da9991a4e926c') in 0.015546 seconds
+  Import took 0.028721 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 239.599919 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/Models/1 - Start/start_ramp_A.fbx
+  artifactKey: Guid(8bda62e48d8b28c42a04bb4d3c766dda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/Models/1 - Start/start_ramp_A.fbx using Guid(8bda62e48d8b28c42a04bb4d3c766dda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '027e9692219c7d00a475c33d1d5419b4') in 0.019837 seconds
+  Import took 0.052956 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 176.588082 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/Background
+  artifactKey: Guid(0aea185282b328945ae3dfbbfe8d0d5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/Background using Guid(0aea185282b328945ae3dfbbfe8d0d5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb8a6c31ad82b7ce1bed238e516614c5') in 0.005928 seconds
+  Import took 0.022975 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.673361 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/1 - Start/Materials
+  artifactKey: Guid(fc0b78f5151423544be825b8abd5351f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/1 - Start/Materials using Guid(fc0b78f5151423544be825b8abd5351f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47124418c8f85d4a69367dd949e7c9a1') in 0.005818 seconds
+  Import took 0.030352 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.953802 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp A.mat
+  artifactKey: Guid(350e82d646da7ce419bf8e040b72f1ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp A.mat using Guid(350e82d646da7ce419bf8e040b72f1ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9752b0201abe83827488bcca672543a9') in 0.106080 seconds
+  Import took 0.154545 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.032311 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp B.mat
+  artifactKey: Guid(29601e2e6cce615469fe3d8bfcd7ecf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp B.mat using Guid(29601e2e6cce615469fe3d8bfcd7ecf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a08d2acf754017627b54c524e5c848c') in 0.018702 seconds
+  Import took 0.034444 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.430171 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp A.mat
+  artifactKey: Guid(350e82d646da7ce419bf8e040b72f1ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp A.mat using Guid(350e82d646da7ce419bf8e040b72f1ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '008f75b1e4f486cba9db90165bdf14c1') in 0.023092 seconds
+  Import took 0.057492 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.415808 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp A.mat
+  artifactKey: Guid(350e82d646da7ce419bf8e040b72f1ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp A.mat using Guid(350e82d646da7ce419bf8e040b72f1ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd74fc4d7876c5edbb57200bbc91393ba') in 0.026828 seconds
+  Import took 0.044506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 45.756617 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp A.mat
+  artifactKey: Guid(350e82d646da7ce419bf8e040b72f1ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp A.mat using Guid(350e82d646da7ce419bf8e040b72f1ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab9a0bfeda158f267674550f59779296') in 0.015944 seconds
+  Import took 0.041100 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp B.mat
+  artifactKey: Guid(29601e2e6cce615469fe3d8bfcd7ecf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp B.mat using Guid(29601e2e6cce615469fe3d8bfcd7ecf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f7e036f516ac20a0f207191c76010b8') in 0.010651 seconds
+  Import took 0.027185 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 34.664748 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp B.mat
+  artifactKey: Guid(29601e2e6cce615469fe3d8bfcd7ecf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp B.mat using Guid(29601e2e6cce615469fe3d8bfcd7ecf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '387382295c0dfc8a1525e27081214819') in 0.015482 seconds
+  Import took 0.063571 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.610059 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp B.mat
+  artifactKey: Guid(29601e2e6cce615469fe3d8bfcd7ecf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp B.mat using Guid(29601e2e6cce615469fe3d8bfcd7ecf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7890020f1fc6b79d7937f5fc7accbcc0') in 0.026427 seconds
+  Import took 0.070720 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.960474 seconds.
+  path: Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp A.mat
+  artifactKey: Guid(350e82d646da7ce419bf8e040b72f1ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Environment/1 - Start/Materials/Ramp A.mat using Guid(350e82d646da7ce419bf8e040b72f1ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2818039b9375920c4e35b35d232de6b') in 0.021488 seconds
+  Import took 0.051821 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001351 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.180 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3004 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 151.2 MB.
+System memory in use after: 149.3 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 3622.
+Total: 13.841700 ms (FindLiveObjects: 2.027000 ms CreateObjectMapping: 0.606800 ms MarkObjects: 7.952500 ms  DeleteObjects: 3.244200 ms)
+

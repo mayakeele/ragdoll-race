@@ -9,39 +9,44 @@ public class CameraController : MonoBehaviour
     public PlayersManager playersManager;
     public Camera mainCamera;
     public Rigidbody rb;
+    public Transform anchorTransform;
     
 
-    [Header("Camera Control Properties")]
-    //[SerializeField] private float cameraSpeedH;
-    //[SerializeField] private float cameraSpeedV;
-    //[SerializeField] private float cameraOrbitRadius;
-    //[SerializeField] private float minCameraAngleV;
-    //[SerializeField] private float maxCameraAngleV;
-    //[SerializeField] private bool invertCameraH;
-    //[SerializeField] private bool invertCameraV;
+    [Header("Framing Parameters")]
+
+    public float horizontalAngle;
+    public float verticalAngle;
+    [Space]
+    public float horizontalPaddingDistance;
+    public float verticalPaddingDistance;
+    [Space]
+    public float cameraFOV;
 
 
-    [Header("Smart Camera Settings")]
-    [SerializeField] private float springFrequency;
-    [SerializeField] private float springDamping;
+
+    [Header("Distance Constraints")]
+    public float maxDistanceForward;
+    public float maxDistanceHorizontal;
+    public float maxDistanceVertical;
+
+
+    [Header("Spring Parameters")]
+    public float springFrequency;
+    public float springDamping;
+
+
+
+    [Header("Control Flags")]
+    public bool freezeInPlace = false;
+    public bool ignoreDistanceConstraints = false;
+
     //[SerializeField] private LayerMask cameraObstructionLayers;
     //[SerializeField] private LayerMask cameraCollisionLayers;
     //[SerializeField] private float cameraPhysicsRadius;
-    //[SerializeField] private float maxCameraFOV;
-    //[SerializeField] private float minCameraFOV;
-    [SerializeField] private float horizontalPaddingDistance;
-    [SerializeField] private float verticalPaddingDistance;
 
-
-    // Input Variables
-    float camInputH;
-    float camInputV;
 
 
     // Camera Variables
-    float camAngleH = 0;
-    float camAngleV = 0;
-    float currFOV;
 
 
 
@@ -49,7 +54,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        currFOV = mainCamera.fieldOfView;
+        cameraFOV = mainCamera.fieldOfView;
     }
 
 
