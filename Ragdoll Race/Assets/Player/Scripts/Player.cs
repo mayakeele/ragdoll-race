@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         //currentDamage = 0;
-        Respawn(manager.spawnTransform.position);
+        RespawnAtPosition(manager.spawnTransform.position);
     }
 
 
@@ -92,8 +92,8 @@ public class Player : MonoBehaviour
 
 
         // Respawn if below y -10
-        if(rootRigidbody.transform.position.y < -8){
-            Respawn(manager.spawnTransform.position);
+        if(rootRigidbody.transform.position.y < -30){
+            RespawnAtPosition(manager.spawnTransform.position);
         }
     }
 
@@ -150,7 +150,15 @@ public class Player : MonoBehaviour
     }
 
 
-    public void Respawn(Vector3 spawnPosition){
+    public void Kill(){
+        // Tells the player manager that this player has been killed, and by whom
+        // Also plays a sound effect and respawns the player at the spawn point
+
+        RespawnAtPosition(manager.spawnTransform.position);
+    }
+
+
+    public void RespawnAtPosition(Vector3 spawnPosition){
         // Respawns the player in the given position, resetting their damage, status, and physics
 
         currentDamage = 0;

@@ -221,4 +221,22 @@ public class CameraController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
     }
+
+
+    public void SetParameters(CameraParametersContainer parameters){
+        horizontalAngle = parameters.horizontalAngle;
+        verticalAngle = parameters.verticalAngle;
+
+        horizontalPaddingDistance = parameters.horizontalPaddingDistance;
+        verticalPaddingDistance = parameters.verticalPaddingDistance;
+
+        cameraFOV = parameters.cameraFOV;
+
+        maxDistanceForward = parameters.maxDistanceForward;
+        maxDistanceHorizontal = parameters.maxDistanceHorizontal;
+        maxDistanceVertical = parameters.maxDistanceVertical;
+
+        springFrequency = parameters.springFrequency;
+        springDamping = parameters.springDamping;
+    }
 }

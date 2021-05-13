@@ -59,4 +59,33 @@ public static class AudioSourceExtensions
         return newPitch;
     }
 
+
+    public static void StopAudio(this AudioSource audioSource){
+        audioSource.loop = false;
+        audioSource.clip = null;
+        audioSource.Stop();
+    }
+
+
+    public static void PlayLoop(this AudioSource audioSource, AudioClip clip){
+        if(clip){
+            audioSource.loop = true;
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
+        else{
+            audioSource.StopAudio();
+        }
+    }
+    public static void PlayLoop(this AudioSource audioSource, AudioClip clip, float volume){
+        if(clip){
+            audioSource.loop = true;
+            audioSource.clip = clip;
+            audioSource.volume = volume;
+            audioSource.Play();
+        }
+        else{
+            audioSource.StopAudio();
+        }
+    }
 }
