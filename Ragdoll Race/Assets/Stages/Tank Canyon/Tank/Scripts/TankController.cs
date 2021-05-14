@@ -16,9 +16,9 @@ public class TankController : MonoBehaviour
 
 
     [Header("References")]
+    [SerializeField] private Rigidbody environmentRigidbody;
     [SerializeField] private CameraController cameraController;
     [SerializeField] private TankAudioManager tankAudioManager;
-    [SerializeField] private Rigidbody tankRigidbody;
     [SerializeField] private TreadsManager treadsManager;
     [SerializeField] private TurretManager turretManager;
 
@@ -80,10 +80,8 @@ public class TankController : MonoBehaviour
     void FixedUpdate()
     {
         if(tankSpeed > 0){
-            MoveTank(tankSpeed, Time.fixedDeltaTime);
+            MoveEnvironment(tankSpeed, Time.fixedDeltaTime);
         }
-
-
     }
 
 
@@ -94,12 +92,11 @@ public class TankController : MonoBehaviour
     }
 
 
-    private void MoveTank(float speed, float timeDelta){
+    private void MoveEnvironment(float speed, float timeDelta){
         // Since the tank uses a kinematic rigidbody, position is updated here
-        Vector3 movementAmount = tankRigidbody.transform.forward * speed * timeDelta;
+        Vector3 movementAmount = -transform.forward * speed * timeDelta;
 
-        tankRigidbody.MovePosition(tankRigidbody.position + movementAmount);
-        tankRigidbody.velocity = tankRigidbody.transform.forward * speed;
+        environmentRigidbody.MovePosition(environmentRigidbody.position + movementAmount);
     }
 
 

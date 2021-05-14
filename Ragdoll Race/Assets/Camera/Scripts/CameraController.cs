@@ -224,13 +224,12 @@ public class CameraController : MonoBehaviour
 
 
     public void SetParameters(CameraParametersContainer parameters){
-        horizontalAngle = parameters.horizontalAngle;
-        verticalAngle = parameters.verticalAngle;
+
+        mainCamera.transform.rotation = Quaternion.Euler(parameters.verticalAngle, parameters.horizontalAngle, 0);
+        mainCamera.fieldOfView = parameters.cameraFOV;
 
         horizontalPaddingDistance = parameters.horizontalPaddingDistance;
         verticalPaddingDistance = parameters.verticalPaddingDistance;
-
-        cameraFOV = parameters.cameraFOV;
 
         maxDistanceForward = parameters.maxDistanceForward;
         maxDistanceHorizontal = parameters.maxDistanceHorizontal;
