@@ -117,7 +117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8622090830548961070
 Transform:
   m_ObjectHideFlags: 0
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622215080718869483}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ede90647928656a4f817a7f9536abc4e, type: 3}
   m_Name: 
@@ -435,7 +435,7 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 600
+    positionSpring: 10
     positionDamper: 0.2
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
@@ -983,7 +983,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701914237914753508}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ede90647928656a4f817a7f9536abc4e, type: 3}
   m_Name: 
@@ -1088,7 +1088,7 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 600
+    positionSpring: 10
     positionDamper: 0.2
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
@@ -1918,7 +1918,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2559919170206092539}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ede90647928656a4f817a7f9536abc4e, type: 3}
   m_Name: 
@@ -2023,7 +2023,7 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 600
+    positionSpring: 10
     positionDamper: 0.2
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
@@ -2097,11 +2097,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeRagdoll: {fileID: 5327272404548169525}
-  leftArm: {fileID: 349094510911649001}
-  rightArm: {fileID: 1670027791477007730}
-  arms: []
-  punchDetectionRange: 2
-  punchDetectionAngularRange: 180
+  armJoints:
+  - {fileID: 4811111629436388687}
+  - {fileID: 1701914237914753511}
+  - {fileID: 2559919170206092517}
+  - {fileID: 622215080718869482}
+  armStrengthLow: 0
+  armDampingLow: 0
+  armStrengthHigh: 130
+  armDampingHigh: 1
 --- !u!1 &2801381557178443521
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,7 +2958,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4811111629436388685}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ede90647928656a4f817a7f9536abc4e, type: 3}
   m_Name: 
@@ -3059,7 +3063,7 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 600
+    positionSpring: 10
     positionDamper: 0.2
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
@@ -3141,8 +3145,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5766242377392847830}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.46, y: 0.994, z: -0.126}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5331671808498688091}
@@ -3171,8 +3175,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5857508265341498916}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.09, y: 0.375, z: 0.358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5331671808498688091}
@@ -3243,7 +3247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1706665622459968776
 Transform:
   m_ObjectHideFlags: 0
@@ -3860,7 +3864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5331671808498688091
 Transform:
   m_ObjectHideFlags: 0

@@ -68,7 +68,7 @@ public class Arm : MonoBehaviour
 
         // If no actions are taking place, move this arm to its idle position
         if(!isActing){
-            SetIKTargetPosition(pelvisTransform.TransformPoint(idlePositionRelativeToPelvis));
+            //SetIKTargetPosition(pelvisTransform.TransformPoint(idlePositionRelativeToPelvis));
         }
     }
 

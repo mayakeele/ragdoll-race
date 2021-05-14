@@ -50,4 +50,14 @@ public static class ConfigurableJointExtensions {
 		// Set target rotation to our newly calculated rotation
 		joint.targetRotation = resultRotation;
 	}
+
+
+	public static void SetSlerpDrive(this ConfigurableJoint joint, float spring, float damper){
+
+		JointDrive drive = joint.slerpDrive;
+        drive.positionSpring = spring;
+        drive.positionDamper = damper;
+
+        joint.slerpDrive = drive;
+	}
 }
