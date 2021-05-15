@@ -14,8 +14,7 @@ public class Player : MonoBehaviour
 
 
     [Header("Damage & Knockback Properties")]
-    [SerializeField] private float knockbackMultiplierAt0;
-    [SerializeField] private float knockbackMultiplierAt100;
+    [SerializeField] private AnimationCurve knockbackMultiplierCurve;
     [Space]
     [SerializeField] private float maxDamage;
     [SerializeField] private float hitImmunityDuration;
@@ -116,7 +115,7 @@ public class Player : MonoBehaviour
         if(!isImmune){
             currentDamage += hitDamage;
 
-            float totalKnockbackMultiplier = hitKnockbackMultiplier * currentDamage.Map(0, 100, knockbackMultiplierAt0, knockbackMultiplierAt100);
+            float totalKnockbackMultiplier = hitKnockbackMultiplier * knockbackMultiplierCurve.Evaluate(currentDamage);
 
             // Calculate the force required to set the new velocity, and multiply it by the total knockback multiplier
             Vector3 velocityChange = hitRelativeVelocity;
