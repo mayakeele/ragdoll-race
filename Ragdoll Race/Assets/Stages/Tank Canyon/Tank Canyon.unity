@@ -260,6 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 101561042}
   - component: {fileID: 101561045}
+  - component: {fileID: 101561046}
   - component: {fileID: 101561044}
   - component: {fileID: 101561043}
   m_Layer: 8
@@ -325,6 +326,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &101561046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101561041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &106697039
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,6 +353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 106697040}
   - component: {fileID: 106697043}
+  - component: {fileID: 106697044}
   - component: {fileID: 106697042}
   - component: {fileID: 106697041}
   m_Layer: 8
@@ -400,6 +419,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &106697044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106697039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &130876133
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 277273527}
   - component: {fileID: 277273530}
+  - component: {fileID: 277273531}
   - component: {fileID: 277273529}
   - component: {fileID: 277273528}
   m_Layer: 8
@@ -598,6 +635,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &277273531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277273526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &282803626
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,6 +662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 282803627}
   - component: {fileID: 282803630}
+  - component: {fileID: 282803631}
   - component: {fileID: 282803629}
   - component: {fileID: 282803628}
   m_Layer: 8
@@ -673,6 +728,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &282803631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282803626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &422794994
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,6 +755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 422794995}
   - component: {fileID: 422794998}
+  - component: {fileID: 422794999}
   - component: {fileID: 422794996}
   - component: {fileID: 422794997}
   m_Layer: 8
@@ -748,6 +821,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &422794999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422794994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &501026635
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 501242810}
   - component: {fileID: 501242813}
+  - component: {fileID: 501242814}
   - component: {fileID: 501242812}
   - component: {fileID: 501242811}
   m_Layer: 8
@@ -853,6 +944,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &501242814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501242809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &510898023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,6 +1273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 639613937}
   - component: {fileID: 639613940}
+  - component: {fileID: 639613941}
   - component: {fileID: 639613938}
   - component: {fileID: 639613939}
   m_Layer: 8
@@ -1230,6 +1339,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &639613941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639613936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &716112521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,7 +1368,6 @@ GameObject:
   - component: {fileID: 716112524}
   - component: {fileID: 716112523}
   - component: {fileID: 716112525}
-  - component: {fileID: 716112526}
   m_Layer: 7
   m_Name: start_ramp_B (1)
   m_TagString: Untagged
@@ -1326,22 +1451,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.090627, y: 0.15, z: 1}
   m_Center: {x: 2.5453136, y: 0, z: 0}
---- !u!54 &716112526
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716112521}
-  serializedVersion: 2
-  m_Mass: 25
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &829265090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,6 +1492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836606703}
   - component: {fileID: 836606706}
+  - component: {fileID: 836606707}
   - component: {fileID: 836606704}
   - component: {fileID: 836606705}
   m_Layer: 8
@@ -1448,6 +1558,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &836606707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836606702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &934233142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 934233143}
   - component: {fileID: 934233146}
+  - component: {fileID: 934233147}
   - component: {fileID: 934233144}
   - component: {fileID: 934233145}
   m_Layer: 8
@@ -1523,6 +1651,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &934233147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934233142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &969627865
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,6 +2377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1409544264}
   - component: {fileID: 1409544267}
+  - component: {fileID: 1409544268}
   - component: {fileID: 1409544265}
   - component: {fileID: 1409544266}
   m_Layer: 8
@@ -2297,6 +2443,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &1409544268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409544263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1441591061
 GameObject:
   m_ObjectHideFlags: 0
@@ -2307,6 +2470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441591062}
   - component: {fileID: 1441591065}
+  - component: {fileID: 1441591066}
   - component: {fileID: 1441591064}
   - component: {fileID: 1441591063}
   m_Layer: 8
@@ -2372,6 +2536,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &1441591066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441591061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1489450411
 GameObject:
   m_ObjectHideFlags: 0
@@ -2474,6 +2655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1580164489}
   - component: {fileID: 1580164492}
+  - component: {fileID: 1580164493}
   - component: {fileID: 1580164490}
   - component: {fileID: 1580164491}
   m_Layer: 8
@@ -2539,6 +2721,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &1580164493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580164488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1606069298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2549,6 +2748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1606069299}
   - component: {fileID: 1606069302}
+  - component: {fileID: 1606069303}
   - component: {fileID: 1606069301}
   - component: {fileID: 1606069300}
   m_Layer: 8
@@ -2614,6 +2814,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &1606069303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606069298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1643929062
 GameObject:
   m_ObjectHideFlags: 0
@@ -2879,13 +3096,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   engineAudioSource: {fileID: 1223363596}
-  engineVolume: 0.419
+  engineVolume: 0.195
   engineIdleSound: {fileID: 8300000, guid: c6a9b1ed7cbc22447bfd807d39010730, type: 3}
   engineSlowSound: {fileID: 8300000, guid: c6a9b1ed7cbc22447bfd807d39010730, type: 3}
   engineMediumSound: {fileID: 8300000, guid: c6a9b1ed7cbc22447bfd807d39010730, type: 3}
   engineFastSound: {fileID: 8300000, guid: c6a9b1ed7cbc22447bfd807d39010730, type: 3}
   treadsAudioSource: {fileID: 510898025}
-  treadsVolume: 0.38
+  treadsVolume: 0.252
   treadsSlowSound: {fileID: 8300000, guid: 5cff2708217678c4bb4556e9fe3feb49, type: 3}
   treadsMediumSound: {fileID: 8300000, guid: 996faef574e080948b5b234ec55a057b, type: 3}
   treadsFastSound: {fileID: 8300000, guid: 8c4d483a25e0fd24ba144470504fb689, type: 3}
@@ -3068,6 +3285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1938440377}
   - component: {fileID: 1938440380}
+  - component: {fileID: 1938440381}
   - component: {fileID: 1938440379}
   - component: {fileID: 1938440378}
   m_Layer: 8
@@ -3133,6 +3351,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &1938440381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938440376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1957157670
 GameObject:
   m_ObjectHideFlags: 0
@@ -3143,6 +3378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1957157671}
   - component: {fileID: 1957157674}
+  - component: {fileID: 1957157675}
   - component: {fileID: 1957157672}
   - component: {fileID: 1957157673}
   m_Layer: 8
@@ -3208,6 +3444,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &1957157675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957157670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1959772271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3220,7 +3473,6 @@ GameObject:
   - component: {fileID: 1959772274}
   - component: {fileID: 1959772273}
   - component: {fileID: 1959772275}
-  - component: {fileID: 1959772276}
   m_Layer: 7
   m_Name: start_ramp_A (1)
   m_TagString: Untagged
@@ -3305,22 +3557,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 8bda62e48d8b28c42a04bb4d3c766dda, type: 3}
---- !u!54 &1959772276
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959772271}
-  serializedVersion: 2
-  m_Mass: 50
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2033952184
 GameObject:
   m_ObjectHideFlags: 0
@@ -3363,6 +3599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2041944643}
   - component: {fileID: 2041944646}
+  - component: {fileID: 2041944647}
   - component: {fileID: 2041944644}
   - component: {fileID: 2041944645}
   m_Layer: 8
@@ -3428,6 +3665,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!114 &2041944647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041944642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 1
+  autoTrackAngularVelocity: 0
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &2088250029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3607,6 +3861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3507437584991520124}
   - component: {fileID: 360468701382553877}
+  - component: {fileID: 360468701382553878}
   - component: {fileID: 360468701382553876}
   - component: {fileID: 360468701382553875}
   - component: {fileID: 7083428826857347320}
@@ -3663,6 +3918,23 @@ MonoBehaviour:
   turretRigidbody: {fileID: 360468701382553876}
   rotationSpeed: 42
   timeBetweenMoves: 6
+--- !u!114 &360468701382553878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360468701382553874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79adcf90e5666c14fad908dab13fcd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  autoTrackVelocity: 0
+  autoTrackAngularVelocity: 1
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
 --- !u!33 &547015345450270812
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3851,7 +4123,6 @@ GameObject:
   - component: {fileID: 2286032628775688489}
   - component: {fileID: 4061518822726725091}
   - component: {fileID: 2548357519451868215}
-  - component: {fileID: 2548357519451868216}
   m_Layer: 7
   m_Name: start_ramp_A
   m_TagString: Untagged
@@ -3873,22 +4144,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 8bda62e48d8b28c42a04bb4d3c766dda, type: 3}
---- !u!54 &2548357519451868216
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2548357519451868214}
-  serializedVersion: 2
-  m_Mass: 50
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &2888572099204454028
 Transform:
   m_ObjectHideFlags: 0
@@ -3947,7 +4202,6 @@ GameObject:
   - component: {fileID: 1647845985199379776}
   - component: {fileID: 3547328494130962826}
   - component: {fileID: 3042841292794200160}
-  - component: {fileID: 3042841292794200161}
   m_Layer: 7
   m_Name: start_ramp_B
   m_TagString: Untagged
@@ -3968,22 +4222,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.090627, y: 0.15, z: 1}
   m_Center: {x: 2.5453136, y: 0, z: 0}
---- !u!54 &3042841292794200161
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3042841292794200159}
-  serializedVersion: 2
-  m_Mass: 25
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!33 &3236166617773970188
 MeshFilter:
   m_ObjectHideFlags: 0

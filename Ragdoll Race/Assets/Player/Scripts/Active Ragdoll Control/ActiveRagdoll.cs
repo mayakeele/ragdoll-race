@@ -53,6 +53,7 @@ public class ActiveRagdoll : MonoBehaviour
     private bool isPerformingJump;
     [HideInInspector] public Rigidbody groundRigidbody = null;
     [HideInInspector] public Vector3 groundPosition = Vector3.zero;
+    [HideInInspector] public Vector3 groundVelocity = Vector3.zero;
 
 
 
@@ -89,6 +90,27 @@ public class ActiveRagdoll : MonoBehaviour
         if(!isPerformingJump && !player.isRagdoll){
 
             if(Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, groundedRayLength, standableLayers)){
+
+                // Update the relative speed of the ground (frame of reference)
+
+                MovingPlatform movingPlatform = hitInfo.transform.GetComponent<MovingPlatform>();
+                groundPosition = hitInfo.point;
+
+                if(movingPlatform){
+                    groundRigidbody = movingPlatform.rigidbody;
+                    groundVelocity = movingPlatform.GetPointVelocity(groundPosition);
+                }
+                else if(hitInfo.rigidbody){
+                    groundRigidbody = hitInfo.rigidbody;
+                    groundVelocity = groundRigidbody.GetPointVelocity(groundPosition);
+
+                }
+                else{
+                    groundRigidbody = null;
+                    groundVelocity = Vector3.zero;
+                }
+
+
                 // Calculate buoyancy force, as a fraction of the total body mass to provide "neutral buoyancy"
                 Vector3 pelvisForce = bodyMass * Physics.gravity.magnitude * buoyancyMultiplier * Vector3.up;
 
@@ -101,16 +123,9 @@ public class ActiveRagdoll : MonoBehaviour
                 // Apply the total upwards force to the pelvis
                 pelvisRigidbody.AddForce(pelvisForce);
 
-
                 // If the player is standing on an object with a rigidbody, record which object that is and apply an equal and opposite force to it
-                if(hitInfo.rigidbody){
-                    groundRigidbody = hitInfo.rigidbody;
-                    groundPosition = hitInfo.point;
+                if(groundRigidbody){
                     groundRigidbody.AddForceAtPosition(-pelvisForce, groundPosition);
-                }
-                else{
-                    groundRigidbody = null;
-                    groundPosition = Vector3.zero;
                 }
 
 
@@ -210,6 +225,13 @@ public class ActiveRagdoll : MonoBehaviour
 
         // Move the root to position. All other body parts of children of root and will follow along automatically
         pelvisRigidbody.transform.position = newRootPosition;
+    }
+
+
+    public Vector3 GetRelativeVelocity(){
+        // Returns the pelvis velocity relative to the current ground frame of reference
+
+        return pelvisRigidbody.velocity - groundVelocity;
     }
 
 

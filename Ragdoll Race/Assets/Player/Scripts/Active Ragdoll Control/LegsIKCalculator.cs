@@ -45,10 +45,10 @@ public class LegsIKCalculator : MonoBehaviour
 
     private bool useDynamicGait;
     private float timeSinceLastStep;
-    private bool leftLegMoving;
+    private bool leftFlag;
 
-    private Vector3 leftFootAnchor;
-    private Vector3 rightFootAnchor;
+    private bool leftLegActive = false;
+    private bool rightLegActive = false;
 
 
 
@@ -67,7 +67,7 @@ public class LegsIKCalculator : MonoBehaviour
 
         // Update leg movement parameters based on the player's speed
 
-        float currSpeed = pelvisRigidbody.velocity.magnitude;
+        float currSpeed = activeRagdoll.GetRelativeVelocity().magnitude;
 
         currStepCycleLength = stepCycleLength.Evaluate(currSpeed);
         currStepVelocityOffset = stepVelocityOffset.Evaluate(currSpeed);
@@ -83,20 +83,28 @@ public class LegsIKCalculator : MonoBehaviour
             if(timeSinceLastStep >= currStepCycleLength / 2){
                 timeSinceLastStep = 0;
 
-                FastIKFabric currentLeg = leftLegMoving ? leftLegIK : rightLegIK;
+                FastIKFabric currentLeg = leftFlag ? leftLegIK : rightLegIK;
                 Transform currentTarget = currentLeg.Target;
 
-                Vector3 desiredPosition = CastToGround(leftLegMoving);
+                Vector3 desiredPosition = CastToGround(leftFlag);
                 float displacementFromDefault = Vector3.Distance(currentTarget.position, desiredPosition);
 
                 if(displacementFromDefault >= minDisplacementToMove){
-                    StartCoroutine(MoveLegRelative(currentLeg, desiredPosition));
-                    if(leftLegMoving){ leftFootAnchor = desiredPosition; }  else{ rightFootAnchor = desiredPosition; }
+
+                    StartCoroutine(MoveLegRelative(currentLeg, desiredPosition, leftFlag));
                 }
 
-                leftLegMoving = !leftLegMoving;
+                leftFlag = !leftFlag;
             }
 
+
+            // Translate the inactive leg's target with the ground
+            if(!leftLegActive){
+                MoveTargetWithGround(leftLegIK.Target);
+            }
+            if(!rightLegActive){
+                MoveTargetWithGround(rightLegIK.Target);
+            }
         }
         
     }
@@ -104,14 +112,6 @@ public class LegsIKCalculator : MonoBehaviour
 
 
     // Public Functions
-
-    public List<Vector3> GetFootAnchors(){
-        List<Vector3> anchors = new List<Vector3>(2);
-        anchors.Add(leftFootAnchor);
-        anchors.Add(rightFootAnchor);
-        return anchors;
-    }
-
 
 
     // Private Functions
@@ -122,7 +122,7 @@ public class LegsIKCalculator : MonoBehaviour
         // Calculate the horizontal and max possible vertical position of the foot
         Vector3 rayOrigin = isLeft ? leftLegRoot.position : rightLegRoot.position;
         rayOrigin += Vector3.down * minLegExtension;  
-        rayOrigin += pelvisRigidbody.velocity.ProjectHorizontal() * currStepVelocityOffset;
+        rayOrigin += activeRagdoll.GetRelativeVelocity().ProjectHorizontal() * currStepVelocityOffset;
 
         float legExtensionRange = maxLegExtension - minLegExtension;
 
@@ -138,8 +138,10 @@ public class LegsIKCalculator : MonoBehaviour
     }
 
 
-    private IEnumerator MoveLeg(FastIKFabric leg, Vector3 newPosition){
+    private IEnumerator MoveLeg(FastIKFabric leg, Vector3 newPosition, bool isLeft){
         // Moves the given leg along a path defined by direction to the new target and the step animation curve
+
+        if(isLeft){ leftLegActive = true; } else{ rightLegActive = true; }
 
         Vector3 oldPosition = leg.Target.position;
         Vector3 totalDisplacement = newPosition - oldPosition;
@@ -163,11 +165,16 @@ public class LegsIKCalculator : MonoBehaviour
 
         leg.Target.position = newPosition;
 
+        if(isLeft){ leftLegActive = false; } else{ rightLegActive = false; }
+
         yield break;
     }
 
-    private IEnumerator MoveLegRelative(FastIKFabric leg, Vector3 newWorldPosition){
+    private IEnumerator MoveLegRelative(FastIKFabric leg, Vector3 newWorldPosition, bool isLeft){
         // Moves the given leg from its old target position to a new target position, which moves and rotates with the player root
+
+        if(isLeft){ leftLegActive = true; } else{ rightLegActive = true; }
+
 
         Transform playerTransform = activeRagdoll.player.rootForward;
 
@@ -175,6 +182,7 @@ public class LegsIKCalculator : MonoBehaviour
         Vector3 newRelativePosition = newWorldPosition - playerTransform.position;
 
         Vector3 totalDisplacement = newRelativePosition - oldRelativePosition;
+
 
         float timeGradient = 0;
         while (timeGradient <= 1){
@@ -194,7 +202,8 @@ public class LegsIKCalculator : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
 
-        //leg.Target.position = newPosition;
+
+        if(isLeft){ leftLegActive = false; } else{ rightLegActive = false; }
 
         yield break;
     }
@@ -204,4 +213,8 @@ public class LegsIKCalculator : MonoBehaviour
         return isLeft ? leftLegIK : rightLegIK;
     }
 
+
+    private void MoveTargetWithGround(Transform target){
+        target.transform.Translate(activeRagdoll.groundVelocity * Time.fixedDeltaTime, Space.World);
+    }
 }

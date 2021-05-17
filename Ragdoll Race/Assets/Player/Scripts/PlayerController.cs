@@ -76,15 +76,16 @@ public class PlayerController : MonoBehaviour
         Vector3 cameraRight = Vector3.Cross(Vector3.up, cameraForward);
 
         // Calculate the ideal velocity both relative to the ground and in world space
-        Vector3 idealRelativeVelocity = ((cameraForward * moveInput.y) + (cameraRight * moveInput.x)) * currMoveSpeedLimit;
-        Vector3 idealVelocity = idealRelativeVelocity;
-        if(player.activeRagdoll.groundRigidbody){
-            idealVelocity += player.activeRagdoll.groundRigidbody.GetPointVelocity(player.activeRagdoll.groundPosition).ProjectHorizontal();
-        }
+        Vector3 idealVelocityRelative = ((cameraForward * moveInput.y) + (cameraRight * moveInput.x)) * currMoveSpeedLimit;
 
-        Vector3 currentVelocity = player.rootRigidbody.velocity.ProjectHorizontal();
 
-        Vector3 requiredVelocityChange = (idealVelocity - currentVelocity);
+        Vector3 idealVelocityWorld = idealVelocityRelative + player.activeRagdoll.groundVelocity.ProjectHorizontal();
+  
+
+        Vector3 currentVelocityWorld = player.rootRigidbody.velocity.ProjectHorizontal();
+
+
+        Vector3 requiredVelocityChange = (idealVelocityWorld - currentVelocityWorld);
         float perFrameSpeedChange = currMoveAcceleration * Time.fixedDeltaTime;
 
 
@@ -113,7 +114,7 @@ public class PlayerController : MonoBehaviour
         // Turn the ragdoll towards the current movement direction by applying torque
         if(!player.isRagdoll){     
             Vector3 currLookDirection = player.rootForward.transform.forward.ProjectHorizontal();
-            Vector3 idealLookDirection = idealRelativeVelocity.ProjectHorizontal();
+            Vector3 idealLookDirection = idealVelocityRelative.ProjectHorizontal();
             Vector3 turningTorque = DampedSpring.GetDampedSpringTorque(currLookDirection, idealLookDirection, player.rootRigidbody.angularVelocity, turnSpringConstant, turnDampingConstant);
 
             player.rootRigidbody.AddTorque(turningTorque);
