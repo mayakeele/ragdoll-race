@@ -258,7 +258,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000008195639, y: 0.2597357, z: -7.1054274e-14}
+  m_ConnectedAnchor: {x: -0.000000044703484, y: 0.2597357, z: 7.81597e-14}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -866,7 +866,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000008195639, y: 0.2597357, z: -7.1054274e-14}
+  m_ConnectedAnchor: {x: 0.000000044703484, y: 0.2597357, z: 7.81597e-14}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -1334,19 +1334,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1146630454572903015}
   walkSpeed: 2
-  runSpeed: 3.7
+  runSpeed: 3.6
   boostSpeed: 10
-  airSpeed: 8
+  airSpeed: 7
   dizzySpeed: 0
   walkAcceleration: 3
-  runAcceleration: 9
+  runAcceleration: 10
   boostAcceleration: 40
-  airAcceleration: 2.5
+  airAcceleration: 2.8
   dizzyAcceleration: 0
   jumpSpeed: 5.5
   jumpSpringDisableTime: 0.11
   jumpPhysicsFrames: 8
-  turnSpringConstant: 120
+  turnSpringConstant: 130
   turnDampingConstant: 23
   ragdollGetupStickThreshold: 0.8
 --- !u!114 &1687905941848008982
@@ -3653,6 +3653,7 @@ MonoBehaviour:
   - {fileID: 0}
   groundRigidbody: {fileID: 0}
   groundPosition: {x: 0, y: 0, z: 0}
+  groundVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &8013968689626403482
 GameObject:
   m_ObjectHideFlags: 0
