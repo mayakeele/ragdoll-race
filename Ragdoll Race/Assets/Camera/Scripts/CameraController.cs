@@ -165,6 +165,11 @@ public class CameraController : MonoBehaviour
     }
 
 
+    private void ConstrainCameraWithinBounds(){
+        // Clamps the camera's position relative to the 
+    }
+
+
 
     private bool IsLineOfSightClear(Vector3 targetPos, Vector3 cameraPos, float castDistance, float sphereRadius, LayerMask obstructingLayers){
         // Casts a sphere from the target to the camera to determine if there are any obstructions directly in the way
@@ -221,6 +226,7 @@ public class CameraController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
     }
+
 
 
     public void SetParameters(CameraParametersContainer parameters){
