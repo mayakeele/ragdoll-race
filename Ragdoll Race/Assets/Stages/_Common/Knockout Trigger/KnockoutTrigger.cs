@@ -25,4 +25,15 @@ public class KnockoutTrigger : MonoBehaviour
             player.Kill();
         }
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        Hittable hittable = other.gameObject.GetComponent<Hittable>();
+
+        if(hittable){
+            Player player = hittable.player;
+
+            player.Kill();
+        }
+    }
 }

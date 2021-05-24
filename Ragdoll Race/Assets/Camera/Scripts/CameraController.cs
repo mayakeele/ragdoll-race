@@ -13,7 +13,6 @@ public class CameraController : MonoBehaviour
     
 
     [Header("Framing Parameters")]
-
     public float horizontalAngle;
     public float verticalAngle;
     [Space]
@@ -229,19 +228,131 @@ public class CameraController : MonoBehaviour
 
 
 
-    public void SetParameters(CameraParametersContainer parameters){
+    public void SetParameters(CameraParametersContainer newParameters){
 
-        mainCamera.transform.rotation = Quaternion.Euler(parameters.verticalAngle, parameters.horizontalAngle, 0);
-        mainCamera.fieldOfView = parameters.cameraFOV;
+        SetLookAngles(newParameters.horizontalAngle, newParameters.verticalAngle);
+        UpdateCameraDirection();
 
-        horizontalPaddingDistance = parameters.horizontalPaddingDistance;
-        verticalPaddingDistance = parameters.verticalPaddingDistance;
+        mainCamera.fieldOfView = newParameters.cameraFOV;
 
-        maxDistanceForward = parameters.maxDistanceForward;
-        maxDistanceHorizontal = parameters.maxDistanceHorizontal;
-        maxDistanceVertical = parameters.maxDistanceVertical;
+        horizontalPaddingDistance = newParameters.horizontalPaddingDistance;
+        verticalPaddingDistance = newParameters.verticalPaddingDistance;
 
-        springFrequency = parameters.springFrequency;
-        springDamping = parameters.springDamping;
+        maxDistanceForward = newParameters.maxDistanceForward;
+        maxDistanceHorizontal = newParameters.maxDistanceHorizontal;
+        maxDistanceVertical = newParameters.maxDistanceVertical;
+
+        springFrequency = newParameters.springFrequency;
+        springDamping = newParameters.springDamping;
+    }
+
+    public void SetParameters(CameraParametersContainer newParameters, CameraTransitionParameters transitionParameters){
+
+        StartCoroutine(TransitionRotation(
+            newParameters.horizontalAngle, newParameters.verticalAngle, 
+            transitionParameters.angleTransitionCurve, transitionParameters.angleTransitionTime));
+
+
+        StartCoroutine(TransitionFOV(newParameters.cameraFOV, transitionParameters.fovTransitionCurve, transitionParameters.fovTransitionTime));
+
+
+        StartCoroutine(TransitionPadding(newParameters.horizontalPaddingDistance, newParameters.verticalPaddingDistance, 
+            transitionParameters.paddingTransitionCurve, transitionParameters.paddingTransitionTime));
+
+
+        maxDistanceForward = newParameters.maxDistanceForward;
+        maxDistanceHorizontal = newParameters.maxDistanceHorizontal;
+        maxDistanceVertical = newParameters.maxDistanceVertical;
+
+
+        springFrequency = newParameters.springFrequency;
+        springDamping = newParameters.springDamping;
+    }
+
+
+
+    public void SetLookAngles(float horizontal, float vertical){
+        horizontalAngle = horizontal;
+        verticalAngle = vertical;
+
+        UpdateCameraDirection();
+    }
+    public void UpdateCameraDirection(){
+        rb.MoveRotation(Quaternion.Euler(verticalAngle, horizontalAngle, 0));
+        //transform.rotation = Quaternion.Euler(verticalAngle, horizontalAngle, 0);
+    }
+
+    public void UpdateFOV(float FOV){
+        cameraFOV = FOV;
+        mainCamera.fieldOfView = cameraFOV;
+    }
+
+
+
+    private IEnumerator TransitionRotation(float finalHorizontal, float finalVertical, AnimationCurve transitionCurve, float transitionTime){
+        // Transitions the camera's horizontal and vertical rotation from its current values to given values over a given time period, 
+        // following a curve from 0 to 1 (start to end)
+
+        float initialHorizontal = horizontalAngle;
+        float initialVertical = verticalAngle;
+
+        float currTime = 0;
+        while(currTime < transitionTime){
+            currTime += Time.fixedDeltaTime;
+
+            float gradient = transitionCurve.Evaluate(currTime / transitionTime);
+
+            horizontalAngle = gradient.Map(0, 1, initialHorizontal, finalHorizontal);
+            verticalAngle = gradient.Map(0, 1, initialVertical, finalVertical);
+
+            UpdateCameraDirection();
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        SetLookAngles(finalHorizontal, finalVertical);
+    }
+
+    private IEnumerator TransitionFOV(float finalFOV, AnimationCurve transitionCurve, float transitionTime){
+        // Transitions the camera's FOV from its current value to a given value over a given time period, 
+        // following a curve from 0 to 1 (start to end)
+
+        float initialFOV = cameraFOV;
+
+        float currTime = 0;
+        while(currTime < transitionTime){
+            currTime += Time.deltaTime;
+
+            float gradient = transitionCurve.Evaluate(currTime / transitionTime);
+
+            UpdateFOV(gradient.Map(0, 1, initialFOV, finalFOV));
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        UpdateFOV(finalFOV);
+    }
+
+    private IEnumerator TransitionPadding(float finalHorizontal, float finalVertical, AnimationCurve transitionCurve, float transitionTime){
+        // Transitions the camera's horizontal and vertical padding from its current values to given values over a given time period, 
+        // following a curve from 0 to 1 (start to end)
+
+        float initialHorizontal = horizontalPaddingDistance;
+        float initialVertical = verticalPaddingDistance;
+
+        float currTime = 0;
+        while(currTime < transitionTime){
+            currTime += Time.fixedDeltaTime;
+
+            float gradient = transitionCurve.Evaluate(currTime / transitionTime);
+
+            horizontalPaddingDistance = gradient.Map(0, 1, initialHorizontal, finalHorizontal);
+            verticalPaddingDistance = gradient.Map(0, 1, initialVertical, finalVertical);
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        horizontalPaddingDistance = finalHorizontal;
+        verticalPaddingDistance = finalVertical;
     }
 }

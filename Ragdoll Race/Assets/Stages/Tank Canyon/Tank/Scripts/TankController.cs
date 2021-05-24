@@ -17,10 +17,14 @@ public class TankController : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Rigidbody environmentRigidbody;
+    [Space]
     [SerializeField] private CameraController cameraController;
+    [Space]
     [SerializeField] private TankAudioManager tankAudioManager;
     [SerializeField] private TreadsManager treadsManager;
     [SerializeField] private TurretManager turretManager;
+    [Space]
+    [SerializeField] private List<GameObject> knockoutTriggerGroups;
 
 
     [Header("Phase Movement Properties")]
@@ -33,36 +37,42 @@ public class TankController : MonoBehaviour
     
     [Header("2 - Bridge")]
     [SerializeField] private CameraParametersContainer bridgeCameraParameters;
+    [SerializeField] private CameraTransitionParameters bridgeCameraTransitionParameters;
     [SerializeField] private float bridgeSpeed;
     [SerializeField] private float bridgeAccelerationTime;
     [SerializeField] private float bridgeFinalDistance;
 
     [Header("3 - Desert")]
     [SerializeField] private CameraParametersContainer desertCameraParameters;
+    [SerializeField] private CameraTransitionParameters desertCameraTransitionParameters;
     [SerializeField] private float desertSpeed;
     [SerializeField] private float desertAccelerationTime;
     [SerializeField] private float desertFinalDistance;
 
     [Header("4 - Pursuit")]
     [SerializeField] private CameraParametersContainer pursuitCameraParameters;
+    [SerializeField] private CameraTransitionParameters pursuitCameraTransitionParameters;
     [SerializeField] private float pursuitSpeed;
     [SerializeField] private float pursuitAccelerationTime;
     [SerializeField] private float pursuitFinalDistance;
 
     [Header("5 - Canyon")]
     [SerializeField] private CameraParametersContainer canyonCameraParameters;
+    [SerializeField] private CameraTransitionParameters canyonCameraTransitionParameters;
     [SerializeField] private float canyonSpeed;
     [SerializeField] private float canyonAccelerationTime;
     [SerializeField] private float canyonFinalDistance;
 
     [Header("6 - Boulders")]
     [SerializeField] private CameraParametersContainer bouldersCameraParameters;
+    [SerializeField] private CameraTransitionParameters bouldersCameraTransitionParameters;
     [SerializeField] private float bouldersSpeed;
     [SerializeField] private float bouldersAccelerationTime;
     [SerializeField] private float bouldersFinalDistance;
 
     [Header("7 - Cliff")]
     [SerializeField] private CameraParametersContainer cliffCameraParameters;
+    [SerializeField] private CameraTransitionParameters cliffCameraTransitionParameters;
     [SerializeField] private float cliffSpeed;
     [SerializeField] private float cliffAccelerationTime;
     [SerializeField] private float cliffFinalDistance;
@@ -124,6 +134,10 @@ public class TankController : MonoBehaviour
                     currentPhase = ProgressionPhase.Desert;
 
                     StartCoroutine(AccelerateTank(desertSpeed, desertAccelerationTime));
+
+                    cameraController.SetParameters(desertCameraParameters, desertCameraTransitionParameters);
+
+                    ActivateKnockoutTriggerGroup(ProgressionPhase.Desert);
                 }
             break;
 
@@ -132,6 +146,10 @@ public class TankController : MonoBehaviour
                     currentPhase = ProgressionPhase.Pursuit;
 
                     StartCoroutine(AccelerateTank(pursuitSpeed, pursuitAccelerationTime));
+
+                    cameraController.SetParameters(pursuitCameraParameters, pursuitCameraTransitionParameters);
+
+                    ActivateKnockoutTriggerGroup(ProgressionPhase.Pursuit);
                 }
             break;
 
@@ -140,6 +158,10 @@ public class TankController : MonoBehaviour
                     currentPhase = ProgressionPhase.Canyon;
 
                     StartCoroutine(AccelerateTank(canyonSpeed, canyonAccelerationTime));
+
+                    cameraController.SetParameters(canyonCameraParameters, canyonCameraTransitionParameters);
+
+                    ActivateKnockoutTriggerGroup(ProgressionPhase.Canyon);
                 }
             break;
 
@@ -148,6 +170,10 @@ public class TankController : MonoBehaviour
                     currentPhase = ProgressionPhase.Boulders;
 
                     StartCoroutine(AccelerateTank(bouldersSpeed, bouldersAccelerationTime));
+
+                    cameraController.SetParameters(bouldersCameraParameters, bouldersCameraTransitionParameters);
+
+                    ActivateKnockoutTriggerGroup(ProgressionPhase.Boulders);
                 }
             break;
 
@@ -156,12 +182,16 @@ public class TankController : MonoBehaviour
                     currentPhase = ProgressionPhase.Cliff;
 
                     StartCoroutine(AccelerateTank(cliffSpeed, cliffAccelerationTime));
+
+                    cameraController.SetParameters(cliffCameraParameters, cliffCameraTransitionParameters);
+
+                    ActivateKnockoutTriggerGroup(ProgressionPhase.Cliff);
                 }
             break;
 
             case ProgressionPhase.Cliff:
                 if(distanceCovered > cliffFinalDistance){
-                    
+                    // End game, freeze controls and let tank fall off cliff
                 }
             break;
         }
@@ -193,6 +223,7 @@ public class TankController : MonoBehaviour
         currentPhase = ProgressionPhase.Idle;
         cameraController.SetParameters(idleCameraParameters);
         SetTankSpeed(0);
+        ActivateKnockoutTriggerGroup(ProgressionPhase.Idle);
 
 
         tankAudioManager.SetAudioState(0);
@@ -203,8 +234,20 @@ public class TankController : MonoBehaviour
 
 
         currentPhase = ProgressionPhase.Bridge;
-        cameraController.SetParameters(bridgeCameraParameters);
+        cameraController.SetParameters(bridgeCameraParameters, bridgeCameraTransitionParameters);
+        ActivateKnockoutTriggerGroup(ProgressionPhase.Bridge);
 
         StartCoroutine(AccelerateTank(bridgeSpeed, bridgeAccelerationTime));
+    }
+
+
+    private void ActivateKnockoutTriggerGroup(ProgressionPhase phase){
+        // Activates the knockout trigger group for the given phase, and deactivates all other phases' groups
+
+        foreach(GameObject group in knockoutTriggerGroups){
+            group.SetActive(false);
+        }
+
+        knockoutTriggerGroups[(int)phase].SetActive(true);
     }
 }

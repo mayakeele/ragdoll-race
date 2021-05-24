@@ -28,22 +28,4 @@ public class CameraParametersContainer : MonoBehaviour
     public float springFrequency;
     public float springDamping;
 
-
-
-    public void SetCameraControllerParameters(CameraController cam){
-        cam.horizontalAngle = horizontalAngle;
-        cam.verticalAngle = verticalAngle;
-
-        cam.horizontalPaddingDistance = horizontalPaddingDistance;
-        cam.verticalPaddingDistance = verticalPaddingDistance;
-
-        cam.cameraFOV = cameraFOV;
-
-        cam.maxDistanceForward = maxDistanceForward;
-        cam.maxDistanceHorizontal = maxDistanceHorizontal;
-        cam.maxDistanceVertical = maxDistanceVertical;
-
-        cam.springFrequency = springFrequency;
-        cam.springDamping = springDamping;
-    }
 }
