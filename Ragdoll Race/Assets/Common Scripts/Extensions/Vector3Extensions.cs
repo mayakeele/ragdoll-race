@@ -116,4 +116,21 @@ public static class Vector3Extensions
             return false;
         }
     }
+
+
+    public static Vector3 ClampMagnitude(this Vector3 v, float min, float max){
+        // Returns a vector in the same direction as v, with its magnitude clamped between min and max
+
+        if(v.magnitude > max){ 
+           return v.normalized * max;
+        }
+
+        else if(v.magnitude < min){ 
+            return v.normalized * min; 
+        }
+
+        else{
+            return v;
+        }
+    }
 }

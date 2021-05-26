@@ -24,9 +24,9 @@ public class CameraController : MonoBehaviour
 
 
     [Header("Distance Constraints")]
-    public float maxDistanceForward;
-    public float maxDistanceHorizontal;
-    public float maxDistanceVertical;
+    public float targetBoundsForward;
+    public float targetBoundsHorizontal;
+    public float targetBoundsVertical;
 
 
     [Header("Spring Parameters")]
@@ -68,30 +68,34 @@ public class CameraController : MonoBehaviour
             List<Vector3> playerHeadPositions = playerFeetPositions.AddVector(0, playersManager.characterHeadHeight, 0);
 
 
-            List<Vector3> playerVolumeWorld = new List<Vector3>();
-            playerVolumeWorld.AddRange(playerFeetPositions);
-            playerVolumeWorld.AddRange(playerHeadPositions);
+            List<Vector3> playerTargetsWorld = new List<Vector3>();
+            playerTargetsWorld.AddRange(playerFeetPositions);
+            playerTargetsWorld.AddRange(playerHeadPositions);
 
-            List<Vector3> playerVolumeLocal = mainCamera.transform.InverseTransformPoints(playerVolumeWorld);
+            List<Vector3> playerTargetsLocal = transform.InverseTransformPoints(playerTargetsWorld);
 
 
-            // Find the bounding box surrounding the players
-            Vector3 maxBoundsLocal = playerVolumeLocal.MaxComponents();
-            Vector3 minBoundsLocal = playerVolumeLocal.MinComponents();
+            // Find the corners of a box surrounding the players in camera space, and constrain within the stage boundaries
+            Vector3 maxDimensionsLocal = playerTargetsLocal.MaxComponents();
+            Vector3 minDimensionsLocal = playerTargetsLocal.MinComponents();
+
+            ConstrainBoxDimensionsWithinBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
+
 
             // Find the local and world space center point of the players
-            Vector3 centerPointLocal = (maxBoundsLocal + minBoundsLocal) / 2;
+            Vector3 centerPointLocal = (maxDimensionsLocal + minDimensionsLocal) / 2;
             Vector3 centerPointWorld = mainCamera.transform.TransformPoint(centerPointLocal);
 
 
-            // Calculate the enclosing volumeand increase x to account for the characters' radii
-            Vector3 enclosingDimensions = (maxBoundsLocal - minBoundsLocal);
+            // Calculate the enclosing volume and increase x to account for the characters' radii
+            Vector3 enclosingDimensions = (maxDimensionsLocal - minDimensionsLocal);
             enclosingDimensions += new Vector3(playersManager.characterRadius * 2, 0, 0);
 
 
             // Frame the players within the camera's view
             float cameraFramingDistance = CalculateFramingDistance(mainCamera, enclosingDimensions, horizontalPaddingDistance, verticalPaddingDistance);
-            Vector3 targetCameraPosition = (-mainCamera.transform.forward * cameraFramingDistance) + centerPointWorld;
+            //float cameraFramingDistance = CalculateFramingDistance(mainCamera, enclosingDimensions, 0, 0);
+            Vector3 targetCameraPosition = (-transform.forward * cameraFramingDistance) + centerPointWorld;
 
 
             // Calculate spring forces on the camera
@@ -165,7 +169,37 @@ public class CameraController : MonoBehaviour
 
 
     private void ConstrainCameraWithinBounds(){
-        // Clamps the camera's position relative to the 
+        // Clamps the camera's position relative to the current anchor
+        Vector3 anchorPlaneNormal = -transform.forward;
+        
+        Vector3 cameraPositionRelative = transform.position - anchorTransform.position;
+
+        // Clamp the sideways direction
+    }
+
+    private void ConstrainBoxDimensionsWithinBounds(ref Vector3 maxDimensionsLocal, ref Vector3 minDimensionsLocal){
+        // Clamps the min and max dimensions of the box surrounding the player targets.
+        // Box min and max dimension points are relative to the camera
+
+        Vector3 anchorPositionLocal = transform.InverseTransformPoint(anchorTransform.position);
+
+        Vector3 maxDimensionsRelativeToAnchor = maxDimensionsLocal - anchorPositionLocal;
+        Vector3 minDimensionsRelativeToAnchor = minDimensionsLocal - anchorPositionLocal;
+
+
+        // Clamp horizontal direction
+        Vector3 maxHorizontalClamped = Vector3.Project(maxDimensionsRelativeToAnchor, Vector3.right).ClampMagnitude(0, targetBoundsHorizontal);
+        Vector3 minHorizontalClamped = Vector3.Project(minDimensionsRelativeToAnchor, Vector3.right).ClampMagnitude(0, targetBoundsHorizontal);
+
+        // Clamp target bounds in the vertical direction
+        Vector3 maxVerticalClamped = Vector3.Project(maxDimensionsRelativeToAnchor, Vector3.up).ClampMagnitude(0, targetBoundsVertical);
+        Vector3 minVerticalClamped = Vector3.Project(minDimensionsRelativeToAnchor, Vector3.up).ClampMagnitude(0, targetBoundsVertical);
+
+
+        // Update target box dimensions to match the clamped values
+        maxDimensionsLocal = anchorPositionLocal + maxHorizontalClamped + maxVerticalClamped;
+        minDimensionsLocal = anchorPositionLocal + minHorizontalClamped + minVerticalClamped;
+
     }
 
 
@@ -229,6 +263,7 @@ public class CameraController : MonoBehaviour
 
 
     public void SetParameters(CameraParametersContainer newParameters){
+        anchorTransform = newParameters.anchorTransform;
 
         SetLookAngles(newParameters.horizontalAngle, newParameters.verticalAngle);
         UpdateCameraDirection();
@@ -238,15 +273,17 @@ public class CameraController : MonoBehaviour
         horizontalPaddingDistance = newParameters.horizontalPaddingDistance;
         verticalPaddingDistance = newParameters.verticalPaddingDistance;
 
-        maxDistanceForward = newParameters.maxDistanceForward;
-        maxDistanceHorizontal = newParameters.maxDistanceHorizontal;
-        maxDistanceVertical = newParameters.maxDistanceVertical;
+        targetBoundsForward = newParameters.maxDistanceForward;
+        targetBoundsHorizontal = newParameters.maxDistanceHorizontal;
+        targetBoundsVertical = newParameters.maxDistanceVertical;
 
         springFrequency = newParameters.springFrequency;
         springDamping = newParameters.springDamping;
     }
 
     public void SetParameters(CameraParametersContainer newParameters, CameraTransitionParameters transitionParameters){
+
+        anchorTransform = newParameters.anchorTransform;
 
         StartCoroutine(TransitionRotation(
             newParameters.horizontalAngle, newParameters.verticalAngle, 
@@ -260,9 +297,9 @@ public class CameraController : MonoBehaviour
             transitionParameters.paddingTransitionCurve, transitionParameters.paddingTransitionTime));
 
 
-        maxDistanceForward = newParameters.maxDistanceForward;
-        maxDistanceHorizontal = newParameters.maxDistanceHorizontal;
-        maxDistanceVertical = newParameters.maxDistanceVertical;
+        targetBoundsForward = newParameters.maxDistanceForward;
+        targetBoundsHorizontal = newParameters.maxDistanceHorizontal;
+        targetBoundsVertical = newParameters.maxDistanceVertical;
 
 
         springFrequency = newParameters.springFrequency;
