@@ -19,7 +19,6 @@ public class CameraParametersContainer : MonoBehaviour
 
 
     [Header("Distance Constraints")]
-    public float maxDistanceForward;
     public float maxDistanceHorizontal;
     public float maxDistanceVertical;
 

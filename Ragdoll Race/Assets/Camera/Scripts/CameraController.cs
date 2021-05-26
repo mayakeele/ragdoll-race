@@ -24,7 +24,6 @@ public class CameraController : MonoBehaviour
 
 
     [Header("Distance Constraints")]
-    public float targetBoundsForward;
     public float targetBoundsHorizontal;
     public float targetBoundsVertical;
 
@@ -75,43 +74,34 @@ public class CameraController : MonoBehaviour
             List<Vector3> playerTargetsLocal = transform.InverseTransformPoints(playerTargetsWorld);
 
 
-            // Find the corners of a box surrounding the players in camera space, and constrain within the stage boundaries
-            Vector3 maxDimensionsLocal = playerTargetsLocal.MaxComponents();
-            Vector3 minDimensionsLocal = playerTargetsLocal.MinComponents();
+            // Find the corners of a box surrounding the players in camera space, add padding space
+            Vector3 maxDimensionsLocal = playerTargetsLocal.MaxComponents() + new Vector3(horizontalPaddingDistance, verticalPaddingDistance, 0);
+            Vector3 minDimensionsLocal = playerTargetsLocal.MinComponents() - new Vector3(horizontalPaddingDistance, verticalPaddingDistance, 0);
 
+
+            // Clamp the box enclosing the players to fit within the bounds
             ConstrainBoxDimensionsWithinBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
 
 
-            // Find the local and world space center point of the players
+            // Find the local and world space center point of the target box
             Vector3 centerPointLocal = (maxDimensionsLocal + minDimensionsLocal) / 2;
-            Vector3 centerPointWorld = mainCamera.transform.TransformPoint(centerPointLocal);
+            Vector3 centerPointWorld = transform.TransformPoint(centerPointLocal);
+            
 
-
-            // Calculate the enclosing volume and increase x to account for the characters' radii
+            // Calculate the enclosing volume and frame the players within the camera's view
             Vector3 enclosingDimensions = (maxDimensionsLocal - minDimensionsLocal);
-            enclosingDimensions += new Vector3(playersManager.characterRadius * 2, 0, 0);
-
-
-            // Frame the players within the camera's view
-            float cameraFramingDistance = CalculateFramingDistance(mainCamera, enclosingDimensions, horizontalPaddingDistance, verticalPaddingDistance);
-            //float cameraFramingDistance = CalculateFramingDistance(mainCamera, enclosingDimensions, 0, 0);
+            float cameraFramingDistance = CalculateFramingDistance(mainCamera, enclosingDimensions);
             Vector3 targetCameraPosition = (-transform.forward * cameraFramingDistance) + centerPointWorld;
 
 
-            // Calculate spring forces on the camera
-            Vector3 relativePosition = transform.position - targetCameraPosition;
+            // Calculate and apply spring forces on the camera
+            Vector3 relativePosition = rb.position - targetCameraPosition;
             Vector3 relativeVelocity = rb.velocity - playersManager.AverageVelocity(allPlayers);
             
             Vector3 springAcceleration = DampedSpring.GetDampedSpringAcceleration(relativePosition, relativeVelocity, springFrequency, springDamping);
             rb.AddForce(springAcceleration, ForceMode.Acceleration);
         }
    
-    }
-
-
-    void LateUpdate()
-    {
-        
     }
 
 
@@ -143,10 +133,10 @@ public class CameraController : MonoBehaviour
     }
 
 
-    private float CalculateFramingDistance(Camera camera, Vector3 boundingDimensions, float hPadding, float vPadding){
+    private float CalculateFramingDistance(Camera camera, Vector3 boundingDimensions){
         // Returns the ideal distance to place the camera FROM THE CENTROID to frame all players
 
-        Vector2 frameDimensions = new Vector2(boundingDimensions.x + hPadding, boundingDimensions.y + vPadding);
+        Vector2 frameDimensions = new Vector2(boundingDimensions.x, boundingDimensions.y);
         float dist;
 
         // Determine whether the constraining dimension is horizontal or vertical
@@ -273,7 +263,6 @@ public class CameraController : MonoBehaviour
         horizontalPaddingDistance = newParameters.horizontalPaddingDistance;
         verticalPaddingDistance = newParameters.verticalPaddingDistance;
 
-        targetBoundsForward = newParameters.maxDistanceForward;
         targetBoundsHorizontal = newParameters.maxDistanceHorizontal;
         targetBoundsVertical = newParameters.maxDistanceVertical;
 
@@ -297,7 +286,6 @@ public class CameraController : MonoBehaviour
             transitionParameters.paddingTransitionCurve, transitionParameters.paddingTransitionTime));
 
 
-        targetBoundsForward = newParameters.maxDistanceForward;
         targetBoundsHorizontal = newParameters.maxDistanceHorizontal;
         targetBoundsVertical = newParameters.maxDistanceVertical;
 
@@ -316,7 +304,7 @@ public class CameraController : MonoBehaviour
     }
     public void UpdateCameraDirection(){
         rb.MoveRotation(Quaternion.Euler(verticalAngle, horizontalAngle, 0));
-        //transform.rotation = Quaternion.Euler(verticalAngle, horizontalAngle, 0);
+        transform.rotation = Quaternion.Euler(verticalAngle, horizontalAngle, 0);
     }
 
     public void UpdateFOV(float FOV){
