@@ -79,8 +79,15 @@ public class CameraController : MonoBehaviour
             Vector3 minDimensionsLocal = playerTargetsLocal.MinComponents() - new Vector3(horizontalPaddingDistance, verticalPaddingDistance, 0);
 
 
-            // Clamp the box enclosing the players to fit within the bounds
-            ConstrainBoxDimensionsWithinBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
+            // Clamp the box enclosing the players to inside the bounds
+            ClampBoxDimensionsToBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
+
+            // Resize the player box to match the camera's aspect ratio
+            ResizeFrameToAspectRatio(ref maxDimensionsLocal, ref minDimensionsLocal, mainCamera.aspect);
+
+            // Shift the clamped, correct aspect ratio box to fit within the bounds
+            ShiftBoxInsideBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
+            
 
 
             // Find the local and world space center point of the target box
@@ -134,7 +141,7 @@ public class CameraController : MonoBehaviour
 
 
     private float CalculateFramingDistance(Camera camera, Vector3 boundingDimensions){
-        // Returns the ideal distance to place the camera FROM THE CENTROID to frame all players
+        // Returns the ideal distance to place the camera to frame all players, from the center of the box
 
         Vector2 frameDimensions = new Vector2(boundingDimensions.x, boundingDimensions.y);
         float dist;
@@ -158,16 +165,34 @@ public class CameraController : MonoBehaviour
     }
 
 
-    private void ConstrainCameraWithinBounds(){
-        // Clamps the camera's position relative to the current anchor
-        Vector3 anchorPlaneNormal = -transform.forward;
-        
-        Vector3 cameraPositionRelative = transform.position - anchorTransform.position;
+    private void ResizeFrameToAspectRatio(ref Vector3 maxDimensionsLocal, ref Vector3 minDimensionsLocal, float aspectRatio){
+        // Resizes the given box to match the camera's aspect ratio, keeping the old volume inside of the new dimensions
+        // If the new frame is outside of the bounding area, shift it back inside
 
-        // Clamp the sideways direction
+        Vector3 boxSize = maxDimensionsLocal - minDimensionsLocal;
+        Vector3 boxCenter = (maxDimensionsLocal + minDimensionsLocal) / 2;
+
+        float currAspect = boxSize.x / boxSize.y;
+
+
+        if (currAspect >= aspectRatio){
+            // Current box is not tall enough; stretch vertically, constant horizontal
+            float newHeight = boxSize.x / aspectRatio;
+            boxSize = new Vector3(boxSize.x, newHeight, boxSize.z);
+        }
+        else{
+            // Current box is not wide enough; stretch horizontally, constant vertical
+            float newWidth = boxSize.y * aspectRatio;
+            boxSize = new Vector3(newWidth, boxSize.y, boxSize.z);
+        }
+
+        // Set referenced max and min corners
+        maxDimensionsLocal = boxCenter + (boxSize / 2);
+        minDimensionsLocal = boxCenter - (boxSize / 2);
     }
 
-    private void ConstrainBoxDimensionsWithinBounds(ref Vector3 maxDimensionsLocal, ref Vector3 minDimensionsLocal){
+
+    private void ClampBoxDimensionsToBounds(ref Vector3 maxDimensionsLocal, ref Vector3 minDimensionsLocal){
         // Clamps the min and max dimensions of the box surrounding the player targets.
         // Box min and max dimension points are relative to the camera
 
@@ -189,7 +214,30 @@ public class CameraController : MonoBehaviour
         // Update target box dimensions to match the clamped values
         maxDimensionsLocal = anchorPositionLocal + maxHorizontalClamped + maxVerticalClamped;
         minDimensionsLocal = anchorPositionLocal + minHorizontalClamped + minVerticalClamped;
+    }
 
+    private void ShiftBoxInsideBounds(ref Vector3 maxDimensionsLocal, ref Vector3 minDimensionsLocal){
+        // Clamps the min and max dimensions of the box surrounding the player targets.
+        // Box min and max dimension points are relative to the camera
+
+        Vector3 anchorPositionLocal = transform.InverseTransformPoint(anchorTransform.position);
+
+        Vector3 boxCenterRelativeToAnchor = ((maxDimensionsLocal + minDimensionsLocal) / 2) - anchorPositionLocal;
+        Vector3 boxSize = maxDimensionsLocal - minDimensionsLocal;
+
+
+        // Clamp the center of the box to fit the whole box within the bounds
+        float maxHorizontalDist = targetBoundsHorizontal - (boxSize.x/2);
+        float maxVerticalDist = targetBoundsVertical - (boxSize.y/2);
+
+        float boxCenterHorizontalClamped = Mathf.Clamp(boxCenterRelativeToAnchor.x, -maxHorizontalDist, maxHorizontalDist);
+        float boxCenterVerticalClamped = Mathf.Clamp(boxCenterRelativeToAnchor.y, -maxVerticalDist, maxVerticalDist);
+
+        boxCenterRelativeToAnchor = new Vector3(boxCenterHorizontalClamped, boxCenterVerticalClamped, boxCenterRelativeToAnchor.z);
+
+        // Update target box dimensions to match the clamped values
+        maxDimensionsLocal = anchorPositionLocal + boxCenterRelativeToAnchor + (boxSize/2);
+        minDimensionsLocal = anchorPositionLocal + boxCenterRelativeToAnchor - (boxSize/2);
     }
 
 
