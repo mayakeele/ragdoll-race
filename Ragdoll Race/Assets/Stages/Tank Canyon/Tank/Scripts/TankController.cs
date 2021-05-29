@@ -30,47 +30,47 @@ public class TankController : MonoBehaviour
     [Header("Phase Movement Properties")]
     [Space]
 
-    [Header("1 - Idle")]
+    [Header("0 - Idle")]
     [SerializeField] private CameraParametersContainer idleCameraParameters;
     [SerializeField] private float idleOffTime;
     [SerializeField] private float idleOnTime;
     
-    [Header("2 - Bridge")]
+    [Header("1 - Bridge")]
     [SerializeField] private CameraParametersContainer bridgeCameraParameters;
     [SerializeField] private CameraTransitionParameters bridgeCameraTransitionParameters;
     [SerializeField] private float bridgeSpeed;
     [SerializeField] private float bridgeAccelerationTime;
     [SerializeField] private float bridgeFinalDistance;
 
-    [Header("3 - Desert")]
+    [Header("2 - Desert")]
     [SerializeField] private CameraParametersContainer desertCameraParameters;
     [SerializeField] private CameraTransitionParameters desertCameraTransitionParameters;
     [SerializeField] private float desertSpeed;
     [SerializeField] private float desertAccelerationTime;
     [SerializeField] private float desertFinalDistance;
 
-    [Header("4 - Pursuit")]
+    [Header("3 - Pursuit")]
     [SerializeField] private CameraParametersContainer pursuitCameraParameters;
     [SerializeField] private CameraTransitionParameters pursuitCameraTransitionParameters;
     [SerializeField] private float pursuitSpeed;
     [SerializeField] private float pursuitAccelerationTime;
     [SerializeField] private float pursuitFinalDistance;
 
-    [Header("5 - Canyon")]
+    [Header("4 - Canyon")]
     [SerializeField] private CameraParametersContainer canyonCameraParameters;
     [SerializeField] private CameraTransitionParameters canyonCameraTransitionParameters;
     [SerializeField] private float canyonSpeed;
     [SerializeField] private float canyonAccelerationTime;
     [SerializeField] private float canyonFinalDistance;
 
-    [Header("6 - Boulders")]
+    [Header("5 - Boulders")]
     [SerializeField] private CameraParametersContainer bouldersCameraParameters;
     [SerializeField] private CameraTransitionParameters bouldersCameraTransitionParameters;
     [SerializeField] private float bouldersSpeed;
     [SerializeField] private float bouldersAccelerationTime;
     [SerializeField] private float bouldersFinalDistance;
 
-    [Header("7 - Cliff")]
+    [Header("6 - Cliff")]
     [SerializeField] private CameraParametersContainer cliffCameraParameters;
     [SerializeField] private CameraTransitionParameters cliffCameraTransitionParameters;
     [SerializeField] private float cliffSpeed;
@@ -206,7 +206,7 @@ public class TankController : MonoBehaviour
 
         float currTime = 0;
         while(currTime < timePeriod){
-            SetTankSpeed(currTime.MapClamped(0, timePeriod, initialSpeed, finalSpeed));
+            SetTankSpeed(currTime.Map(0, timePeriod, initialSpeed, finalSpeed));
 
             currTime += Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();

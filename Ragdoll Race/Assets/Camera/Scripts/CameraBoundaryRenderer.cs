@@ -9,7 +9,8 @@ public class CameraBoundaryRenderer : MonoBehaviour
     public CameraParametersContainer parametersContainer;
     public CameraController cameraController;
 
-    public bool setCameraParameters; //"run" or "generate" for example
+    public bool setCameraParameters;
+    public bool showGizmo;
  
     private void OnValidate()
     {
@@ -28,14 +29,14 @@ public class CameraBoundaryRenderer : MonoBehaviour
     }
 
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         
-        if(parametersContainer){
+        if(showGizmo && parametersContainer){
 
             Transform anchor = parametersContainer.anchorTransform;
 
-            Matrix4x4 rotationMatrix = Matrix4x4.TRS(anchor.position, anchor.rotation, anchor.lossyScale);
+            Matrix4x4 rotationMatrix = Matrix4x4.TRS(anchor.position, cameraController.transform.rotation, Vector3.one);
             Gizmos.matrix = rotationMatrix; 
 
             float width = parametersContainer.maxDistanceHorizontal * 2;

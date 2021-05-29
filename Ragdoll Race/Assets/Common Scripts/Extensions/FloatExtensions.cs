@@ -34,7 +34,7 @@ public static class FloatExtensions
         float gradient = value.Gradient(originalStart, originalEnd);
         float newValue = newStart + (gradient * (newEnd - newStart));
 
-        newValue = Mathf.Clamp(newValue, newStart, newEnd);
+        newValue = newEnd > newStart ? Mathf.Clamp(newValue, newStart, newEnd) : Mathf.Clamp(newValue, newEnd, newStart);
         
         return newValue;
     }
