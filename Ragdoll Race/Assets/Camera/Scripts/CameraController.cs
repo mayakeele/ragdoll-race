@@ -50,11 +50,6 @@ public class CameraController : MonoBehaviour
 
     // Main Functions
 
-    void Start()
-    {
-        cameraFOV = mainCamera.fieldOfView;
-    }
-
 
     void FixedUpdate(){
 
@@ -98,7 +93,7 @@ public class CameraController : MonoBehaviour
             // Calculate the enclosing volume and frame the players within the camera's view
             Vector3 enclosingDimensions = (maxDimensionsLocal - minDimensionsLocal);
             float cameraFramingDistance = CalculateFramingDistance(mainCamera, enclosingDimensions);
-            Vector3 targetCameraPosition = (-transform.forward * cameraFramingDistance) + centerPointWorld;
+            Vector3 targetCameraPosition = centerPointWorld + (-transform.forward * cameraFramingDistance);
 
 
             // Calculate and apply spring forces on the camera
@@ -117,27 +112,13 @@ public class CameraController : MonoBehaviour
 
     public Vector3 GetCameraForwardDirection(){
         // Calculates the direction the camera is facing, projected onto the horizontal plane
-        Vector3 camForwardDir = mainCamera.transform.forward.ProjectHorizontal().normalized;
+        Vector3 camForwardDir = transform.forward.ProjectHorizontal().normalized;
         return camForwardDir;
     }
 
 
 
     // Private Functions
-
-    private Vector2 AltitudeAzimuthBetween(Vector3 startPos, Vector3 endPos, Vector3 perspectivePos){
-        // Returns the horizontal and vertical (azimuth and altitude) angle between two vectors when seen from a perspective postion
-
-        Vector3 startDir = (startPos - perspectivePos).normalized;
-        Vector3 endDir = (endPos = perspectivePos).normalized;
-
-        Vector3 middlePlaneNormal = startPos - endPos;
-
-        float hAngle = Vector3.Angle(startDir.ProjectHorizontal(), endDir.ProjectHorizontal());    
-        float vAngle = Vector3.Angle(Vector3.ProjectOnPlane(startDir, middlePlaneNormal), Vector3.ProjectOnPlane(endDir, middlePlaneNormal));
-        
-        return new Vector2(hAngle, vAngle);
-    }
 
 
     private float CalculateFramingDistance(Camera camera, Vector3 boundingDimensions){
@@ -306,7 +287,7 @@ public class CameraController : MonoBehaviour
         SetLookAngles(newParameters.horizontalAngle, newParameters.verticalAngle);
         UpdateCameraDirection();
 
-        mainCamera.fieldOfView = newParameters.cameraFOV;
+        UpdateFOV(newParameters.cameraFOV);
 
         horizontalPaddingDistance = newParameters.horizontalPaddingDistance;
         verticalPaddingDistance = newParameters.verticalPaddingDistance;
@@ -328,7 +309,6 @@ public class CameraController : MonoBehaviour
 
 
         StartCoroutine(TransitionFOV(newParameters.cameraFOV, transitionParameters.fovTransitionCurve, transitionParameters.fovTransitionTime));
-
 
         StartCoroutine(TransitionPadding(newParameters.horizontalPaddingDistance, newParameters.verticalPaddingDistance, 
             transitionParameters.paddingTransitionCurve, transitionParameters.paddingTransitionTime));
@@ -394,13 +374,14 @@ public class CameraController : MonoBehaviour
 
         float currTime = 0;
         while(currTime < transitionTime){
-            currTime += Time.deltaTime;
+            currTime += Time.fixedDeltaTime;
 
             float gradient = transitionCurve.Evaluate(currTime / transitionTime);
+            float currFOV = gradient.Map(0, 1, initialFOV, finalFOV);
 
-            UpdateFOV(gradient.Map(0, 1, initialFOV, finalFOV));
+            UpdateFOV(currFOV);
 
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForFixedUpdate();
         }
 
         UpdateFOV(finalFOV);

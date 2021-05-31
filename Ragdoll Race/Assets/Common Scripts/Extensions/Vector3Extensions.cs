@@ -133,4 +133,18 @@ public static class Vector3Extensions
             return v;
         }
     }
+
+    public static Vector2 AltitudeAzimuthBetween(Vector3 startPos, Vector3 endPos, Vector3 perspectivePos){
+        // Returns the horizontal and vertical (azimuth and altitude) angle between two vectors when seen from a perspective postion
+
+        Vector3 startDir = (startPos - perspectivePos).normalized;
+        Vector3 endDir = (endPos = perspectivePos).normalized;
+
+        Vector3 middlePlaneNormal = startPos - endPos;
+
+        float hAngle = Vector3.Angle(startDir.ProjectHorizontal(), endDir.ProjectHorizontal());    
+        float vAngle = Vector3.Angle(Vector3.ProjectOnPlane(startDir, middlePlaneNormal), Vector3.ProjectOnPlane(endDir, middlePlaneNormal));
+        
+        return new Vector2(hAngle, vAngle);
+    }
 }

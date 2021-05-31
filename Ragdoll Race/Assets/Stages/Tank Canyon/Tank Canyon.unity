@@ -644,7 +644,7 @@ MonoBehaviour:
   cameraFOV: 38
   maxDistanceHorizontal: 9.8
   maxDistanceVertical: 4.13
-  springFrequency: 10
+  springFrequency: 14
   springDamping: 1.5
 --- !u!114 &130957502
 MonoBehaviour:
@@ -2060,7 +2060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraController: {fileID: 1144723278}
   allPlayers: []
-  characterHeadHeight: 1.2
+  characterHeadHeight: 1.3
   characterPelvisHeight: 0.45
   characterRadius: 0.5
   spawnTransform: {fileID: 501026636}
@@ -2847,11 +2847,11 @@ MonoBehaviour:
   horizontalAngle: -40
   verticalAngle: 35
   horizontalPaddingDistance: 2.5
-  verticalPaddingDistance: 2
-  cameraFOV: 35
+  verticalPaddingDistance: 2.5
+  cameraFOV: 30
   maxDistanceHorizontal: 16.38
   maxDistanceVertical: 10.67
-  springFrequency: 10
+  springFrequency: 14
   springDamping: 1.5
 --- !u!114 &969627868
 MonoBehaviour:
@@ -4062,7 +4062,7 @@ MonoBehaviour:
   cameraFOV: 40
   maxDistanceHorizontal: 8.59
   maxDistanceVertical: 5
-  springFrequency: 10
+  springFrequency: 14
   springDamping: 1.5
 --- !u!114 &1328466832
 MonoBehaviour:
@@ -5938,11 +5938,11 @@ MonoBehaviour:
   horizontalAngle: -20
   verticalAngle: 42.7
   horizontalPaddingDistance: 2.5
-  verticalPaddingDistance: 1.5
-  cameraFOV: 38
+  verticalPaddingDistance: 2.5
+  cameraFOV: 40
   maxDistanceHorizontal: 9.8
   maxDistanceVertical: 5.9
-  springFrequency: 10
+  springFrequency: 14
   springDamping: 1.5
 --- !u!114 &1861176675
 MonoBehaviour:
@@ -6954,10 +6954,10 @@ MonoBehaviour:
   verticalAngle: 40
   horizontalPaddingDistance: 3
   verticalPaddingDistance: 2
-  cameraFOV: 38
+  cameraFOV: 36
   maxDistanceHorizontal: 8.3
   maxDistanceVertical: 6.11
-  springFrequency: 10
+  springFrequency: 14
   springDamping: 1.5
 --- !u!114 &2084218583
 MonoBehaviour:

@@ -125,10 +125,6 @@ public class TankController : MonoBehaviour
         
         switch(currentPhase){
 
-            case ProgressionPhase.Idle:
-
-            break;
-
             case ProgressionPhase.Bridge:
                 if(distanceCovered > bridgeFinalDistance){
                     currentPhase = ProgressionPhase.Desert;
