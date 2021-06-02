@@ -15,11 +15,11 @@ D:/Programming/Unity Projects/ragdoll-race/Ragdoll Race
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54331
+60646
 Successfully changed project path to: D:/Programming/Unity Projects/ragdoll-race/Ragdoll Race
 D:/Programming/Unity Projects/ragdoll-race/Ragdoll Race
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 102.84 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 46.89 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.7f1 (c53830e277f1)
 [Subsystems] Discovering subsystems at path D:/Unity Installs/2020.2.7f1/Editor/Data/Resources/UnitySubsystems
@@ -35,19 +35,335 @@ Initialize mono
 Mono path[0] = 'D:/Unity Installs/2020.2.7f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity Installs/2020.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity Installs/2020.2.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56648
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56724
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity Installs/2020.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.038467 seconds.
+Registered in 0.001011 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 50.78 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 47.75 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  8.532 seconds
+- Completed reload, in  0.860 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.043704 seconds.
+Registered in 0.001032 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 46.13 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.911 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 1.44 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2769 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 138.8 MB.
+System memory in use after: 137.0 MB.
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 3203.
+Total: 7.349500 ms (FindLiveObjects: 0.863100 ms CreateObjectMapping: 0.420000 ms MarkObjects: 4.031800 ms  DeleteObjects: 2.031700 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Stages/Monoplane/Environment/Ocean
+  artifactKey: Guid(82e7dce7b2a0bbc458224c059d48a1d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Environment/Ocean using Guid(82e7dce7b2a0bbc458224c059d48a1d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a76865176a07eb2b9fdc2aac68919d10') in 0.038182 seconds
+  Import took 0.112658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Stages/Monoplane/Environment
+  artifactKey: Guid(e46ff10f7b4672c43bab99e81ee191a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Environment using Guid(e46ff10f7b4672c43bab99e81ee191a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cef503cf450d1c64797efdd2b20223e') in 0.021222 seconds
+  Import took 0.088578 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.579501 seconds.
+  path: Assets/Stages/Monoplane/Environment/Ocean/Materials
+  artifactKey: Guid(30719b4fac3c5204da10d2b38daa1c14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Environment/Ocean/Materials using Guid(30719b4fac3c5204da10d2b38daa1c14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c8d3f59f1ccd0b8cb0b2e862256a376') in 0.007117 seconds
+  Import took 0.043535 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.007903 seconds.
+  path: Assets/Stages/Monoplane/Environment/Ocean/drive-download-20210601T220053Z-001.zip
+  artifactKey: Guid(e47fdc62bb688394ba326ac485580a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Environment/Ocean/drive-download-20210601T220053Z-001.zip using Guid(e47fdc62bb688394ba326ac485580a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d7b18cac66a1de3811a3ca2d4db03e1') in 0.035860 seconds
+  Import took 0.040325 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.739598 seconds.
+  path: Assets/Stages/Monoplane/Environment/Ocean/Materials/Material_604.png
+  artifactKey: Guid(3bfb629e70874c5498dd0acf4a2b8fe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Environment/Ocean/Materials/Material_604.png using Guid(3bfb629e70874c5498dd0acf4a2b8fe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83154a39727b204552ccc5ee03c00b7e') in 0.300752 seconds
+  Import took 0.338906 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000355 seconds.
+  path: Assets/Stages/Monoplane/Environment/Ocean/Materials/Water_002_NORM.jpg
+  artifactKey: Guid(76711607a9278b2479295d8df50f94d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Environment/Ocean/Materials/Water_002_NORM.jpg using Guid(76711607a9278b2479295d8df50f94d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e77899b31bc038abc95c30e3373ab9b') in 0.030695 seconds
+  Import took 0.060088 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000165 seconds.
+  path: Assets/Stages/Monoplane/Environment/Ocean/Materials/Water_002_OCC.jpg
+  artifactKey: Guid(53431a30dce23214eb8789444a271a18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Environment/Ocean/Materials/Water_002_OCC.jpg using Guid(53431a30dce23214eb8789444a271a18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b07c225583aa3cb570fd8f2b9fcfa99') in 0.011960 seconds
+  Import took 0.052078 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000411 seconds.
+  path: Assets/Stages/Monoplane/Environment/Ocean/Materials/Water_002_ROUGH.jpg
+  artifactKey: Guid(b760669cff4742e47b5ab84856f8078b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Environment/Ocean/Materials/Water_002_ROUGH.jpg using Guid(b760669cff4742e47b5ab84856f8078b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52f83204d6282a85f78a56c88517e661') in 0.012885 seconds
+  Import took 0.068729 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000621 seconds.
+  path: Assets/Stages/Monoplane/Environment/Ocean/Materials/Water_002_DISP.png
+  artifactKey: Guid(d062483307d78c249b61d5eb26f88abf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Environment/Ocean/Materials/Water_002_DISP.png using Guid(d062483307d78c249b61d5eb26f88abf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55a37bef9c05a1abb09ac18a3f1f1051') in 0.018086 seconds
+  Import took 0.082268 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000336 seconds.
+  path: Assets/Stages/Monoplane/Environment/Ocean/Materials/Water_002_COLOR.jpg
+  artifactKey: Guid(7b5dadab1ad009040a0fc9be2be23c67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Environment/Ocean/Materials/Water_002_COLOR.jpg using Guid(7b5dadab1ad009040a0fc9be2be23c67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49ec34f5425f3be56514144b97b7aca1') in 0.010481 seconds
+  Import took 0.034811 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.447893 seconds.
+  path: Assets/Stages/Monoplane/Environment/Ocean/Materials/OceanWater.mat
+  artifactKey: Guid(1e4427dec7285464cb716851cb59ed3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Environment/Ocean/Materials/OceanWater.mat using Guid(1e4427dec7285464cb716851cb59ed3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dec36e788ae054fb22b56980fb7d8a55') in 0.312103 seconds
+  Import took 0.364069 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 65.970616 seconds.
+  path: Assets/Stages/Monoplane/Environment/Ocean/Materials/Water_002_NORM.jpg
+  artifactKey: Guid(76711607a9278b2479295d8df50f94d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Environment/Ocean/Materials/Water_002_NORM.jpg using Guid(76711607a9278b2479295d8df50f94d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e32d0bec721d01b8ab03bdcfaa82f7e') in 0.015098 seconds
+  Import took 0.077798 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.588677 seconds.
+  path: Assets/Stages/Monoplane/Environment/Ocean/Materials/OceanWater.mat
+  artifactKey: Guid(1e4427dec7285464cb716851cb59ed3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Environment/Ocean/Materials/OceanWater.mat using Guid(1e4427dec7285464cb716851cb59ed3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dee2435a903efe82134b6b69bc373e9') in 0.033558 seconds
+  Import took 0.063300 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 555.254627 seconds.
+  path: Assets/Stages/Monoplane/Environment/Ocean/Materials/OceanWater.mat
+  artifactKey: Guid(1e4427dec7285464cb716851cb59ed3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Environment/Ocean/Materials/OceanWater.mat using Guid(1e4427dec7285464cb716851cb59ed3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca8b1c89858dc6dde81fd45ac113a108') in 0.021238 seconds
+  Import took 0.030510 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 330.206450 seconds.
+  path: Assets/Stages/Monoplane/Plane/Airplane Container.prefab
+  artifactKey: Guid(7277c556fe0a6a34ab777699eab7fbfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Plane/Airplane Container.prefab using Guid(7277c556fe0a6a34ab777699eab7fbfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9545220e3e7de6dccd53bad49e7f5e8') in 0.235211 seconds
+  Import took 0.277455 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004652 seconds.
+  path: Assets/Stages/Monoplane/Plane/Airplane Container.prefab
+  artifactKey: Guid(7277c556fe0a6a34ab777699eab7fbfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Plane/Airplane Container.prefab using Guid(7277c556fe0a6a34ab777699eab7fbfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9545220e3e7de6dccd53bad49e7f5e8') in 0.011240 seconds
+  Import took 0.016409 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.762036 seconds.
+  path: Assets/Stages/Monoplane/Plane/Airplane Container.prefab
+  artifactKey: Guid(7277c556fe0a6a34ab777699eab7fbfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Plane/Airplane Container.prefab using Guid(7277c556fe0a6a34ab777699eab7fbfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15fd392f9cd88e8759548a0360a7d255') in 0.013075 seconds
+  Import took 0.048067 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.780327 seconds.
+  path: Assets/Stages/Monoplane/Plane/Airplane Container.prefab
+  artifactKey: Guid(7277c556fe0a6a34ab777699eab7fbfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Plane/Airplane Container.prefab using Guid(7277c556fe0a6a34ab777699eab7fbfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59bb0f08475bf52e0e850ee5d94f1a3b') in 0.017590 seconds
+  Import took 0.060201 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000996 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.939 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2677 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 140.1 MB.
+System memory in use after: 138.3 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 3289.
+Total: 10.997200 ms (FindLiveObjects: 0.689000 ms CreateObjectMapping: 0.429500 ms MarkObjects: 5.405200 ms  DeleteObjects: 4.470700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001067 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.891 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2677 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 140.1 MB.
+System memory in use after: 138.3 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 3292.
+Total: 4.243300 ms (FindLiveObjects: 0.321400 ms CreateObjectMapping: 0.129800 ms MarkObjects: 1.949600 ms  DeleteObjects: 1.841600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001023 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.895 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2677 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 140.1 MB.
+System memory in use after: 138.3 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 3295.
+Total: 3.795200 ms (FindLiveObjects: 0.320200 ms CreateObjectMapping: 0.146900 ms MarkObjects: 2.170500 ms  DeleteObjects: 1.156900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 2677.115324 seconds.
+  path: Assets/Stages/Monoplane/Plane/Scripts/AirplanePropeller.cs
+  artifactKey: Guid(7466bbc0399375641bbc4427fe9bf7ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Plane/Scripts/AirplanePropeller.cs using Guid(7466bbc0399375641bbc4427fe9bf7ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4de81cb481e9dc045102a18c50149037') in 0.019902 seconds
+  Import took 0.079842 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.991272 seconds.
+  path: Assets/Stages/Monoplane/Plane/Scripts/AirplaneStageManager.cs
+  artifactKey: Guid(6560c61f5a46c9440bec42b7c71c1f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Plane/Scripts/AirplaneStageManager.cs using Guid(6560c61f5a46c9440bec42b7c71c1f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9095c54509c04b8763d0675307a8d7d') in 0.006294 seconds
+  Import took 0.052098 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001037 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.868 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.42 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2678 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 140.2 MB.
+System memory in use after: 138.4 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 3299.
+Total: 3.279900 ms (FindLiveObjects: 0.311000 ms CreateObjectMapping: 0.150600 ms MarkObjects: 1.717400 ms  DeleteObjects: 1.100200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 2250.351356 seconds.
+  path: Assets/Stages/Monoplane/Plane/Scripts/AirplaneStageManager.cs
+  artifactKey: Guid(6560c61f5a46c9440bec42b7c71c1f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Plane/Scripts/AirplaneStageManager.cs using Guid(6560c61f5a46c9440bec42b7c71c1f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ea6949659fa976a8caa62447eea5ac4') in 0.007819 seconds
+  Import took 0.030850 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006516 seconds.
+  path: Assets/Stages/Monoplane/Plane/Scripts/AirplaneStageManager.cs
+  artifactKey: Guid(6560c61f5a46c9440bec42b7c71c1f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Monoplane/Plane/Scripts/AirplaneStageManager.cs using Guid(6560c61f5a46c9440bec42b7c71c1f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ea6949659fa976a8caa62447eea5ac4') in 0.002452 seconds
+  Import took 0.007128 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.754401 seconds.
+  path: Assets/Common Scripts/Extensions/MaterialExtensions.cs
+  artifactKey: Guid(29595251891c92d4a8f71000d6cae2b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Common Scripts/Extensions/MaterialExtensions.cs using Guid(29595251891c92d4a8f71000d6cae2b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c962899eed2246a538a62ede4f25d623') in 0.015273 seconds
+  Import took 0.059810 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2997.657062 seconds.
+  path: Assets/Common Scripts/Extensions/MaterialExtensions.cs
+  artifactKey: Guid(29595251891c92d4a8f71000d6cae2b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Common Scripts/Extensions/MaterialExtensions.cs using Guid(29595251891c92d4a8f71000d6cae2b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '393a785d632307cea8c19056b57aa9b7') in 0.028888 seconds
+  Import took 0.106449 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -23,10 +23,7 @@ public class TreadsManager : MonoBehaviour
 
     void Update()
     {
-        float deltaOffset = (relativeTreadSpeed / totalTreadLength) * Time.deltaTime * treadMaterial.mainTextureScale.y;
-        float newOffset = treadMaterial.mainTextureOffset.y + deltaOffset;
-        
-        treadMaterial.mainTextureOffset = new Vector2(0, newOffset % 1);
+        treadMaterial.ScrollTexture(0, relativeTreadSpeed / totalTreadLength, Time.deltaTime);
     }
 
     

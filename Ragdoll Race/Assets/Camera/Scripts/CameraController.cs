@@ -7,8 +7,8 @@ public class CameraController : MonoBehaviour
 
     [Header("Component References")]
     public PlayersManager playersManager;
-    public Camera mainCamera;
-    public Rigidbody rb;
+    [HideInInspector] public Camera mainCamera;
+    [HideInInspector] public Rigidbody rb;
     public Transform anchorTransform;
     
 
@@ -50,6 +50,11 @@ public class CameraController : MonoBehaviour
 
     // Main Functions
 
+    private void Awake()
+    {
+        mainCamera = GetComponentInChildren<Camera>();
+        rb = GetComponent<Rigidbody>();
+    }
 
     void FixedUpdate(){
 

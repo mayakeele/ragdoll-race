@@ -35,4 +35,15 @@ public static class ListExtensions
         }
     }
 
+
+    public static void ActivateOneDeactivateOthers(this List<GameObject> objectList, int activeIndex){
+        // Activates the object at the specified index, and deactivates all other objects in the list
+
+        foreach(GameObject otherObject in objectList){
+            otherObject.SetActive(false);
+        }
+
+        objectList[activeIndex].SetActive(true);
+    }
+
 }

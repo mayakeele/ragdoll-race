@@ -3409,10 +3409,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1374290141311447390, guid: 949766e47c81ef04581ebbf33d24e5dd, type: 3}
-      propertyPath: field of view
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 1374290142317272420, guid: 949766e47c81ef04581ebbf33d24e5dd, type: 3}
       propertyPath: m_Name
       value: Camera Controller
@@ -3462,10 +3458,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1374290142317272442, guid: 949766e47c81ef04581ebbf33d24e5dd, type: 3}
-      propertyPath: verticalAngle
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374290142317272442, guid: 949766e47c81ef04581ebbf33d24e5dd, type: 3}
       propertyPath: playersManager
       value: 
       objectReference: {fileID: 575556899}
@@ -3473,34 +3465,6 @@ PrefabInstance:
       propertyPath: anchorTransform
       value: 
       objectReference: {fileID: 407625693}
-    - target: {fileID: 1374290142317272442, guid: 949766e47c81ef04581ebbf33d24e5dd, type: 3}
-      propertyPath: springFrequency
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374290142317272442, guid: 949766e47c81ef04581ebbf33d24e5dd, type: 3}
-      propertyPath: targetBoundsForward
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374290142317272442, guid: 949766e47c81ef04581ebbf33d24e5dd, type: 3}
-      propertyPath: targetBoundsVertical
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374290142317272442, guid: 949766e47c81ef04581ebbf33d24e5dd, type: 3}
-      propertyPath: targetBoundsHorizontal
-      value: 8.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374290142317272442, guid: 949766e47c81ef04581ebbf33d24e5dd, type: 3}
-      propertyPath: verticalPaddingDistance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374290142317272442, guid: 949766e47c81ef04581ebbf33d24e5dd, type: 3}
-      propertyPath: horizontalPaddingDistance
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374290142317272443, guid: 949766e47c81ef04581ebbf33d24e5dd, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 949766e47c81ef04581ebbf33d24e5dd, type: 3}
 --- !u!114 &1144723278 stripped

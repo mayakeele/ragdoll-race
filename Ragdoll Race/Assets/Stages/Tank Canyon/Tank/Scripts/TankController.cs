@@ -133,7 +133,7 @@ public class TankController : MonoBehaviour
 
                     cameraController.SetParameters(desertCameraParameters, desertCameraTransitionParameters);
 
-                    ActivateKnockoutTriggerGroup(ProgressionPhase.Desert);
+                    knockoutTriggerGroups.ActivateOneDeactivateOthers((int)ProgressionPhase.Desert);
                 }
             break;
 
@@ -145,7 +145,7 @@ public class TankController : MonoBehaviour
 
                     cameraController.SetParameters(pursuitCameraParameters, pursuitCameraTransitionParameters);
 
-                    ActivateKnockoutTriggerGroup(ProgressionPhase.Pursuit);
+                    knockoutTriggerGroups.ActivateOneDeactivateOthers((int)ProgressionPhase.Pursuit);
                 }
             break;
 
@@ -157,7 +157,7 @@ public class TankController : MonoBehaviour
 
                     cameraController.SetParameters(canyonCameraParameters, canyonCameraTransitionParameters);
 
-                    ActivateKnockoutTriggerGroup(ProgressionPhase.Canyon);
+                    knockoutTriggerGroups.ActivateOneDeactivateOthers((int)ProgressionPhase.Canyon);
                 }
             break;
 
@@ -169,7 +169,7 @@ public class TankController : MonoBehaviour
 
                     cameraController.SetParameters(bouldersCameraParameters, bouldersCameraTransitionParameters);
 
-                    ActivateKnockoutTriggerGroup(ProgressionPhase.Boulders);
+                    knockoutTriggerGroups.ActivateOneDeactivateOthers((int)ProgressionPhase.Boulders);
                 }
             break;
 
@@ -181,7 +181,7 @@ public class TankController : MonoBehaviour
 
                     cameraController.SetParameters(cliffCameraParameters, cliffCameraTransitionParameters);
 
-                    ActivateKnockoutTriggerGroup(ProgressionPhase.Cliff);
+                    knockoutTriggerGroups.ActivateOneDeactivateOthers((int)ProgressionPhase.Cliff);
                 }
             break;
 
@@ -219,7 +219,7 @@ public class TankController : MonoBehaviour
         currentPhase = ProgressionPhase.Idle;
         cameraController.SetParameters(idleCameraParameters);
         SetTankSpeed(0);
-        ActivateKnockoutTriggerGroup(ProgressionPhase.Idle);
+        knockoutTriggerGroups.ActivateOneDeactivateOthers((int)ProgressionPhase.Idle);
 
 
         tankAudioManager.SetAudioState(0);
@@ -231,19 +231,9 @@ public class TankController : MonoBehaviour
 
         currentPhase = ProgressionPhase.Bridge;
         cameraController.SetParameters(bridgeCameraParameters, bridgeCameraTransitionParameters);
-        ActivateKnockoutTriggerGroup(ProgressionPhase.Bridge);
+        knockoutTriggerGroups.ActivateOneDeactivateOthers((int)ProgressionPhase.Bridge);
 
         StartCoroutine(AccelerateTank(bridgeSpeed, bridgeAccelerationTime));
     }
 
-
-    private void ActivateKnockoutTriggerGroup(ProgressionPhase phase){
-        // Activates the knockout trigger group for the given phase, and deactivates all other phases' groups
-
-        foreach(GameObject group in knockoutTriggerGroups){
-            group.SetActive(false);
-        }
-
-        knockoutTriggerGroups[(int)phase].SetActive(true);
-    }
 }
