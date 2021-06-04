@@ -116,4 +116,35 @@ public static class Vector3Extensions
             return false;
         }
     }
+
+
+    public static Vector3 ClampMagnitude(this Vector3 v, float min, float max){
+        // Returns a vector in the same direction as v, with its magnitude clamped between min and max
+
+        if(v.magnitude > max){ 
+           return v.normalized * max;
+        }
+
+        else if(v.magnitude < min){ 
+            return v.normalized * min; 
+        }
+
+        else{
+            return v;
+        }
+    }
+
+    public static Vector2 AltitudeAzimuthBetween(Vector3 startPos, Vector3 endPos, Vector3 perspectivePos){
+        // Returns the horizontal and vertical (azimuth and altitude) angle between two vectors when seen from a perspective postion
+
+        Vector3 startDir = (startPos - perspectivePos).normalized;
+        Vector3 endDir = (endPos = perspectivePos).normalized;
+
+        Vector3 middlePlaneNormal = startPos - endPos;
+
+        float hAngle = Vector3.Angle(startDir.ProjectHorizontal(), endDir.ProjectHorizontal());    
+        float vAngle = Vector3.Angle(Vector3.ProjectOnPlane(startDir, middlePlaneNormal), Vector3.ProjectOnPlane(endDir, middlePlaneNormal));
+        
+        return new Vector2(hAngle, vAngle);
+    }
 }

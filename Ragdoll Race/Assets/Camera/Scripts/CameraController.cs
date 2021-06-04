@@ -7,13 +7,12 @@ public class CameraController : MonoBehaviour
 
     [Header("Component References")]
     public PlayersManager playersManager;
-    public Camera mainCamera;
-    public Rigidbody rb;
+    [HideInInspector] public Camera mainCamera;
+    [HideInInspector] public Rigidbody rb;
     public Transform anchorTransform;
     
 
     [Header("Framing Parameters")]
-
     public float horizontalAngle;
     public float verticalAngle;
     [Space]
@@ -25,9 +24,8 @@ public class CameraController : MonoBehaviour
 
 
     [Header("Distance Constraints")]
-    public float maxDistanceForward;
-    public float maxDistanceHorizontal;
-    public float maxDistanceVertical;
+    public float targetBoundsHorizontal;
+    public float targetBoundsVertical;
 
 
     [Header("Spring Parameters")]
@@ -52,11 +50,11 @@ public class CameraController : MonoBehaviour
 
     // Main Functions
 
-    void Start()
+    private void Awake()
     {
-        cameraFOV = mainCamera.fieldOfView;
+        mainCamera = GetComponentInChildren<Camera>();
+        rb = GetComponent<Rigidbody>();
     }
-
 
     void FixedUpdate(){
 
@@ -69,34 +67,42 @@ public class CameraController : MonoBehaviour
             List<Vector3> playerHeadPositions = playerFeetPositions.AddVector(0, playersManager.characterHeadHeight, 0);
 
 
-            List<Vector3> playerVolumeWorld = new List<Vector3>();
-            playerVolumeWorld.AddRange(playerFeetPositions);
-            playerVolumeWorld.AddRange(playerHeadPositions);
+            List<Vector3> playerTargetsWorld = new List<Vector3>();
+            playerTargetsWorld.AddRange(playerFeetPositions);
+            playerTargetsWorld.AddRange(playerHeadPositions);
 
-            List<Vector3> playerVolumeLocal = mainCamera.transform.InverseTransformPoints(playerVolumeWorld);
-
-
-            // Find the bounding box surrounding the players
-            Vector3 maxBoundsLocal = playerVolumeLocal.MaxComponents();
-            Vector3 minBoundsLocal = playerVolumeLocal.MinComponents();
-
-            // Find the local and world space center point of the players
-            Vector3 centerPointLocal = (maxBoundsLocal + minBoundsLocal) / 2;
-            Vector3 centerPointWorld = mainCamera.transform.TransformPoint(centerPointLocal);
+            List<Vector3> playerTargetsLocal = transform.InverseTransformPoints(playerTargetsWorld);
 
 
-            // Calculate the enclosing volumeand increase x to account for the characters' radii
-            Vector3 enclosingDimensions = (maxBoundsLocal - minBoundsLocal);
-            enclosingDimensions += new Vector3(playersManager.characterRadius * 2, 0, 0);
+            // Find the corners of a box surrounding the players in camera space, add padding space
+            Vector3 maxDimensionsLocal = playerTargetsLocal.MaxComponents() + new Vector3(horizontalPaddingDistance, verticalPaddingDistance, 0);
+            Vector3 minDimensionsLocal = playerTargetsLocal.MinComponents() - new Vector3(horizontalPaddingDistance, verticalPaddingDistance, 0);
 
 
-            // Frame the players within the camera's view
-            float cameraFramingDistance = CalculateFramingDistance(mainCamera, enclosingDimensions, horizontalPaddingDistance, verticalPaddingDistance);
-            Vector3 targetCameraPosition = (-mainCamera.transform.forward * cameraFramingDistance) + centerPointWorld;
+            // Clamp the box enclosing the players to inside the bounds
+            ClampBoxDimensionsToBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
+
+            // Resize the player box to match the camera's aspect ratio
+            ResizeFrameToAspectRatio(ref maxDimensionsLocal, ref minDimensionsLocal, mainCamera.aspect);
+
+            // Shift the clamped, correct aspect ratio box to fit within the bounds
+            ShiftBoxInsideBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
+            
 
 
-            // Calculate spring forces on the camera
-            Vector3 relativePosition = transform.position - targetCameraPosition;
+            // Find the local and world space center point of the target box
+            Vector3 centerPointLocal = (maxDimensionsLocal + minDimensionsLocal) / 2;
+            Vector3 centerPointWorld = transform.TransformPoint(centerPointLocal);
+            
+
+            // Calculate the enclosing volume and frame the players within the camera's view
+            Vector3 enclosingDimensions = (maxDimensionsLocal - minDimensionsLocal);
+            float cameraFramingDistance = CalculateFramingDistance(mainCamera, enclosingDimensions);
+            Vector3 targetCameraPosition = centerPointWorld + (-transform.forward * cameraFramingDistance);
+
+
+            // Calculate and apply spring forces on the camera
+            Vector3 relativePosition = rb.position - targetCameraPosition;
             Vector3 relativeVelocity = rb.velocity - playersManager.AverageVelocity(allPlayers);
             
             Vector3 springAcceleration = DampedSpring.GetDampedSpringAcceleration(relativePosition, relativeVelocity, springFrequency, springDamping);
@@ -106,18 +112,12 @@ public class CameraController : MonoBehaviour
     }
 
 
-    void LateUpdate()
-    {
-        
-    }
-
-
 
     // Public Functions
 
     public Vector3 GetCameraForwardDirection(){
         // Calculates the direction the camera is facing, projected onto the horizontal plane
-        Vector3 camForwardDir = mainCamera.transform.forward.ProjectHorizontal().normalized;
+        Vector3 camForwardDir = transform.forward.ProjectHorizontal().normalized;
         return camForwardDir;
     }
 
@@ -125,25 +125,11 @@ public class CameraController : MonoBehaviour
 
     // Private Functions
 
-    private Vector2 AltitudeAzimuthBetween(Vector3 startPos, Vector3 endPos, Vector3 perspectivePos){
-        // Returns the horizontal and vertical (azimuth and altitude) angle between two vectors when seen from a perspective postion
 
-        Vector3 startDir = (startPos - perspectivePos).normalized;
-        Vector3 endDir = (endPos = perspectivePos).normalized;
+    private float CalculateFramingDistance(Camera camera, Vector3 boundingDimensions){
+        // Returns the ideal distance to place the camera to frame all players, from the center of the box
 
-        Vector3 middlePlaneNormal = startPos - endPos;
-
-        float hAngle = Vector3.Angle(startDir.ProjectHorizontal(), endDir.ProjectHorizontal());    
-        float vAngle = Vector3.Angle(Vector3.ProjectOnPlane(startDir, middlePlaneNormal), Vector3.ProjectOnPlane(endDir, middlePlaneNormal));
-        
-        return new Vector2(hAngle, vAngle);
-    }
-
-
-    private float CalculateFramingDistance(Camera camera, Vector3 boundingDimensions, float hPadding, float vPadding){
-        // Returns the ideal distance to place the camera FROM THE CENTROID to frame all players
-
-        Vector2 frameDimensions = new Vector2(boundingDimensions.x + hPadding, boundingDimensions.y + vPadding);
+        Vector2 frameDimensions = new Vector2(boundingDimensions.x, boundingDimensions.y);
         float dist;
 
         // Determine whether the constraining dimension is horizontal or vertical
@@ -162,6 +148,82 @@ public class CameraController : MonoBehaviour
         dist += boundingDimensions.z / 2;
 
         return dist;
+    }
+
+
+    private void ResizeFrameToAspectRatio(ref Vector3 maxDimensionsLocal, ref Vector3 minDimensionsLocal, float aspectRatio){
+        // Resizes the given box to match the camera's aspect ratio, keeping the old volume inside of the new dimensions
+        // If the new frame is outside of the bounding area, shift it back inside
+
+        Vector3 boxSize = maxDimensionsLocal - minDimensionsLocal;
+        Vector3 boxCenter = (maxDimensionsLocal + minDimensionsLocal) / 2;
+
+        float currAspect = boxSize.x / boxSize.y;
+
+
+        if (currAspect >= aspectRatio){
+            // Current box is not tall enough; stretch vertically, constant horizontal
+            float newHeight = boxSize.x / aspectRatio;
+            boxSize = new Vector3(boxSize.x, newHeight, boxSize.z);
+        }
+        else{
+            // Current box is not wide enough; stretch horizontally, constant vertical
+            float newWidth = boxSize.y * aspectRatio;
+            boxSize = new Vector3(newWidth, boxSize.y, boxSize.z);
+        }
+
+        // Set referenced max and min corners
+        maxDimensionsLocal = boxCenter + (boxSize / 2);
+        minDimensionsLocal = boxCenter - (boxSize / 2);
+    }
+
+
+    private void ClampBoxDimensionsToBounds(ref Vector3 maxDimensionsLocal, ref Vector3 minDimensionsLocal){
+        // Clamps the min and max dimensions of the box surrounding the player targets.
+        // Box min and max dimension points are relative to the camera
+
+        Vector3 anchorPositionLocal = transform.InverseTransformPoint(anchorTransform.position);
+
+        Vector3 maxDimensionsRelativeToAnchor = maxDimensionsLocal - anchorPositionLocal;
+        Vector3 minDimensionsRelativeToAnchor = minDimensionsLocal - anchorPositionLocal;
+
+
+        // Clamp horizontal direction
+        Vector3 maxHorizontalClamped = Vector3.Project(maxDimensionsRelativeToAnchor, Vector3.right).ClampMagnitude(0, targetBoundsHorizontal);
+        Vector3 minHorizontalClamped = Vector3.Project(minDimensionsRelativeToAnchor, Vector3.right).ClampMagnitude(0, targetBoundsHorizontal);
+
+        // Clamp target bounds in the vertical direction
+        Vector3 maxVerticalClamped = Vector3.Project(maxDimensionsRelativeToAnchor, Vector3.up).ClampMagnitude(0, targetBoundsVertical);
+        Vector3 minVerticalClamped = Vector3.Project(minDimensionsRelativeToAnchor, Vector3.up).ClampMagnitude(0, targetBoundsVertical);
+
+
+        // Update target box dimensions to match the clamped values
+        maxDimensionsLocal = anchorPositionLocal + maxHorizontalClamped + maxVerticalClamped;
+        minDimensionsLocal = anchorPositionLocal + minHorizontalClamped + minVerticalClamped;
+    }
+
+    private void ShiftBoxInsideBounds(ref Vector3 maxDimensionsLocal, ref Vector3 minDimensionsLocal){
+        // Clamps the min and max dimensions of the box surrounding the player targets.
+        // Box min and max dimension points are relative to the camera
+
+        Vector3 anchorPositionLocal = transform.InverseTransformPoint(anchorTransform.position);
+
+        Vector3 boxCenterRelativeToAnchor = ((maxDimensionsLocal + minDimensionsLocal) / 2) - anchorPositionLocal;
+        Vector3 boxSize = maxDimensionsLocal - minDimensionsLocal;
+
+
+        // Clamp the center of the box to fit the whole box within the bounds
+        float maxHorizontalDist = targetBoundsHorizontal - (boxSize.x/2);
+        float maxVerticalDist = targetBoundsVertical - (boxSize.y/2);
+
+        float boxCenterHorizontalClamped = Mathf.Clamp(boxCenterRelativeToAnchor.x, -maxHorizontalDist, maxHorizontalDist);
+        float boxCenterVerticalClamped = Mathf.Clamp(boxCenterRelativeToAnchor.y, -maxVerticalDist, maxVerticalDist);
+
+        boxCenterRelativeToAnchor = new Vector3(boxCenterHorizontalClamped, boxCenterVerticalClamped, boxCenterRelativeToAnchor.z);
+
+        // Update target box dimensions to match the clamped values
+        maxDimensionsLocal = anchorPositionLocal + boxCenterRelativeToAnchor + (boxSize/2);
+        minDimensionsLocal = anchorPositionLocal + boxCenterRelativeToAnchor - (boxSize/2);
     }
 
 
@@ -223,19 +285,133 @@ public class CameraController : MonoBehaviour
     }
 
 
-    public void SetParameters(CameraParametersContainer parameters){
 
-        mainCamera.transform.rotation = Quaternion.Euler(parameters.verticalAngle, parameters.horizontalAngle, 0);
-        mainCamera.fieldOfView = parameters.cameraFOV;
+    public void SetParameters(CameraParametersContainer newParameters){
+        anchorTransform = newParameters.anchorTransform;
 
-        horizontalPaddingDistance = parameters.horizontalPaddingDistance;
-        verticalPaddingDistance = parameters.verticalPaddingDistance;
+        SetLookAngles(newParameters.horizontalAngle, newParameters.verticalAngle);
+        UpdateCameraDirection();
 
-        maxDistanceForward = parameters.maxDistanceForward;
-        maxDistanceHorizontal = parameters.maxDistanceHorizontal;
-        maxDistanceVertical = parameters.maxDistanceVertical;
+        UpdateFOV(newParameters.cameraFOV);
 
-        springFrequency = parameters.springFrequency;
-        springDamping = parameters.springDamping;
+        horizontalPaddingDistance = newParameters.horizontalPaddingDistance;
+        verticalPaddingDistance = newParameters.verticalPaddingDistance;
+
+        targetBoundsHorizontal = newParameters.maxDistanceHorizontal;
+        targetBoundsVertical = newParameters.maxDistanceVertical;
+
+        springFrequency = newParameters.springFrequency;
+        springDamping = newParameters.springDamping;
+    }
+
+    public void SetParameters(CameraParametersContainer newParameters, CameraTransitionParameters transitionParameters){
+
+        anchorTransform = newParameters.anchorTransform;
+
+        StartCoroutine(TransitionRotation(
+            newParameters.horizontalAngle, newParameters.verticalAngle, 
+            transitionParameters.angleTransitionCurve, transitionParameters.angleTransitionTime));
+
+
+        StartCoroutine(TransitionFOV(newParameters.cameraFOV, transitionParameters.fovTransitionCurve, transitionParameters.fovTransitionTime));
+
+        StartCoroutine(TransitionPadding(newParameters.horizontalPaddingDistance, newParameters.verticalPaddingDistance, 
+            transitionParameters.paddingTransitionCurve, transitionParameters.paddingTransitionTime));
+
+
+        targetBoundsHorizontal = newParameters.maxDistanceHorizontal;
+        targetBoundsVertical = newParameters.maxDistanceVertical;
+
+
+        springFrequency = newParameters.springFrequency;
+        springDamping = newParameters.springDamping;
+    }
+
+
+
+    public void SetLookAngles(float horizontal, float vertical){
+        horizontalAngle = horizontal;
+        verticalAngle = vertical;
+
+        UpdateCameraDirection();
+    }
+    public void UpdateCameraDirection(){
+        rb.MoveRotation(Quaternion.Euler(verticalAngle, horizontalAngle, 0));
+        transform.rotation = Quaternion.Euler(verticalAngle, horizontalAngle, 0);
+    }
+
+    public void UpdateFOV(float FOV){
+        cameraFOV = FOV;
+        mainCamera.fieldOfView = cameraFOV;
+    }
+
+
+
+    private IEnumerator TransitionRotation(float finalHorizontal, float finalVertical, AnimationCurve transitionCurve, float transitionTime){
+        // Transitions the camera's horizontal and vertical rotation from its current values to given values over a given time period, 
+        // following a curve from 0 to 1 (start to end)
+
+        float initialHorizontal = horizontalAngle;
+        float initialVertical = verticalAngle;
+
+        float currTime = 0;
+        while(currTime < transitionTime){
+            currTime += Time.fixedDeltaTime;
+
+            float gradient = transitionCurve.Evaluate(currTime / transitionTime);
+
+            horizontalAngle = gradient.Map(0, 1, initialHorizontal, finalHorizontal);
+            verticalAngle = gradient.Map(0, 1, initialVertical, finalVertical);
+
+            UpdateCameraDirection();
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        SetLookAngles(finalHorizontal, finalVertical);
+    }
+
+    private IEnumerator TransitionFOV(float finalFOV, AnimationCurve transitionCurve, float transitionTime){
+        // Transitions the camera's FOV from its current value to a given value over a given time period, 
+        // following a curve from 0 to 1 (start to end)
+
+        float initialFOV = cameraFOV;
+
+        float currTime = 0;
+        while(currTime < transitionTime){
+            currTime += Time.fixedDeltaTime;
+
+            float gradient = transitionCurve.Evaluate(currTime / transitionTime);
+            float currFOV = gradient.Map(0, 1, initialFOV, finalFOV);
+
+            UpdateFOV(currFOV);
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        UpdateFOV(finalFOV);
+    }
+
+    private IEnumerator TransitionPadding(float finalHorizontal, float finalVertical, AnimationCurve transitionCurve, float transitionTime){
+        // Transitions the camera's horizontal and vertical padding from its current values to given values over a given time period, 
+        // following a curve from 0 to 1 (start to end)
+
+        float initialHorizontal = horizontalPaddingDistance;
+        float initialVertical = verticalPaddingDistance;
+
+        float currTime = 0;
+        while(currTime < transitionTime){
+            currTime += Time.fixedDeltaTime;
+
+            float gradient = transitionCurve.Evaluate(currTime / transitionTime);
+
+            horizontalPaddingDistance = gradient.Map(0, 1, initialHorizontal, finalHorizontal);
+            verticalPaddingDistance = gradient.Map(0, 1, initialVertical, finalVertical);
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        horizontalPaddingDistance = finalHorizontal;
+        verticalPaddingDistance = finalVertical;
     }
 }

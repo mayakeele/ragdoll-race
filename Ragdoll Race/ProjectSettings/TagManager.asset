@@ -15,7 +15,7 @@ TagManager:
   - PlayerBody
   - StaticTerrain
   - DynamicTerrain
-  - 
+  - KnockoutTrigger
   - 
   - 
   - 

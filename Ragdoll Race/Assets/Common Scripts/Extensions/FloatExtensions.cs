@@ -34,7 +34,7 @@ public static class FloatExtensions
         float gradient = value.Gradient(originalStart, originalEnd);
         float newValue = newStart + (gradient * (newEnd - newStart));
 
-        newValue = Mathf.Clamp(newValue, newStart, newEnd);
+        newValue = newEnd > newStart ? Mathf.Clamp(newValue, newStart, newEnd) : Mathf.Clamp(newValue, newEnd, newStart);
         
         return newValue;
     }
@@ -95,4 +95,7 @@ public static class FloatExtensions
         float diff = ( angle2 - angle1 + 180 ) % 360 - 180;
         return diff < -180 ? diff + 360 : diff;
     }
+
+
+    
 }

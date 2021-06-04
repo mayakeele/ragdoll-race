@@ -11,64 +11,78 @@ public class TankController : MonoBehaviour
         Pursuit,
         Canyon,
         Boulders,
-        End
+        Cliff
     }
 
 
     [Header("References")]
     [SerializeField] private Rigidbody environmentRigidbody;
+    [Space]
     [SerializeField] private CameraController cameraController;
+    [Space]
     [SerializeField] private TankAudioManager tankAudioManager;
     [SerializeField] private TreadsManager treadsManager;
     [SerializeField] private TurretManager turretManager;
+    [Space]
+    [SerializeField] private List<GameObject> knockoutTriggerGroups;
 
 
     [Header("Phase Movement Properties")]
     [Space]
-    [Header("Common")]
-    [SerializeField] private float restAcceleration;
-    [SerializeField] private float movingAcceleration;
-    [Space]
 
-    [Header("1 - Idle")]
+    [Header("0 - Idle")]
     [SerializeField] private CameraParametersContainer idleCameraParameters;
     [SerializeField] private float idleOffTime;
     [SerializeField] private float idleOnTime;
     
-    [Header("2 - Bridge")]
+    [Header("1 - Bridge")]
     [SerializeField] private CameraParametersContainer bridgeCameraParameters;
+    [SerializeField] private CameraTransitionParameters bridgeCameraTransitionParameters;
     [SerializeField] private float bridgeSpeed;
+    [SerializeField] private float bridgeAccelerationTime;
+    [SerializeField] private float bridgeFinalDistance;
 
-    [Header("3 - Desert")]
-    [SerializeField] private float desertInitialX;
+    [Header("2 - Desert")]
     [SerializeField] private CameraParametersContainer desertCameraParameters;
+    [SerializeField] private CameraTransitionParameters desertCameraTransitionParameters;
     [SerializeField] private float desertSpeed;
+    [SerializeField] private float desertAccelerationTime;
+    [SerializeField] private float desertFinalDistance;
 
-    [Header("4 - Pursuit")]
-    [SerializeField] private float pursuitInitialX;
+    [Header("3 - Pursuit")]
     [SerializeField] private CameraParametersContainer pursuitCameraParameters;
+    [SerializeField] private CameraTransitionParameters pursuitCameraTransitionParameters;
     [SerializeField] private float pursuitSpeed;
+    [SerializeField] private float pursuitAccelerationTime;
+    [SerializeField] private float pursuitFinalDistance;
 
-    [Header("5 - Canyon")]
-    [SerializeField] private float canyonInitialX;
+    [Header("4 - Canyon")]
     [SerializeField] private CameraParametersContainer canyonCameraParameters;
+    [SerializeField] private CameraTransitionParameters canyonCameraTransitionParameters;
     [SerializeField] private float canyonSpeed;
+    [SerializeField] private float canyonAccelerationTime;
+    [SerializeField] private float canyonFinalDistance;
 
-    [Header("6 - Boulders")]
-    [SerializeField] private float bouldersInitialX;
+    [Header("5 - Boulders")]
     [SerializeField] private CameraParametersContainer bouldersCameraParameters;
+    [SerializeField] private CameraTransitionParameters bouldersCameraTransitionParameters;
     [SerializeField] private float bouldersSpeed;
+    [SerializeField] private float bouldersAccelerationTime;
+    [SerializeField] private float bouldersFinalDistance;
 
-    [Header("7 - Cliff")]
-    [SerializeField] private float cliffInitialX;
+    [Header("6 - Cliff")]
     [SerializeField] private CameraParametersContainer cliffCameraParameters;
+    [SerializeField] private CameraTransitionParameters cliffCameraTransitionParameters;
     [SerializeField] private float cliffSpeed;
+    [SerializeField] private float cliffAccelerationTime;
+    [SerializeField] private float cliffFinalDistance;
 
 
 
     // Current State
     public float tankSpeed;
-    private ProgressionPhase currentProgressionPhase = ProgressionPhase.Idle;
+    private float distanceCovered = 0;
+    private ProgressionPhase currentPhase = ProgressionPhase.Idle;
 
 
 
@@ -82,6 +96,8 @@ public class TankController : MonoBehaviour
         if(tankSpeed > 0){
             MoveEnvironment(tankSpeed, Time.fixedDeltaTime);
         }
+
+        CheckIfNextPhaseStarts();
     }
 
 
@@ -94,21 +110,105 @@ public class TankController : MonoBehaviour
 
     private void MoveEnvironment(float speed, float timeDelta){
         // Since the tank uses a kinematic rigidbody, position is updated here
-        Vector3 movementAmount = -transform.forward * speed * timeDelta;
+        float movementAmount = speed * timeDelta;
+        Vector3 movementVector = Vector3.right * movementAmount;
 
-        environmentRigidbody.MovePosition(environmentRigidbody.position + movementAmount);
+        distanceCovered += movementAmount;
+
+        environmentRigidbody.MovePosition(environmentRigidbody.position + movementVector);
     }
 
 
-    private bool CheckIfNextPhaseStarts(ProgressionPhase currentPhase){
-        // Checks whether the tank has crossed into the next phase's threshold given the current one
+    private void CheckIfNextPhaseStarts(){
+        // Checks whether the tank has crossed into the next phase's threshold given the current phase
+        // Sets new tank behavior if a new phase is entered
         
         switch(currentPhase){
-            case ProgressionPhase.Idle:
 
+            case ProgressionPhase.Bridge:
+                if(distanceCovered > bridgeFinalDistance){
+                    currentPhase = ProgressionPhase.Desert;
+
+                    StartCoroutine(AccelerateTank(desertSpeed, desertAccelerationTime));
+
+                    cameraController.SetParameters(desertCameraParameters, desertCameraTransitionParameters);
+
+                    knockoutTriggerGroups.ActivateOneDeactivateOthers((int)ProgressionPhase.Desert);
+                }
+            break;
+
+            case ProgressionPhase.Desert:
+                if(distanceCovered > desertFinalDistance){
+                    currentPhase = ProgressionPhase.Pursuit;
+
+                    StartCoroutine(AccelerateTank(pursuitSpeed, pursuitAccelerationTime));
+
+                    cameraController.SetParameters(pursuitCameraParameters, pursuitCameraTransitionParameters);
+
+                    knockoutTriggerGroups.ActivateOneDeactivateOthers((int)ProgressionPhase.Pursuit);
+                }
+            break;
+
+            case ProgressionPhase.Pursuit:
+                if(distanceCovered > pursuitFinalDistance){
+                    currentPhase = ProgressionPhase.Canyon;
+
+                    StartCoroutine(AccelerateTank(canyonSpeed, canyonAccelerationTime));
+
+                    cameraController.SetParameters(canyonCameraParameters, canyonCameraTransitionParameters);
+
+                    knockoutTriggerGroups.ActivateOneDeactivateOthers((int)ProgressionPhase.Canyon);
+                }
+            break;
+
+            case ProgressionPhase.Canyon:
+                if(distanceCovered > canyonFinalDistance){
+                    currentPhase = ProgressionPhase.Boulders;
+
+                    StartCoroutine(AccelerateTank(bouldersSpeed, bouldersAccelerationTime));
+
+                    cameraController.SetParameters(bouldersCameraParameters, bouldersCameraTransitionParameters);
+
+                    knockoutTriggerGroups.ActivateOneDeactivateOthers((int)ProgressionPhase.Boulders);
+                }
+            break;
+
+            case ProgressionPhase.Boulders:
+                if(distanceCovered > bouldersFinalDistance){
+                    currentPhase = ProgressionPhase.Cliff;
+
+                    StartCoroutine(AccelerateTank(cliffSpeed, cliffAccelerationTime));
+
+                    cameraController.SetParameters(cliffCameraParameters, cliffCameraTransitionParameters);
+
+                    knockoutTriggerGroups.ActivateOneDeactivateOthers((int)ProgressionPhase.Cliff);
+                }
+            break;
+
+            case ProgressionPhase.Cliff:
+                if(distanceCovered > cliffFinalDistance){
+                    // End game, freeze controls and let tank fall off cliff
+                }
             break;
         }
-        return true;
+
+    }
+
+
+    private IEnumerator AccelerateTank(float finalSpeed, float timePeriod){
+        // Accelerates the tank from its current speed to the given speed, over a given period of time
+
+        float initialSpeed = tankSpeed;
+
+        float currTime = 0;
+        while(currTime < timePeriod){
+            SetTankSpeed(currTime.Map(0, timePeriod, initialSpeed, finalSpeed));
+
+            currTime += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+
+        tankSpeed = finalSpeed;
     }
 
 
@@ -116,9 +216,10 @@ public class TankController : MonoBehaviour
     private IEnumerator BeginLevel(){
         // Turns on the engine after a little while. Then waits a little longer, then starts moving and triggers the next phase
 
-        currentProgressionPhase = ProgressionPhase.Idle;
+        currentPhase = ProgressionPhase.Idle;
         cameraController.SetParameters(idleCameraParameters);
         SetTankSpeed(0);
+        knockoutTriggerGroups.ActivateOneDeactivateOthers((int)ProgressionPhase.Idle);
 
 
         tankAudioManager.SetAudioState(0);
@@ -128,8 +229,11 @@ public class TankController : MonoBehaviour
         yield return new WaitForSeconds(idleOnTime);
 
 
-        currentProgressionPhase = ProgressionPhase.Bridge;
-        cameraController.SetParameters(bridgeCameraParameters);
-        SetTankSpeed(bridgeSpeed);
+        currentPhase = ProgressionPhase.Bridge;
+        cameraController.SetParameters(bridgeCameraParameters, bridgeCameraTransitionParameters);
+        knockoutTriggerGroups.ActivateOneDeactivateOthers((int)ProgressionPhase.Bridge);
+
+        StartCoroutine(AccelerateTank(bridgeSpeed, bridgeAccelerationTime));
     }
+
 }
