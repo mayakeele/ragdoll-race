@@ -15,8 +15,6 @@ public class FrustumMeshGenerator : MonoBehaviour
     [Space]
     public CameraParametersContainer cameraParametersContainer;
 
-
-    private float aspect = 16/9;
     private string KOTriggerLayerName = "KnockoutTrigger";
 
 
@@ -40,11 +38,51 @@ public class FrustumMeshGenerator : MonoBehaviour
         // Generates a mesh in the shape of a modified frustum, which passes through and is centered on a clipped plane with given parameters.
         // Creates a new GameObject with the mesh attached, which widens in the +z direction.
 
+        List<Vector3> vertices = GenerateFrustumVertices();
+
+        // Create faces for the far and near planes. Other faces are unnecessary since convex mesh is generated automatically
+        int[] triangles = new int[]{
+            0,1,2,
+            2,3,0,
+            4,5,6,
+            6,7,4
+        };
+        
+        // Finally, generate the mesh and gameobject holding it
+        Mesh mesh = new Mesh();
+        mesh.SetVertices(vertices);
+        mesh.triangles = triangles;
+
+        GameObject frustumContainer = new GameObject("KO Trigger");
+        frustumContainer.transform.parent = transform.parent;
+        frustumContainer.transform.localPosition = Vector3.zero;
+        frustumContainer.transform.localRotation = Quaternion.identity;
+        frustumContainer.transform.localScale = Vector3.one;
+        
+        frustumContainer.layer = LayerMask.NameToLayer(KOTriggerLayerName);
+
+
+        // Add mesh collider and OnExit KO Trigger
+        MeshCollider frustumCollider = frustumContainer.AddComponent<MeshCollider>();
+        frustumCollider.sharedMesh = mesh;
+        frustumCollider.convex = true;
+        frustumCollider.isTrigger = true;
+
+        KnockoutTrigger knockoutTrigger = frustumContainer.AddComponent<KnockoutTrigger>();
+        knockoutTrigger.knockoutOnEnter = false;
+        knockoutTrigger.knockoutOnExit = true;
+    }
+
+
+    private List<Vector3> GenerateFrustumVertices(){
+        // Generates 8 vertices in the shape of a modified frustum, centered on the focus plane and widening in the +z direction
+        // Vertices start at the top left corner of the far plane, wrap counterclockwise, then do the same for the near plane
+
         float focusPlaneHeight = cameraParametersContainer.maxDistanceVertical + (2 * heightPadding);
         float focusPlaneWidth = cameraParametersContainer.maxDistanceHorizontal + (2 * widthPadding);
 
         float vFOV = cameraParametersContainer.cameraFOV;
-        float hFOV = Camera.VerticalToHorizontalFieldOfView(cameraParametersContainer.cameraFOV, aspect);
+        float hFOV = Camera.VerticalToHorizontalFieldOfView(vFOV, 16f/9f);
 
         // Determine the rate of change of width and height with respect to depth using h and v FOV
         float vRateOfChange = 1 * Mathf.Tan(Mathf.Deg2Rad * vFOV / 2);
@@ -89,36 +127,37 @@ public class FrustumMeshGenerator : MonoBehaviour
             nearCenter + new Vector3(-nearWidthHalf, -nearHeightHalf, 0)
         };
 
-        // Create faces for the far and near planes. Other faces are unnecessary since convex mesh is generated automatically
-        int[] triangles = new int[]{
-            0,1,2,
-            2,3,0,
-            4,5,6,
-            6,7,4
-        };
+
+        return vertices;
+    }
+
+
+    void OnDrawGizmosSelected()
+    {
+        // When this object is selected, draw the shape the frustum will appear in using gizmo lines
+
+        // Calculate frustum vertices and transform to world space
+        List<Vector3> vertices = GenerateFrustumVertices();
+        vertices = transform.parent ? transform.parent.TransformPoints(vertices) : transform.TransformPoints(vertices);
+
+        Gizmos.color = Color.cyan;
         
-        // Finally, generate the mesh and gameobject holding it
-        Mesh mesh = new Mesh();
-        mesh.SetVertices(vertices);
-        mesh.triangles = triangles;
+        // Draw far plane
+        Gizmos.DrawLine(vertices[0], vertices[1]);
+        Gizmos.DrawLine(vertices[1], vertices[2]);
+        Gizmos.DrawLine(vertices[2], vertices[3]);
+        Gizmos.DrawLine(vertices[3], vertices[0]);
 
-        GameObject frustumContainer = new GameObject("KO Trigger");
-        frustumContainer.transform.parent = transform.parent;
-        frustumContainer.transform.localPosition = Vector3.zero;
-        frustumContainer.transform.localRotation = Quaternion.identity;
-        frustumContainer.transform.localScale = Vector3.one;
-        
-        frustumContainer.layer = LayerMask.NameToLayer(KOTriggerLayerName);
+        // Draw near plane
+        Gizmos.DrawLine(vertices[4], vertices[5]);
+        Gizmos.DrawLine(vertices[5], vertices[6]);
+        Gizmos.DrawLine(vertices[6], vertices[7]);
+        Gizmos.DrawLine(vertices[7], vertices[4]);
 
-
-        // Add mesh collider and OnExit KO Trigger
-        MeshCollider frustumCollider = frustumContainer.AddComponent<MeshCollider>();
-        frustumCollider.sharedMesh = mesh;
-        frustumCollider.convex = true;
-        frustumCollider.isTrigger = true;
-
-        KnockoutTrigger knockoutTrigger = frustumContainer.AddComponent<KnockoutTrigger>();
-        knockoutTrigger.knockoutOnEnter = false;
-        knockoutTrigger.knockoutOnExit = true;
+        // Draw lines connecting planes
+        Gizmos.DrawLine(vertices[0], vertices[4]);
+        Gizmos.DrawLine(vertices[1], vertices[5]);
+        Gizmos.DrawLine(vertices[2], vertices[6]);
+        Gizmos.DrawLine(vertices[3], vertices[7]);
     }
 }
