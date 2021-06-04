@@ -36,7 +36,9 @@ public class CameraBoundaryRenderer : MonoBehaviour
 
             Transform anchor = parametersContainer.anchorTransform;
 
-            Matrix4x4 rotationMatrix = Matrix4x4.TRS(anchor.position, cameraController.transform.rotation, Vector3.one);
+            Quaternion rotation = Quaternion.Euler(parametersContainer.verticalAngle, parametersContainer.horizontalAngle, 0);
+
+            Matrix4x4 rotationMatrix = Matrix4x4.TRS(anchor.position, rotation, Vector3.one);
             Gizmos.matrix = rotationMatrix; 
 
             float width = parametersContainer.maxDistanceHorizontal * 2;

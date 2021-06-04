@@ -7,13 +7,17 @@ using UnityEditor;
 public class FrustumMeshGenerator : MonoBehaviour
 {
     [Header("Frustum Properties")]
-    public float focusPlaneWidth;
-    public float focusPlaneHeight;
+    public float widthPadding;
+    public float heightPadding;
     [Space]
     public float depthBeyondFocusPlane;
     public float depthBeforeFocusPlane;
     [Space]
-    public Camera camera;
+    public CameraParametersContainer cameraParametersContainer;
+
+
+    private float aspect = 16/9;
+    private string KOTriggerLayerName = "KnockoutTrigger";
 
 
     [Header("Generate Frustum Mesh")]
@@ -32,16 +36,19 @@ public class FrustumMeshGenerator : MonoBehaviour
 
 
 
-    private void GenerateModifiedFrustumMesh(){
+    public void GenerateModifiedFrustumMesh(){
         // Generates a mesh in the shape of a modified frustum, which passes through and is centered on a clipped plane with given parameters.
         // Creates a new GameObject with the mesh attached, which widens in the +z direction.
 
-        float vFOV = camera.fieldOfView;
-        float hFOV = Camera.VerticalToHorizontalFieldOfView(camera.fieldOfView, camera.aspect);
+        float focusPlaneHeight = cameraParametersContainer.maxDistanceVertical + (2 * heightPadding);
+        float focusPlaneWidth = cameraParametersContainer.maxDistanceHorizontal + (2 * widthPadding);
+
+        float vFOV = cameraParametersContainer.cameraFOV;
+        float hFOV = Camera.VerticalToHorizontalFieldOfView(cameraParametersContainer.cameraFOV, aspect);
 
         // Determine the rate of change of width and height with respect to depth using h and v FOV
-        float vRateOfChange = Mathf.Tan(Mathf.Deg2Rad * vFOV / 2);
-        float hRateOfChange = Mathf.Tan(Mathf.Deg2Rad * hFOV / 2);
+        float vRateOfChange = 1 * Mathf.Tan(Mathf.Deg2Rad * vFOV / 2);
+        float hRateOfChange = 1 * Mathf.Tan(Mathf.Deg2Rad * hFOV / 2);
 
         // Find the tip of the pyramid/tent the frustum derives from
         float vDepthConstraint = focusPlaneHeight / vRateOfChange;
@@ -95,15 +102,23 @@ public class FrustumMeshGenerator : MonoBehaviour
         mesh.SetVertices(vertices);
         mesh.triangles = triangles;
 
-        GameObject frustumContainer = new GameObject("Frustum Mesh");
-        frustumContainer.transform.SetParent(transform.parent);
+        GameObject frustumContainer = new GameObject("KO Trigger");
+        frustumContainer.transform.parent = transform.parent;
         frustumContainer.transform.localPosition = Vector3.zero;
         frustumContainer.transform.localRotation = Quaternion.identity;
         frustumContainer.transform.localScale = Vector3.one;
+        
+        frustumContainer.layer = LayerMask.NameToLayer(KOTriggerLayerName);
 
+
+        // Add mesh collider and OnExit KO Trigger
         MeshCollider frustumCollider = frustumContainer.AddComponent<MeshCollider>();
         frustumCollider.sharedMesh = mesh;
         frustumCollider.convex = true;
+        frustumCollider.isTrigger = true;
 
+        KnockoutTrigger knockoutTrigger = frustumContainer.AddComponent<KnockoutTrigger>();
+        knockoutTrigger.knockoutOnEnter = false;
+        knockoutTrigger.knockoutOnExit = true;
     }
 }

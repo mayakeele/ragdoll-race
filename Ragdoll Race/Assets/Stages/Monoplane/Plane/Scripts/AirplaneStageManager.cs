@@ -70,6 +70,10 @@ public class AirplaneStageManager : MonoBehaviour
         }
 
 
+        // Activate this phase's KO Trigger, deactivate others
+        knockoutTriggerGroups.ActivateOneDeactivateOthers(newPhaseNum);
+
+
         // Set airplane speed
         StartCoroutine(AcceleratePlane(phaseAirplaneSpeeds[currentPhase], accelerationTime));
 
