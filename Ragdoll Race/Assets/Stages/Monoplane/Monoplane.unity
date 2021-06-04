@@ -255,7 +255,7 @@ MonoBehaviour:
   parametersContainer: {fileID: 331882272}
   cameraController: {fileID: 702152849}
   setCameraParameters: 0
-  showGizmo: 1
+  showGizmo: 0
 --- !u!1 &128672319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,8 +1422,8 @@ MonoBehaviour:
   horizontalPaddingDistance: 3.5
   verticalPaddingDistance: 3.5
   cameraFOV: 28
-  maxDistanceHorizontal: 8.88
-  maxDistanceVertical: 11.05
+  maxDistanceHorizontal: 9.92
+  maxDistanceVertical: 10.6
   springFrequency: 12
   springDamping: 1.5
 --- !u!43 &1157676159

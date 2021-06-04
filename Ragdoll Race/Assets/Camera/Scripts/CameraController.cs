@@ -88,6 +88,7 @@ public class CameraController : MonoBehaviour
             // Shift the clamped, correct aspect ratio box to fit within the bounds
             ShiftBoxInsideBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
             
+            
 
 
             // Find the local and world space center point of the target box
@@ -172,6 +173,7 @@ public class CameraController : MonoBehaviour
             boxSize = new Vector3(newWidth, boxSize.y, boxSize.z);
         }
 
+
         // Set referenced max and min corners
         maxDimensionsLocal = boxCenter + (boxSize / 2);
         minDimensionsLocal = boxCenter - (boxSize / 2);
@@ -210,6 +212,14 @@ public class CameraController : MonoBehaviour
 
         Vector3 boxCenterRelativeToAnchor = ((maxDimensionsLocal + minDimensionsLocal) / 2) - anchorPositionLocal;
         Vector3 boxSize = maxDimensionsLocal - minDimensionsLocal;
+
+
+        // If the box is bigger than one of the bounding area's dimensions, scale the box to fit inside while maintaining aspect ratio
+        float boxWidthBoundaryFraction = boxSize.x / (targetBoundsHorizontal * 2);
+        float boxHeightBoundaryFraction = boxSize.y / (targetBoundsVertical * 2);
+
+        float maxBoundaryFraction = Mathf.Max(boxWidthBoundaryFraction, boxHeightBoundaryFraction);
+        if(maxBoundaryFraction > 1) boxSize = boxSize / maxBoundaryFraction;
 
 
         // Clamp the center of the box to fit the whole box within the bounds
