@@ -113,4 +113,17 @@ public static class RandomExtensions
         foreach (int c in count){
             Debug.Log(c);
         }*/
+
+
+    public static void Shuffle<T>(this List<T> list){
+        int count = list.Count;
+        int last = count - 1;
+
+        for (int i = 0; i < last; i++) {
+            int r = UnityEngine.Random.Range(i, count);
+            T tmp = list[i];
+            list[i] = list[r];
+            list[r] = tmp;
+        }
+    }
 }

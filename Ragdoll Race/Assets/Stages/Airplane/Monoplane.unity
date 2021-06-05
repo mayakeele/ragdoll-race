@@ -123,123 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &113804891
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 113804894}
-  - component: {fileID: 113804893}
-  - component: {fileID: 113804892}
-  m_Layer: 0
-  m_Name: PlayersManager
-  m_TagString: PlayersManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &113804892
+--- !u!114 &113804893 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1555841464662762375, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+  m_PrefabInstance: {fileID: 1555841464641299930}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113804891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NotificationBehavior: 2
-  m_MaxPlayerCount: -1
-  m_AllowJoining: 1
-  m_JoinBehavior: 1
-  m_PlayerJoinedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_PlayerLeftEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_JoinAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Join
-      m_Type: 1
-      m_ExpectedControlType: Button
-      m_Id: 17423628-88d5-4d23-a052-ad1a448a1a32
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 2e0db8f5-bbdb-45dd-a633-c7b5ed502eb4
-        m_Path: <HID::PDP CO.,LTD. Faceoff Wired Pro Controller for Nintendo Switch>/button10
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Join
-        m_Flags: 0
-      - m_Name: 
-        m_Id: 912beb7d-e058-4268-809d-b5ea0cfae031
-        m_Path: <Gamepad>/start
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Join
-        m_Flags: 0
-      - m_Name: 
-        m_Id: 9a0cd183-8038-45ef-ad05-05f9d207db3d
-        m_Path: <Keyboard>/enter
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Join
-        m_Flags: 0
-    m_Reference: {fileID: -5373818349701249791, guid: 0c9391a12fdb70e459bafa14b264625b, type: 3}
-  m_PlayerPrefab: {fileID: 343518790451568842, guid: 8ecb230fd7f74b2469ff8debaa37476a, type: 3}
-  m_SplitScreen: 0
-  m_MaintainAspectRatioInSplitScreen: 0
-  m_FixedNumberOfSplitScreens: -1
-  m_SplitScreenRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!114 &113804893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113804891}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2baae18bf10a6242b3281f55cd7bcc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraController: {fileID: 702152849}
-  allPlayers: []
-  characterHeadHeight: 1.2
-  characterPelvisHeight: 0.45
-  characterRadius: 0.5
-  spawnTransform: {fileID: 1087465520}
---- !u!4 &113804894
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113804891}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &119955421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1419,8 +1313,8 @@ MonoBehaviour:
   anchorTransform: {fileID: 1676716281}
   horizontalAngle: -90
   verticalAngle: 45
-  horizontalPaddingDistance: 3.5
-  verticalPaddingDistance: 3.5
+  horizontalPaddingDistance: 3
+  verticalPaddingDistance: 2.7
   cameraFOV: 28
   maxDistanceHorizontal: 9.92
   maxDistanceVertical: 10.6
@@ -2399,6 +2293,71 @@ MonoBehaviour:
   springDampingRatio: 1
   angularSpringConstant: 27000
   angularSpringDampingConstant: 20000
+--- !u!1001 &1555841464641299930
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1555841464662762369, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+      propertyPath: m_Name
+      value: PlayersManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555841464662762372, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555841464662762372, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555841464662762372, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555841464662762372, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555841464662762372, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555841464662762372, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555841464662762372, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555841464662762372, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555841464662762372, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555841464662762372, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555841464662762372, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555841464662762375, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+      propertyPath: spawnTransform
+      value: 
+      objectReference: {fileID: 1087465520}
+    - target: {fileID: 1555841464662762375, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
+      propertyPath: cameraController
+      value: 
+      objectReference: {fileID: 702152849}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
 --- !u!1 &1889268046492546137
 GameObject:
   m_ObjectHideFlags: 0

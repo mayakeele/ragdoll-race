@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
+  skinnedMeshRenderer: {fileID: 5804403427678821753}
   activeRagdoll: {fileID: 5327272404548169525}
   rootRigidbody: {fileID: 4661580775540585530}
   rootForward: {fileID: 3304757144567379501}
@@ -3475,7 +3476,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d88bb338c63105b43a9a6ff236d5b39d, type: 2}
+  - {fileID: 2100000, guid: 748c38683ce18ab469ed0abf1c24ed8f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

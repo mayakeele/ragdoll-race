@@ -13,6 +13,10 @@ public class PlayersManager : MonoBehaviour
     private List<Player> onscreenPlayers;
 
 
+    [Header("Materials")]
+    [SerializeField] private List<Material> playerMaterials;
+
+
     [Header("Shared Player Properties")]
     public float characterHeadHeight;
     public float characterPelvisHeight;
@@ -26,15 +30,9 @@ public class PlayersManager : MonoBehaviour
 
     // Main Functions
 
-    void Start()
+    void Awake()
     {
-        
-    }
-
-
-    void Update()
-    {
-        
+        playerMaterials.Shuffle();
     }
 
 
@@ -126,6 +124,11 @@ public class PlayersManager : MonoBehaviour
         return cameraController.GetCameraForwardDirection();
     }
 
+
+    public Material GetPlayerMaterial(int playerIndex){
+        if(playerIndex < playerMaterials.Count)  return playerMaterials[playerIndex];
+        else return playerMaterials[playerMaterials.Count - 1];
+    }
 
 
     // Private Functions

@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1555841464662762369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1555841464662762372}
+  - component: {fileID: 1555841464662762375}
+  - component: {fileID: 1555841464662762374}
+  m_Layer: 0
+  m_Name: PlayersManager
+  m_TagString: PlayersManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1555841464662762372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555841464662762369}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1555841464662762375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555841464662762369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2baae18bf10a6242b3281f55cd7bcc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraController: {fileID: 0}
+  allPlayers: []
+  playerMaterials:
+  - {fileID: 2100000, guid: d88bb338c63105b43a9a6ff236d5b39d, type: 2}
+  - {fileID: 2100000, guid: 56768b62f23e32b4b9b1c4ed7d46e23e, type: 2}
+  - {fileID: 2100000, guid: 61719d60bae112940a306f883b33a58b, type: 2}
+  - {fileID: 2100000, guid: 62f436980f470fa4297660c007a81563, type: 2}
+  - {fileID: 2100000, guid: 7e1ba9b09676bf84d9b4195ef5d6555d, type: 2}
+  - {fileID: 2100000, guid: 73a5267fcfd511746887f1e717ba3af8, type: 2}
+  - {fileID: 2100000, guid: 432ba8fc3f4a51a46b3aa09bad47da47, type: 2}
+  - {fileID: 2100000, guid: 674045945e8f2e94da6ec8b6277781ae, type: 2}
+  - {fileID: 2100000, guid: fa554888c3a922c46b990bfdefe25429, type: 2}
+  - {fileID: 2100000, guid: ec292252c018f76498dbd9cc0a9cbe5d, type: 2}
+  - {fileID: 2100000, guid: 748c38683ce18ab469ed0abf1c24ed8f, type: 2}
+  - {fileID: 2100000, guid: 609edc5af686af64ca85c29f15405e84, type: 2}
+  - {fileID: 2100000, guid: 4c09f098763482942a75d859ace166b7, type: 2}
+  characterHeadHeight: 1.2
+  characterPelvisHeight: 0.45
+  characterRadius: 0.5
+  spawnTransform: {fileID: 0}
+--- !u!114 &1555841464662762374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555841464662762369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NotificationBehavior: 2
+  m_MaxPlayerCount: -1
+  m_AllowJoining: 1
+  m_JoinBehavior: 1
+  m_PlayerJoinedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_PlayerLeftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_JoinAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Join
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 17423628-88d5-4d23-a052-ad1a448a1a32
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 2e0db8f5-bbdb-45dd-a633-c7b5ed502eb4
+        m_Path: <HID::PDP CO.,LTD. Faceoff Wired Pro Controller for Nintendo Switch>/button10
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 912beb7d-e058-4268-809d-b5ea0cfae031
+        m_Path: <Gamepad>/start
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 9a0cd183-8038-45ef-ad05-05f9d207db3d
+        m_Path: <Keyboard>/enter
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
+    m_Reference: {fileID: -5373818349701249791, guid: 0c9391a12fdb70e459bafa14b264625b, type: 3}
+  m_PlayerPrefab: {fileID: 343518790451568842, guid: 8ecb230fd7f74b2469ff8debaa37476a, type: 3}
+  m_SplitScreen: 0
+  m_MaintainAspectRatioInSplitScreen: 0
+  m_FixedNumberOfSplitScreens: -1
+  m_SplitScreenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1

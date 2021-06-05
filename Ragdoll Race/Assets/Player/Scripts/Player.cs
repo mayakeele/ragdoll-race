@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     [Header("Component References")]
     [HideInInspector] public PlayersManager manager;
+    public SkinnedMeshRenderer skinnedMeshRenderer;
     public ActiveRagdoll activeRagdoll;
     public Rigidbody rootRigidbody;
     public Transform rootForward;
     public AudioSource audioSource;
     [SerializeField] private string managerTag = "PlayersManager";
+    private PlayerInput playerInput;
 
 
     [Header("Damage & Knockback Properties")]
@@ -43,9 +46,15 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        
+
+        playerInput = GetComponentInChildren<PlayerInput>();
         manager = GameObject.FindGameObjectWithTag(managerTag).GetComponent<PlayersManager>();
 
+        int playerIndex = playerInput.playerIndex;
         manager.AddPlayer(this);
+
+        skinnedMeshRenderer.material = manager.GetPlayerMaterial(playerIndex);
     }
 
 
@@ -182,4 +191,5 @@ public class Player : MonoBehaviour
         // Change leg physic materials
         activeRagdoll.SetLegPhysicMaterial(ragdollState);
     }
+
 }
