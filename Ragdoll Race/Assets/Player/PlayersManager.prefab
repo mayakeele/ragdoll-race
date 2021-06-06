@@ -47,18 +47,27 @@ MonoBehaviour:
   cameraController: {fileID: 0}
   allPlayers: []
   playerMaterials:
-  - {fileID: 2100000, guid: d88bb338c63105b43a9a6ff236d5b39d, type: 2}
-  - {fileID: 2100000, guid: 56768b62f23e32b4b9b1c4ed7d46e23e, type: 2}
-  - {fileID: 2100000, guid: 61719d60bae112940a306f883b33a58b, type: 2}
-  - {fileID: 2100000, guid: 62f436980f470fa4297660c007a81563, type: 2}
-  - {fileID: 2100000, guid: 7e1ba9b09676bf84d9b4195ef5d6555d, type: 2}
-  - {fileID: 2100000, guid: 73a5267fcfd511746887f1e717ba3af8, type: 2}
-  - {fileID: 2100000, guid: 432ba8fc3f4a51a46b3aa09bad47da47, type: 2}
-  - {fileID: 2100000, guid: 674045945e8f2e94da6ec8b6277781ae, type: 2}
   - {fileID: 2100000, guid: fa554888c3a922c46b990bfdefe25429, type: 2}
+  - {fileID: 2100000, guid: 56768b62f23e32b4b9b1c4ed7d46e23e, type: 2}
+  - {fileID: 2100000, guid: 4fb0588db1db95e4e8dfc5018aa0f54b, type: 2}
+  - {fileID: 2100000, guid: 73a5267fcfd511746887f1e717ba3af8, type: 2}
+  - {fileID: 2100000, guid: 61719d60bae112940a306f883b33a58b, type: 2}
   - {fileID: 2100000, guid: ec292252c018f76498dbd9cc0a9cbe5d, type: 2}
+  - {fileID: 2100000, guid: 2256616fb9974e4489ecc0b7b96f2e25, type: 2}
+  - {fileID: 2100000, guid: 7e1ba9b09676bf84d9b4195ef5d6555d, type: 2}
+  - {fileID: 2100000, guid: 674045945e8f2e94da6ec8b6277781ae, type: 2}
+  - {fileID: 2100000, guid: 432ba8fc3f4a51a46b3aa09bad47da47, type: 2}
+  - {fileID: 2100000, guid: d88bb338c63105b43a9a6ff236d5b39d, type: 2}
   - {fileID: 2100000, guid: 748c38683ce18ab469ed0abf1c24ed8f, type: 2}
+  - {fileID: 2100000, guid: 62f436980f470fa4297660c007a81563, type: 2}
   - {fileID: 2100000, guid: 609edc5af686af64ca85c29f15405e84, type: 2}
+  - {fileID: 2100000, guid: b82d2f6d0e339284dbf8c448b6732d4f, type: 2}
+  - {fileID: 2100000, guid: a0030f6d284cd09448154073a5ec8902, type: 2}
+  - {fileID: 2100000, guid: f6bc347b6ceac5743af940b7dd1a799c, type: 2}
+  - {fileID: 2100000, guid: 2ab9263f8a63055499dc3521ac2a3b16, type: 2}
+  - {fileID: 2100000, guid: 92802970bf15bf94aa526aaab2194700, type: 2}
+  - {fileID: 2100000, guid: abd02b0b7fc0b8842a171ee21356cef3, type: 2}
+  - {fileID: 2100000, guid: 0dae526491b7f1a47a513e4a16718ad6, type: 2}
   - {fileID: 2100000, guid: 4c09f098763482942a75d859ace166b7, type: 2}
   characterHeadHeight: 1.2
   characterPelvisHeight: 0.45
