@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     [HideInInspector] public Camera mainCamera;
     [HideInInspector] public Rigidbody rb;
     public Transform anchorTransform;
+    private CameraShakeManager cameraShakeManager;
     
 
     [Header("Framing Parameters")]
@@ -54,6 +55,7 @@ public class CameraController : MonoBehaviour
     {
         mainCamera = GetComponentInChildren<Camera>();
         rb = GetComponent<Rigidbody>();
+        cameraShakeManager = GetComponent<CameraShakeManager>();
     }
 
     void FixedUpdate(){
@@ -353,6 +355,11 @@ public class CameraController : MonoBehaviour
     public void UpdateFOV(float FOV){
         cameraFOV = FOV;
         mainCamera.fieldOfView = cameraFOV;
+    }
+
+
+    public void AddCameraShake(float traumaAmount){
+        cameraShakeManager.AddCameraShake(traumaAmount);
     }
 
 

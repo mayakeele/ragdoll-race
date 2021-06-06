@@ -39,6 +39,24 @@ public static class FloatExtensions
         return newValue;
     }
 
+    public static float MapPercent(this float percent, float newStart, float newEnd){
+        // Returns a value that is the same percentage of the way between the new bounds as percent is between 0 and 1
+        
+        float newValue = newStart + (percent * (newEnd - newStart));
+        
+        return newValue;
+    }
+
+    public static float MapPercentClamped(this float percent, float newStart, float newEnd){
+        // Returns a value that is the same percentage of the way between the new bounds as percent is between 0 and 1, clamped between min and max ends
+        
+        float newValue = newStart + (percent * (newEnd - newStart));
+
+        newValue = newEnd > newStart ? Mathf.Clamp(newValue, newStart, newEnd) : Mathf.Clamp(newValue, newEnd, newStart);
+        
+        return newValue;
+    }
+
 
 
     // Float array functions

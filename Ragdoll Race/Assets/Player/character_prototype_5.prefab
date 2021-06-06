@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleDamageBySpeed: 1
+  scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 8
   knockbackMultiplier: 2
@@ -224,6 +224,8 @@ MonoBehaviour:
   canForceRagdollOnHit: 0
   forceRagdollDurationMin: 0
   forceRagdollDurationMax: 0
+  minCameraShakeOnHit: 0.03
+  maxCameraShakeOnHit: 0.28
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
@@ -580,7 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleDamageBySpeed: 1
+  scaleHitPowerBySpeed: 1
   minHitSpeed: 2
   maxHitSpeed: 7
   knockbackMultiplier: 1.5
@@ -616,6 +618,8 @@ MonoBehaviour:
   canForceRagdollOnHit: 1
   forceRagdollDurationMin: 0.15
   forceRagdollDurationMax: 0.6
+  minCameraShakeOnHit: 0.13
+  maxCameraShakeOnHit: 0.35
   hitSoundClips:
   - {fileID: 8300000, guid: 41e4349e58c40974391d454950933504, type: 3}
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
@@ -796,7 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleDamageBySpeed: 1
+  scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 8
   knockbackMultiplier: 2
@@ -832,6 +836,8 @@ MonoBehaviour:
   canForceRagdollOnHit: 0
   forceRagdollDurationMin: 0
   forceRagdollDurationMax: 0
+  minCameraShakeOnHit: 0.03
+  maxCameraShakeOnHit: 0.28
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
@@ -1075,7 +1081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleDamageBySpeed: 1
+  scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 6
   knockbackMultiplier: 2
@@ -1111,6 +1117,8 @@ MonoBehaviour:
   canForceRagdollOnHit: 0
   forceRagdollDurationMin: 0
   forceRagdollDurationMax: 0
+  minCameraShakeOnHit: 0.03
+  maxCameraShakeOnHit: 0.28
   hitSoundClips:
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
   - {fileID: 8300000, guid: c25a5d1e01945aa4f9992924d9555c88, type: 3}
@@ -1499,7 +1507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleDamageBySpeed: 1
+  scaleHitPowerBySpeed: 1
   minHitSpeed: 2
   maxHitSpeed: 7
   knockbackMultiplier: 1.5
@@ -1535,6 +1543,8 @@ MonoBehaviour:
   canForceRagdollOnHit: 1
   forceRagdollDurationMin: 0.1
   forceRagdollDurationMax: 0.5
+  minCameraShakeOnHit: 0.13
+  maxCameraShakeOnHit: 0.35
   hitSoundClips:
   - {fileID: 8300000, guid: 41e4349e58c40974391d454950933504, type: 3}
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
@@ -1716,7 +1726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleDamageBySpeed: 1
+  scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 7
   knockbackMultiplier: 1.5
@@ -1752,6 +1762,8 @@ MonoBehaviour:
   canForceRagdollOnHit: 0
   forceRagdollDurationMin: 0
   forceRagdollDurationMax: 0
+  minCameraShakeOnHit: 0.03
+  maxCameraShakeOnHit: 0.28
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
@@ -2016,7 +2028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleDamageBySpeed: 1
+  scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 8
   knockbackMultiplier: 1.5
@@ -2052,6 +2064,8 @@ MonoBehaviour:
   canForceRagdollOnHit: 0
   forceRagdollDurationMin: 0
   forceRagdollDurationMax: 0
+  minCameraShakeOnHit: 0.03
+  maxCameraShakeOnHit: 0.28
   hitSoundClips:
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
   - {fileID: 8300000, guid: c25a5d1e01945aa4f9992924d9555c88, type: 3}
@@ -2708,7 +2722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleDamageBySpeed: 1
+  scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 7
   knockbackMultiplier: 1.5
@@ -2744,6 +2758,8 @@ MonoBehaviour:
   canForceRagdollOnHit: 0
   forceRagdollDurationMin: 0
   forceRagdollDurationMax: 0
+  minCameraShakeOnHit: 0.03
+  maxCameraShakeOnHit: 0.28
   hitSoundClips:
   - {fileID: 8300000, guid: 07d287c3c166c624e843324ec5d7879b, type: 3}
   hitVolume: 1
@@ -3196,7 +3212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleDamageBySpeed: 1
+  scaleHitPowerBySpeed: 1
   minHitSpeed: 1.5
   maxHitSpeed: 6
   knockbackMultiplier: 2.5
@@ -3232,6 +3248,8 @@ MonoBehaviour:
   canForceRagdollOnHit: 1
   forceRagdollDurationMin: 0.5
   forceRagdollDurationMax: 2
+  minCameraShakeOnHit: 0.15
+  maxCameraShakeOnHit: 0.38
   hitSoundClips:
   - {fileID: 8300000, guid: 3a7d5be78970be14c9a1aad23f559fa2, type: 3}
   hitVolume: 1
@@ -3703,7 +3721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleDamageBySpeed: 1
+  scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 8
   knockbackMultiplier: 1.5
@@ -3739,6 +3757,8 @@ MonoBehaviour:
   canForceRagdollOnHit: 0
   forceRagdollDurationMin: 0
   forceRagdollDurationMax: 0
+  minCameraShakeOnHit: 0.03
+  maxCameraShakeOnHit: 0.28
   hitSoundClips:
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
   - {fileID: 8300000, guid: c25a5d1e01945aa4f9992924d9555c88, type: 3}
@@ -4129,7 +4149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleDamageBySpeed: 1
+  scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 6
   knockbackMultiplier: 2
@@ -4165,6 +4185,8 @@ MonoBehaviour:
   canForceRagdollOnHit: 0
   forceRagdollDurationMin: 0
   forceRagdollDurationMax: 0
+  minCameraShakeOnHit: 0.03
+  maxCameraShakeOnHit: 0.28
   hitSoundClips:
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}
   - {fileID: 8300000, guid: c25a5d1e01945aa4f9992924d9555c88, type: 3}
@@ -4444,7 +4466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleDamageBySpeed: 1
+  scaleHitPowerBySpeed: 1
   minHitSpeed: 2
   maxHitSpeed: 7
   knockbackMultiplier: 1.5
@@ -4480,6 +4502,8 @@ MonoBehaviour:
   canForceRagdollOnHit: 1
   forceRagdollDurationMin: 0.05
   forceRagdollDurationMax: 0.4
+  minCameraShakeOnHit: 0.13
+  maxCameraShakeOnHit: 0.35
   hitSoundClips:
   - {fileID: 8300000, guid: 41e4349e58c40974391d454950933504, type: 3}
   - {fileID: 8300000, guid: 87d4edf8b1c65ed4495f62718c7962c4, type: 3}

@@ -2414,7 +2414,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279759874129353772}
   serializedVersion: 2
-  m_Mass: 600
+  m_Mass: 800
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -2436,9 +2436,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 1279759874129353773}
   targetTransform: {fileID: 1921637947}
-  springFrequency: 18
-  springDampingRatio: 1
-  angularSpringConstant: 27000
+  springFrequency: 16
+  springDampingRatio: 0.9
+  angularSpringConstant: 30000
   angularSpringDampingConstant: 20000
 --- !u!1001 &1555841464641299930
 PrefabInstance:
@@ -2912,8 +2912,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.83, y: 6.2026854, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0.07}
+  m_Size: {x: 0.71345395, y: 6.2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5216028968976288494
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2942,9 +2942,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleDamageBySpeed: 0
+  scaleHitPowerBySpeed: 0
   minHitSpeed: 0
-  maxHitSpeed: 0
+  maxHitSpeed: 1
   knockbackMultiplier: 1
   minDamage: 0
   maxDamage: 15

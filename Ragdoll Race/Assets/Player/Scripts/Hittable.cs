@@ -16,6 +16,11 @@ public class Hittable : MonoBehaviour
     [SerializeField] private float forceRagdollDurationMax;
 
 
+    [Header("Camera Shake Effects")]
+    [SerializeField] private float minCameraShakeOnHit;
+    [SerializeField] private float maxCameraShakeOnHit;
+
+
     [Header("Sound Effects")]
     [SerializeField] private List<AudioClip> hitSoundClips;
     [Range(0,1)] [SerializeField] private float hitVolume = 1;
@@ -28,6 +33,7 @@ public class Hittable : MonoBehaviour
     [HideInInspector] public Player player;
     [HideInInspector] public Rigidbody rigidbody;
     private AudioSource audioSource;
+    private CameraShakeManager cameraShakeManager;
 
 
 
@@ -37,6 +43,8 @@ public class Hittable : MonoBehaviour
         audioSource = player.audioSource;
 
         rigidbody = GetComponent<Rigidbody>();
+
+        cameraShakeManager = FindObjectOfType<CameraShakeManager>();
     }
 
     void Update()
@@ -58,11 +66,15 @@ public class Hittable : MonoBehaviour
 
         
         if(hitSuccessful){
-
+            
+            // Play impact sound at hit location 
             if(hitSoundClips.Count > 0){
-                // Play impact sound at hit location 
                 audioSource.PlayClipPitchShifted(RandomExtensions.RandomChoice(hitSoundClips), hitVolume, hitPitchMin, hitPitchMax);
             }
+            
+            // Shake the camera
+            float cameraShakeAmount = hitSpeedGradient.MapPercentClamped(minCameraShakeOnHit, maxCameraShakeOnHit);
+            cameraShakeManager.AddCameraShake(cameraShakeAmount);
 
             return true;
         }
