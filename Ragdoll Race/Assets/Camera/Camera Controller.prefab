@@ -164,11 +164,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 1374290141311447390}
-  pitchAmplitudeMax: 3
-  yawAmplitudeMax: 4
+  pitchAmplitudeMax: 3.3
+  yawAmplitudeMax: 4.4
   rollAmplitudeMax: 5.5
-  noiseFrequencyMultiplier: 1500
-  traumaDecayRate: 0.87
+  xAmplitudeMax: 0.75
+  yAmplitudeMax: 0.6
+  zAmplitudeMax: 0
+  rotationNoiseFrequencyMultiplier: 1500
+  translationNoiseFrequencyMultiplier: 500
+  traumaDecayRate: 0.75
 --- !u!114 &1374290142317272442
 MonoBehaviour:
   m_ObjectHideFlags: 0

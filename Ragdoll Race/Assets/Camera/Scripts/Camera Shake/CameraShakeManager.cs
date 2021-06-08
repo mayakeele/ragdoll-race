@@ -9,13 +9,21 @@ public class CameraShakeManager : MonoBehaviour
     private FastNoiseLite noise;
 
 
-    [Header("Shake Properties")]
+    [Header("Rotational Shake Amplitudes")]
     [SerializeField] private float pitchAmplitudeMax;
     [SerializeField] private float yawAmplitudeMax;
     [SerializeField] private float rollAmplitudeMax;
     [Space]
-    [SerializeField] private float noiseFrequencyMultiplier;
+
+    [Header("Translational Shake Amplitudes")]
+    [SerializeField] private float xAmplitudeMax;
+    [SerializeField] private float yAmplitudeMax;
+    [SerializeField] private float zAmplitudeMax;
     [Space]
+
+    [Header("Other Properties")]
+    [SerializeField] private float rotationNoiseFrequencyMultiplier;
+    [SerializeField] private float translationNoiseFrequencyMultiplier;
     [SerializeField] private float traumaDecayRate;
 
     private float currentTrauma = 0;
@@ -36,7 +44,7 @@ public class CameraShakeManager : MonoBehaviour
         DecayTrauma(Time.deltaTime);
 
         if(currentTrauma > 0){
-            RotateCamera(Time.time);
+            MoveCamera(Time.time);
         }
         else{
             camera.transform.localRotation = Quaternion.identity;
@@ -51,20 +59,32 @@ public class CameraShakeManager : MonoBehaviour
 
 
 
-    private void RotateCamera(float currentTime){
+    private void MoveCamera(float currentTime){
         // Shakes the camera continuously by rotating in 3 dimensions using Perlin noise
 
         float shakeAmount = Mathf.Pow(currentTrauma, 2);
 
+        // Shake Rotationally
         noise.SetSeed(seed);
-        float pitchAngle = shakeAmount * pitchAmplitudeMax * noise.GetNoise(currentTime * noiseFrequencyMultiplier, 0);
+        float pitchAngle = shakeAmount * pitchAmplitudeMax * noise.GetNoise(currentTime * rotationNoiseFrequencyMultiplier, 0);
         noise.SetSeed(seed+1);
-        float yawAngle = shakeAmount * yawAmplitudeMax * noise.GetNoise(currentTime * noiseFrequencyMultiplier, 0);
+        float yawAngle = shakeAmount * yawAmplitudeMax * noise.GetNoise(currentTime * rotationNoiseFrequencyMultiplier, 0);
         noise.SetSeed(seed+2);
-        float rollAngle = shakeAmount * rollAmplitudeMax * noise.GetNoise(currentTime * noiseFrequencyMultiplier, 0);
+        float rollAngle = shakeAmount * rollAmplitudeMax * noise.GetNoise(currentTime * rotationNoiseFrequencyMultiplier, 0);
 
+        // Shake Translationally
+        noise.SetSeed(seed+3);
+        float xDisplacement = shakeAmount * xAmplitudeMax * noise.GetNoise(currentTime * translationNoiseFrequencyMultiplier, 0);
+        noise.SetSeed(seed+4);
+        float yDisplacement = shakeAmount * yAmplitudeMax * noise.GetNoise(currentTime * translationNoiseFrequencyMultiplier, 0);
+        noise.SetSeed(seed+5);
+        float zDisplacement = shakeAmount * zAmplitudeMax * noise.GetNoise(currentTime * translationNoiseFrequencyMultiplier, 0);
+
+        // Apply rotation and translation shake
         Quaternion newRotation = Quaternion.Euler(pitchAngle, yawAngle, rollAngle);
+        Vector3 newPosition = new Vector3(xDisplacement, yDisplacement, zDisplacement);
         camera.transform.localRotation = newRotation;
+        camera.transform.localPosition = newPosition;
     }
 
 
