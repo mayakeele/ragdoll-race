@@ -23,7 +23,6 @@ public class CameraController : MonoBehaviour
     public float cameraFOV;
 
 
-
     [Header("Distance Constraints")]
     public float targetBoundsHorizontal;
     public float targetBoundsVertical;
@@ -39,13 +38,9 @@ public class CameraController : MonoBehaviour
     public bool freezeInPlace = false;
     public bool ignoreDistanceConstraints = false;
 
-    //[SerializeField] private LayerMask cameraObstructionLayers;
-    //[SerializeField] private LayerMask cameraCollisionLayers;
-    //[SerializeField] private float cameraPhysicsRadius;
 
 
-
-    // Camera Variables
+    private List<Transform> additionalTargets = new List<Transform>();
 
 
 
@@ -72,6 +67,7 @@ public class CameraController : MonoBehaviour
             List<Vector3> playerTargetsWorld = new List<Vector3>();
             playerTargetsWorld.AddRange(playerFeetPositions);
             playerTargetsWorld.AddRange(playerHeadPositions);
+            playerTargetsWorld.AddRange(additionalTargets.GetPositions());
 
             List<Vector3> playerTargetsLocal = transform.InverseTransformPoints(playerTargetsWorld);
 
@@ -118,10 +114,52 @@ public class CameraController : MonoBehaviour
 
     // Public Functions
 
+    public bool AddAdditionalTarget(Transform target){
+        // Adds target and returns true if the target is not already in the list
+        if(!additionalTargets.Contains(target)){
+            additionalTargets.Add(target);
+            return true;
+        }
+        else{ return false; }
+    }
+
+    public bool RemoveAdditionalTarget(Transform target){
+        // Removes target and returns true if the target existed
+        if(additionalTargets.Contains(target)){
+            additionalTargets.Remove(target);
+            return true;
+        }
+        else{ return false; }
+    }
+
+    public void ClearAdditionalTargets(){
+        additionalTargets.Clear();
+    }
+
+
     public Vector3 GetCameraForwardDirection(){
         // Calculates the direction the camera is facing, projected onto the horizontal plane
         Vector3 camForwardDir = transform.forward.ProjectHorizontal().normalized;
         return camForwardDir;
+    }
+
+
+    public Transform CreateTemporaryAdditionalTarget(Vector3 position, float lifetime){
+        // Creates a new transform at the specified position and registers it as an additional camera target.
+        // After its lifetime has passed, remove from target list and destroy transform
+
+        Transform target = new GameObject("temporary camera target").transform;
+        target.position = position;
+
+        AddAdditionalTarget(target);
+        StartCoroutine(RemoveTargetAfterTime(target, lifetime, true));
+
+        return target;
+    }
+    private IEnumerator RemoveTargetAfterTime(Transform target, float time, bool destroyGameObject = false){
+        yield return new WaitForSeconds(time);
+        RemoveAdditionalTarget(target);
+        if(destroyGameObject) Destroy(target.gameObject);
     }
 
 

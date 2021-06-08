@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     public bool isImmune;
     private float immunityTimer;
 
+    private bool knockedOutThisFrame;
 
 
     // Unity Functions
@@ -106,6 +107,12 @@ public class Player : MonoBehaviour
     }
 
 
+    void FixedUpdate()
+    {
+        knockedOutThisFrame = false;
+    }
+
+
     // Public Functions
     
     public void TrySetRagdollState(bool ragdollState){
@@ -158,11 +165,15 @@ public class Player : MonoBehaviour
     }
 
 
-    public void Kill(){
-        // Tells the player manager that this player has been killed, and by whom
-        // Also plays a sound effect and respawns the player at the spawn point
+    public void TryKnockout(GameObject prefabToSpawn = null){
+        // Tells the player manager that this player has been killed
+        // Passes on the given prefab to spawn. If no prefab is given,
+        // passes null, PlayerManager will instantiate default instead
 
-        RespawnAtPosition(manager.spawnTransform.position);
+        if(!knockedOutThisFrame){         
+            knockedOutThisFrame = true;
+            manager.KnockoutPlayer(this, rootRigidbody.position, prefabToSpawn);
+        }    
     }
 
 

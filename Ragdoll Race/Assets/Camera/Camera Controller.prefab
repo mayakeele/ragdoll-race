@@ -168,8 +168,7 @@ MonoBehaviour:
   yawAmplitudeMax: 4
   rollAmplitudeMax: 5.5
   noiseFrequencyMultiplier: 1500
-  traumaDecayRate: 0.9
-  currentTrauma: 0
+  traumaDecayRate: 0.87
 --- !u!114 &1374290142317272442
 MonoBehaviour:
   m_ObjectHideFlags: 0

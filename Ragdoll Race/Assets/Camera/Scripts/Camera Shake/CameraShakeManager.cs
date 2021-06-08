@@ -18,7 +18,7 @@ public class CameraShakeManager : MonoBehaviour
     [Space]
     [SerializeField] private float traumaDecayRate;
 
-    [SerializeField] private float currentTrauma;
+    private float currentTrauma = 0;
     private int seed;
 
 

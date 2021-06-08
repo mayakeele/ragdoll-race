@@ -17,14 +17,23 @@ public class PlayersManager : MonoBehaviour
     [SerializeField] private List<Material> playerMaterials;
 
 
-    [Header("Shared Player Properties")]
+    [Header("Knockout Effects")]
+    [SerializeField] private GameObject defaultKnockoutEffectPrefab;
+    [SerializeField] private float KOCameraShakeAmount;
+    [SerializeField] private float postKOCameraLingerDuration;
+
+
+    [Header("Player Body Dimensions")]
     public float characterHeadHeight;
     public float characterPelvisHeight;
     public float characterRadius;
 
 
-    [Header("Variables")]
+    [Header("Spawning")]
     public Transform spawnTransform;
+
+    private int[] playerLifeCounts;
+    private int[] playerKnockoutCounts;
 
 
 
@@ -128,6 +137,28 @@ public class PlayersManager : MonoBehaviour
     public Material GetPlayerMaterial(int playerIndex){
         if(playerIndex < playerMaterials.Count)  return playerMaterials[playerIndex];
         else return playerMaterials[playerMaterials.Count - 1];
+    }
+
+
+    public void KnockoutPlayer(Player player, Vector3 knockoutPosition, GameObject prefabToSpawn = null){
+        // Updates player lives and knockouts given. If a prefab is specified, instantiates it
+        // at the player's last position. Otherwise, instantiate the default KO effect
+
+        // *** Update lives ***
+
+        // *** Determine who last touched the player, award KO to them ***
+
+        player.RespawnAtPosition(spawnTransform.position);
+
+        // Spawn a KO effect prefab, which includes VFX, SFX, and anything else to spawn
+        if(prefabToSpawn) Instantiate(prefabToSpawn, knockoutPosition, Quaternion.identity);
+        else Instantiate(defaultKnockoutEffectPrefab, knockoutPosition, Quaternion.identity);
+
+        // Add some camera shake
+        cameraController.AddCameraShake(KOCameraShakeAmount);
+
+        // Make the camera keep the knockout location in view for a little bit after the KO
+        cameraController.CreateTemporaryAdditionalTarget(knockoutPosition, postKOCameraLingerDuration);
     }
 
 

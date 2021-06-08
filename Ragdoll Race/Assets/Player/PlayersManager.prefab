@@ -69,6 +69,9 @@ MonoBehaviour:
   - {fileID: 2100000, guid: abd02b0b7fc0b8842a171ee21356cef3, type: 2}
   - {fileID: 2100000, guid: 0dae526491b7f1a47a513e4a16718ad6, type: 2}
   - {fileID: 2100000, guid: 4c09f098763482942a75d859ace166b7, type: 2}
+  defaultKnockoutEffectPrefab: {fileID: 7306722852800413837, guid: c9ba7d6fa0593494387ae60e157b787c, type: 3}
+  KOCameraShakeAmount: 0.38
+  postKOCameraLingerDuration: 1.5
   characterHeadHeight: 1.2
   characterPelvisHeight: 0.45
   characterRadius: 0.5
