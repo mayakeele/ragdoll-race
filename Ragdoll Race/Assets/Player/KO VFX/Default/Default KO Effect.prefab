@@ -94,6 +94,7 @@ VFXRenderer:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -203,7 +204,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ee4d2f81773c1d74995d05b6e15affb5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.981
+  m_Volume: 0.806
   m_Pitch: 1
   Loop: 0
   Mute: 0
