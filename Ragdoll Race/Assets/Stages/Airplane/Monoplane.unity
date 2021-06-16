@@ -451,7 +451,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 136.352, y: -33.789978, z: -34.04901}
 --- !u!1001 &702152848
 PrefabInstance:
@@ -2453,7 +2453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1555841464662762372, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1555841464662762372, guid: 4516a71a9610f164cb2a6657c2188a32, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2942,6 +2942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attachedPlayer: {fileID: 0}
   scaleHitPowerBySpeed: 0
   minHitSpeed: 0
   maxHitSpeed: 1

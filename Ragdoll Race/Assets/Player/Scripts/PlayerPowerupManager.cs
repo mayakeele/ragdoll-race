@@ -44,8 +44,11 @@ public class PlayerPowerupManager : MonoBehaviour
     }
 
     public void RemovePowerup(){
-        if(HasPowerup()) currentPowerup.OnRemove();
-        currentPowerup = null;
+        if(HasPowerup()){
+            currentPowerup.OnRemove();
+            Destroy(currentPowerup.gameObject);
+            currentPowerup = null;
+        }
     }
 
 

@@ -6,6 +6,7 @@ public class ProximityMineItem : SpawnedItem
 {
     [Header("Activation Properties")]
     [SerializeField] private float initialDisarmDuration;
+    [SerializeField] private float activationTime;
     [SerializeField] private LayerMask triggerableLayers;
 
 
@@ -15,7 +16,6 @@ public class ProximityMineItem : SpawnedItem
     [SerializeField] private float explosionForce;
 
 
-    [HideInInspector] public Player attachedPlayer;
     private bool isArmed = false;
     private bool isExploding = false;
 

@@ -41,6 +41,5 @@ public class ProximityMinePowerup : Powerup
 
         numMines--;
 
-        Debug.Log("Mines left: " + numMines);
     }
 }

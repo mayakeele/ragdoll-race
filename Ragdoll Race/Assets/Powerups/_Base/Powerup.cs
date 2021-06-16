@@ -37,7 +37,7 @@ public class Powerup : MonoBehaviour
     }
 
     public virtual void OnRemove(){
-        Destroy(this.gameObject);
+
     }
 
 
