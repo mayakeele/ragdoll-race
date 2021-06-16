@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
         Vector3 idealVelocityRelative = ((cameraForward * moveInput.y) + (cameraRight * moveInput.x)) * currMoveSpeedLimit;
 
 
-        Vector3 idealVelocityWorld = idealVelocityRelative + player.activeRagdoll.groundVelocity.ProjectHorizontal();
+        Vector3 idealVelocityWorld = idealVelocityRelative + player.groundVelocity.ProjectHorizontal();
   
 
         Vector3 currentVelocityWorld = player.rootRigidbody.velocity.ProjectHorizontal();
@@ -105,8 +105,8 @@ public class PlayerController : MonoBehaviour
             player.rootRigidbody.AddForce(player.activeRagdoll.GetBodyMass() * currMoveAcceleration * requiredVelocityChange.normalized);
 
             // If the player is standing on an object with a rigidbody, apply equal and opposite force
-            if(player.activeRagdoll.groundRigidbody){
-                player.activeRagdoll.groundRigidbody.AddForceAtPosition(-movementForce, player.activeRagdoll.groundPosition);
+            if(player.groundRigidbody){
+                player.groundRigidbody.AddForceAtPosition(-movementForce, player.groundPosition);
             }
         }
 
@@ -175,7 +175,7 @@ public class PlayerController : MonoBehaviour
             player.activeRagdoll.armsActionCoordinator.OnArmActionButtonReleased();
         }
     }
-
+    
 
 
     // Private Functions

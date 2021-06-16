@@ -56,11 +56,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343518790451568842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.32, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6826366817965464653}
   - {fileID: 3480036356828148909}
+  - {fileID: 6826366817965464653}
+  - {fileID: 5281402915875966497}
   - {fileID: 4812255934038809146}
   - {fileID: 8304472216952777454}
   m_Father: {fileID: 0}
@@ -127,7 +128,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxDamage: 300
+  maxDamage: 500
   hitImmunityDuration: 0.2
   knockbackAngleCurve:
     serializedVersion: 2
@@ -141,6 +142,11 @@ MonoBehaviour:
   autoGetup: 1
   isDizzy: 0
   isImmune: 0
+  groundTransform: {fileID: 0}
+  groundRigidbody: {fileID: 0}
+  groundPosition: {x: 0, y: 0, z: 0}
+  groundVelocity: {x: 0, y: 0, z: 0}
+  groundNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &622215080718869483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1175,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000013683758, y: 0.16881587, z: -0.000000011175871}
+  m_ConnectedAnchor: {x: 0.0000000136837635, y: 0.16881585, z: 0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -1327,7 +1333,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1121321718870833776}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8450690294800486267
 MonoBehaviour:
@@ -1397,6 +1403,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1584728442163640374}
+        m_TargetAssemblyTypeName: PlayerPowerupManager, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 560767f2-2b13-4210-8e92-f2c18d9bba70
     m_ActionName: Gameplay/Move[/PDP CO.,LTD. Faceoff Wired Pro Controller for Nintendo
       Switch/stick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
@@ -1404,6 +1422,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8450690294800486267}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1584728442163640374}
+        m_TargetAssemblyTypeName: PlayerPowerupManager, Assembly-CSharp
         m_MethodName: OnJump
         m_Mode: 0
         m_Arguments:
@@ -1452,8 +1482,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1584728442163640374}
+        m_TargetAssemblyTypeName: PlayerPowerupManager, Assembly-CSharp
+        m_MethodName: OnArmAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f1b94437-ebc5-4d68-9722-29d8850073a7
     m_ActionName: Gameplay/Left Arm Action[/XInputControllerWindows/leftTrigger,/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1584728442163640374}
+        m_TargetAssemblyTypeName: PlayerPowerupManager, Assembly-CSharp
+        m_MethodName: OnActivate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c0bd7d00-2f87-40dc-9b27-f00a54db90c0
+    m_ActionName: Gameplay/Activate Powerup[/XInputControllerWindows/buttonEast,/Keyboard/tab]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -1581,7 +1639,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.17796132, z: 0}
+  m_ConnectedAnchor: {x: 0, y: 0.17796133, z: 0}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -2893,6 +2951,51 @@ CapsuleCollider:
   m_Height: 0.27679184
   m_Direction: 1
   m_Center: {x: 0.007373135, y: 0.12338847, z: 0.01412486}
+--- !u!1 &6251701972139850888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5281402915875966497}
+  - component: {fileID: 1584728442163640374}
+  m_Layer: 6
+  m_Name: Powerup Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5281402915875966497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6251701972139850888}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1121321718870833776}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1584728442163640374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6251701972139850888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bc90910cc860c44808ceb3f71a7a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  initialPowerup: {fileID: 1023949611086863326, guid: 4234f98b090d9584aa49143b72a9df9c, type: 3}
 --- !u!1 &6503780231121693589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,7 +3576,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1121321718870833776}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5804403427678821753
 SkinnedMeshRenderer:
@@ -3604,7 +3707,7 @@ Transform:
   m_Children:
   - {fileID: 5290909471116892973}
   m_Father: {fileID: 1121321718870833776}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &5327272404548169525
 MonoBehaviour:
@@ -3670,9 +3773,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  groundRigidbody: {fileID: 0}
-  groundPosition: {x: 0, y: 0, z: 0}
-  groundVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &8013968689626403482
 GameObject:
   m_ObjectHideFlags: 0
@@ -4237,7 +4337,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000013683758, y: 0.16881587, z: -0.000000011175871}
+  m_ConnectedAnchor: {x: -0.0000000136837635, y: 0.16881585, z: 0.0000000037252903}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -4414,7 +4514,7 @@ Transform:
   - {fileID: 1564797017027049950}
   - {fileID: 3051902190544631363}
   m_Father: {fileID: 1121321718870833776}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8666473851824884713
 GameObject:

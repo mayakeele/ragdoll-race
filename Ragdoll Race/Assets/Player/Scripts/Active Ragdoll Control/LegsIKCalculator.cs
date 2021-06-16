@@ -215,6 +215,6 @@ public class LegsIKCalculator : MonoBehaviour
 
 
     private void MoveTargetWithGround(Transform target){
-        target.transform.Translate(activeRagdoll.groundVelocity * Time.fixedDeltaTime, Space.World);
+        target.transform.Translate(activeRagdoll.player.groundVelocity * Time.fixedDeltaTime, Space.World);
     }
 }

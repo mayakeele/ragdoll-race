@@ -7,7 +7,7 @@ public class Hitter : MonoBehaviour
     
     [Header("References")]
     private Rigidbody rigidbody;
-    private Player attachedPlayer;
+    [HideInInspector] public Player attachedPlayer;
 
 
     [Header("Hit Criteria")]
@@ -127,7 +127,7 @@ public class Hitter : MonoBehaviour
         
         
         // Tell the hit Hittable that it has been hit, receive whether the hittable was able to be hit
-        bool hitSuccessful = hitObject.Hit(hitLocation, relativeVelocity, hitDamageOutput, knockbackMultiplier, hitSpeedGradientOutput);
+        bool hitSuccessful = hitObject.Hit(hitLocation, relativeVelocity, hitDamageOutput, knockbackMultiplier, hitSpeedGradientOutput, attachedPlayer);
         if(hitSuccessful){
             // Play impact sound at hit location
             if(playerHitSounds.Count > 0){

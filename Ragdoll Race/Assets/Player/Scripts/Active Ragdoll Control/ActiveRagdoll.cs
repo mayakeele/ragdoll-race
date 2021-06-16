@@ -51,9 +51,7 @@ public class ActiveRagdoll : MonoBehaviour
     private List<JointDrive> bodyPartDefaultJointMotors = new List<JointDrive>();
     private bool isPerformingGetup;
     private bool isPerformingJump;
-    [HideInInspector] public Rigidbody groundRigidbody = null;
-    [HideInInspector] public Vector3 groundPosition = Vector3.zero;
-    [HideInInspector] public Vector3 groundVelocity = Vector3.zero;
+    
 
 
 
@@ -93,29 +91,15 @@ public class ActiveRagdoll : MonoBehaviour
 
                 // Update the relative speed of the ground (frame of reference)
 
-                MovingPlatform movingPlatform = hitInfo.transform.GetComponent<MovingPlatform>();
-                groundPosition = hitInfo.point;
-
-                if(movingPlatform){
-                    groundRigidbody = movingPlatform.rigidbody;
-                    groundVelocity = movingPlatform.GetPointVelocity(groundPosition);
-                }
-                else if(hitInfo.rigidbody){
-                    groundRigidbody = hitInfo.rigidbody;
-                    groundVelocity = groundRigidbody.GetPointVelocity(groundPosition);
-
-                }
-                else{
-                    groundRigidbody = null;
-                    groundVelocity = Vector3.zero;
-                }
+                player.isGrounded = true;
+                UpdateGroundTrackingVariables(hitInfo);
 
 
                 // Calculate buoyancy force, as a fraction of the total body mass to provide "neutral buoyancy"
                 Vector3 pelvisForce = bodyMass * Physics.gravity.magnitude * buoyancyMultiplier * Vector3.up;
 
                 // Add an extra spring force which increases as legs compress, also provides damping
-                float targetHeight = hitInfo.point.y + targetPelvisHeight;
+                float targetHeight = player.groundPosition.y + targetPelvisHeight;
                 //float targetHeight = legsIKCalculator.GetFootAnchors().MaxComponents().y + targetPelvisHeight;
                 pelvisForce += CalculateUpwardForce(pelvisRigidbody.worldCenterOfMass.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping, false);    
                 
@@ -124,12 +108,12 @@ public class ActiveRagdoll : MonoBehaviour
                 pelvisRigidbody.AddForce(pelvisForce);
 
                 // If the player is standing on an object with a rigidbody, record which object that is and apply an equal and opposite force to it
-                if(groundRigidbody){
-                    groundRigidbody.AddForceAtPosition(-pelvisForce, groundPosition);
+                if(player.groundRigidbody){
+                    player.groundRigidbody.AddForceAtPosition(-pelvisForce, player.groundPosition);
                 }
 
 
-                player.isGrounded = true;
+                
             }
             else{
                 player.isGrounded = false;
@@ -231,7 +215,7 @@ public class ActiveRagdoll : MonoBehaviour
     public Vector3 GetRelativeVelocity(){
         // Returns the pelvis velocity relative to the current ground frame of reference
 
-        return pelvisRigidbody.velocity - groundVelocity;
+        return pelvisRigidbody.velocity - player.groundVelocity;
     }
 
 
@@ -258,6 +242,30 @@ public class ActiveRagdoll : MonoBehaviour
         }
 
         return centerOfMass / totalMass;
+    }
+
+
+    private void UpdateGroundTrackingVariables(RaycastHit hitInfo){
+        // Updates the player's varables which track the ground
+        player.groundTransform = hitInfo.transform;
+        player.groundPosition = hitInfo.point;
+        player.groundNormal = hitInfo.normal;
+
+        MovingPlatform movingPlatform = hitInfo.transform.GetComponent<MovingPlatform>();
+
+        if(movingPlatform){
+            player.groundRigidbody = movingPlatform.rigidbody;
+            player.groundVelocity = movingPlatform.GetPointVelocity(player.groundPosition);
+        }
+        else if(hitInfo.rigidbody){
+            player.groundRigidbody = hitInfo.rigidbody;
+            player.groundVelocity = player.groundRigidbody.GetPointVelocity(player.groundPosition);
+
+        }
+        else{
+            player.groundRigidbody = null;
+            player.groundVelocity = Vector3.zero;
+        }
     }
 
 

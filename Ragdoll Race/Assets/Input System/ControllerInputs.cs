@@ -49,6 +49,14 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Activate Powerup"",
+                    ""type"": ""Button"",
+                    ""id"": ""c0bd7d00-2f87-40dc-9b27-f00a54db90c0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -131,17 +139,6 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""72eb7243-725d-490a-8f72-f4c9a5a01046"",
-                    ""path"": ""<HID::PDP CO.,LTD. Faceoff Wired Pro Controller for Nintendo Switch>/button2"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""a6f986f6-a1f0-4d5b-a936-bc861e265ee2"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
@@ -164,8 +161,8 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""406df89e-6949-4adb-bab8-19ff86b8e3e2"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""id"": ""368ae289-73fb-4040-bc43-b8ba51e1698a"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -175,8 +172,8 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""368ae289-73fb-4040-bc43-b8ba51e1698a"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""id"": ""406df89e-6949-4adb-bab8-19ff86b8e3e2"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -198,11 +195,33 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""743d0e8e-7313-4bb1-ae92-64a9f14c4e85"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Arm Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""28fcca70-0f79-49bf-b636-cdb23f7a2d17"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Activate Powerup"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3879578-24c9-4c9f-b92a-9f259b743bfd"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Activate Powerup"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -266,6 +285,7 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_ToggleRagdoll = m_Gameplay.FindAction("Toggle Ragdoll", throwIfNotFound: true);
         m_Gameplay_ArmAction = m_Gameplay.FindAction("Arm Action", throwIfNotFound: true);
+        m_Gameplay_ActivatePowerup = m_Gameplay.FindAction("Activate Powerup", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Join = m_Menu.FindAction("Join", throwIfNotFound: true);
@@ -322,6 +342,7 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_ToggleRagdoll;
     private readonly InputAction m_Gameplay_ArmAction;
+    private readonly InputAction m_Gameplay_ActivatePowerup;
     public struct GameplayActions
     {
         private @ControllerInputs m_Wrapper;
@@ -330,6 +351,7 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
         public InputAction @ToggleRagdoll => m_Wrapper.m_Gameplay_ToggleRagdoll;
         public InputAction @ArmAction => m_Wrapper.m_Gameplay_ArmAction;
+        public InputAction @ActivatePowerup => m_Wrapper.m_Gameplay_ActivatePowerup;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -351,6 +373,9 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                 @ArmAction.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnArmAction;
                 @ArmAction.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnArmAction;
                 @ArmAction.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnArmAction;
+                @ActivatePowerup.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnActivatePowerup;
+                @ActivatePowerup.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnActivatePowerup;
+                @ActivatePowerup.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnActivatePowerup;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -367,6 +392,9 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
                 @ArmAction.started += instance.OnArmAction;
                 @ArmAction.performed += instance.OnArmAction;
                 @ArmAction.canceled += instance.OnArmAction;
+                @ActivatePowerup.started += instance.OnActivatePowerup;
+                @ActivatePowerup.performed += instance.OnActivatePowerup;
+                @ActivatePowerup.canceled += instance.OnActivatePowerup;
             }
         }
     }
@@ -410,6 +438,7 @@ public class @ControllerInputs : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnToggleRagdoll(InputAction.CallbackContext context);
         void OnArmAction(InputAction.CallbackContext context);
+        void OnActivatePowerup(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {

@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.2/staging' branch; Version is '2020.2.7f1 (c53830e277f1) revision 12924976'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19042.985; Version 2009; 64bit' Language: 'en' Physical Memory: 16164 MB
+OS: 'Windows 10 Pro; OS build 19042.1052; Version 2009; 64bit' Language: 'en' Physical Memory: 16164 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -15,11 +15,11 @@ D:/Programming/Unity Projects/ragdoll-race/Ragdoll Race
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53698
+53936
 Successfully changed project path to: D:/Programming/Unity Projects/ragdoll-race/Ragdoll Race
 D:/Programming/Unity Projects/ragdoll-race/Ragdoll Race
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 59.89 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 67.06 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.7f1 (c53830e277f1)
 [Subsystems] Discovering subsystems at path D:/Unity Installs/2020.2.7f1/Editor/Data/Resources/UnitySubsystems
@@ -35,565 +35,155 @@ Initialize mono
 Mono path[0] = 'D:/Unity Installs/2020.2.7f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity Installs/2020.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity Installs/2020.2.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56636
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56612
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity Installs/2020.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001014 seconds.
+Registered in 0.001012 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 51.49 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 50.60 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.801 seconds
+- Completed reload, in  0.895 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001060 seconds.
+Registered in 0.000990 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 53.60 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 53.50 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.988 seconds
+- Completed reload, in  0.947 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.54 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3305 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 155.7 MB.
-System memory in use after: 153.8 MB.
+Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 158.4 MB.
+System memory in use after: 156.5 MB.
 
-Unloading 44 unused Assets to reduce memory usage. Loaded Objects now: 3742.
-Total: 3.303300 ms (FindLiveObjects: 0.452500 ms CreateObjectMapping: 0.200800 ms MarkObjects: 1.676500 ms  DeleteObjects: 0.972200 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5617173c2aa623eb272ea3a59af3a7dd') in 0.118400 seconds
-  Import took 0.143211 seconds .
+Unloading 44 unused Assets to reduce memory usage. Loaded Objects now: 3749.
+Total: 3.499000 ms (FindLiveObjects: 0.471700 ms CreateObjectMapping: 0.187900 ms MarkObjects: 1.814500 ms  DeleteObjects: 1.023900 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.160069 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61ea0136e0ad14ef909b0baf110ed854') in 0.010586 seconds
-  Import took 0.107050 seconds .
+  path: Assets/Powerups/_Base/SpawnedObject.cs
+  artifactKey: Guid(038a318843590b943bcfa050ec9d88b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/_Base/SpawnedObject.cs using Guid(038a318843590b943bcfa050ec9d88b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e3916e23ece08dcecf737b7dda96f6c') in 0.176986 seconds
+  Import took 0.186150 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.428001 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e3316ed3aa7a2f02377216f9a4d883a') in 0.003666 seconds
-  Import took 0.130804 seconds .
+  Time since last request: 5816.664111 seconds.
+  path: Assets/Powerups/_Base/SpawnedItem.cs
+  artifactKey: Guid(c42f1a85374074a4cb2ae269e234d361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/_Base/SpawnedItem.cs using Guid(c42f1a85374074a4cb2ae269e234d361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5532403c7654897d757a69127bb626d6') in 0.010463 seconds
+  Import took 0.049078 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.144327 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e3316ed3aa7a2f02377216f9a4d883a') in 0.005253 seconds
-  Import took 0.012663 seconds .
+  Time since last request: 90.989193 seconds.
+  path: Assets/Powerups/_Base/SpawnedItem.cs
+  artifactKey: Guid(c42f1a85374074a4cb2ae269e234d361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/_Base/SpawnedItem.cs using Guid(c42f1a85374074a4cb2ae269e234d361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '919725759cccaf1aee6af08a3cdfdb5b') in 0.001979 seconds
+  Import took 0.035666 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 5610.040421 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6675312fdd2e439e8b87c080c9b266e4') in 0.011021 seconds
-  Import took 0.055934 seconds .
+  Time since last request: 11.759768 seconds.
+  path: Assets/Powerups/Proximity Mine/ProximityMineItem.cs
+  artifactKey: Guid(c601f402f4c584c43a27842f588f8040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/ProximityMineItem.cs using Guid(c601f402f4c584c43a27842f588f8040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '485b18610c520f249bf3487317c2fd96') in 0.008764 seconds
+  Import took 0.069680 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.135854 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6675312fdd2e439e8b87c080c9b266e4') in 0.004139 seconds
-  Import took 0.011755 seconds .
+  Time since last request: 28.128117 seconds.
+  path: Assets/Powerups/Proximity Mine/ProximityMine_Object.cs
+  artifactKey: Guid(320277bbee2f47047a854a0da1e85c9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/ProximityMine_Object.cs using Guid(320277bbee2f47047a854a0da1e85c9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6c16b4d1ae04ee2498300fd27ff2070') in 0.044632 seconds
+  Import took 0.066933 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 83.695901 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55c7898b5cec38e458b8bf2675e4fb22') in 0.004619 seconds
-  Import took 0.031462 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.144232 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '926c49bb820f5f09d5e212dc06cca71b') in 0.004557 seconds
-  Import took 0.020696 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 34.161790 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10a78d0a273b4a1edd5c9e782dd82359') in 0.004561 seconds
-  Import took 0.020881 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.781770 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adb7649e5f403e490ed13a64bb5acb32') in 0.008166 seconds
-  Import took 0.054071 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.383476 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d2d65d974f40056a120452f6d12f59d') in 0.002522 seconds
-  Import took 0.023125 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 22.032087 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5603e2fb9ebde5425d89c914a6bb255') in 0.002553 seconds
-  Import took 0.012595 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 30.487844 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e5ee0be8d45239e0f0c01bd6a50fae1') in 0.002631 seconds
-  Import took 0.028182 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003345 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e5ee0be8d45239e0f0c01bd6a50fae1') in 0.002701 seconds
-  Import took 0.007897 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 28.365942 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18dd9e4d9b99d981a218cf3505809a6b') in 0.002666 seconds
-  Import took 0.047535 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 19.200849 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e66dba278601afb7f576a5fe9b77fdf8') in 0.002816 seconds
-  Import took 0.025197 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.610210 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a63f2381b2e8cafb9e9d163f64661536') in 0.002668 seconds
-  Import took 0.021726 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.233934 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '324ee7e2ea209d3988c567d86aa74236') in 0.002530 seconds
-  Import took 0.035112 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.600882 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '492edc051f86abd960456804cd63755f') in 0.002608 seconds
-  Import took 0.020141 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 76.014611 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51623377a647c48b6f0f4f6bf29d4965') in 0.002619 seconds
-  Import took 0.017436 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 26.923800 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6928e0e1f809807c6bba0c3d969ae23c') in 0.003906 seconds
-  Import took 0.009224 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 18.337475 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5c7cb84c954e3556d05d23a1a26e624') in 0.002529 seconds
-  Import took 0.015573 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001599 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5c7cb84c954e3556d05d23a1a26e624') in 0.002506 seconds
-  Import took 0.008554 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.472210 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b302d540fb5a0125c2863f5d31d36eb0') in 0.002480 seconds
-  Import took 0.024338 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001982 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b302d540fb5a0125c2863f5d31d36eb0') in 0.002700 seconds
-  Import took 0.008167 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 20.339505 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd32877c77d8fbf734524984eb13a6856') in 0.002504 seconds
-  Import took 0.017373 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 30.732921 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb3f02a29c0c14e7eeeecf2adccb9ff7') in 0.002555 seconds
-  Import took 0.027558 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.004132 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb3f02a29c0c14e7eeeecf2adccb9ff7') in 0.004130 seconds
-  Import took 0.009298 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 36.071032 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb5475e35c47dbedd7fbd052534a4736') in 0.002758 seconds
-  Import took 0.022888 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.004448 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb5475e35c47dbedd7fbd052534a4736') in 0.002636 seconds
-  Import took 0.007891 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 209.275846 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17cb80e74be605167060ecf5cb47b5d2') in 0.002773 seconds
-  Import took 0.025111 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 354.222355 seconds.
-  path: Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx
-  artifactKey: Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Blast Ring/Blast_Ring.vfx using Guid(8765c25b931de4d488415f44c75504ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52c212d1a85171833c7cc619e544e9f2') in 0.009206 seconds
-  Import took 0.046896 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 67.069284 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '187507937fc49138436c72f61c36b255') in 0.004523 seconds
-  Import took 0.051634 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 32.137374 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51a0edcebb572d2de4fe1e777920f75d') in 0.005189 seconds
-  Import took 0.013603 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 68.520277 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6fda4a02698fb0547fd6019a12664b7') in 0.004448 seconds
-  Import took 0.011921 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.692424 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40dbe754707d05a88091b2018024200a') in 0.004797 seconds
-  Import took 0.021477 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.005059 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40dbe754707d05a88091b2018024200a') in 0.004805 seconds
-  Import took 0.010137 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 31.154004 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b013ab6cf2d6837351007b0fa527ff1') in 0.004741 seconds
-  Import took 0.012394 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 33.987766 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '301be4d43a54294bd713ac478019e24b') in 0.004565 seconds
-  Import took 0.019970 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 30.019060 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '365afabed86662ae0477c1ff5d0880a9') in 0.004774 seconds
-  Import took 0.022176 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001804 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '365afabed86662ae0477c1ff5d0880a9') in 0.005542 seconds
-  Import took 0.010991 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 125.904712 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57d207cae4247e005a1b0ea82987ce6e') in 0.005480 seconds
-  Import took 0.352399 seconds .
+  Time since last request: 1.230794 seconds.
+  path: Assets/Powerups/Proximity Mine/ProximityMineItem.cs
+  artifactKey: Guid(c601f402f4c584c43a27842f588f8040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/ProximityMineItem.cs using Guid(c601f402f4c584c43a27842f588f8040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b86d42df33883053a06d31888bb2daa') in 0.031362 seconds
+  Import took 0.069760 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001332 seconds.
+Registered in 0.001123 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.316 seconds
+- Completed reload, in  1.026 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.16 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3203 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 150.5 MB.
-System memory in use after: 148.7 MB.
+Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 153.0 MB.
+System memory in use after: 151.2 MB.
 
-Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3745.
-Total: 6.272400 ms (FindLiveObjects: 0.530400 ms CreateObjectMapping: 0.454000 ms MarkObjects: 3.615800 ms  DeleteObjects: 1.667600 ms)
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 3752.
+Total: 3.610500 ms (FindLiveObjects: 0.406000 ms CreateObjectMapping: 0.171100 ms MarkObjects: 1.962700 ms  DeleteObjects: 1.069000 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 134.806745 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d6413a1f69a82259bc3ef92d18bca57') in 0.016505 seconds
-  Import took 0.047337 seconds .
+  Time since last request: 343.384899 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '094d943fa4f1a853c1b7fdf151a785ce') in 0.635706 seconds
+  Import took 0.685182 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001287 seconds.
+Registered in 0.001154 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.73 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.51 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.285 seconds
+- Completed reload, in  0.903 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.99 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3203 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 150.6 MB.
-System memory in use after: 148.8 MB.
+Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 158.3 MB.
+System memory in use after: 156.5 MB.
 
-Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3748.
-Total: 5.143800 ms (FindLiveObjects: 0.400900 ms CreateObjectMapping: 0.216400 ms MarkObjects: 2.968500 ms  DeleteObjects: 1.556900 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 63.952356 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32c1de5846028170fd237fd8dd5c11a8') in 0.017560 seconds
-  Import took 0.028507 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 78.699092 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b3735997cc35aeab543c90c06f39173') in 0.004507 seconds
-  Import took 0.011763 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.012113 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b3735997cc35aeab543c90c06f39173') in 0.005240 seconds
-  Import took 0.011104 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 53.497234 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '922e75588c3a3c2b4587baff803507ea') in 0.004835 seconds
-  Import took 0.034638 seconds .
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3801.
+Total: 8.716900 ms (FindLiveObjects: 0.679000 ms CreateObjectMapping: 0.461400 ms MarkObjects: 4.763400 ms  DeleteObjects: 2.811100 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001362 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.63 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.231 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3203 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 150.6 MB.
-System memory in use after: 148.8 MB.
-
-Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3751.
-Total: 5.527800 ms (FindLiveObjects: 0.458400 ms CreateObjectMapping: 0.233000 ms MarkObjects: 3.045100 ms  DeleteObjects: 1.789600 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 126.222717 seconds.
-  path: Assets/Player/KO VFX/Default/Default KO Effect.prefab
-  artifactKey: Guid(c9ba7d6fa0593494387ae60e157b787c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default KO Effect.prefab using Guid(c9ba7d6fa0593494387ae60e157b787c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '956dc6a90381208ceaeef78946df2261') in 0.053147 seconds
-  Import took 0.076334 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.019488 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c97afb11e0b6781be4462d0040231d4') in 0.004771 seconds
-  Import took 0.015177 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002057 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c97afb11e0b6781be4462d0040231d4') in 0.004502 seconds
-  Import took 0.010643 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.514202 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '287f5c8f36eef439d1aaeb5048e82c9d') in 0.004528 seconds
-  Import took 0.018461 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001133 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.261 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3203 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 150.7 MB.
-System memory in use after: 148.9 MB.
-
-Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3755.
-Total: 8.441900 ms (FindLiveObjects: 1.177500 ms CreateObjectMapping: 0.745300 ms MarkObjects: 3.684300 ms  DeleteObjects: 2.829900 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 99.996757 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fef5af00736ce2d53f3d7a4021f9dd7d') in 0.018589 seconds
-  Import took 0.038684 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001373 seconds.
+Registered in 0.001303 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.54 ms, found 0 plugins.
@@ -602,24 +192,277 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.023 seconds
+- Completed reload, in  0.889 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.54 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3203 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 150.7 MB.
-System memory in use after: 148.9 MB.
+Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 158.4 MB.
+System memory in use after: 156.6 MB.
 
-Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3758.
-Total: 4.453000 ms (FindLiveObjects: 0.412200 ms CreateObjectMapping: 0.228800 ms MarkObjects: 2.305600 ms  DeleteObjects: 1.505000 ms)
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3804.
+Total: 3.612800 ms (FindLiveObjects: 0.437100 ms CreateObjectMapping: 0.183300 ms MarkObjects: 1.835200 ms  DeleteObjects: 1.156200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001653 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.906 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.96 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 158.4 MB.
+System memory in use after: 156.6 MB.
+
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3807.
+Total: 6.727900 ms (FindLiveObjects: 1.185900 ms CreateObjectMapping: 0.340400 ms MarkObjects: 3.587000 ms  DeleteObjects: 1.612200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001147 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.978 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.15 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 158.4 MB.
+System memory in use after: 156.6 MB.
+
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3810.
+Total: 5.419600 ms (FindLiveObjects: 0.459100 ms CreateObjectMapping: 0.176100 ms MarkObjects: 2.602200 ms  DeleteObjects: 2.179400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001174 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.890 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 158.4 MB.
+System memory in use after: 156.6 MB.
+
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3813.
+Total: 10.545400 ms (FindLiveObjects: 0.788900 ms CreateObjectMapping: 0.470200 ms MarkObjects: 5.543600 ms  DeleteObjects: 3.740300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001141 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.51 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.923 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 158.4 MB.
+System memory in use after: 156.6 MB.
+
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3816.
+Total: 3.380100 ms (FindLiveObjects: 0.305300 ms CreateObjectMapping: 0.165400 ms MarkObjects: 1.777800 ms  DeleteObjects: 1.130900 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 296.440765 seconds.
-  path: Assets/Player/KO VFX/Default/Default_KO.vfx
-  artifactKey: Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Player/KO VFX/Default/Default_KO.vfx using Guid(33ff44dca00cdb44b9ebad676fc8b39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7d12246f5cf68438a00be79c66dfa69') in 0.018477 seconds
-  Import took 0.056981 seconds .
+  Time since last request: 8119.020170 seconds.
+  path: Assets/Powerups/Proximity Mine/ProximityMinePowerup.cs
+  artifactKey: Guid(51729a14a2de53c4cbf462c8c19d1144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/ProximityMinePowerup.cs using Guid(51729a14a2de53c4cbf462c8c19d1144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c4fffcd9b44a039be441e5ba25366de') in 0.009736 seconds
+  Import took 0.077748 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.017634 seconds.
+  path: Assets/Powerups/Proximity Mine/ProximityMinePowerup.cs
+  artifactKey: Guid(51729a14a2de53c4cbf462c8c19d1144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/ProximityMinePowerup.cs using Guid(51729a14a2de53c4cbf462c8c19d1144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c4fffcd9b44a039be441e5ba25366de') in 0.004065 seconds
+  Import took 0.017422 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.801165 seconds.
+  path: Assets/Powerups/Proximity Mine/ProximityMineItem.cs
+  artifactKey: Guid(c601f402f4c584c43a27842f588f8040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/ProximityMineItem.cs using Guid(c601f402f4c584c43a27842f588f8040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fedf8b238680f36351b3b066a6e0b4c') in 0.001747 seconds
+  Import took 0.047500 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.644558 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91155a97211e61f9b323fb25052987cc') in 0.157018 seconds
+  Import took 0.204730 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.574767 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '686a7573468fdae169bc899c6d490929') in 0.010391 seconds
+  Import took 0.038717 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.070573 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6bfe9438c33ce857a8c661e6ca98277') in 0.010807 seconds
+  Import took 0.047993 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.720501 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cdc5390a529984a8c02c5203a965665') in 0.017797 seconds
+  Import took 0.042307 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.193647 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '378ab72f4715bbece7e75e5fa69114a4') in 0.016310 seconds
+  Import took 0.044035 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.010922 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46ca1df55aaef27aea8e5c5efd07640a') in 0.020971 seconds
+  Import took 0.038451 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.635088 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7d7415ef9ed747e0355ec5aacdb53b4') in 0.018452 seconds
+  Import took 0.037550 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.329633 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbe2b75919f29eeb9d5106824c4229b3') in 0.015072 seconds
+  Import took 0.023773 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.227054 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77687d4c1fecc8e0e7e41552955885f3') in 0.016706 seconds
+  Import took 0.037378 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.411604 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de9a260ae01b6dd3afc65368dfb85581') in 0.015645 seconds
+  Import took 0.026636 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.217631 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b142b53aa637280313abdedcae0d2283') in 0.011468 seconds
+  Import took 0.051712 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.923361 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '581f045b233526956889dfcaedd7785d') in 0.008918 seconds
+  Import took 0.024563 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.430438 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fb92a6519ce6d7ed8c5f337be2f924f') in 0.010963 seconds
+  Import took 0.033705 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.448639 seconds.
+  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
+  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cec1ce8e2a8791a66d4f91da57a1ef61') in 0.011085 seconds
+  Import took 0.033545 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001376 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.060 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 158.6 MB.
+System memory in use after: 156.8 MB.
+
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3855.
+Total: 7.017100 ms (FindLiveObjects: 0.598200 ms CreateObjectMapping: 0.301800 ms MarkObjects: 3.690700 ms  DeleteObjects: 2.424300 ms)
 

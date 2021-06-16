@@ -27,9 +27,7 @@ public class Player : MonoBehaviour
 
     [Header("State Variables")]
     public float currentDamage = 0;
-
     public bool isGrounded;
-
     public bool isRagdoll;
     private bool forceRagdollState;
     private float forceRagdollTimer;
@@ -37,17 +35,29 @@ public class Player : MonoBehaviour
 
     public bool isDizzy;
 
+    
+
+    [Header("Hit Tracking")]
+    private Player lastPlayerHitBy;
     public bool isImmune;
     private float immunityTimer;
-
     private bool knockedOutThisFrame;
+
+
+
+    [Header("Grounded Variables")]
+    [HideInInspector] public Transform groundTransform = null;
+    [HideInInspector] public Rigidbody groundRigidbody = null;
+    [HideInInspector] public Vector3 groundPosition = Vector3.zero;
+    [HideInInspector] public Vector3 groundVelocity = Vector3.zero;
+    [HideInInspector] public Vector3 groundNormal = Vector3.zero;
+
 
 
     // Unity Functions
 
     void Awake()
     {
-        
 
         playerInput = GetComponentInChildren<PlayerInput>();
         manager = GameObject.FindGameObjectWithTag(managerTag).GetComponent<PlayersManager>();
@@ -124,7 +134,7 @@ public class Player : MonoBehaviour
     
 
 
-    public bool OnBodyPartHit(Hittable bodyPart, Vector3 hitLocation, Vector3 hitRelativeVelocity, float hitDamage, float hitKnockbackMultiplier, float ragdollDuration){
+    public bool OnBodyPartHit(Hittable bodyPart, Vector3 hitLocation, Vector3 hitRelativeVelocity, float hitDamage, float hitKnockbackMultiplier, float ragdollDuration, Player attacker = null){
         // Apply damage to the player, then apply knockback to the body part that was hit
         // Returns whether the hit was successful (if player is not immune)
 
