@@ -10,8 +10,25 @@ public class ActiveRagdoll : MonoBehaviour
     public ArmsActionCoordinator armsActionCoordinator;
     [SerializeField] private Rigidbody pelvisRigidbody;
     [SerializeField] private List<Rigidbody> bodyPartRigidbodies;
+
+
+    [Header("Enumerated Body Part References")]
     public Transform headTransform;
-    public Transform torsoTransform;
+    [Space]
+    public Transform torsoUpperTransform;
+    public Transform torsoMiddleTransform;
+    public Transform torsoLowerTransform;
+    [Space]
+    public Transform leftArmInnerTransform;
+    public Transform leftArmOuterTransform;
+    public Transform rightArmInnerTransform;
+    public Transform rightArmOuterTransform;
+    [Space]
+    public Transform leftLegInnerTransform;
+    public Transform leftLegOuterTransform;
+    public Transform rightLegInnerTransform;
+    public Transform rightLegOuterTransform;
+
 
 
     [Header("Ground Detection Settings")]

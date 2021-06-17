@@ -16,6 +16,9 @@ public class Powerup : MonoBehaviour
     [HideInInspector] public PlayerPowerupManager attachedPowerupManager;
 
 
+    private bool hasActivated = false;
+
+
 
 
     public Texture2D GetIcon(){
@@ -23,6 +26,11 @@ public class Powerup : MonoBehaviour
     }
 
 
+
+    void Awake()
+    {
+        OnPickup();
+    }
 
 
 
@@ -32,7 +40,11 @@ public class Powerup : MonoBehaviour
 
     }
 
-    public virtual void OnActivate(){
+    public virtual void OnActivateInitial(){
+
+    }
+    
+    public virtual void OnActivateContinued(){
 
     }
 
@@ -43,6 +55,17 @@ public class Powerup : MonoBehaviour
 
 
     // Input Events
+
+    public virtual void OnInputActivate(){
+        if(!hasActivated){
+            OnActivateInitial();
+        }
+        else{
+            OnActivateContinued();
+        }
+
+        hasActivated = true;
+    }
 
     public virtual void OnInputMove(Vector2 movementInput){
 

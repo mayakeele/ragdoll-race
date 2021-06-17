@@ -9,7 +9,7 @@ public class PlayerPowerupManager : MonoBehaviour
 
     private Powerup currentPowerup;
 
-    public Powerup initialPowerup;
+    [SerializeField] private Powerup initialPowerup;
 
     private bool isPowerupHeld;
     private bool isPowerupActive;
@@ -18,7 +18,10 @@ public class PlayerPowerupManager : MonoBehaviour
     void Awake()
     {
         player = GetComponentInParent<Player>();
+    }
 
+    void Start()
+    {
         SetPowerup(initialPowerup, true);
     }
 
@@ -60,7 +63,7 @@ public class PlayerPowerupManager : MonoBehaviour
     // Input passers-on
 
     public void OnActivate(InputAction.CallbackContext context){
-        if(HasPowerup() && context.started) currentPowerup.OnActivate();
+        if(HasPowerup() && context.started) currentPowerup.OnInputActivate();
     }
 
     public void OnMove(InputAction.CallbackContext context){

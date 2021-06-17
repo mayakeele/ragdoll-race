@@ -15,11 +15,11 @@ D:/Programming/Unity Projects/ragdoll-race/Ragdoll Race
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53936
+56117
 Successfully changed project path to: D:/Programming/Unity Projects/ragdoll-race/Ragdoll Race
 D:/Programming/Unity Projects/ragdoll-race/Ragdoll Race
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 67.06 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 193.50 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.7f1 (c53830e277f1)
 [Subsystems] Discovering subsystems at path D:/Unity Installs/2020.2.7f1/Editor/Data/Resources/UnitySubsystems
@@ -35,435 +35,607 @@ Initialize mono
 Mono path[0] = 'D:/Unity Installs/2020.2.7f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity Installs/2020.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity Installs/2020.2.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56612
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56208
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity Installs/2020.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001012 seconds.
+Registered in 0.003988 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 50.60 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 175.69 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.895 seconds
+- Completed reload, in  3.197 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000990 seconds.
+Registered in 0.003703 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 53.50 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 175.94 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.947 seconds
+- Completed reload, in  3.407 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.14 seconds
+Refreshing native plugins compatible for Editor in 1.34 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3311 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 158.4 MB.
-System memory in use after: 156.5 MB.
-
-Unloading 44 unused Assets to reduce memory usage. Loaded Objects now: 3749.
-Total: 3.499000 ms (FindLiveObjects: 0.471700 ms CreateObjectMapping: 0.187900 ms MarkObjects: 1.814500 ms  DeleteObjects: 1.023900 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Powerups/_Base/SpawnedObject.cs
-  artifactKey: Guid(038a318843590b943bcfa050ec9d88b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/_Base/SpawnedObject.cs using Guid(038a318843590b943bcfa050ec9d88b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e3916e23ece08dcecf737b7dda96f6c') in 0.176986 seconds
-  Import took 0.186150 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5816.664111 seconds.
-  path: Assets/Powerups/_Base/SpawnedItem.cs
-  artifactKey: Guid(c42f1a85374074a4cb2ae269e234d361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/_Base/SpawnedItem.cs using Guid(c42f1a85374074a4cb2ae269e234d361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5532403c7654897d757a69127bb626d6') in 0.010463 seconds
-  Import took 0.049078 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 90.989193 seconds.
-  path: Assets/Powerups/_Base/SpawnedItem.cs
-  artifactKey: Guid(c42f1a85374074a4cb2ae269e234d361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/_Base/SpawnedItem.cs using Guid(c42f1a85374074a4cb2ae269e234d361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '919725759cccaf1aee6af08a3cdfdb5b') in 0.001979 seconds
-  Import took 0.035666 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.759768 seconds.
-  path: Assets/Powerups/Proximity Mine/ProximityMineItem.cs
-  artifactKey: Guid(c601f402f4c584c43a27842f588f8040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/ProximityMineItem.cs using Guid(c601f402f4c584c43a27842f588f8040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '485b18610c520f249bf3487317c2fd96') in 0.008764 seconds
-  Import took 0.069680 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 28.128117 seconds.
-  path: Assets/Powerups/Proximity Mine/ProximityMine_Object.cs
-  artifactKey: Guid(320277bbee2f47047a854a0da1e85c9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/ProximityMine_Object.cs using Guid(320277bbee2f47047a854a0da1e85c9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6c16b4d1ae04ee2498300fd27ff2070') in 0.044632 seconds
-  Import took 0.066933 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.230794 seconds.
-  path: Assets/Powerups/Proximity Mine/ProximityMineItem.cs
-  artifactKey: Guid(c601f402f4c584c43a27842f588f8040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/ProximityMineItem.cs using Guid(c601f402f4c584c43a27842f588f8040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b86d42df33883053a06d31888bb2daa') in 0.031362 seconds
-  Import took 0.069760 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001123 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.026 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 153.0 MB.
-System memory in use after: 151.2 MB.
-
-Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 3752.
-Total: 3.610500 ms (FindLiveObjects: 0.406000 ms CreateObjectMapping: 0.171100 ms MarkObjects: 1.962700 ms  DeleteObjects: 1.069000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 343.384899 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '094d943fa4f1a853c1b7fdf151a785ce') in 0.635706 seconds
-  Import took 0.685182 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001154 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.51 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.903 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 158.3 MB.
-System memory in use after: 156.5 MB.
-
-Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3801.
-Total: 8.716900 ms (FindLiveObjects: 0.679000 ms CreateObjectMapping: 0.461400 ms MarkObjects: 4.763400 ms  DeleteObjects: 2.811100 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001303 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.54 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.889 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.54 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3313 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 158.4 MB.
 System memory in use after: 156.6 MB.
 
-Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3804.
-Total: 3.612800 ms (FindLiveObjects: 0.437100 ms CreateObjectMapping: 0.183300 ms MarkObjects: 1.835200 ms  DeleteObjects: 1.156200 ms)
+Unloading 44 unused Assets to reduce memory usage. Loaded Objects now: 3751.
+Total: 9.101800 ms (FindLiveObjects: 0.724500 ms CreateObjectMapping: 0.434700 ms MarkObjects: 4.751400 ms  DeleteObjects: 3.188400 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Input System/ControllerInputs.inputactions
+  artifactKey: Guid(0c9391a12fdb70e459bafa14b264625b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Input System/ControllerInputs.inputactions using Guid(0c9391a12fdb70e459bafa14b264625b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'beaaa4ea39b71cfa1355204410477e48') in 0.162861 seconds
+  Import took 0.179655 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2493.597492 seconds.
+  path: Assets/Powerups/Boxing Gloves
+  artifactKey: Guid(54c52df00c6aec746bf5ce6228cb3388) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves using Guid(54c52df00c6aec746bf5ce6228cb3388) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca21c440fa748af31637a24d020e2872') in 0.041110 seconds
+  Import took 0.114094 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.665008 seconds.
+  path: Assets/Powerups/Boxing Gloves/boxingGlove_L.fbx
+  artifactKey: Guid(d86bde5aacf313a41aa7c317f9e3e5f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/boxingGlove_L.fbx using Guid(d86bde5aacf313a41aa7c317f9e3e5f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '444490835c4d1f70d580a2cef057de5e') in 0.924582 seconds
+  Import took 0.990202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000563 seconds.
+  path: Assets/Powerups/Boxing Gloves/boxingGlove_R.fbx
+  artifactKey: Guid(d02fe4099052a354ab6f3198d32f5db1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/boxingGlove_R.fbx using Guid(d02fe4099052a354ab6f3198d32f5db1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e097fd0930a202dbf0aa46749fc0bc47') in 0.063586 seconds
+  Import took 0.109671 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 34.355168 seconds.
+  path: Assets/Powerups/Boxing Gloves/boxingGlove_L.fbx
+  artifactKey: Guid(d86bde5aacf313a41aa7c317f9e3e5f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/boxingGlove_L.fbx using Guid(d86bde5aacf313a41aa7c317f9e3e5f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec231a7fd99c77decdf843c15d90e5ef') in 0.069744 seconds
+  Import took 0.147571 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000507 seconds.
+  path: Assets/Powerups/Boxing Gloves/boxingGlove_R.fbx
+  artifactKey: Guid(d02fe4099052a354ab6f3198d32f5db1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/boxingGlove_R.fbx using Guid(d02fe4099052a354ab6f3198d32f5db1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a214a26d5c2147a5a7fcb194279d68f3') in 0.069975 seconds
+  Import took 0.119021 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000431 seconds.
+  path: Assets/Powerups/Boxing Gloves/boxingGlove_L.fbx
+  artifactKey: Guid(d86bde5aacf313a41aa7c317f9e3e5f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/boxingGlove_L.fbx using Guid(d86bde5aacf313a41aa7c317f9e3e5f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec231a7fd99c77decdf843c15d90e5ef') in 0.070238 seconds
+  Import took 0.084790 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1996.824568 seconds.
+  path: Assets/Powerups/Boxing Gloves/Boxing Glove L.prefab
+  artifactKey: Guid(b69fd9f51eadf6f4bbb9dd4eabadbd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Boxing Glove L.prefab using Guid(b69fd9f51eadf6f4bbb9dd4eabadbd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f3656bd106dced7394fff51564ecdea') in 0.061968 seconds
+  Import took 0.085951 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.606745 seconds.
+  path: Assets/Powerups/Boxing Gloves/Boxing Glove R.prefab
+  artifactKey: Guid(b1e66ace9d8b0f74a93789afed7dca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Boxing Glove R.prefab using Guid(b1e66ace9d8b0f74a93789afed7dca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a40fa67c21a9e24792cc646162c2fdbf') in 0.073219 seconds
+  Import took 0.148002 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007987 seconds.
+  path: Assets/Powerups/Boxing Gloves/Boxing Glove R.prefab
+  artifactKey: Guid(b1e66ace9d8b0f74a93789afed7dca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Boxing Glove R.prefab using Guid(b1e66ace9d8b0f74a93789afed7dca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a40fa67c21a9e24792cc646162c2fdbf') in 0.025374 seconds
+  Import took 0.043065 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.315449 seconds.
+  path: Assets/Stages/Airplane/Environment/Ocean/Materials/OceanWater.mat
+  artifactKey: Guid(1e4427dec7285464cb716851cb59ed3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Airplane/Environment/Ocean/Materials/OceanWater.mat using Guid(1e4427dec7285464cb716851cb59ed3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2812338ff975048c7aa36050066da6a9') in 0.408946 seconds
+  Import took 0.451699 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000728 seconds.
+  path: Assets/Stages/Tank Canyon/Tank/Materials/Tank Treads.mat
+  artifactKey: Guid(fea6cdd93702fa4429f38004cdf96f84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Tank/Materials/Tank Treads.mat using Guid(fea6cdd93702fa4429f38004cdf96f84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95791deafc3270358018156d98ca16db') in 0.214126 seconds
+  Import took 0.242512 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000667 seconds.
+  path: Assets/Stages/Airplane/Environment/Ocean/Materials/OceanWater.mat
+  artifactKey: Guid(1e4427dec7285464cb716851cb59ed3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Airplane/Environment/Ocean/Materials/OceanWater.mat using Guid(1e4427dec7285464cb716851cb59ed3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2812338ff975048c7aa36050066da6a9') in 0.099965 seconds
+  Import took 0.121996 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000845 seconds.
+  path: Assets/Stages/Tank Canyon/Tank/Materials/Tank Treads.mat
+  artifactKey: Guid(fea6cdd93702fa4429f38004cdf96f84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Stages/Tank Canyon/Tank/Materials/Tank Treads.mat using Guid(fea6cdd93702fa4429f38004cdf96f84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95791deafc3270358018156d98ca16db') in 0.097589 seconds
+  Import took 0.124922 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.926343 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item
+  artifactKey: Guid(8e6f8f58c69eea24689f5c8d42c12073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item using Guid(8e6f8f58c69eea24689f5c8d42c12073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e88d434724f7e45141b4de21befab5b') in 0.034671 seconds
+  Import took 0.092897 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.977407 seconds.
+  path: Assets/Powerups/Boxing Gloves/Powerup
+  artifactKey: Guid(e9dcb45c6947f7d40984410d21362357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Powerup using Guid(e9dcb45c6947f7d40984410d21362357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a75e0769391c7d03a84d87a6044d247c') in 0.006207 seconds
+  Import took 0.024338 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.292924 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/BoxingGlove.mat
+  artifactKey: Guid(d3f6ce2ba9918284cb7256999f29051f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/BoxingGlove.mat using Guid(d3f6ce2ba9918284cb7256999f29051f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b3417c58fa24a8b4d1808837e322734') in 0.072742 seconds
+  Import took 0.148728 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.705087 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/BoxingGlove.mat
+  artifactKey: Guid(d3f6ce2ba9918284cb7256999f29051f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/BoxingGlove.mat using Guid(d3f6ce2ba9918284cb7256999f29051f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b7d0d04b2d8f0a004be4099963dc4bc') in 0.054357 seconds
+  Import took 0.081179 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 275.249440 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/BoxingGlove.mat
+  artifactKey: Guid(d3f6ce2ba9918284cb7256999f29051f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/BoxingGlove.mat using Guid(d3f6ce2ba9918284cb7256999f29051f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '571eb8f4391ff06e97051c3b13ff602b') in 0.081524 seconds
+  Import took 0.106064 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 332.968085 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/Boxing Glove L.prefab
+  artifactKey: Guid(b69fd9f51eadf6f4bbb9dd4eabadbd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/Boxing Glove L.prefab using Guid(b69fd9f51eadf6f4bbb9dd4eabadbd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '439b659f21f4416ad217c523f0e3b085') in 0.083356 seconds
+  Import took 0.144249 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000608 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/Boxing Glove R.prefab
+  artifactKey: Guid(b1e66ace9d8b0f74a93789afed7dca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/Boxing Glove R.prefab using Guid(b1e66ace9d8b0f74a93789afed7dca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da6b2225344764fbf664f5d83755684d') in 0.060184 seconds
+  Import took 0.095560 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 138.352340 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1597fc980ba6ca0609c8772f6a3a524e') in 0.047111 seconds
+  Import took 0.069478 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 71.213854 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '027445f96c2e9944c944682b41f23e1b') in 0.008001 seconds
+  Import took 0.059631 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013546 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '027445f96c2e9944c944682b41f23e1b') in 0.006791 seconds
+  Import took 0.024264 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.412102 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bea2d507a50d8a04ae2c87816b0fd471') in 0.007194 seconds
+  Import took 0.024769 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 161.127927 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/BoxingGlove.physicMaterial
+  artifactKey: Guid(54378dabad4b4c44c9719e61a66eaa7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/BoxingGlove.physicMaterial using Guid(54378dabad4b4c44c9719e61a66eaa7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b85c69ec58db525f3b1d388ab8a506c9') in 0.014131 seconds
+  Import took 0.037100 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.040171 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/BoxingGlove.physicMaterial
+  artifactKey: Guid(54378dabad4b4c44c9719e61a66eaa7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/BoxingGlove.physicMaterial using Guid(54378dabad4b4c44c9719e61a66eaa7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b85c69ec58db525f3b1d388ab8a506c9') in 0.006933 seconds
+  Import took 0.025351 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.823373 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/BoxingGlove.physicMaterial
+  artifactKey: Guid(54378dabad4b4c44c9719e61a66eaa7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/BoxingGlove.physicMaterial using Guid(54378dabad4b4c44c9719e61a66eaa7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '020342249cbf5c625bd093c5263ace37') in 0.006694 seconds
+  Import took 0.042216 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018826 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/BoxingGlove.physicMaterial
+  artifactKey: Guid(54378dabad4b4c44c9719e61a66eaa7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/BoxingGlove.physicMaterial using Guid(54378dabad4b4c44c9719e61a66eaa7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '020342249cbf5c625bd093c5263ace37') in 0.007229 seconds
+  Import took 0.027792 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 75.596460 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/Boxing Glove L.prefab
+  artifactKey: Guid(b69fd9f51eadf6f4bbb9dd4eabadbd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/Boxing Glove L.prefab using Guid(b69fd9f51eadf6f4bbb9dd4eabadbd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fc957f3be270f7c856c75cf80742b22') in 0.044859 seconds
+  Import took 0.065576 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.510658 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/Boxing Glove R.prefab
+  artifactKey: Guid(b1e66ace9d8b0f74a93789afed7dca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/Boxing Glove R.prefab using Guid(b1e66ace9d8b0f74a93789afed7dca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd0352d6de2535acb1b13289d6b6fff8') in 0.062598 seconds
+  Import took 0.119804 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.261262 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/Boxing Glove L.prefab
+  artifactKey: Guid(b69fd9f51eadf6f4bbb9dd4eabadbd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/Boxing Glove L.prefab using Guid(b69fd9f51eadf6f4bbb9dd4eabadbd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6493d77a2eb095767ad6c65c42d742fb') in 0.023117 seconds
+  Import took 0.042312 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.459544 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/Boxing Glove R.prefab
+  artifactKey: Guid(b1e66ace9d8b0f74a93789afed7dca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/Boxing Glove R.prefab using Guid(b1e66ace9d8b0f74a93789afed7dca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdc92731d5914beb915eae8225b20cbf') in 0.030116 seconds
+  Import took 0.049325 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.112937 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/Boxing Glove R.prefab
+  artifactKey: Guid(b1e66ace9d8b0f74a93789afed7dca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/Boxing Glove R.prefab using Guid(b1e66ace9d8b0f74a93789afed7dca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02afa44fc0f0d3627a183fd0d898cb8a') in 0.025800 seconds
+  Import took 0.065453 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.522648 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/Boxing Glove L.prefab
+  artifactKey: Guid(b69fd9f51eadf6f4bbb9dd4eabadbd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/Boxing Glove L.prefab using Guid(b69fd9f51eadf6f4bbb9dd4eabadbd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4882f768ed7545284daafbf3fc912fb5') in 0.029135 seconds
+  Import took 0.090102 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 63.929396 seconds.
+  path: Assets/Powerups/Boxing Gloves/Powerup/BoxingGlovePowerup.cs
+  artifactKey: Guid(445c5905518777f429b64614c4a6a6a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Powerup/BoxingGlovePowerup.cs using Guid(445c5905518777f429b64614c4a6a6a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e85d63c74aaa4b40fb8f0613ecad5bca') in 0.045242 seconds
+  Import took 0.068246 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.058151 seconds.
+  path: Assets/Powerups/Boxing Gloves/Powerup/BoxingGlovePowerup.cs
+  artifactKey: Guid(445c5905518777f429b64614c4a6a6a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Powerup/BoxingGlovePowerup.cs using Guid(445c5905518777f429b64614c4a6a6a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e85d63c74aaa4b40fb8f0613ecad5bca') in 0.005583 seconds
+  Import took 0.023010 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001653 seconds.
+Registered in 0.003379 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.08 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.906 seconds
+- Completed reload, in  4.232 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.96 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 2.45 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 158.4 MB.
-System memory in use after: 156.6 MB.
+Unloading 3212 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 158.9 MB.
+System memory in use after: 157.0 MB.
 
-Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3807.
-Total: 6.727900 ms (FindLiveObjects: 1.185900 ms CreateObjectMapping: 0.340400 ms MarkObjects: 3.587000 ms  DeleteObjects: 1.612200 ms)
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 3836.
+Total: 9.928500 ms (FindLiveObjects: 0.714500 ms CreateObjectMapping: 0.475700 ms MarkObjects: 4.971000 ms  DeleteObjects: 3.764500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1194.928324 seconds.
+  path: Assets/Powerups/Boxing Gloves/Powerup/BoxingGlovePowerup.cs
+  artifactKey: Guid(445c5905518777f429b64614c4a6a6a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Powerup/BoxingGlovePowerup.cs using Guid(445c5905518777f429b64614c4a6a6a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7359ad3913bc51a4112079c04b9d7a54') in 0.036208 seconds
+  Import took 0.074015 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001147 seconds.
+Registered in 0.002972 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.53 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.40 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.978 seconds
+- Completed reload, in  3.275 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.15 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 2.23 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 158.4 MB.
-System memory in use after: 156.6 MB.
+Unloading 3212 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 158.9 MB.
+System memory in use after: 157.1 MB.
 
-Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3810.
-Total: 5.419600 ms (FindLiveObjects: 0.459100 ms CreateObjectMapping: 0.176100 ms MarkObjects: 2.602200 ms  DeleteObjects: 2.179400 ms)
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3839.
+Total: 12.299000 ms (FindLiveObjects: 1.011000 ms CreateObjectMapping: 0.580900 ms MarkObjects: 6.720200 ms  DeleteObjects: 3.983700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 402.209422 seconds.
+  path: Assets/Powerups/Boxing Gloves/Powerup/BoxingGlovePowerup.cs
+  artifactKey: Guid(445c5905518777f429b64614c4a6a6a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Powerup/BoxingGlovePowerup.cs using Guid(445c5905518777f429b64614c4a6a6a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94d2142a8e636c2af59ea0f9bab12d2f') in 0.054927 seconds
+  Import took 0.104162 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001174 seconds.
+Registered in 0.002844 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.49 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.890 seconds
+- Completed reload, in  3.447 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.64 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.20 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 158.4 MB.
-System memory in use after: 156.6 MB.
+Unloading 3212 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 159.0 MB.
+System memory in use after: 157.1 MB.
 
-Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3813.
-Total: 10.545400 ms (FindLiveObjects: 0.788900 ms CreateObjectMapping: 0.470200 ms MarkObjects: 5.543600 ms  DeleteObjects: 3.740300 ms)
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3842.
+Total: 12.332900 ms (FindLiveObjects: 1.011600 ms CreateObjectMapping: 0.677000 ms MarkObjects: 7.161000 ms  DeleteObjects: 3.480200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 499.504172 seconds.
+  path: Assets/Powerups/Boxing Gloves/Powerup/BoxingGlovePowerup.cs
+  artifactKey: Guid(445c5905518777f429b64614c4a6a6a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Powerup/BoxingGlovePowerup.cs using Guid(445c5905518777f429b64614c4a6a6a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a49964211f6e54964c495698c294373') in 0.017421 seconds
+  Import took 0.097504 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.027521 seconds.
+  path: Assets/Player/character_prototype_5.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/character_prototype_5.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ccde4c3505d99cc765fbc190b703e45') in 0.804018 seconds
+  Import took 0.873690 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011899 seconds.
+  path: Assets/Player/character_prototype_5.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/character_prototype_5.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ccde4c3505d99cc765fbc190b703e45') in 0.048527 seconds
+  Import took 0.069505 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.226316 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a919be76148e3572e2f3b1de0a700e9') in 0.138549 seconds
+  Import took 0.163928 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 35.642103 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac7276b100d9f62f6aa53aa43772c45e') in 0.073198 seconds
+  Import took 0.102392 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.438589 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f66f39f0347252a9ed9714e27f255420') in 0.061993 seconds
+  Import took 0.166694 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.817957 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '987903f07def0f64663d1805e6920ed7') in 0.063353 seconds
+  Import took 0.163373 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.361408 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1baeaa44a99cad9331c1dd58a96e6b12') in 0.064148 seconds
+  Import took 0.092965 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.831997 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32c31e1dd03b2b2b2c141f4009fea384') in 0.061177 seconds
+  Import took 0.123994 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.435421 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fb57278f07f384f38cb16db130efcc7') in 0.060980 seconds
+  Import took 0.089065 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.642997 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8e386acb0e4303e2c1f340be9714a3e') in 0.061127 seconds
+  Import took 0.167765 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.759567 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51d79ce9442f03ba81580e2b061d7986') in 0.063583 seconds
+  Import took 0.088638 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.682964 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd3280cd694b3534aa42cd5e777e0411') in 0.049346 seconds
+  Import took 0.069898 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.164557 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0f4c5cba9236a264e804186df4ab43b') in 0.064591 seconds
+  Import took 0.143002 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.548636 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfd1d0836e793b9133d22f40a989c6a2') in 0.060157 seconds
+  Import took 0.105231 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001141 seconds.
+Registered in 0.001609 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.51 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.60 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.923 seconds
+- Completed reload, in  1.665 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.72 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 158.4 MB.
-System memory in use after: 156.6 MB.
+Unloading 3212 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 173.2 MB.
+System memory in use after: 171.4 MB.
 
-Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3816.
-Total: 3.380100 ms (FindLiveObjects: 0.305300 ms CreateObjectMapping: 0.165400 ms MarkObjects: 1.777800 ms  DeleteObjects: 1.130900 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 8119.020170 seconds.
-  path: Assets/Powerups/Proximity Mine/ProximityMinePowerup.cs
-  artifactKey: Guid(51729a14a2de53c4cbf462c8c19d1144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/ProximityMinePowerup.cs using Guid(51729a14a2de53c4cbf462c8c19d1144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c4fffcd9b44a039be441e5ba25366de') in 0.009736 seconds
-  Import took 0.077748 seconds .
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3882.
+Total: 5.523900 ms (FindLiveObjects: 0.436100 ms CreateObjectMapping: 0.201800 ms MarkObjects: 2.828600 ms  DeleteObjects: 2.055400 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.017634 seconds.
-  path: Assets/Powerups/Proximity Mine/ProximityMinePowerup.cs
-  artifactKey: Guid(51729a14a2de53c4cbf462c8c19d1144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/ProximityMinePowerup.cs using Guid(51729a14a2de53c4cbf462c8c19d1144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c4fffcd9b44a039be441e5ba25366de') in 0.004065 seconds
-  Import took 0.017422 seconds .
+  Time since last request: 2292.111078 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66e6d4eb8a2503f84f47ecbb5f195b0f') in 0.288860 seconds
+  Import took 0.314979 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.801165 seconds.
-  path: Assets/Powerups/Proximity Mine/ProximityMineItem.cs
-  artifactKey: Guid(c601f402f4c584c43a27842f588f8040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/ProximityMineItem.cs using Guid(c601f402f4c584c43a27842f588f8040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fedf8b238680f36351b3b066a6e0b4c') in 0.001747 seconds
-  Import took 0.047500 seconds .
+  Time since last request: 9807.962155 seconds.
+  path: Assets/Powerups/Bear Trap/Powerup/Bear Trap Powerup.prefab
+  artifactKey: Guid(08c356f419e4b5c418aa35c5bc701bd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Bear Trap/Powerup/Bear Trap Powerup.prefab using Guid(08c356f419e4b5c418aa35c5bc701bd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f225ac44652061602ce26101fd87ae3') in 0.014701 seconds
+  Import took 0.090055 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.644558 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91155a97211e61f9b323fb25052987cc') in 0.157018 seconds
-  Import took 0.204730 seconds .
+  Time since last request: 0.532615 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/Boxing Glove L.prefab
+  artifactKey: Guid(b69fd9f51eadf6f4bbb9dd4eabadbd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/Boxing Glove L.prefab using Guid(b69fd9f51eadf6f4bbb9dd4eabadbd83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2cea1aec8a1969be60e4bd568727b74') in 0.022800 seconds
+  Import took 0.130595 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.574767 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '686a7573468fdae169bc899c6d490929') in 0.010391 seconds
-  Import took 0.038717 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 23.070573 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6bfe9438c33ce857a8c661e6ca98277') in 0.010807 seconds
-  Import took 0.047993 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.720501 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cdc5390a529984a8c02c5203a965665') in 0.017797 seconds
-  Import took 0.042307 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.193647 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '378ab72f4715bbece7e75e5fa69114a4') in 0.016310 seconds
-  Import took 0.044035 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.010922 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46ca1df55aaef27aea8e5c5efd07640a') in 0.020971 seconds
-  Import took 0.038451 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.635088 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7d7415ef9ed747e0355ec5aacdb53b4') in 0.018452 seconds
-  Import took 0.037550 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.329633 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbe2b75919f29eeb9d5106824c4229b3') in 0.015072 seconds
-  Import took 0.023773 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.227054 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77687d4c1fecc8e0e7e41552955885f3') in 0.016706 seconds
-  Import took 0.037378 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.411604 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de9a260ae01b6dd3afc65368dfb85581') in 0.015645 seconds
-  Import took 0.026636 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.217631 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b142b53aa637280313abdedcae0d2283') in 0.011468 seconds
-  Import took 0.051712 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.923361 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '581f045b233526956889dfcaedd7785d') in 0.008918 seconds
-  Import took 0.024563 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.430438 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fb92a6519ce6d7ed8c5f337be2f924f') in 0.010963 seconds
-  Import took 0.033705 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 21.448639 seconds.
-  path: Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab
-  artifactKey: Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Powerups/Proximity Mine/Proximity Mine Object.prefab using Guid(adcb3098d28daf6499a3367f134a8694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cec1ce8e2a8791a66d4f91da57a1ef61') in 0.011085 seconds
-  Import took 0.033545 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001376 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.53 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.060 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3209 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 158.6 MB.
-System memory in use after: 156.8 MB.
-
-Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 3855.
-Total: 7.017100 ms (FindLiveObjects: 0.598200 ms CreateObjectMapping: 0.301800 ms MarkObjects: 3.690700 ms  DeleteObjects: 2.424300 ms)
+  Time since last request: 0.000173 seconds.
+  path: Assets/Powerups/Boxing Gloves/Item/Boxing Glove R.prefab
+  artifactKey: Guid(b1e66ace9d8b0f74a93789afed7dca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Powerups/Boxing Gloves/Item/Boxing Glove R.prefab using Guid(b1e66ace9d8b0f74a93789afed7dca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13a8f3b958e97424afb020f716260873') in 0.012176 seconds
+  Import took 0.022343 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

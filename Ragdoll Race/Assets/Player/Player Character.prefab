@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1121321718870833776}
   - component: {fileID: 1146630454572903015}
   m_Layer: 6
-  m_Name: character_prototype_5
+  m_Name: Player Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,6 +81,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   skinnedMeshRenderer: {fileID: 5804403427678821753}
+  controller: {fileID: 8450690294800486267}
+  powerupManager: {fileID: 1584728442163640374}
   activeRagdoll: {fileID: 5327272404548169525}
   rootRigidbody: {fileID: 4661580775540585530}
   rootForward: {fileID: 3304757144567379501}
@@ -194,7 +196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedPlayer: {fileID: 0}
   scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 8
@@ -589,7 +590,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedPlayer: {fileID: 0}
   scaleHitPowerBySpeed: 1
   minHitSpeed: 2
   maxHitSpeed: 7
@@ -808,7 +808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedPlayer: {fileID: 0}
   scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 8
@@ -1090,7 +1089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedPlayer: {fileID: 0}
   scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 6
@@ -1569,7 +1567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedPlayer: {fileID: 0}
   scaleHitPowerBySpeed: 1
   minHitSpeed: 2
   maxHitSpeed: 7
@@ -1789,7 +1786,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedPlayer: {fileID: 0}
   scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 7
@@ -2092,7 +2088,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedPlayer: {fileID: 0}
   scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 8
@@ -2787,7 +2782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedPlayer: {fileID: 0}
   scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 7
@@ -3003,7 +2997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  initialPowerup: {fileID: 1048453965242023615, guid: 08c356f419e4b5c418aa35c5bc701bd5, type: 3}
+  initialPowerup: {fileID: 8026398323700952261, guid: 3fe4764cbdab4f2429e64d1829b61b9e, type: 3}
 --- !u!1 &6503780231121693589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3323,7 +3317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedPlayer: {fileID: 0}
   scaleHitPowerBySpeed: 1
   minHitSpeed: 1.5
   maxHitSpeed: 6
@@ -3753,7 +3746,17 @@ MonoBehaviour:
   - {fileID: 4811111629436388684}
   - {fileID: 1701914237914753510}
   headTransform: {fileID: 8502075522921601462}
-  torsoTransform: {fileID: 2900649650939020827}
+  torsoUpperTransform: {fileID: 2029225389583452554}
+  torsoMiddleTransform: {fileID: 2900649650939020827}
+  torsoLowerTransform: {fileID: 950391314494120467}
+  leftArmInnerTransform: {fileID: 8700730402837818926}
+  leftArmOuterTransform: {fileID: 7556246858854535579}
+  rightArmInnerTransform: {fileID: 8855991024770718278}
+  rightArmOuterTransform: {fileID: 5404635165949549881}
+  leftLegInnerTransform: {fileID: 7074530767959210540}
+  leftLegOuterTransform: {fileID: 5274855373370711496}
+  rightLegInnerTransform: {fileID: 5297792952367820472}
+  rightLegOuterTransform: {fileID: 7503550235738573222}
   standableLayers:
     serializedVersion: 2
     m_Bits: 384
@@ -3830,7 +3833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedPlayer: {fileID: 0}
   scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 8
@@ -4259,7 +4261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedPlayer: {fileID: 0}
   scaleHitPowerBySpeed: 1
   minHitSpeed: 1.8
   maxHitSpeed: 6
@@ -4577,7 +4578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedPlayer: {fileID: 0}
   scaleHitPowerBySpeed: 1
   minHitSpeed: 2
   maxHitSpeed: 7

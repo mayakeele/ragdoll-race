@@ -13,7 +13,7 @@ public class ProximityMinePowerup : Powerup
 
     
 
-    public override void OnActivate(){
+    public override void OnActivateInitial(){
         // If the player is grounded, attach a proximity mine prefab on that ground
 
         Player attachedPlayer = attachedPowerupManager.player;
@@ -29,6 +29,10 @@ public class ProximityMinePowerup : Powerup
         if(numMines <= 0){
             attachedPowerupManager.RemovePowerup();
         }
+    }
+    public override void OnActivateContinued()
+    {
+        OnActivateInitial();
     }
 
 

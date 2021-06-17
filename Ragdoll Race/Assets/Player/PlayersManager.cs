@@ -148,6 +148,7 @@ public class PlayersManager : MonoBehaviour
 
         // *** Determine who last touched the player, award KO to them ***
 
+        // Respawn the player
         player.RespawnAtPosition(spawnTransform.position);
 
         // Spawn a KO effect prefab, which includes VFX, SFX, and anything else to spawn

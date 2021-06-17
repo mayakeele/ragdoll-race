@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     [Header("Component References")]
     [HideInInspector] public PlayersManager manager;
     public SkinnedMeshRenderer skinnedMeshRenderer;
+    public PlayerController controller;
+    public PlayerPowerupManager powerupManager;
     public ActiveRagdoll activeRagdoll;
     public Rigidbody rootRigidbody;
     public Transform rootForward;
@@ -176,9 +178,9 @@ public class Player : MonoBehaviour
 
 
     public void TryKnockout(GameObject prefabToSpawn = null){
-        // Tells the player manager that this player has been killed
-        // Passes on the given prefab to spawn. If no prefab is given,
-        // passes null, PlayerManager will instantiate default instead
+        // Tells the player manager that this player has been killed. Passes on the given prefab to spawn. 
+        // If no prefab is given, passes null, PlayerManager will instantiate default instead.
+        // All actions should be done on the PlayerManager; this function should not take any action beyond notifying the manager
 
         if(!knockedOutThisFrame){         
             knockedOutThisFrame = true;
@@ -188,7 +190,9 @@ public class Player : MonoBehaviour
 
 
     public void RespawnAtPosition(Vector3 spawnPosition){
-        // Respawns the player in the given position, resetting their damage, status, and physics
+        // Respawns the player in the given position, resetting their damage, ragdoll, powerups and physics
+
+        powerupManager.RemovePowerup();
 
         currentDamage = 0;
         TriggerImmunity();

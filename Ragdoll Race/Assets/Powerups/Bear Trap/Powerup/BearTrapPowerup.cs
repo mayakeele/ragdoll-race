@@ -11,7 +11,7 @@ public class BearTrapPowerup : Powerup
 
     
 
-    public override void OnActivate(){
+    public override void OnActivateInitial(){
         // If the player is grounded, attach a bear trap prefab to that ground
 
         Player attachedPlayer = attachedPowerupManager.player;
@@ -27,6 +27,11 @@ public class BearTrapPowerup : Powerup
         if(numTraps <= 0){
             attachedPowerupManager.RemovePowerup();
         }
+    }
+
+    public override void OnActivateContinued()
+    {
+        OnActivateInitial();
     }
 
 

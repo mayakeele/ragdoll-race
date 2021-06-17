@@ -7,7 +7,7 @@ public class Hitter : MonoBehaviour
     
     [Header("References")]
     private Rigidbody rigidbody;
-    [HideInInspector] public Player attachedPlayer;
+    private Player attachedPlayer;
 
 
     [Header("Hit Criteria")]
@@ -104,6 +104,17 @@ public class Hitter : MonoBehaviour
         }
     }
 
+
+
+    public Player GetAttachedPlayer(){
+        return attachedPlayer;
+    }
+
+    public void SetAttachedPlayer(Player player){
+        attachedPlayer = player;
+    }
+
+    
 
     private void RegisterHit(Hittable hitObject, Vector3 relativeVelocity, Vector3 hitLocation){
         // Tells the hit hittable that it has been hit, passing along information about damage and knockback given

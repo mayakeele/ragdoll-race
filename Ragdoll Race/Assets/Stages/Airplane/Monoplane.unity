@@ -2942,7 +2942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90fbbbd92c73ba4e8b547304323d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachedPlayer: {fileID: 0}
   scaleHitPowerBySpeed: 0
   minHitSpeed: 0
   maxHitSpeed: 1
