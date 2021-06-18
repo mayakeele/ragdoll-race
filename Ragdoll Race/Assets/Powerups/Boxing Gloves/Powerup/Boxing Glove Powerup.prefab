@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 445c5905518777f429b64614c4a6a6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  category: 3
+  canBePassive: 1
   icon: {fileID: 0}
   attachedPowerupManager: {fileID: 0}
   leftGlovePrefab: {fileID: 3531926801073086062, guid: b69fd9f51eadf6f4bbb9dd4eabadbd83, type: 3}

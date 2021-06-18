@@ -27,7 +27,7 @@ public class ProximityMinePowerup : Powerup
         }
 
         if(numMines <= 0){
-            attachedPowerupManager.RemovePowerup();
+            attachedPowerupManager.RemovePowerup(this);
         }
     }
     public override void OnActivateContinued()

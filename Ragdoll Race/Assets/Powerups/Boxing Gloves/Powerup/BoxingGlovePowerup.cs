@@ -72,6 +72,6 @@ public class BoxingGlovePowerup : Powerup
 
         // ~~~~~ Spawn VFX objects
 
-        attachedPowerupManager.RemovePowerup();
+        attachedPowerupManager.RemovePowerup(this);
     }
 }

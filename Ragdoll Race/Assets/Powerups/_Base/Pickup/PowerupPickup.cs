@@ -33,7 +33,7 @@ public class PowerupPickup : MonoBehaviour
 
         // If a player is detected, try to give them a powerup
         if(hittable){
-            bool wasPowerupGiven = hittable.player.powerupManager.SetPowerup(powerup);
+            bool wasPowerupGiven = hittable.player.powerupManager.TrySetPowerup(powerup);
 
             if(wasPowerupGiven && destroySelfOnPickup){
                 RemoveSelf();

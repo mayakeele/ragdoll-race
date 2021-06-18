@@ -16,7 +16,7 @@ public class Powerup : MonoBehaviour
     }
 
 
-    [HideInInspector] public static bool[,] powerupCategoryCompatibility = {
+    private static readonly bool[,] powerupCategoryCompatibility = {
         {true,true,true,true,true,true,true},
         {false,false,false,false,false,false,false},
         {false,false,false,false,false,false,false},
@@ -44,7 +44,7 @@ public class Powerup : MonoBehaviour
         return icon;
     }
 
-    public bool ArePowerupsCompatible(PowerupCategory incomingCategory, PowerupCategory currentCategory){
+    public static bool ArePowerupsCompatible(PowerupCategory incomingCategory, PowerupCategory currentCategory){
         return powerupCategoryCompatibility[(int)currentCategory, (int)incomingCategory];
     }
 

@@ -26,7 +26,7 @@ public class BearTrapPowerup : Powerup
         }
 
         if(numTraps <= 0){
-            attachedPowerupManager.RemovePowerup();
+            attachedPowerupManager.RemovePowerup(this);
         }
     }
 

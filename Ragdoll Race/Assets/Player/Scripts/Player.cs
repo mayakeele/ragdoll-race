@@ -192,7 +192,7 @@ public class Player : MonoBehaviour
     public void RespawnAtPosition(Vector3 spawnPosition){
         // Respawns the player in the given position, resetting their damage, ragdoll, powerups and physics
 
-        powerupManager.RemovePowerup();
+        powerupManager.RemoveAllPowerups();
 
         currentDamage = 0;
         TriggerImmunity();

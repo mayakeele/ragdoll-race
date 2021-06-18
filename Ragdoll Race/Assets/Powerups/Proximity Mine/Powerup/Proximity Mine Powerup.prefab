@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1023949611086863321}
   - component: {fileID: 1023949611086863326}
   m_Layer: 0
-  m_Name: Proximity Mine
+  m_Name: Proximity Mine Powerup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51729a14a2de53c4cbf462c8c19d1144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  category: 1
+  canBePassive: 0
   icon: {fileID: 0}
   attachedPowerupManager: {fileID: 0}
   numMines: 3
