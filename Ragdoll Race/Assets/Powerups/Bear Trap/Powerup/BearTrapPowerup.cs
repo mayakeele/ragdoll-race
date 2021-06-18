@@ -18,7 +18,8 @@ public class BearTrapPowerup : Powerup
 
         if(attachedPlayer.isGrounded && numTraps > 0){
             Vector3 position = attachedPlayer.groundPosition;
-            Quaternion rotation = Quaternion.FromToRotation(Vector3.up, attachedPlayer.groundNormal);
+            Vector3 forwardDirection = Vector3.ProjectOnPlane(attachedPlayer.rootForward.position, attachedPlayer.groundNormal);
+            Quaternion rotation = Quaternion.LookRotation(forwardDirection, attachedPlayer.groundNormal);
             Transform parent = attachedPlayer.groundTransform;
 
             if(position != null && rotation != null && parent) SpawnTrap(position, rotation, parent);

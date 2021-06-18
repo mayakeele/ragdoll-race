@@ -5,19 +5,38 @@ using UnityEngine.Events;
 
 public class Powerup : MonoBehaviour
 {
-    //[Header("Events")]
-    //public UnityEvent OnPickup;
-    //public UnityEvent OnActivate;
-    //public UnityEvent OnDeactivate;
+    public enum PowerupCategory{
+        PassiveEffect,
+        ItemSpawner,
+        ActiveWeapon,
+        PassiveHandAttachment,
+        PassiveFeetAttachment,
+        PassiveTorsoAttachment,
+        Transformation
+    }
 
 
+    [HideInInspector] public static bool[,] powerupCategoryCompatibility = {
+        {true,true,true,true,true,true,true},
+        {false,false,false,false,false,false,false},
+        {false,false,false,false,false,false,false},
+        {true,true,false,false,true,true,false},
+        {true,true,true,true,false,true,false},
+        {true,true,true,true,true,false,false},
+        {false,false,false,false,false,false,false}
+    };
+
+
+
+    public PowerupCategory category;
+    public bool canBePassive;
+    [Space]
     [SerializeField] private Texture2D icon;
 
+
+
     [HideInInspector] public PlayerPowerupManager attachedPowerupManager;
-
-
     private bool hasActivated = false;
-
 
 
 
@@ -25,11 +44,8 @@ public class Powerup : MonoBehaviour
         return icon;
     }
 
-
-
-    void Awake()
-    {
-        OnPickup();
+    public bool ArePowerupsCompatible(PowerupCategory incomingCategory, PowerupCategory currentCategory){
+        return powerupCategoryCompatibility[(int)currentCategory, (int)incomingCategory];
     }
 
 
@@ -56,7 +72,7 @@ public class Powerup : MonoBehaviour
 
     // Input Events
 
-    public virtual void OnInputActivate(){
+    public void OnInputActivate(){
         if(!hasActivated){
             OnActivateInitial();
         }

@@ -47,14 +47,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftJaw: {fileID: 9213425798413856787}
   rightJaw: {fileID: 117656669537809295}
-  disarmedDuration: 1.5
-  reopenDuration: 0.8
-  snapShutDuration: 0.11
-  trappedDuration: 5
+  disarmedDuration: 1
+  reopenDuration: 0.7
+  snapShutDuration: 0.1
+  trappedDuration: 4
   triggerableLayers:
     serializedVersion: 2
     m_Bits: 64
-  numActivationsRemaining: 3
+  numActivationsRemaining: 2
   damageDealt: 20
   jointStrength: 100000000
   openAngle: 0
@@ -218,10 +218,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7229368268996791123, guid: d64b9e52b1730944d98a015aa95515d7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0606845c20c1877489a2583a52d6c0a0, type: 2}
+    - target: {fileID: -5713056762112849301, guid: d64b9e52b1730944d98a015aa95515d7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0606845c20c1877489a2583a52d6c0a0, type: 2}
     - target: {fileID: 919132149155446097, guid: d64b9e52b1730944d98a015aa95515d7, type: 3}
       propertyPath: m_Name
       value: Model
       objectReference: {fileID: 0}
+    - target: {fileID: 7570945569733940790, guid: d64b9e52b1730944d98a015aa95515d7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0606845c20c1877489a2583a52d6c0a0, type: 2}
+    - target: {fileID: 8000681150211780002, guid: d64b9e52b1730944d98a015aa95515d7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0606845c20c1877489a2583a52d6c0a0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d64b9e52b1730944d98a015aa95515d7, type: 3}
 --- !u!4 &6454668576146054451 stripped

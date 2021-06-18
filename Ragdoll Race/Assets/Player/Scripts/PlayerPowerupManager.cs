@@ -33,11 +33,13 @@ public class PlayerPowerupManager : MonoBehaviour
     public bool SetPowerup(Powerup powerup, bool overrideCurrent = false){
         // Creates a new instance of the powerup given and attaches it to this manager
 
-        Powerup powerupCopy = Object.Instantiate(powerup);
+        if(overrideCurrent || !HasPowerup()){
+            RemovePowerup();
 
-        if(overrideCurrent || HasPowerup()){
+            Powerup powerupCopy = Object.Instantiate(powerup);
             currentPowerup = powerupCopy;
             currentPowerup.attachedPowerupManager = this;
+            currentPowerup.OnPickup();
 
             return true;
         }
