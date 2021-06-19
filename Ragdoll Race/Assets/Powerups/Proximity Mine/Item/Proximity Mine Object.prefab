@@ -126,14 +126,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c601f402f4c584c43a27842f588f8040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialDisarmDuration: 2
+  initialDisarmDuration: 1
+  triggerDuration: 0.3
+  autoExplodeAfterTime: 30
   triggerableLayers:
     serializedVersion: 2
     m_Bits: 64
-  explosionRadius: 0
-  explosionDamage: 0
-  explosionForce: 0
-  attachedPlayer: {fileID: 0}
+  explosionRadius: 1.3
+  explosionKnockbackMultiplier: 2
+  explosionDamageCenter: 15
+  explosionDamageEdge: 5
+  explosionSpeedCenter: 12
+  explosionSpeedEdge: 6
+  warningEffect: {fileID: 0}
+  explosionEffect: {fileID: 0}
 --- !u!135 &5798661648244224713
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -145,5 +151,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.33
+  m_Radius: 0.48
   m_Center: {x: 0, y: 0, z: 0}

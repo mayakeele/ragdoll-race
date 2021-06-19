@@ -202,6 +202,7 @@ MonoBehaviour:
   knockbackMultiplier: 2
   minDamage: 2
   maxDamage: 12
+  alwaysForceRagdoll: 0
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -230,8 +231,8 @@ MonoBehaviour:
   bodyPartDamageMultiplier: 0.5
   bodyPartKnockbackMultiplier: 1
   canForceRagdollOnHit: 0
-  forceRagdollDurationMin: 0
-  forceRagdollDurationMax: 0
+  forceRagdollDurationMin: 0.08
+  forceRagdollDurationMax: 0.25
   minCameraShakeOnHit: 0.03
   maxCameraShakeOnHit: 0.28
   hitSoundClips:
@@ -596,6 +597,7 @@ MonoBehaviour:
   knockbackMultiplier: 1.5
   minDamage: 5
   maxDamage: 13
+  alwaysForceRagdoll: 0
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -814,6 +816,7 @@ MonoBehaviour:
   knockbackMultiplier: 2
   minDamage: 2
   maxDamage: 12
+  alwaysForceRagdoll: 0
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -842,8 +845,8 @@ MonoBehaviour:
   bodyPartDamageMultiplier: 0.5
   bodyPartKnockbackMultiplier: 1
   canForceRagdollOnHit: 0
-  forceRagdollDurationMin: 0
-  forceRagdollDurationMax: 0
+  forceRagdollDurationMin: 0.08
+  forceRagdollDurationMax: 0.25
   minCameraShakeOnHit: 0.03
   maxCameraShakeOnHit: 0.28
   hitSoundClips:
@@ -1095,6 +1098,7 @@ MonoBehaviour:
   knockbackMultiplier: 2
   minDamage: 4
   maxDamage: 12
+  alwaysForceRagdoll: 0
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -1123,8 +1127,8 @@ MonoBehaviour:
   bodyPartDamageMultiplier: 1
   bodyPartKnockbackMultiplier: 1
   canForceRagdollOnHit: 0
-  forceRagdollDurationMin: 0
-  forceRagdollDurationMax: 0
+  forceRagdollDurationMin: 0.08
+  forceRagdollDurationMax: 0.25
   minCameraShakeOnHit: 0.03
   maxCameraShakeOnHit: 0.28
   hitSoundClips:
@@ -1573,6 +1577,7 @@ MonoBehaviour:
   knockbackMultiplier: 1.5
   minDamage: 5
   maxDamage: 13
+  alwaysForceRagdoll: 0
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -1792,6 +1797,7 @@ MonoBehaviour:
   knockbackMultiplier: 1.5
   minDamage: 2
   maxDamage: 10
+  alwaysForceRagdoll: 0
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -1820,8 +1826,8 @@ MonoBehaviour:
   bodyPartDamageMultiplier: 0.5
   bodyPartKnockbackMultiplier: 1
   canForceRagdollOnHit: 0
-  forceRagdollDurationMin: 0
-  forceRagdollDurationMax: 0
+  forceRagdollDurationMin: 0.08
+  forceRagdollDurationMax: 0.25
   minCameraShakeOnHit: 0.03
   maxCameraShakeOnHit: 0.28
   hitSoundClips:
@@ -2094,6 +2100,7 @@ MonoBehaviour:
   knockbackMultiplier: 1.5
   minDamage: 2
   maxDamage: 10
+  alwaysForceRagdoll: 0
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -2122,8 +2129,8 @@ MonoBehaviour:
   bodyPartDamageMultiplier: 1
   bodyPartKnockbackMultiplier: 1
   canForceRagdollOnHit: 0
-  forceRagdollDurationMin: 0
-  forceRagdollDurationMax: 0
+  forceRagdollDurationMin: 0.08
+  forceRagdollDurationMax: 0.25
   minCameraShakeOnHit: 0.03
   maxCameraShakeOnHit: 0.28
   hitSoundClips:
@@ -2788,6 +2795,7 @@ MonoBehaviour:
   knockbackMultiplier: 1.5
   minDamage: 2
   maxDamage: 10
+  alwaysForceRagdoll: 0
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -2816,8 +2824,8 @@ MonoBehaviour:
   bodyPartDamageMultiplier: 0.5
   bodyPartKnockbackMultiplier: 1
   canForceRagdollOnHit: 0
-  forceRagdollDurationMin: 0
-  forceRagdollDurationMax: 0
+  forceRagdollDurationMin: 0.08
+  forceRagdollDurationMax: 0.25
   minCameraShakeOnHit: 0.03
   maxCameraShakeOnHit: 0.28
   hitSoundClips:
@@ -2997,7 +3005,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  initialPowerup: {fileID: 8026398323700952261, guid: 3fe4764cbdab4f2429e64d1829b61b9e, type: 3}
+  activePowerup: {fileID: 0}
+  passivePowerup: {fileID: 0}
 --- !u!1 &6503780231121693589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3323,6 +3332,7 @@ MonoBehaviour:
   knockbackMultiplier: 2.5
   minDamage: 5
   maxDamage: 15
+  alwaysForceRagdoll: 0
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -3839,6 +3849,7 @@ MonoBehaviour:
   knockbackMultiplier: 1.5
   minDamage: 2
   maxDamage: 10
+  alwaysForceRagdoll: 0
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -3867,8 +3878,8 @@ MonoBehaviour:
   bodyPartDamageMultiplier: 1
   bodyPartKnockbackMultiplier: 1
   canForceRagdollOnHit: 0
-  forceRagdollDurationMin: 0
-  forceRagdollDurationMax: 0
+  forceRagdollDurationMin: 0.08
+  forceRagdollDurationMax: 0.25
   minCameraShakeOnHit: 0.03
   maxCameraShakeOnHit: 0.28
   hitSoundClips:
@@ -4267,6 +4278,7 @@ MonoBehaviour:
   knockbackMultiplier: 2
   minDamage: 4
   maxDamage: 12
+  alwaysForceRagdoll: 0
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}
@@ -4295,8 +4307,8 @@ MonoBehaviour:
   bodyPartDamageMultiplier: 1
   bodyPartKnockbackMultiplier: 1
   canForceRagdollOnHit: 0
-  forceRagdollDurationMin: 0
-  forceRagdollDurationMax: 0
+  forceRagdollDurationMin: 0.08
+  forceRagdollDurationMax: 0.25
   minCameraShakeOnHit: 0.03
   maxCameraShakeOnHit: 0.28
   hitSoundClips:
@@ -4584,6 +4596,7 @@ MonoBehaviour:
   knockbackMultiplier: 1.5
   minDamage: 5
   maxDamage: 13
+  alwaysForceRagdoll: 0
   audioSource: {fileID: 7919443795128758726}
   playerHitSounds:
   - {fileID: 8300000, guid: 17d58b683762dee42b6a17137bbd685b, type: 3}

@@ -48,17 +48,17 @@ MonoBehaviour:
   leftJaw: {fileID: 9213425798413856787}
   rightJaw: {fileID: 117656669537809295}
   disarmedDuration: 1
-  reopenDuration: 0.7
-  snapShutDuration: 0.1
-  trappedDuration: 4
+  reopenDuration: 0.68
+  snapShutDuration: 0.08
+  trappedDuration: 3.5
   triggerableLayers:
     serializedVersion: 2
     m_Bits: 64
   numActivationsRemaining: 2
-  damageDealt: 20
+  damageDealt: 18
   jointStrength: 100000000
   openAngle: 0
-  closedAngle: -75
+  closedAngle: -82
   reopenCurve:
     serializedVersion: 2
     m_Curve:

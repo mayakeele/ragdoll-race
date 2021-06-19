@@ -19,7 +19,8 @@ public class Hitter : MonoBehaviour
     [Header("Knockback & Damage Properties")]
     public float knockbackMultiplier;
     public float minDamage;
-    public float maxDamage;    
+    public float maxDamage;
+    public bool alwaysForceRagdoll = false;
 
 
     [Header("Sound Effects")]
@@ -120,7 +121,7 @@ public class Hitter : MonoBehaviour
         // Tells the hit hittable that it has been hit, passing along information about damage and knockback given
         // "Output" variables are used to handle hitters that don't scale damage with speed, i.e. deal instant damage on contact
 
-        float hitSpeedGradientInput = relativeVelocity.magnitude.GradientClamped(minHitSpeed, maxHitSpeed);
+        float hitSpeedGradientInput = relativeVelocity.magnitude.GetGradientClamped(minHitSpeed, maxHitSpeed);
 
         float hitDamageOutput;
         float hitSpeedGradientOutput;
@@ -138,7 +139,7 @@ public class Hitter : MonoBehaviour
         
         
         // Tell the hit Hittable that it has been hit, receive whether the hittable was able to be hit
-        bool hitSuccessful = hitObject.Hit(hitLocation, relativeVelocity, hitDamageOutput, knockbackMultiplier, hitSpeedGradientOutput, attachedPlayer);
+        bool hitSuccessful = hitObject.Hit(hitLocation, relativeVelocity, hitDamageOutput, knockbackMultiplier, hitSpeedGradientOutput, attachedPlayer, alwaysForceRagdoll);
         if(hitSuccessful){
             // Play impact sound at hit location
             if(playerHitSounds.Count > 0){

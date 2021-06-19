@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProximityMinePowerup : Powerup
 {
     [Header("Mine Spawning Properties")]
-    [SerializeField] private int numMines = 3;
+    [SerializeField] private int numMines = 2;
     //[SerializeField] private float spawnWaitDuration;
     //[SerializeField] private LayerMask placeableLayers = LayerMask.GetMask("StaticTerrain", "DynamicTerrain");
     [Space]
@@ -20,7 +20,8 @@ public class ProximityMinePowerup : Powerup
 
         if(attachedPlayer.isGrounded && numMines > 0){
             Vector3 position = attachedPlayer.groundPosition;
-            Quaternion rotation = Quaternion.FromToRotation(Vector3.up, attachedPlayer.groundNormal);
+            Vector3 forwardDirection = Vector3.ProjectOnPlane(attachedPlayer.rootForward.position, attachedPlayer.groundNormal);
+            Quaternion rotation = Quaternion.LookRotation(forwardDirection, attachedPlayer.groundNormal);
             Transform parent = attachedPlayer.groundTransform;
 
             if(position != null && rotation != null && parent) SpawnMine(position, rotation, parent);

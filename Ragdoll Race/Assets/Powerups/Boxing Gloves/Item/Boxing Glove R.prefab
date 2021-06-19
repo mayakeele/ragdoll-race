@@ -174,11 +174,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scaleHitPowerBySpeed: 1
-  minHitSpeed: 1
-  maxHitSpeed: 6
+  minHitSpeed: 2
+  maxHitSpeed: 9
   knockbackMultiplier: 2
   minDamage: 4
   maxDamage: 14
+  alwaysForceRagdoll: 1
   audioSource: {fileID: 1268436742}
   playerHitSounds: []
   playerHitVolume: 1
