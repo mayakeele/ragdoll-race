@@ -51,7 +51,7 @@ public class BearTrapItem : SpawnedItem
     }
 
     
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if(isArmed && triggerableLayers.ContainsLayer(other.gameObject.layer)){
             Hittable hittable = other.gameObject.GetComponent<Hittable>();
