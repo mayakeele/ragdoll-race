@@ -13,10 +13,11 @@ public class ProximityMinePowerup : Powerup
 
     
 
-    public override void OnActivateInitial(){
+    public override bool OnActivateInitial(){
         // If the player is grounded, attach a proximity mine prefab on that ground
 
         Player attachedPlayer = attachedPowerupManager.player;
+        bool placementSuccessful = false;
 
         if(attachedPlayer.isGrounded && numMines > 0){
             Vector3 position = attachedPlayer.groundPosition;
@@ -24,13 +25,19 @@ public class ProximityMinePowerup : Powerup
             Quaternion rotation = Quaternion.LookRotation(forwardDirection, attachedPlayer.groundNormal);
             Transform parent = attachedPlayer.groundTransform;
 
-            if(position != null && rotation != null && parent) SpawnMine(position, rotation, parent);
+            if(position != null && rotation != null && parent) {
+                SpawnMine(position, rotation, parent);
+                placementSuccessful = true;
+            }
         }
 
         if(numMines <= 0){
             attachedPowerupManager.RemovePowerup(this);
         }
+
+        return placementSuccessful;
     }
+    
     public override void OnActivateContinued()
     {
         OnActivateInitial();

@@ -19,7 +19,7 @@ public class BoxingGlovePowerup : Powerup
     private GameObject rightGlove;
 
 
-    public override void OnActivateInitial(){
+    public override bool OnActivateInitial(){
         // Spawn left and right gloves on the player's hands, and create a fixed joint
 
         leftGlove = Instantiate(leftGlovePrefab);
@@ -55,6 +55,8 @@ public class BoxingGlovePowerup : Powerup
 
         // Queue removal of the powerup after a while
         StartCoroutine(RemoveGlovesAfterWait());
+
+        return true;
     }
 
 

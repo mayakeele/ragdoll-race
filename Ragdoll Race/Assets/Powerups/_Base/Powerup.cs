@@ -36,7 +36,7 @@ public class Powerup : MonoBehaviour
 
 
     [HideInInspector] public PlayerPowerupManager attachedPowerupManager;
-    private bool hasActivated = false;
+    [HideInInspector] public bool hasActivated = false;
 
 
 
@@ -56,8 +56,9 @@ public class Powerup : MonoBehaviour
 
     }
 
-    public virtual void OnActivateInitial(){
-
+    public virtual bool OnActivateInitial(){
+        // Returns whether the initial activation was successful
+        return true;
     }
     
     public virtual void OnActivateContinued(){
@@ -74,13 +75,13 @@ public class Powerup : MonoBehaviour
 
     public void OnInputActivate(){
         if(!hasActivated){
-            OnActivateInitial();
+            hasActivated = OnActivateInitial();
         }
         else{
             OnActivateContinued();
         }
 
-        hasActivated = true;
+        
     }
 
     public virtual void OnInputMove(Vector2 movementInput){

@@ -11,10 +11,11 @@ public class BearTrapPowerup : Powerup
 
     
 
-    public override void OnActivateInitial(){
+    public override bool OnActivateInitial(){
         // If the player is grounded, attach a bear trap prefab to that ground
 
         Player attachedPlayer = attachedPowerupManager.player;
+        bool placementSuccessful = false;
 
         if(attachedPlayer.isGrounded && numTraps > 0){
             Vector3 position = attachedPlayer.groundPosition;
@@ -23,11 +24,15 @@ public class BearTrapPowerup : Powerup
             Transform parent = attachedPlayer.groundTransform;
 
             if(position != null && rotation != null && parent) SpawnTrap(position, rotation, parent);
+
+            placementSuccessful = true;
         }
 
         if(numTraps <= 0){
             attachedPowerupManager.RemovePowerup(this);
         }
+
+        return placementSuccessful;
     }
 
     public override void OnActivateContinued()

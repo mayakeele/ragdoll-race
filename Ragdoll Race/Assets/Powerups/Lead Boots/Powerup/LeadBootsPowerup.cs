@@ -19,7 +19,7 @@ public class LeadBootsPowerup : Powerup
     private GameObject rightBoot;
 
 
-    public override void OnActivateInitial(){
+    public override bool OnActivateInitial(){
         // Spawn left and right boots on the player's legs, and create a fixed joint
 
         leftBoot = Instantiate(leftBootPrefab);
@@ -55,6 +55,8 @@ public class LeadBootsPowerup : Powerup
 
         // Queue removal of the powerup after a while
         StartCoroutine(RemoveBootsAfterWait());
+
+        return true;
     }
 
 

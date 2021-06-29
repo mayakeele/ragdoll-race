@@ -78,12 +78,9 @@ public class PlayerController : MonoBehaviour
         // Calculate the ideal velocity both relative to the ground and in world space
         Vector3 idealVelocityRelative = ((cameraForward * moveInput.y) + (cameraRight * moveInput.x)) * currMoveSpeedLimit;
 
-
         Vector3 idealVelocityWorld = idealVelocityRelative + player.groundVelocity.ProjectHorizontal();
-  
 
         Vector3 currentVelocityWorld = player.rootRigidbody.velocity.ProjectHorizontal();
-
 
         Vector3 requiredVelocityChange = (idealVelocityWorld - currentVelocityWorld);
         float perFrameSpeedChange = currMoveAcceleration * Time.fixedDeltaTime;

@@ -131,24 +131,24 @@ public class PlayerPowerupManager : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context){
         Vector2 moveInput = context.action.ReadValue<Vector2>();
 
-        if(ActiveSlotTaken()) activePowerup.OnInputMove(moveInput);
-        if(PassiveSlotTaken()) passivePowerup.OnInputMove(moveInput);
+        if(ActiveSlotTaken() && activePowerup.hasActivated) activePowerup.OnInputMove(moveInput);
+        if(PassiveSlotTaken() && passivePowerup.hasActivated) passivePowerup.OnInputMove(moveInput);
 
     }
 
     public void OnJump(InputAction.CallbackContext context){
-        if(ActiveSlotTaken() && context.started) activePowerup.OnInputJump();
-        if(PassiveSlotTaken() && context.started) passivePowerup.OnInputJump();
+        if(ActiveSlotTaken() && activePowerup.hasActivated && context.started) activePowerup.OnInputJump();
+        if(PassiveSlotTaken() && passivePowerup.hasActivated && context.started) passivePowerup.OnInputJump();
     }
 
     public void OnArmAction(InputAction.CallbackContext context){
         if(context.started){
-            if(ActiveSlotTaken()) activePowerup.OnInputArmsUp();
-            if(PassiveSlotTaken()) passivePowerup.OnInputArmsUp();
+            if(ActiveSlotTaken() && activePowerup.hasActivated) activePowerup.OnInputArmsUp();
+            if(PassiveSlotTaken() && passivePowerup.hasActivated) passivePowerup.OnInputArmsUp();
         }
         else if(context.canceled){
-            if(ActiveSlotTaken()) activePowerup.OnInputArmsDown();
-            if(PassiveSlotTaken()) passivePowerup.OnInputArmsDown();
+            if(ActiveSlotTaken() && activePowerup.hasActivated) activePowerup.OnInputArmsDown();
+            if(PassiveSlotTaken() && passivePowerup.hasActivated) passivePowerup.OnInputArmsDown();
         }
     }
 
