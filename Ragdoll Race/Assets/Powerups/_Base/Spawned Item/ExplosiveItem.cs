@@ -17,6 +17,7 @@ public class ExplosiveItem : SpawnedItem
     [SerializeField] private LayerMask affectedLayers;
     [Space]
     [SerializeField] private GameObject explosionEffect;
+    [SerializeField] private float cameraShakeTrauma;
 
 
 
@@ -35,6 +36,9 @@ public class ExplosiveItem : SpawnedItem
 
         // Instantiate the explosion effects if it exists
         if(explosionEffect) Instantiate(explosionEffect, transform.position, transform.rotation);
+
+        // Apply camera shake
+        GetAttachedPlayer().manager.cameraController.AddCameraShake(cameraShakeTrauma);
 
         // Get a list of all colliders in the explosion radius
         List<Collider> collidersInRadius = new List<Collider>(Physics.OverlapSphere(explosionCenterPosition, explosionRadius, affectedLayers));

@@ -135,7 +135,8 @@ MonoBehaviour:
   affectedLayers:
     serializedVersion: 2
     m_Bits: 64
-  explosionEffect: {fileID: 0}
+  explosionEffect: {fileID: 4748044244749797256, guid: 1b20e0598a6bd1b4794932d85a4e0194, type: 3}
+  cameraShakeTrauma: 0.22
   initialDisarmDuration: 1
   triggerDuration: 0.3
   autoExplodeAfterTime: 30

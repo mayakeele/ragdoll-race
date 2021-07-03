@@ -49,13 +49,14 @@ MonoBehaviour:
   explosionRadius: 2.3
   explosionKnockbackMultiplier: 2
   explosionDamageCenter: 30
-  explosionDamageEdge: 7
+  explosionDamageEdge: 10
   explosionSpeedCenter: 23
-  explosionSpeedEdge: 4
+  explosionSpeedEdge: 10
   affectedLayers:
     serializedVersion: 2
     m_Bits: 64
-  explosionEffect: {fileID: 0}
+  explosionEffect: {fileID: 5370121237784898959, guid: bea2411ee1a7c434bb89af836168f8e5, type: 3}
+  cameraShakeTrauma: 0.5
   modelTransform: {fileID: 2689717264840240940}
   rocketRigidbody: {fileID: 6070922158005057687}
   powerup: {fileID: 0}
