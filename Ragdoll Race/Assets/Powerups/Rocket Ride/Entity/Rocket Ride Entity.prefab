@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7503919641161234009}
   - component: {fileID: 6070922158005057687}
   m_Layer: 10
-  m_Name: Rocket Ride Item
+  m_Name: Rocket Ride Entity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   explosionEffect: {fileID: 5370121237784898959, guid: bea2411ee1a7c434bb89af836168f8e5, type: 3}
-  cameraShakeTrauma: 0.5
+  cameraShakeTrauma: 0.45
   modelTransform: {fileID: 2689717264840240940}
   rocketRigidbody: {fileID: 6070922158005057687}
   powerup: {fileID: 0}
@@ -84,7 +84,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  rocketLifetime: 5
+  rocketLifetime: 3.6
   chargeupRotationRate: 900
   playerAttachedSpeed: 6
   unburdenedSpeed: 12

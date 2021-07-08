@@ -49,7 +49,7 @@ public class ProximityMinePowerup : Powerup
         
         //GameObject newMine = GameObject.Instantiate(minePrefab, position, rotation, parent);
         // Spawn a mine prefab at the desired location
-        GameObject newMine = SpawnedItem.SpawnItemForPlayer(minePrefab, attachedPowerupManager.player, position, rotation, parent);
+        GameObject newMine = SpawnedEntity.SpawnEntityForPlayer(minePrefab, attachedPowerupManager.player, position, rotation, parent);
 
         numMines--;
 

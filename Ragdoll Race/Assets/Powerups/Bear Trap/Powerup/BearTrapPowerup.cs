@@ -45,7 +45,7 @@ public class BearTrapPowerup : Powerup
         // Create mine prefab at position and rotation of the ground, make child of ground
         
         // Spawn a mine prefab at the desired location
-        GameObject newTrap = SpawnedItem.SpawnItemForPlayer(trapPrefab, attachedPowerupManager.player, position, rotation, parent);
+        GameObject newTrap = SpawnedEntity.SpawnEntityForPlayer(trapPrefab, attachedPowerupManager.player, position, rotation, parent);
 
         numTraps--;
     }

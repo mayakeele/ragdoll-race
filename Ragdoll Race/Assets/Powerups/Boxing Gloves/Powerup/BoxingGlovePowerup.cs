@@ -35,7 +35,7 @@ public class BoxingGlovePowerup : Powerup
 
 
         // Set glove transforms to match arms
-        Vector3 leftPosition =leftHandTransform.TransformPoint(leftOffset);
+        Vector3 leftPosition = leftHandTransform.TransformPoint(leftOffset);
         leftGlove.transform.SetPositionAndRotation(leftPosition, leftHandTransform.rotation);
 
         Vector3 rightPosition = rightHandTransform.TransformPoint(rightOffset);

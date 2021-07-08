@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 6371885397128980203}
   - component: {fileID: 5798661648244224713}
   m_Layer: 9
-  m_Name: Proximity Mine Object
+  m_Name: Proximity Mine Entity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

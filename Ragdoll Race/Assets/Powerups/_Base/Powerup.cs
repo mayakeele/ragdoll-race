@@ -7,13 +7,13 @@ public class Powerup : MonoBehaviour
 {
     public enum PowerupCategory{
         PassiveEffect,
-        ItemSpawner,
+        EntitySpawner,
         ActiveWeapon,
-        PassiveHandAttachment,
-        PassiveFeetAttachment,
-        PassiveTorsoAttachment,
-        Transformation,
-        Rideable
+        HandAttachment,
+        FeetAttachment,
+        TorsoAttachment,
+        BodyTransformation,
+        KinematicMover
     }
 
 

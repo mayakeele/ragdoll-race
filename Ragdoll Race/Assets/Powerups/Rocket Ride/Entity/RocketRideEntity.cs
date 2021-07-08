@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketRideItem : ExplosiveItem
+public class RocketRideEntity : ExplosiveSpawnedEntity
 {
     [Header("References")]
     public Transform modelTransform;

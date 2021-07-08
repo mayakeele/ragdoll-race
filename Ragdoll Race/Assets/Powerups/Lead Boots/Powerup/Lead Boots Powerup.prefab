@@ -47,8 +47,9 @@ MonoBehaviour:
   canBePassive: 1
   icon: {fileID: 0}
   attachedPowerupManager: {fileID: 0}
+  hasActivated: 0
   leftBootPrefab: {fileID: 264040732999470583, guid: 9f3c0cf076c7f60488e5ec28d6a432ed, type: 3}
   rightBootPrefab: {fileID: 3494544000909444364, guid: 98b28a77b72387b4786482ca6252947d, type: 3}
-  powerupDuration: 22
+  powerupDuration: 20
   leftOffset: {x: -0.033, y: 0.061, z: 0}
   rightOffset: {x: 0.033, y: 0.061, z: 0}

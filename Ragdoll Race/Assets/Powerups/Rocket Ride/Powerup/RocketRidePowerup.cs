@@ -40,7 +40,7 @@ public class RocketRidePowerup : Powerup
 
     private Rigidbody playerPelvisRigidbody;
     private GameObject rocketObject;
-    private RocketRideItem rocketItem;
+    private RocketRideEntity rocketEntity;
     private Joint rocketJoint;
 
     private LifetimePhase currentPhase = LifetimePhase.Inactive;
@@ -52,11 +52,11 @@ public class RocketRidePowerup : Powerup
     void FixedUpdate(){
         // Handle player directional input by rotating and moving the rocket
 
-        if(rocketItem && rocketItem.isPlayerAttached){
+        if(rocketEntity && rocketEntity.isPlayerAttached){
             // Allow for free steering during chargeup phase
             if(currentPhase == LifetimePhase.Chargeup){
                 if(movementInputWorld.magnitude > turningDeadzone){
-                    rocketItem.RotateRocketDirection(movementInputWorld);
+                    rocketEntity.RotateRocketDirection(movementInputWorld);
                 }
             }
 
@@ -67,7 +67,7 @@ public class RocketRidePowerup : Powerup
                 float forwardBackwardInputSpeed = movementInputRocketSpace.z > 0 ? directionalInputForwardSpeed : directionalInputBackwardSpeed;
                 Vector2 velocityInputRocketSpace = new Vector2(directionalInputSidewaysSpeed * movementInputRocketSpace.x, forwardBackwardInputSpeed * movementInputRocketSpace.z);
 
-                rocketItem.MoveRocket(velocityInputRocketSpace);
+                rocketEntity.MoveRocket(velocityInputRocketSpace);
             }
         }
     }
@@ -89,12 +89,12 @@ public class RocketRidePowerup : Powerup
             Vector3 spawnPosition = attachedPowerupManager.player.rootRigidbody.position;
             Vector3 forwardDirection = attachedPowerupManager.player.rootForward.forward.ProjectHorizontal();
             Quaternion spawnRotation = Quaternion.LookRotation(forwardDirection, Vector3.up);
-            rocketObject = SpawnedItem.SpawnItemForPlayer(rocketPrefab, attachedPowerupManager.player, spawnPosition, spawnRotation);
+            rocketObject = SpawnedEntity.SpawnEntityForPlayer(rocketPrefab, attachedPowerupManager.player, spawnPosition, spawnRotation);
 
             // Begin scaling the rocket's model and collider from 0 to full scale
-            rocketItem = rocketObject.GetComponent<RocketRideItem>();
-            rocketItem.powerup = this;
-            StartCoroutine(rocketItem.ScaleModel(playerShiftDuration));
+            rocketEntity = rocketObject.GetComponent<RocketRideEntity>();
+            rocketEntity.powerup = this;
+            StartCoroutine(rocketEntity.ScaleModel(playerShiftDuration));
 
             // Begin shifting the player upwards
             StartCoroutine(ShiftPlayerUpwards());
@@ -110,8 +110,8 @@ public class RocketRidePowerup : Powerup
 
     public override void OnActivateContinued()
     {
-        if(rocketItem && rocketItem.isPlayerAttached && currentPhase == LifetimePhase.Moving){
-            rocketItem.ExplodeRocket();
+        if(rocketEntity && rocketEntity.isPlayerAttached && currentPhase == LifetimePhase.Moving){
+            rocketEntity.ExplodeRocket();
         }
     }
 
@@ -120,7 +120,7 @@ public class RocketRidePowerup : Powerup
     {
         // Detaches from the rocket if in moving phase, and the player isn't already attached
 
-        if(rocketItem && rocketItem.isPlayerAttached && (currentPhase == LifetimePhase.Moving || currentPhase == LifetimePhase.Chargeup)){
+        if(rocketEntity && rocketEntity.isPlayerAttached && (currentPhase == LifetimePhase.Moving || currentPhase == LifetimePhase.Chargeup)){
             attachedPowerupManager.RemovePowerup(this);
             JumpOffRocket(jumpOffSpeed);
         }
@@ -141,7 +141,7 @@ public class RocketRidePowerup : Powerup
 
     public override void OnRemove()
     {
-        if(rocketItem) rocketItem.isPlayerAttached = false;
+        if(rocketEntity) rocketEntity.isPlayerAttached = false;
         if(rocketJoint) Destroy(rocketJoint);
 
         if(playerPelvisRigidbody) playerPelvisRigidbody.isKinematic = false;
@@ -195,7 +195,7 @@ public class RocketRidePowerup : Powerup
     private IEnumerator PerformChargeup(){
 
         currentPhase = LifetimePhase.Chargeup;
-        rocketItem.canExplode = true;
+        rocketEntity.canExplode = true;
 
         // ~~~~~~~ TODO special effects here ~~~~~~~~~~
 

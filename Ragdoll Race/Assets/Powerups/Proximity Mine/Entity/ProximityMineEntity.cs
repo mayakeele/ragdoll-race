@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProximityMineItem : ExplosiveItem
+public class ProximityMineEntity : ExplosiveSpawnedEntity
 {
     [Header("Activation Properties")]
     [SerializeField] private float initialDisarmDuration;

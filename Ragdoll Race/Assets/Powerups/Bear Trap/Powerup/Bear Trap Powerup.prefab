@@ -43,7 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcae4e0e6a00e8d4ebfca52ce31d4c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  category: 1
+  canBePassive: 0
   icon: {fileID: 0}
   attachedPowerupManager: {fileID: 0}
+  hasActivated: 0
   numTraps: 1
   trapPrefab: {fileID: 2633354687812011255, guid: d4670e78c56046444aca8a7e3a70267e, type: 3}

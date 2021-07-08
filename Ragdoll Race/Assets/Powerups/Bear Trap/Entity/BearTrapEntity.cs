@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BearTrapItem : SpawnedItem
+public class BearTrapEntity : SpawnedEntity
 {
     [Header("Part References")]
     [SerializeField] private GameObject leftJaw;
