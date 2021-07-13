@@ -26,12 +26,12 @@ public class LeadBootsPowerup : Powerup
         rightBoot = Instantiate(rightBootPrefab);
 
         // Set boots' Hitter components' attached player
-        leftBoot.GetComponent<Hitter>().SetAttachedPlayer(attachedPowerupManager.player);
-        rightBoot.GetComponent<Hitter>().SetAttachedPlayer(attachedPowerupManager.player);
+        leftBoot.GetComponent<Hitter>().SetAttachedPlayer(attachedPlayer);
+        rightBoot.GetComponent<Hitter>().SetAttachedPlayer(attachedPlayer);
 
         // Get references to player leg transforms
-        Transform leftFootTransform = attachedPowerupManager.player.activeRagdoll.leftLegOuterTransform;
-        Transform rightFootTransform = attachedPowerupManager.player.activeRagdoll.rightLegOuterTransform;
+        Transform leftFootTransform = attachedPlayer.activeRagdoll.leftLegOuterTransform;
+        Transform rightFootTransform = attachedPlayer.activeRagdoll.rightLegOuterTransform;
 
 
         // Set boot transforms to match legs

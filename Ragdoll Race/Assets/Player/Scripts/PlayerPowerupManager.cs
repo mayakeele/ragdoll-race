@@ -72,6 +72,7 @@ public class PlayerPowerupManager : MonoBehaviour
         Powerup powerupCopy = Object.Instantiate(incomingPowerup);
         activePowerup = powerupCopy;
         activePowerup.attachedPowerupManager = this;
+        activePowerup.attachedPlayer = player;
         activePowerup.OnPickup();
     }
 
@@ -120,12 +121,19 @@ public class PlayerPowerupManager : MonoBehaviour
     // Input passers-on
 
     public void OnActivate(InputAction.CallbackContext context){
+        // Call activation button function if first frame pressed
         if(context.started){
             if(ActiveSlotTaken()) activePowerup.OnInputActivate();
             if(PassiveSlotTaken()) passivePowerup.OnInputActivate();
 
             TryMoveActiveToPassive();
-        } 
+        }
+        
+        // Call activation button release function if button is released
+        if(context.canceled){
+            if(ActiveSlotTaken()) activePowerup.OnActivateButtonReleased();
+            if(PassiveSlotTaken()) passivePowerup.OnActivateButtonReleased();
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context){

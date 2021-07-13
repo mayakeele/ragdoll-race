@@ -57,6 +57,12 @@ public class PlayersManager : MonoBehaviour
     public List<Player> GetAllPlayers(){
         return allPlayers;
     }
+    public List<Player> GetAllPlayers(Player playerToIgnore){
+        List<Player> modifiedAllPlayers = GetAllPlayers();
+        modifiedAllPlayers.Remove(playerToIgnore);
+        
+        return modifiedAllPlayers;
+    }
 
     public List<Player> GetOnscreenPlayers(){
         return onscreenPlayers;

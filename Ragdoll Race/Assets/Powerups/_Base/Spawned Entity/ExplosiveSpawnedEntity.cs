@@ -59,7 +59,7 @@ public class ExplosiveSpawnedEntity : SpawnedEntity
                 float scaledSpeed = distGradient.MapPercentClamped(explosionSpeedCenter, explosionSpeedEdge);
 
                 Hittable lowerTorsoTarget = hittable.player.activeRagdoll.torsoLowerTransform.GetComponent<Hittable>();
-                lowerTorsoTarget.Hit(hittable.transform.position, scaledSpeed * direction, scaledDamage, explosionKnockbackMultiplier, distGradient, GetAttachedPlayer(), true);
+                lowerTorsoTarget.HitWithGlobalVelocity(hittable.transform.position, scaledSpeed * direction, scaledDamage, explosionKnockbackMultiplier, distGradient, GetAttachedPlayer(), true);
             }
         }
 

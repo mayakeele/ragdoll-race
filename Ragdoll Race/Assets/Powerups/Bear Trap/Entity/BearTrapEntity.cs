@@ -101,7 +101,7 @@ public class BearTrapEntity : SpawnedEntity
         joint.enablePreprocessing = false;
 
         // Apply damage to the player
-        trappedHittable.Hit(triggerCollider.transform.position, Vector3.zero, damageDealt, 0, 1, GetAttachedPlayer());
+        trappedHittable.HitWithGlobalVelocity(triggerCollider.transform.position, Vector3.zero, damageDealt, 0, 1, GetAttachedPlayer());
 
         // Spawn closing effects
 

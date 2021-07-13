@@ -139,7 +139,7 @@ public class Hitter : MonoBehaviour
         
         
         // Tell the hit Hittable that it has been hit, receive whether the hittable was able to be hit
-        bool hitSuccessful = hitObject.Hit(hitLocation, relativeVelocity, hitDamageOutput, knockbackMultiplier, hitSpeedGradientOutput, attachedPlayer, alwaysForceRagdoll);
+        bool hitSuccessful = hitObject.HitWithRelativeVelocity(hitLocation, relativeVelocity, hitDamageOutput, knockbackMultiplier, hitSpeedGradientOutput, attachedPlayer, alwaysForceRagdoll);
         if(hitSuccessful){
             // Play impact sound at hit location
             if(playerHitSounds.Count > 0){

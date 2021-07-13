@@ -11,8 +11,6 @@ public class RocketRideEntity : ExplosiveSpawnedEntity
 
 
     [Header("Rocket Properties")]
-    [SerializeField] private AnimationCurve rocketScaleCurve;
-    [Space]
     [SerializeField] private float rocketLifetime;
     [Space]
     [SerializeField] private float chargeupRotationRate;
@@ -53,7 +51,7 @@ public class RocketRideEntity : ExplosiveSpawnedEntity
 
             if(hittable){
                 // Only trigger explosion if the collision is not from the attached player
-                if(hittable.player != powerup.attachedPowerupManager.player){
+                if(hittable.player != powerup.attachedPlayer){
                     ExplodeRocket();
                 }
             }
@@ -66,7 +64,7 @@ public class RocketRideEntity : ExplosiveSpawnedEntity
 
 
 
-    public IEnumerator ScaleModel(float duration){
+    /*public IEnumerator ScaleModel(float duration){
         // Scales the rocket's model and collider over time
         float currentTime = 0;
 
@@ -82,7 +80,7 @@ public class RocketRideEntity : ExplosiveSpawnedEntity
         }
 
         modelTransform.localScale = rocketScaleCurve.Evaluate(1) * Vector3.one;
-    }
+    }*/
 
 
 

@@ -16,7 +16,6 @@ public class ProximityMinePowerup : Powerup
     public override bool OnActivateInitial(){
         // If the player is grounded, attach a proximity mine prefab on that ground
 
-        Player attachedPlayer = attachedPowerupManager.player;
         bool placementSuccessful = false;
 
         if(attachedPlayer.isGrounded && numMines > 0){
@@ -49,7 +48,7 @@ public class ProximityMinePowerup : Powerup
         
         //GameObject newMine = GameObject.Instantiate(minePrefab, position, rotation, parent);
         // Spawn a mine prefab at the desired location
-        GameObject newMine = SpawnedEntity.SpawnEntityForPlayer(minePrefab, attachedPowerupManager.player, position, rotation, parent);
+        GameObject newMine = SpawnedEntity.SpawnEntityForPlayer(minePrefab, attachedPlayer, position, rotation, parent);
 
         numMines--;
 

@@ -14,7 +14,6 @@ public class BearTrapPowerup : Powerup
     public override bool OnActivateInitial(){
         // If the player is grounded, attach a bear trap prefab to that ground
 
-        Player attachedPlayer = attachedPowerupManager.player;
         bool placementSuccessful = false;
 
         if(attachedPlayer.isGrounded && numTraps > 0){
@@ -45,7 +44,7 @@ public class BearTrapPowerup : Powerup
         // Create mine prefab at position and rotation of the ground, make child of ground
         
         // Spawn a mine prefab at the desired location
-        GameObject newTrap = SpawnedEntity.SpawnEntityForPlayer(trapPrefab, attachedPowerupManager.player, position, rotation, parent);
+        GameObject newTrap = SpawnedEntity.SpawnEntityForPlayer(trapPrefab, attachedPlayer, position, rotation, parent);
 
         numTraps--;
     }

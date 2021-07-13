@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5370121237784898960}
   - component: {fileID: 5370121237784898961}
   - component: {fileID: 5370121237784898958}
+  - component: {fileID: 4092793730396655794}
   m_Layer: 0
   m_Name: Rocket Explosion
   m_TagString: Untagged
@@ -144,6 +145,19 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4092793730396655794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5370121237784898959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a89d00d1a57d4504ca94bac77f4f4ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeDuration: 5
 --- !u!1 &6897469229871204754
 GameObject:
   m_ObjectHideFlags: 0

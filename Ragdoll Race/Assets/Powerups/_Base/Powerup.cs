@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Powerup : MonoBehaviour
 {
-    public enum PowerupCategory{
+    public enum PowerupCategory {        
         PassiveEffect,
         EntitySpawner,
         ActiveWeapon,
@@ -16,6 +16,11 @@ public class Powerup : MonoBehaviour
         KinematicMover
     }
 
+    public enum LifetimeCountdownStart {
+        Never,
+        OnPickup,
+        OnActivate
+    }
 
     private static readonly bool[,] powerupCategoryCompatibility = {
         {true,true,true,true,true,true,true,true},
@@ -33,11 +38,17 @@ public class Powerup : MonoBehaviour
     public PowerupCategory category;
     public bool canBePassive;
     [Space]
+    public float powerupLifetime;
+    public LifetimeCountdownStart lifetimeCountdownStart;
+    
+    [Space]
     [SerializeField] private Texture2D icon;
 
 
 
     [HideInInspector] public PlayerPowerupManager attachedPowerupManager;
+    [HideInInspector] public Player attachedPlayer;
+
     [HideInInspector] public bool hasActivated = false;
 
 
@@ -58,6 +69,7 @@ public class Powerup : MonoBehaviour
 
     }
 
+
     public virtual bool OnActivateInitial(){
         // Returns whether the initial activation was successful
         return true;
@@ -66,6 +78,11 @@ public class Powerup : MonoBehaviour
     public virtual void OnActivateContinued(){
 
     }
+
+    public virtual void OnActivateButtonReleased(){
+
+    }
+
 
     public virtual void OnRemove(){
 
@@ -76,6 +93,7 @@ public class Powerup : MonoBehaviour
     // Input Events
 
     public void OnInputActivate(){
+
         if(!hasActivated){
             hasActivated = OnActivateInitial();
         }

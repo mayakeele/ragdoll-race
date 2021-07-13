@@ -26,12 +26,12 @@ public class BoxingGlovePowerup : Powerup
         rightGlove = Instantiate(rightGlovePrefab);
 
         // Set gloves' Hitter components' attached player
-        leftGlove.GetComponent<Hitter>().SetAttachedPlayer(attachedPowerupManager.player);
-        rightGlove.GetComponent<Hitter>().SetAttachedPlayer(attachedPowerupManager.player);
+        leftGlove.GetComponent<Hitter>().SetAttachedPlayer(attachedPlayer);
+        rightGlove.GetComponent<Hitter>().SetAttachedPlayer(attachedPlayer);
 
         // Get references to player hand positions
-        Transform leftHandTransform = attachedPowerupManager.player.activeRagdoll.leftArmOuterTransform;
-        Transform rightHandTransform = attachedPowerupManager.player.activeRagdoll.rightArmOuterTransform;
+        Transform leftHandTransform = attachedPlayer.activeRagdoll.leftArmOuterTransform;
+        Transform rightHandTransform = attachedPlayer.activeRagdoll.rightArmOuterTransform;
 
 
         // Set glove transforms to match arms

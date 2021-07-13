@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RocketRidePowerup : Powerup
 {
-    private enum LifetimePhase{
+    private enum RocketState{
         Inactive,
         Spawning,
         Chargeup,
@@ -20,7 +20,9 @@ public class RocketRidePowerup : Powerup
     [SerializeField] private float playerAngleThreshold;
     [SerializeField] private float playerShiftDistance;
     [SerializeField] private float playerShiftDuration;
+    [Space]
     [SerializeField] private AnimationCurve playerShiftCurve;
+    [SerializeField] private AnimationCurve rocketScaleCurve;
 
 
     [Header("Rocket Chargeup")]
@@ -43,7 +45,7 @@ public class RocketRidePowerup : Powerup
     private RocketRideEntity rocketEntity;
     private Joint rocketJoint;
 
-    private LifetimePhase currentPhase = LifetimePhase.Inactive;
+    private RocketState currentState = RocketState.Inactive;
 
     private Vector3 movementInputWorld = Vector3.zero;
 
@@ -54,14 +56,14 @@ public class RocketRidePowerup : Powerup
 
         if(rocketEntity && rocketEntity.isPlayerAttached){
             // Allow for free steering during chargeup phase
-            if(currentPhase == LifetimePhase.Chargeup){
+            if(currentState == RocketState.Chargeup){
                 if(movementInputWorld.magnitude > turningDeadzone){
                     rocketEntity.RotateRocketDirection(movementInputWorld);
                 }
             }
 
             // Limited directional speed input while moving
-            else if(currentPhase == LifetimePhase.Moving){
+            else if(currentState == RocketState.Moving){
                 Vector3 movementInputRocketSpace = rocketObject.transform.InverseTransformDirection(movementInputWorld);
 
                 float forwardBackwardInputSpeed = movementInputRocketSpace.z > 0 ? directionalInputForwardSpeed : directionalInputBackwardSpeed;
@@ -76,25 +78,26 @@ public class RocketRidePowerup : Powerup
 
     public override bool OnActivateInitial()
     {
-        playerPelvisRigidbody = attachedPowerupManager.player.rootRigidbody;
+        playerPelvisRigidbody = attachedPlayer.rootRigidbody;
 
         // Only activate the powerup if the player is upright and not ragdolled
 
-        float playerUprightAngle = Vector3.Angle(attachedPowerupManager.player.rootForward.up, Vector3.up);
-        if(playerUprightAngle <= playerAngleThreshold && !attachedPowerupManager.player.isRagdoll){
+        float playerUprightAngle = Vector3.Angle(attachedPlayer.rootForward.up, Vector3.up);
+        if(playerUprightAngle <= playerAngleThreshold && !attachedPlayer.isRagdoll){
 
-            currentPhase = LifetimePhase.Spawning;
+            currentState = RocketState.Spawning;
 
             // Spawn the rocket
-            Vector3 spawnPosition = attachedPowerupManager.player.rootRigidbody.position;
-            Vector3 forwardDirection = attachedPowerupManager.player.rootForward.forward.ProjectHorizontal();
+            Vector3 spawnPosition = attachedPlayer.rootRigidbody.position;
+            Vector3 forwardDirection = attachedPlayer.rootForward.forward.ProjectHorizontal();
             Quaternion spawnRotation = Quaternion.LookRotation(forwardDirection, Vector3.up);
-            rocketObject = SpawnedEntity.SpawnEntityForPlayer(rocketPrefab, attachedPowerupManager.player, spawnPosition, spawnRotation);
+            rocketObject = SpawnedEntity.SpawnEntityForPlayer(rocketPrefab, attachedPlayer, spawnPosition, spawnRotation);
 
             // Begin scaling the rocket's model and collider from 0 to full scale
             rocketEntity = rocketObject.GetComponent<RocketRideEntity>();
             rocketEntity.powerup = this;
-            StartCoroutine(rocketEntity.ScaleModel(playerShiftDuration));
+            //StartCoroutine(rocketEntity.ScaleModel(playerShiftDuration));
+            StartCoroutine(TransformExtensions.ScaleOverDurationUpdate(rocketEntity.modelTransform, playerShiftDuration, rocketScaleCurve));
 
             // Begin shifting the player upwards
             StartCoroutine(ShiftPlayerUpwards());
@@ -110,7 +113,7 @@ public class RocketRidePowerup : Powerup
 
     public override void OnActivateContinued()
     {
-        if(rocketEntity && rocketEntity.isPlayerAttached && currentPhase == LifetimePhase.Moving){
+        if(rocketEntity && rocketEntity.isPlayerAttached && currentState == RocketState.Moving){
             rocketEntity.ExplodeRocket();
         }
     }
@@ -120,7 +123,7 @@ public class RocketRidePowerup : Powerup
     {
         // Detaches from the rocket if in moving phase, and the player isn't already attached
 
-        if(rocketEntity && rocketEntity.isPlayerAttached && (currentPhase == LifetimePhase.Moving || currentPhase == LifetimePhase.Chargeup)){
+        if(rocketEntity && rocketEntity.isPlayerAttached && (currentState == RocketState.Moving || currentState == RocketState.Chargeup)){
             attachedPowerupManager.RemovePowerup(this);
             JumpOffRocket(jumpOffSpeed);
         }
@@ -130,7 +133,7 @@ public class RocketRidePowerup : Powerup
     public override void OnInputMove(Vector2 movementInput)
     {
         // Calculate and store the world-space direction of the player's input
-        Vector3 cameraForward = attachedPowerupManager.player.manager.cameraController.GetCameraForwardDirection();
+        Vector3 cameraForward = attachedPlayer.manager.cameraController.GetCameraForwardDirection();
 
         Vector3 worldForward = movementInput.y * cameraForward;
         Vector3 worldRight = movementInput.x * Vector3.Cross(Vector3.up, cameraForward);
@@ -194,20 +197,20 @@ public class RocketRidePowerup : Powerup
 
     private IEnumerator PerformChargeup(){
 
-        currentPhase = LifetimePhase.Chargeup;
+        currentState = RocketState.Chargeup;
         rocketEntity.canExplode = true;
 
         // ~~~~~~~ TODO special effects here ~~~~~~~~~~
 
         yield return new WaitForSeconds(rocketChargeupDuration);
 
-        currentPhase = LifetimePhase.Moving;
+        currentState = RocketState.Moving;
     }
 
 
     public void JumpOffRocket(float jumpSpeed){
-        float bodyMass = attachedPowerupManager.player.activeRagdoll.GetBodyMass();
-        Vector3 playerVelocity = attachedPowerupManager.player.rootRigidbody.velocity;
+        float bodyMass = attachedPlayer.activeRagdoll.GetBodyMass();
+        Vector3 playerVelocity = attachedPlayer.rootRigidbody.velocity;
 
         Vector3 jumpForce = (bodyMass / Time.fixedDeltaTime) * jumpSpeed * Vector3.up;
         Vector3 backwardsForce = (bodyMass / Time.fixedDeltaTime) * -playerVelocity.ProjectHorizontal();

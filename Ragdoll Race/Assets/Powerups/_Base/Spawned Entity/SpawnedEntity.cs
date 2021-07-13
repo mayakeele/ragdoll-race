@@ -17,7 +17,6 @@ public class SpawnedEntity : MonoBehaviour
 
 
 
-
     public static GameObject SpawnEntityForPlayer(GameObject entity, Player player){
         // Instantiates the given prefab, and attaches a player
         GameObject entityGameobject = GameObject.Instantiate(entity);

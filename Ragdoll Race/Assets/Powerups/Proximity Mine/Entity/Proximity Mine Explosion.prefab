@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4748044244749797271}
   - component: {fileID: 4748044244749797270}
   - component: {fileID: 4748044244749797257}
+  - component: {fileID: 1102929449888434800}
   m_Layer: 0
   m_Name: Proximity Mine Explosion
   m_TagString: Untagged
@@ -144,6 +145,19 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1102929449888434800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4748044244749797256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a89d00d1a57d4504ca94bac77f4f4ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeDuration: 5
 --- !u!1 &6333579079809035057
 GameObject:
   m_ObjectHideFlags: 0

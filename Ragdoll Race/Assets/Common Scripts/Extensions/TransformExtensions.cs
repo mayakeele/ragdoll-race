@@ -26,4 +26,80 @@ public static class TransformExtensions
         
         return rotList;
     }
+
+
+
+    public static IEnumerator ScaleOverDurationUpdate(Transform scaledTransform, float duration, float initialScale, float finalScale){
+        // Scales the given transform from initial to final scale over time
+        float currentTime = 0;
+
+        while(currentTime < duration){
+            float timeGradient = currentTime / duration;
+
+            float currentScale = Mathf.Lerp(initialScale, finalScale, timeGradient);
+
+            scaledTransform.localScale = currentScale * Vector3.one;
+
+            currentTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        scaledTransform.localScale = finalScale * Vector3.one;
+    }
+
+    public static IEnumerator ScaleOverDurationUpdate(Transform scaledTransform, float duration, AnimationCurve scaleCurve){
+        // Scales the given transform from initial to final scale over time
+        float currentTime = 0;
+
+        while(currentTime < duration){
+            float timeGradient = currentTime / duration;
+
+            float currentScale = scaleCurve.Evaluate(timeGradient);
+
+            scaledTransform.localScale = currentScale * Vector3.one;
+
+            currentTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        scaledTransform.localScale = scaleCurve.Evaluate(1) * Vector3.one;
+    }
+
+
+
+    public static IEnumerator ScaleOverDurationFixedUpdate(Transform scaledTransform, float duration, float initialScale, float finalScale){
+        // Scales the given transform from initial to final scale over time
+        float currentTime = 0;
+
+        while(currentTime < duration){
+            float timeGradient = currentTime / duration;
+
+            float currentScale = Mathf.Lerp(initialScale, finalScale, timeGradient);
+
+            scaledTransform.localScale = currentScale * Vector3.one;
+
+            currentTime += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+
+        scaledTransform.localScale = finalScale * Vector3.one;
+    }
+
+    public static IEnumerator ScaleOverDurationFixedUpdate(Transform scaledTransform, float duration, AnimationCurve scaleCurve){
+        // Scales the given transform from initial to final scale over time
+        float currentTime = 0;
+
+        while(currentTime < duration){
+            float timeGradient = currentTime / duration;
+
+            float currentScale = scaleCurve.Evaluate(timeGradient);
+
+            scaledTransform.localScale = currentScale * Vector3.one;
+
+            currentTime += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+
+        scaledTransform.localScale = scaleCurve.Evaluate(1) * Vector3.one;
+    }
 }

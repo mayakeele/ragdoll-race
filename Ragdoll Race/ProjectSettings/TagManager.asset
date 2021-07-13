@@ -16,7 +16,7 @@ TagManager:
   - StaticTerrain
   - DynamicTerrain
   - KnockoutTrigger
-  - CollidableItem
+  - CollidableEntity
   - 
   - 
   - 
