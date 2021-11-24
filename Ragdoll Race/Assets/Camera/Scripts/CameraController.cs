@@ -44,6 +44,7 @@ public class CameraController : MonoBehaviour
 
 
 
+
     // Main Functions
 
     private void Awake()
@@ -77,15 +78,18 @@ public class CameraController : MonoBehaviour
             Vector3 minDimensionsLocal = playerTargetsLocal.MinComponents() - new Vector3(horizontalPaddingDistance, verticalPaddingDistance, 0);
 
 
-            // Clamp the box enclosing the players to inside the bounds
-            ClampBoxDimensionsToBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
+            //
+            if(!ignoreDistanceConstraints){
+                // Clamp the box enclosing the players to inside the bounds
+                ClampBoxDimensionsToBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
 
-            // Resize the player box to match the camera's aspect ratio
-            ResizeFrameToAspectRatio(ref maxDimensionsLocal, ref minDimensionsLocal, mainCamera.aspect);
-
-            // Shift the clamped, correct aspect ratio box to fit within the bounds
-            ShiftBoxInsideBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
-            
+                // Resize the player box to match the camera's aspect ratio
+                ResizeFrameToAspectRatio(ref maxDimensionsLocal, ref minDimensionsLocal, mainCamera.aspect);
+                
+                
+                // Shift the clamped, correct aspect ratio box to fit within the bounds
+                ShiftBoxInsideBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
+            }
             
 
 

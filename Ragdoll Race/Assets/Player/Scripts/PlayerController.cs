@@ -16,13 +16,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float runSpeed;
     [SerializeField] private float boostSpeed;
     [SerializeField] private float airSpeed;
-    [SerializeField] private float dizzySpeed;
+
     [Space]
     [SerializeField] private float walkAcceleration;
     [SerializeField] private float runAcceleration;
     [SerializeField] private float boostAcceleration;
     [SerializeField] private float airAcceleration;
-    [SerializeField] private float dizzyAcceleration;
+
+    [Space]
+    [SerializeField] private float sharpTurnMinAngle;
+    [SerializeField] private float sharpTurnDeceleration;
     
 
     [Header("Jump Settings")]
@@ -47,8 +50,10 @@ public class PlayerController : MonoBehaviour
 
 
     // Movement Variables
-    float currMoveSpeedLimit;
-    float currMoveAcceleration;
+    public float currMoveSpeedLimit;
+    public float currMoveAcceleration;
+
+    public bool isDecelerating;
 
 
 
@@ -77,12 +82,18 @@ public class PlayerController : MonoBehaviour
 
         // Calculate the ideal velocity both relative to the ground and in world space
         Vector3 idealVelocityRelative = ((cameraForward * moveInput.y) + (cameraRight * moveInput.x)) * currMoveSpeedLimit;
-
         Vector3 idealVelocityWorld = idealVelocityRelative + player.groundVelocity.ProjectHorizontal();
-
         Vector3 currentVelocityWorld = player.rootRigidbody.velocity.ProjectHorizontal();
 
+        // Determine whether the player is accelerating or decelerating based on the angle between velocity and acceleration
         Vector3 requiredVelocityChange = (idealVelocityWorld - currentVelocityWorld);
+        float angleVA = Vector3.Angle(currentVelocityWorld, requiredVelocityChange);
+
+        // If angle is greater than 90 degrees and grounded, player is decelerating
+        if(angleVA > sharpTurnMinAngle && player.isGrounded){
+            currMoveAcceleration = sharpTurnDeceleration;
+        }
+
         float perFrameSpeedChange = currMoveAcceleration * Time.fixedDeltaTime;
 
 
@@ -180,12 +191,7 @@ public class PlayerController : MonoBehaviour
     private void UpdateMovementSpeed(){
         // Updates the current speed and acceleration limit
         
-        if(player.isDizzy){
-            // Dizzy state overrides other states
-            currMoveSpeedLimit = dizzySpeed;
-            currMoveAcceleration = dizzyAcceleration;
-        }
-        else if(player.isGrounded){
+        if(player.isGrounded){
             // Grounded movement
             currMoveSpeedLimit = runSpeed;
             currMoveAcceleration = runAcceleration;

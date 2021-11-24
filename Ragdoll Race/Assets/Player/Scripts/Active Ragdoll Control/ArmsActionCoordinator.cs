@@ -9,6 +9,9 @@ public class ArmsActionCoordinator : MonoBehaviour
 
     public ActiveRagdoll activeRagdoll;
     [SerializeField] private List<ConfigurableJoint> armJoints;
+    [Space]
+    [SerializeField] private List<ConfigurableJoint> lowerTorsoJoints;
+    [SerializeField] private List<ConfigurableJoint> upperTorsoJoints;
 
 
     [Header("Arm Strength Properties")]
@@ -18,7 +21,23 @@ public class ArmsActionCoordinator : MonoBehaviour
     [Space]
     [SerializeField] private float armStrengthHigh;
     [SerializeField] private float armDampingHigh;
+
+
+    [Header("Lower Torso Strength Properties")]
+    [SerializeField] private float lowerTorsoStrengthLow;
+    [SerializeField] private float lowerTorsoDampingLow;
+    [Space]
+    [SerializeField] private float lowerTorsoStrengthHigh;
+    [SerializeField] private float lowerTorsoDampingHigh;
     
+
+    [Header("Upper Torso Strength Properties")]
+    [SerializeField] private float upperTorsoStrengthLow;
+    [SerializeField] private float upperTorsoDampingLow;
+    [Space]
+    [SerializeField] private float upperTorsoStrengthHigh;
+    [SerializeField] private float upperTorsoDampingHigh;
+
 
 
     // Private Variables
@@ -27,33 +46,59 @@ public class ArmsActionCoordinator : MonoBehaviour
     // Unity Functions
     void Start()
     {
-        foreach(ConfigurableJoint joint in armJoints){
-            joint.SetSlerpDrive(armStrengthLow, armDampingLow);
-        }
+        // Initialize arms and body in relaxed state
+        SetArmJointsState(false);
+        SetTorsoJointsState(false);
     }
 
 
     // Public Functions
 
     public void OnArmActionButtonPressed(){
-        // Set both arms' joint muscle strenth to high when the button is held, low when released
+        // Stiffen the arm and torso joints when the action button is first held
 
-        foreach(ConfigurableJoint joint in armJoints){
-            joint.SetSlerpDrive(armStrengthHigh, armDampingHigh);
-        }
+        SetArmJointsState(true);
+        SetTorsoJointsState(true);
     }
 
 
     public void OnArmActionButtonReleased(){
+        // Unstiffen the arm and torso joints when the action button is released
 
-        foreach(ConfigurableJoint joint in armJoints){
-            joint.SetSlerpDrive(armStrengthLow, armDampingLow);
-        }
+        SetArmJointsState(false);
+        SetTorsoJointsState(false);
     }
 
 
 
     // Private Functions
+
+
+    private void SetArmJointsState(bool setHigh){
+        // Sets the joint drive properties on each arm either high or low
+
+        foreach(ConfigurableJoint joint in armJoints){
+            if(setHigh) joint.SetSlerpDrive(armStrengthHigh, armDampingHigh);
+            else joint.SetSlerpDrive(armStrengthLow, armDampingLow);
+        }
+    }
+
+
+    private void SetTorsoJointsState(bool setHigh){
+        // Sets the joint drive properties on the upper and lower torso joints either high or low
+
+        foreach(ConfigurableJoint joint in lowerTorsoJoints){
+            if(setHigh) joint.SetSlerpDrive(lowerTorsoStrengthHigh, lowerTorsoDampingHigh);
+            else joint.SetSlerpDrive(lowerTorsoStrengthLow, lowerTorsoDampingLow);
+        }
+
+        foreach(ConfigurableJoint joint in upperTorsoJoints){
+            if(setHigh) joint.SetSlerpDrive(upperTorsoStrengthHigh, upperTorsoDampingHigh);
+            else joint.SetSlerpDrive(upperTorsoStrengthLow, upperTorsoDampingLow);
+        }
+    }
+
+
 
     private Player FindClosestPlayerInRange(float range, float totalAngularRange){
         // Searches through all players and returns the one with the closest root that is also in angular range of this player's forward direction

@@ -35,8 +35,6 @@ public class Player : MonoBehaviour
     private float forceRagdollTimer;
     public bool autoGetup;
 
-    public bool isDizzy;
-
     
 
     [Header("Hit Tracking")]

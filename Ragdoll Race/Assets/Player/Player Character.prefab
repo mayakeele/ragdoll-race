@@ -93,39 +93,48 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 0.0026281711
-      outSlope: 0.0026281711
+      value: 0.5
+      inSlope: 0.012204836
+      outSlope: 0.012204836
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.36036426
+      outWeight: 0.2203025
+    - serializedVersion: 3
+      time: 50
+      value: 1.5
+      inSlope: 0.04381482
+      outSlope: 0.042944416
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.1406504
+      outWeight: 0.17818718
     - serializedVersion: 3
       time: 100
-      value: 3
-      inSlope: 0.033591956
-      outSlope: 0.033591956
-      tangentMode: 0
+      value: 4
+      inSlope: 0.05222523
+      outSlope: 0.034656443
+      tangentMode: 1
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.21067277
+      inWeight: 0.14956497
+      outWeight: 0.11344757
     - serializedVersion: 3
-      time: 199.5119
-      value: 5.9567413
-      inSlope: 0.026015349
-      outSlope: 0.026015349
-      tangentMode: 0
+      time: 200
+      value: 7
+      inSlope: 0.027373489
+      outSlope: 0.027869243
+      tangentMode: 1
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.252927
+      inWeight: 0.08369629
+      outWeight: 0.11797806
     - serializedVersion: 3
       time: 300
-      value: 8
-      inSlope: 0.0066285245
-      outSlope: 0.0066285245
+      value: 10
+      inSlope: 0.03025927
+      outSlope: 0.03025927
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.2467801
+      inWeight: 0.086412355
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -142,7 +151,6 @@ MonoBehaviour:
   isGrounded: 1
   isRagdoll: 0
   autoGetup: 1
-  isDizzy: 0
   isImmune: 0
   groundTransform: {fileID: 0}
   groundRigidbody: {fileID: 0}
@@ -251,7 +259,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622215080718869483}
   serializedVersion: 2
-  m_Mass: 1.5
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -737,8 +745,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 2500
-    positionDamper: 150
+    positionSpring: 5000
+    positionDamper: 100
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -865,7 +873,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701914237914753508}
   serializedVersion: 2
-  m_Mass: 1.5
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -1162,12 +1170,12 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2215533081896350628}
   serializedVersion: 2
-  m_Mass: 3.5
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!153 &2215533081896350630
@@ -1252,8 +1260,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 300
-    positionDamper: 30
+    positionSpring: 220
+    positionDamper: 4
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -1356,21 +1364,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1146630454572903015}
   walkSpeed: 2
-  runSpeed: 3.6
+  runSpeed: 3.8
   boostSpeed: 10
   airSpeed: 7
-  dizzySpeed: 0
   walkAcceleration: 3
   runAcceleration: 10
   boostAcceleration: 40
   airAcceleration: 2.8
-  dizzyAcceleration: 0
+  sharpTurnMinAngle: 90
+  sharpTurnDeceleration: 18
   jumpSpeed: 5.5
   jumpSpringDisableTime: 0.11
   jumpPhysicsFrames: 8
   turnSpringConstant: 130
   turnDampingConstant: 23
   ragdollGetupStickThreshold: 0.8
+  currMoveSpeedLimit: 0
+  currMoveAcceleration: 0
+  isDecelerating: 0
 --- !u!114 &1687905941848008982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1717,8 +1728,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 2000
-    positionDamper: 150
+    positionSpring: 5000
+    positionDamper: 100
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -1901,7 +1912,7 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 85
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -2013,10 +2024,23 @@ MonoBehaviour:
   - {fileID: 1701914237914753511}
   - {fileID: 2559919170206092517}
   - {fileID: 622215080718869482}
+  lowerTorsoJoints:
+  - {fileID: 1631317394147680011}
+  - {fileID: 2479165823800619597}
+  upperTorsoJoints:
+  - {fileID: 8666473851824884715}
   armStrengthLow: 0
   armDampingLow: 0
-  armStrengthHigh: 130
+  armStrengthHigh: 200
   armDampingHigh: 1
+  lowerTorsoStrengthLow: 6500
+  lowerTorsoDampingLow: 750
+  lowerTorsoStrengthHigh: 8000
+  lowerTorsoDampingHigh: 10
+  upperTorsoStrengthLow: 4500
+  upperTorsoDampingLow: 750
+  upperTorsoStrengthHigh: 8000
+  upperTorsoDampingHigh: 10
 --- !u!1 &2801381557178443521
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,12 +2188,12 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2859407633730351773}
   serializedVersion: 2
-  m_Mass: 2
+  m_Mass: 1.5
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!153 &2859407633730351772
@@ -2254,8 +2278,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 300
-    positionDamper: 30
+    positionSpring: 220
+    positionDamper: 4
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -2564,37 +2588,46 @@ MonoBehaviour:
   rightLegIK: {fileID: 155480673944757732}
   leftLegRoot: {fileID: 1480588966867081698}
   rightLegRoot: {fileID: 2370050999383913506}
-  minDisplacementToMove: 0.06
+  minDisplacementToMove: 0.1
   stepVelocityOffset:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.36217675
-      inSlope: -0.1727879
-      outSlope: -0.1727879
+      value: 0.021846406
+      inSlope: 0.6571568
+      outSlope: 0.6571568
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.1063132
+      outWeight: 0.19299638
     - serializedVersion: 3
-      time: 1.493921
-      value: 0.15244654
-      inSlope: -0.09094523
-      outSlope: -0.09094523
+      time: 0.14194888
+      value: 0.097466566
+      inSlope: 0.22212891
+      outSlope: 0.22212891
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.1769212
-      outWeight: 0.061575938
+      inWeight: 0.27626356
+      outWeight: 0.0526825
     - serializedVersion: 3
-      time: 4
-      value: 0.07015724
-      inSlope: -0.010699628
-      outSlope: -0.11976627
+      time: 1
+      value: 0.2478811
+      inSlope: 0.0053952257
+      outSlope: 0.96897924
       tangentMode: 1
       weightedMode: 0
-      inWeight: 0.1286948
-      outWeight: 0.33333334
+      inWeight: 0.06346758
+      outWeight: 0.13900694
+    - serializedVersion: 3
+      time: 1.2
+      value: 0.2901991
+      inSlope: 0.23006126
+      outSlope: 0
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.34457198
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -2603,30 +2636,30 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1.5349195
-      inSlope: -0.5410102
-      outSlope: -0.5410102
+      value: 1.4003942
+      inSlope: -0.08122212
+      outSlope: -0.08122212
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.15108754
+      outWeight: 0.21138732
     - serializedVersion: 3
-      time: 1.0851504
-      value: 0.9391302
-      inSlope: -0.34272912
-      outSlope: -0.34272912
+      time: 0.19414793
+      value: 1.2195542
+      inSlope: -2.3352292
+      outSlope: -2.3352292
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.055142436
+      inWeight: 0.1526873
+      outWeight: 0.027991097
     - serializedVersion: 3
-      time: 4
-      value: 0.58
-      inSlope: -0.01796193
-      outSlope: -0.01796193
+      time: 1
+      value: 0.5803831
+      inSlope: -0.3162423
+      outSlope: -0.3162423
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.055229615
+      inWeight: 0.049620982
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -2636,21 +2669,30 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.41121304
-      inSlope: 0.043762863
-      outSlope: 0.043762863
-      tangentMode: 34
+      value: 0.51709455
+      inSlope: -0.08988254
+      outSlope: -0.08988254
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0.19673504
+    - serializedVersion: 3
+      time: 0.28139213
+      value: 0.48812655
+      inSlope: -0.16926731
+      outSlope: -0.16926731
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.19416311
+      outWeight: 0.04211273
     - serializedVersion: 3
       time: 1
-      value: 0.4549759
-      inSlope: 0.043762863
-      outSlope: 0.043762863
-      tangentMode: 34
+      value: 0.44179207
+      inSlope: -0.02372816
+      outSlope: -0.02372816
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.07055441
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -2660,21 +2702,30 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.07095925
-      inSlope: 0.019393336
-      outSlope: 0.019393336
-      tangentMode: 34
+      value: 0.05540381
+      inSlope: 0.028726311
+      outSlope: 0.028726311
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0.03748126
     - serializedVersion: 3
-      time: 3.5
-      value: 0.13883592
-      inSlope: 0.019393336
-      outSlope: 0.019393336
-      tangentMode: 34
+      time: 0.10189783
+      value: 0.06620266
+      inSlope: 0.1140843
+      outSlope: 0.1140843
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.035365883
+    - serializedVersion: 3
+      time: 1
+      value: 0.11124767
+      inSlope: 0.003866298
+      outSlope: 0.003866298
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.038395163
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -2685,20 +2736,29 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: -0.0023498535
-      inSlope: 0.9846445
-      outSlope: 0.9846445
+      inSlope: 2.22255
+      outSlope: 2.22255
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.067058824
+      outWeight: 0.052367166
+    - serializedVersion: 3
+      time: 0.5077927
+      value: 0.56016165
+      inSlope: 0.80873984
+      outSlope: 0.80873984
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.07554698
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.08309725
-      outSlope: 0.08309725
+      inSlope: 0.8244705
+      outSlope: 0.8244705
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.056764722
+      inWeight: 0.07767235
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -2710,13 +2770,13 @@ MonoBehaviour:
       time: 0
       value: 0
       inSlope: 3.6427896
-      outSlope: 4.4867487
+      outSlope: 3.8204176
       tangentMode: 5
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.049411763
+      outWeight: 0.040697284
     - serializedVersion: 3
-      time: 0.5
+      time: 0.60272217
       value: 1
       inSlope: 0
       outSlope: 0
@@ -2727,11 +2787,11 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -4.536981
+      inSlope: -2.9806337
       outSlope: 0
       tangentMode: 1
       weightedMode: 0
-      inWeight: 0.044705987
+      inWeight: 0.058824167
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -2899,7 +2959,7 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 85
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -2934,7 +2994,7 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 10
+    positionSpring: 200
     positionDamper: 0.2
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
@@ -3776,8 +3836,8 @@ MonoBehaviour:
   buoyancyMultiplier: 1
   legsSpringConstant: 100
   legsSpringDamping: 0.8
-  pelvisRotationSpringConstant: 900
-  pelvisRotationDampingConstant: 33
+  pelvisRotationSpringConstant: 1100
+  pelvisRotationDampingConstant: 29
   pelvisRotationSnapAngle: 5
   legJointTargetFollowers:
   - {fileID: 3183162087892567172}
@@ -3913,12 +3973,12 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8013968689626403482}
   serializedVersion: 2
-  m_Mass: 2
+  m_Mass: 1.5
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!153 &8013968689626403461
@@ -4003,8 +4063,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 300
-    positionDamper: 30
+    positionSpring: 220
+    positionDamper: 4
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -4342,12 +4402,12 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8303786980578074054}
   serializedVersion: 2
-  m_Mass: 3.5
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!153 &8303786980578074048
@@ -4432,8 +4492,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 300
-    positionDamper: 30
+    positionSpring: 220
+    positionDamper: 4
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -4736,8 +4796,8 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 2000
-    positionDamper: 150
+    positionSpring: 2500
+    positionDamper: 75
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1

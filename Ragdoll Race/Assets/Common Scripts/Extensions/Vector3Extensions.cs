@@ -27,6 +27,12 @@ public static class Vector3Extensions
         return Vector3.ProjectOnPlane(inVector, Vector3.up);
     }
 
+    public static Vector3 ProjectHorizontalNormalized(this Vector3 inVector){
+        // Projects the input vector onto the XZ plane
+        return Vector3.ProjectOnPlane(inVector, Vector3.up).normalized;
+    }
+
+
 
     public static Vector3 Average(this List<Vector3> vectorList){
         // Calculates the average of all vectors in the list
