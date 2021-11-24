@@ -7,12 +7,12 @@ public static class FloatExtensions
 
     // Scalar float functions
 
-    public static float Gradient(this float value, float rangeStart, float rangeEnd){
+    public static float GetGradient(this float value, float rangeStart, float rangeEnd){
         // Returns the percentage of the way the value is between the start and end values
         return (value - rangeStart) / (rangeEnd - rangeStart);
     }
 
-    public static float GradientClamped(this float value, float rangeStart, float rangeEnd){
+    public static float GetGradientClamped(this float value, float rangeStart, float rangeEnd){
         // Returns the percentage of the way the value is between the start and end values
         float gradient = (value - rangeStart) / (rangeEnd - rangeStart);
         
@@ -22,7 +22,7 @@ public static class FloatExtensions
     public static float Map(this float value, float originalStart, float originalEnd, float newStart, float newEnd){
         // Returns a value that is the same percentage of the way between the new bounds as value is between the original bounds
         
-        float gradient = value.Gradient(originalStart, originalEnd);
+        float gradient = value.GetGradient(originalStart, originalEnd);
         float newValue = newStart + (gradient * (newEnd - newStart));
         
         return newValue;
@@ -31,8 +31,26 @@ public static class FloatExtensions
     public static float MapClamped(this float value, float originalStart, float originalEnd, float newStart, float newEnd){
         // Returns a value that is the same percentage of the way between the new bounds as value is between the original bounds, clamped between min and max ends
         
-        float gradient = value.Gradient(originalStart, originalEnd);
+        float gradient = value.GetGradient(originalStart, originalEnd);
         float newValue = newStart + (gradient * (newEnd - newStart));
+
+        newValue = newEnd > newStart ? Mathf.Clamp(newValue, newStart, newEnd) : Mathf.Clamp(newValue, newEnd, newStart);
+        
+        return newValue;
+    }
+
+    public static float MapPercent(this float percent, float newStart, float newEnd){
+        // Returns a value that is the same percentage of the way between the new bounds as percent is between 0 and 1
+        
+        float newValue = newStart + (percent * (newEnd - newStart));
+        
+        return newValue;
+    }
+
+    public static float MapPercentClamped(this float percent, float newStart, float newEnd){
+        // Returns a value that is the same percentage of the way between the new bounds as percent is between 0 and 1, clamped between min and max ends
+        
+        float newValue = newStart + (percent * (newEnd - newStart));
 
         newValue = newEnd > newStart ? Mathf.Clamp(newValue, newStart, newEnd) : Mathf.Clamp(newValue, newEnd, newStart);
         

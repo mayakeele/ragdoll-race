@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     [Header("Component References")]
     [HideInInspector] public PlayersManager manager;
+    public SkinnedMeshRenderer skinnedMeshRenderer;
+    public PlayerController controller;
+    public PlayerPowerupManager powerupManager;
     public ActiveRagdoll activeRagdoll;
     public Rigidbody rootRigidbody;
     public Transform rootForward;
     public AudioSource audioSource;
     [SerializeField] private string managerTag = "PlayersManager";
+    private PlayerInput playerInput;
 
 
     [Header("Damage & Knockback Properties")]
@@ -24,18 +29,28 @@ public class Player : MonoBehaviour
 
     [Header("State Variables")]
     public float currentDamage = 0;
-
     public bool isGrounded;
-
     public bool isRagdoll;
     private bool forceRagdollState;
     private float forceRagdollTimer;
     public bool autoGetup;
 
-    public bool isDizzy;
+    
 
+    [Header("Hit Tracking")]
+    private Player lastPlayerHitBy;
     public bool isImmune;
     private float immunityTimer;
+    private bool knockedOutThisFrame;
+
+
+
+    [Header("Grounded Variables")]
+    [HideInInspector] public Transform groundTransform = null;
+    [HideInInspector] public Rigidbody groundRigidbody = null;
+    [HideInInspector] public Vector3 groundPosition = Vector3.zero;
+    [HideInInspector] public Vector3 groundVelocity = Vector3.zero;
+    [HideInInspector] public Vector3 groundNormal = Vector3.zero;
 
 
 
@@ -43,9 +58,14 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+
+        playerInput = GetComponentInChildren<PlayerInput>();
         manager = GameObject.FindGameObjectWithTag(managerTag).GetComponent<PlayersManager>();
 
+        int playerIndex = playerInput.playerIndex;
         manager.AddPlayer(this);
+
+        skinnedMeshRenderer.material = manager.GetPlayerMaterial(playerIndex);
     }
 
 
@@ -97,6 +117,12 @@ public class Player : MonoBehaviour
     }
 
 
+    void FixedUpdate()
+    {
+        knockedOutThisFrame = false;
+    }
+
+
     // Public Functions
     
     public void TrySetRagdollState(bool ragdollState){
@@ -108,7 +134,7 @@ public class Player : MonoBehaviour
     
 
 
-    public bool OnBodyPartHit(Hittable bodyPart, Vector3 hitLocation, Vector3 hitRelativeVelocity, float hitDamage, float hitKnockbackMultiplier, float ragdollDuration){
+    public bool OnBodyPartHit(Hittable bodyPart, Vector3 hitLocation, Vector3 hitRelativeVelocity, float hitDamage, float hitKnockbackMultiplier, float ragdollDuration, Player attacker = null){
         // Apply damage to the player, then apply knockback to the body part that was hit
         // Returns whether the hit was successful (if player is not immune)
 
@@ -149,16 +175,22 @@ public class Player : MonoBehaviour
     }
 
 
-    public void Kill(){
-        // Tells the player manager that this player has been killed, and by whom
-        // Also plays a sound effect and respawns the player at the spawn point
+    public void TryKnockout(GameObject prefabToSpawn = null){
+        // Tells the player manager that this player has been killed. Passes on the given prefab to spawn. 
+        // If no prefab is given, passes null, PlayerManager will instantiate default instead.
+        // All actions should be done on the PlayerManager; this function should not take any action beyond notifying the manager
 
-        RespawnAtPosition(manager.spawnTransform.position);
+        if(!knockedOutThisFrame){         
+            knockedOutThisFrame = true;
+            manager.KnockoutPlayer(this, rootRigidbody.position, prefabToSpawn);
+        }    
     }
 
 
     public void RespawnAtPosition(Vector3 spawnPosition){
-        // Respawns the player in the given position, resetting their damage, status, and physics
+        // Respawns the player in the given position, resetting their damage, ragdoll, powerups and physics
+
+        powerupManager.RemoveAllPowerups();
 
         currentDamage = 0;
         TriggerImmunity();
@@ -182,4 +214,5 @@ public class Player : MonoBehaviour
         // Change leg physic materials
         activeRagdoll.SetLegPhysicMaterial(ragdollState);
     }
+
 }

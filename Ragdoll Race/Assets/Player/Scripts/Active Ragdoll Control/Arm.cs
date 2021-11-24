@@ -112,7 +112,7 @@ public class Arm : MonoBehaviour
         while(elapsedTime < punchDuration){
             elapsedTime += Time.fixedDeltaTime;
 
-            float timeGradient = elapsedTime.GradientClamped(0, punchDuration);
+            float timeGradient = elapsedTime.GetGradientClamped(0, punchDuration);
 
             Vector3 currentDisplacementLocal = new Vector3(
                 totalDisplacementLocal.x * punchCurveSideways.Evaluate(timeGradient),

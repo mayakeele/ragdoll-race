@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     [HideInInspector] public Camera mainCamera;
     [HideInInspector] public Rigidbody rb;
     public Transform anchorTransform;
+    private CameraShakeManager cameraShakeManager;
     
 
     [Header("Framing Parameters")]
@@ -20,7 +21,6 @@ public class CameraController : MonoBehaviour
     public float verticalPaddingDistance;
     [Space]
     public float cameraFOV;
-
 
 
     [Header("Distance Constraints")]
@@ -38,13 +38,10 @@ public class CameraController : MonoBehaviour
     public bool freezeInPlace = false;
     public bool ignoreDistanceConstraints = false;
 
-    //[SerializeField] private LayerMask cameraObstructionLayers;
-    //[SerializeField] private LayerMask cameraCollisionLayers;
-    //[SerializeField] private float cameraPhysicsRadius;
 
 
+    private List<Transform> additionalTargets = new List<Transform>();
 
-    // Camera Variables
 
 
 
@@ -54,6 +51,7 @@ public class CameraController : MonoBehaviour
     {
         mainCamera = GetComponentInChildren<Camera>();
         rb = GetComponent<Rigidbody>();
+        cameraShakeManager = GetComponent<CameraShakeManager>();
     }
 
     void FixedUpdate(){
@@ -70,6 +68,7 @@ public class CameraController : MonoBehaviour
             List<Vector3> playerTargetsWorld = new List<Vector3>();
             playerTargetsWorld.AddRange(playerFeetPositions);
             playerTargetsWorld.AddRange(playerHeadPositions);
+            playerTargetsWorld.AddRange(additionalTargets.GetPositions());
 
             List<Vector3> playerTargetsLocal = transform.InverseTransformPoints(playerTargetsWorld);
 
@@ -79,14 +78,18 @@ public class CameraController : MonoBehaviour
             Vector3 minDimensionsLocal = playerTargetsLocal.MinComponents() - new Vector3(horizontalPaddingDistance, verticalPaddingDistance, 0);
 
 
-            // Clamp the box enclosing the players to inside the bounds
-            ClampBoxDimensionsToBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
+            //
+            if(!ignoreDistanceConstraints){
+                // Clamp the box enclosing the players to inside the bounds
+                ClampBoxDimensionsToBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
 
-            // Resize the player box to match the camera's aspect ratio
-            ResizeFrameToAspectRatio(ref maxDimensionsLocal, ref minDimensionsLocal, mainCamera.aspect);
-
-            // Shift the clamped, correct aspect ratio box to fit within the bounds
-            ShiftBoxInsideBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
+                // Resize the player box to match the camera's aspect ratio
+                ResizeFrameToAspectRatio(ref maxDimensionsLocal, ref minDimensionsLocal, mainCamera.aspect);
+                
+                
+                // Shift the clamped, correct aspect ratio box to fit within the bounds
+                ShiftBoxInsideBounds(ref maxDimensionsLocal, ref minDimensionsLocal);
+            }
             
 
 
@@ -115,10 +118,52 @@ public class CameraController : MonoBehaviour
 
     // Public Functions
 
+    public bool AddAdditionalTarget(Transform target){
+        // Adds target and returns true if the target is not already in the list
+        if(!additionalTargets.Contains(target)){
+            additionalTargets.Add(target);
+            return true;
+        }
+        else{ return false; }
+    }
+
+    public bool RemoveAdditionalTarget(Transform target){
+        // Removes target and returns true if the target existed
+        if(additionalTargets.Contains(target)){
+            additionalTargets.Remove(target);
+            return true;
+        }
+        else{ return false; }
+    }
+
+    public void ClearAdditionalTargets(){
+        additionalTargets.Clear();
+    }
+
+
     public Vector3 GetCameraForwardDirection(){
         // Calculates the direction the camera is facing, projected onto the horizontal plane
         Vector3 camForwardDir = transform.forward.ProjectHorizontal().normalized;
         return camForwardDir;
+    }
+
+
+    public Transform CreateTemporaryAdditionalTarget(Vector3 position, float lifetime){
+        // Creates a new transform at the specified position and registers it as an additional camera target.
+        // After its lifetime has passed, remove from target list and destroy transform
+
+        Transform target = new GameObject("temporary camera target").transform;
+        target.position = position;
+
+        AddAdditionalTarget(target);
+        StartCoroutine(RemoveTargetAfterTime(target, lifetime, true));
+
+        return target;
+    }
+    private IEnumerator RemoveTargetAfterTime(Transform target, float time, bool destroyGameObject = false){
+        yield return new WaitForSeconds(time);
+        RemoveAdditionalTarget(target);
+        if(destroyGameObject) Destroy(target.gameObject);
     }
 
 
@@ -172,6 +217,7 @@ public class CameraController : MonoBehaviour
             boxSize = new Vector3(newWidth, boxSize.y, boxSize.z);
         }
 
+
         // Set referenced max and min corners
         maxDimensionsLocal = boxCenter + (boxSize / 2);
         minDimensionsLocal = boxCenter - (boxSize / 2);
@@ -210,6 +256,14 @@ public class CameraController : MonoBehaviour
 
         Vector3 boxCenterRelativeToAnchor = ((maxDimensionsLocal + minDimensionsLocal) / 2) - anchorPositionLocal;
         Vector3 boxSize = maxDimensionsLocal - minDimensionsLocal;
+
+
+        // If the box is bigger than one of the bounding area's dimensions, scale the box to fit inside while maintaining aspect ratio
+        float boxWidthBoundaryFraction = boxSize.x / (targetBoundsHorizontal * 2);
+        float boxHeightBoundaryFraction = boxSize.y / (targetBoundsVertical * 2);
+
+        float maxBoundaryFraction = Mathf.Max(boxWidthBoundaryFraction, boxHeightBoundaryFraction);
+        if(maxBoundaryFraction > 1) boxSize = boxSize / maxBoundaryFraction;
 
 
         // Clamp the center of the box to fit the whole box within the bounds
@@ -343,6 +397,11 @@ public class CameraController : MonoBehaviour
     public void UpdateFOV(float FOV){
         cameraFOV = FOV;
         mainCamera.fieldOfView = cameraFOV;
+    }
+
+
+    public void AddCameraShake(float traumaAmount){
+        cameraShakeManager.AddCameraShake(traumaAmount);
     }
 
 

@@ -18,13 +18,27 @@ public class LegsIKCalculator : MonoBehaviour
 
 
     [Header("Step Animation Properties")]
+
     [SerializeField] private float minDisplacementToMove;
+
+    [Tooltip("Forward offset of the ground detecting ray as a function of the player's normalized speed.")]
     [SerializeField] private AnimationCurve stepVelocityOffset;
+
+    [Tooltip("Duration of an entire step cycle, including both legs' movement and downtime, as a function of the player's normalized speed.")]
     [SerializeField] private AnimationCurve stepCycleLength;
+
+    [Tooltip("Duration of a single step animation, from when a foot leaves the ground to when it touches back down, as a function of the player's normalized speed.")]
     [SerializeField] private AnimationCurve stepAnimationDuration;
+
+    [Tooltip("Step height scalar as a function of the player's normalized speed.")]
     [SerializeField] private AnimationCurve stepAnimationMaxHeight;
+
     [Space]
+
+    [Tooltip("Relative horizontal position of the IK target over time during one step. Position and time are normalized between 0 and 1")]
     [SerializeField] private AnimationCurve stepDistanceCurve;
+
+    [Tooltip("Relative vertical position of the foot over time during one step. Position and time are normalized between 0 and 1")]
     [SerializeField] private AnimationCurve stepHeightCurve;
 
 
@@ -68,11 +82,14 @@ public class LegsIKCalculator : MonoBehaviour
         // Update leg movement parameters based on the player's speed
 
         float currSpeed = activeRagdoll.GetRelativeVelocity().magnitude;
+        float currSpeedNormalized = currSpeed / activeRagdoll.player.controller.currMoveSpeedLimit;
 
-        currStepCycleLength = stepCycleLength.Evaluate(currSpeed);
-        currStepVelocityOffset = stepVelocityOffset.Evaluate(currSpeed);
-        currStepAnimationDuration = stepAnimationDuration.Evaluate(currSpeed);
-        currStepAnimationMaxHeight = stepAnimationMaxHeight.Evaluate(currSpeed);
+        currStepCycleLength = stepCycleLength.Evaluate(currSpeedNormalized);
+        currStepVelocityOffset = stepVelocityOffset.Evaluate(currSpeedNormalized);
+        currStepAnimationDuration = stepAnimationDuration.Evaluate(currSpeedNormalized);
+        currStepAnimationMaxHeight = stepAnimationMaxHeight.Evaluate(currSpeedNormalized);
+
+        Debug.Log(currSpeedNormalized);
 
 
         // Only perform IK calculations if the player is not ragdolled
@@ -122,7 +139,7 @@ public class LegsIKCalculator : MonoBehaviour
         // Calculate the horizontal and max possible vertical position of the foot
         Vector3 rayOrigin = isLeft ? leftLegRoot.position : rightLegRoot.position;
         rayOrigin += Vector3.down * minLegExtension;  
-        rayOrigin += activeRagdoll.GetRelativeVelocity().ProjectHorizontal() * currStepVelocityOffset;
+        rayOrigin += activeRagdoll.GetRelativeVelocity().ProjectHorizontalNormalized() * currStepVelocityOffset;
 
         float legExtensionRange = maxLegExtension - minLegExtension;
 
@@ -215,6 +232,6 @@ public class LegsIKCalculator : MonoBehaviour
 
 
     private void MoveTargetWithGround(Transform target){
-        target.transform.Translate(activeRagdoll.groundVelocity * Time.fixedDeltaTime, Space.World);
+        target.transform.Translate(activeRagdoll.player.groundVelocity * Time.fixedDeltaTime, Space.World);
     }
 }

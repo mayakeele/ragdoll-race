@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class KnockoutTrigger : MonoBehaviour
 {
+    [Header("Trigger Properties")]
     public bool knockoutOnEnter = true;
     public bool knockoutOnExit = false;
 
-    public Collider collider;
+
+    [Header("Override KO Effect Prefab")]
+    [SerializeField] private GameObject knockoutEffectPrefab;
+
+
+    private Collider collider;
+
+
 
     private void Awake()
     {
@@ -24,24 +32,12 @@ public class KnockoutTrigger : MonoBehaviour
             Hittable hittable = other.gameObject.GetComponent<Hittable>();
 
             if(hittable){
-                Player player = hittable.player;
+                Player thisPlayer = hittable.player;
 
-                player.Kill();
+                if(knockoutEffectPrefab) thisPlayer.TryKnockout(knockoutEffectPrefab);
+                else thisPlayer.TryKnockout();
             }
         }   
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if(knockoutOnEnter){
-            Hittable hittable = other.gameObject.GetComponent<Hittable>();
-
-            if(hittable){
-                Player player = hittable.player;
-
-                player.Kill();
-            }
-        }
     }
 
 
@@ -51,9 +47,10 @@ public class KnockoutTrigger : MonoBehaviour
             Hittable hittable = other.gameObject.GetComponent<Hittable>();
 
             if(hittable){
-                Player player = hittable.player;
+                Player thisPlayer = hittable.player;
 
-                player.Kill();
+                if(knockoutEffectPrefab) thisPlayer.TryKnockout(knockoutEffectPrefab);
+                else thisPlayer.TryKnockout(); 
             }
         }
         

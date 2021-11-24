@@ -4,7 +4,7 @@
 PhysicsManager:
   m_ObjectHideFlags: 0
   serializedVersion: 13
-  m_Gravity: {x: 0, y: -9.81, z: 0}
+  m_Gravity: {x: 0, y: -10, z: 0}
   m_DefaultMaterial: {fileID: 0}
   m_BounceThreshold: 2
   m_DefaultMaxDepenetrationVelocity: 10
@@ -18,7 +18,7 @@ PhysicsManager:
   m_ClothInterCollisionDistance: 0.1
   m_ClothInterCollisionStiffness: 0.2
   m_ContactsGeneration: 1
-  m_LayerCollisionMatrix: 00fcffff00fcffff00fcfffff8ffffff08fcffff08fcffffc8ffffff48fcffff48fcffff48fcffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  m_LayerCollisionMatrix: 00f8ffff00f8ffff00f8fffff8ffffff08f8ffff08f8ffffc8ffffff48fcffff48fcffff48f8ffffc8fdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
   m_AutoSimulation: 1
   m_AutoSyncTransforms: 0
   m_ReuseCollisionCallbacks: 1
@@ -34,4 +34,4 @@ PhysicsManager:
   m_EnableEnhancedDeterminism: 0
   m_EnableUnifiedHeightmaps: 1
   m_SolverType: 0
-  m_DefaultMaxAngularSpeed: 30
+  m_DefaultMaxAngularSpeed: 40

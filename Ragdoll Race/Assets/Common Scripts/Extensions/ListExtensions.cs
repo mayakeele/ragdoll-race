@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Reflection;
 
 public static class ListExtensions
 {
@@ -45,5 +46,26 @@ public static class ListExtensions
 
         objectList[activeIndex].SetActive(true);
     }
+
+
+    /*public static List<T> GetProperties<T>(this List<object> objectList, string propertyName){
+        // Returns a list of the specified property from a given list of objects
+
+        if(objectList.Count > 0){
+
+            List<T> propertiesList = new List<T>();
+
+            for(int i = 0; i < objectList.Count; i++){
+                object thisObject = objectList[i];
+                T thisParameter = (T) thisObject.GetType().GetProperty(propertyName).GetValue(thisObject);
+                propertiesList.Add(thisParameter);
+            }
+
+            return propertiesList;
+        }
+        else{
+            return new List<T>();
+        }  
+    }*/
 
 }

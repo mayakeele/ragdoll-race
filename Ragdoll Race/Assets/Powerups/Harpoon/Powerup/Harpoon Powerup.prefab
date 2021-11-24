@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9028041392693014139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9067050668005906598}
+  - component: {fileID: 366563115092187598}
+  m_Layer: 0
+  m_Name: Harpoon Powerup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9067050668005906598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9028041392693014139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &366563115092187598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9028041392693014139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6102c72a85ea924486ff9a0b8b2eb99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  category: 7
+  canBePassive: 0
+  icon: {fileID: 0}
+  attachedPowerupManager: {fileID: 0}
+  attachedPlayer: {fileID: 0}
+  hasActivated: 0
+  hookPrefab: {fileID: 196231372475413748, guid: 100a809485465924ebeeb5d81824855c, type: 3}
+  ropePrefab: {fileID: 0}
+  beltPrefab: {fileID: 5922046986917539312, guid: ebeae8b0395ef8e40aeef30beb3d46ac, type: 3}
+  powerupDuration: 30
+  hookSpawnOffset: {x: 0, y: 0.076, z: -0.457}
+  harpoonRangeMax: 10
+  harpoonRangeMin: 0.5
+  harpoonAngularRange: 45

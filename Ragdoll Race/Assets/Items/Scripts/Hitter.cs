@@ -11,7 +11,7 @@ public class Hitter : MonoBehaviour
 
 
     [Header("Hit Criteria")]
-    [SerializeField] private bool scaleDamageBySpeed = true;
+    [SerializeField] private bool scaleHitPowerBySpeed = true;
     public float minHitSpeed;
     public float maxHitSpeed;
 
@@ -20,6 +20,7 @@ public class Hitter : MonoBehaviour
     public float knockbackMultiplier;
     public float minDamage;
     public float maxDamage;
+    public bool alwaysForceRagdoll = false;
 
 
     [Header("Sound Effects")]
@@ -52,7 +53,6 @@ public class Hitter : MonoBehaviour
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
-  
     }
 
 
@@ -86,40 +86,7 @@ public class Hitter : MonoBehaviour
             // Register hit if the RELATIVE speed is fast enough and THIS speed is fast enough (hitter is active, not passive)
             if(preCollisionVelocity.magnitude >= minHitSpeed && relativeVelocity.magnitude >= minHitSpeed){
                 
-                Vector3 hitLocation = other.GetContact(0).point;
-                float hitDamage;
-                float hitSpeedGradient;
-
-                // Scale damage by the gradient between the speed floor and ceiling
-                if(scaleDamageBySpeed){
-                    
-                    hitDamage = relativeVelocity.magnitude.MapClamped(minHitSpeed, maxHitSpeed, minDamage, maxDamage);     
-                    hitSpeedGradient = relativeVelocity.magnitude.GradientClamped(minHitSpeed, maxHitSpeed);
-                }
-                // Otherwise, assume speed and damage are maximum
-                else{  
-                    hitDamage = maxDamage;
-                    hitSpeedGradient = 1;
-                }
-                
-                
-                // Tell the hit Hittable that it has been hit, receive whether the hit was successful
-                bool hitSuccessful = hitObject.Hit(hitLocation, relativeVelocity, hitDamage, knockbackMultiplier, hitSpeedGradient);
-                if(hitSuccessful){
-                    // Play impact sound at hit location
-                    if(playerHitSounds.Count > 0){
-                        audioSource.PlayClipPitchShifted(RandomExtensions.RandomChoice(playerHitSounds), playerHitVolume, playerHitPitchMin, playerHitPitchMax);
-                    }
-
-                    // Create hit particle effects
-
-
-                    // If this hitter object is part of the player, give them brief immunity to avoid blowback
-                    //if(attachedPlayer){
-                        //attachedPlayer.TriggerImmunity();
-                    //}
-                }
-                
+                RegisterHit(hitObject, relativeVelocity, other.GetContact(0).point);
             }
             
         }
@@ -135,6 +102,54 @@ public class Hitter : MonoBehaviour
             }
 
             // Create particle effect
+        }
+    }
+
+
+
+    public Player GetAttachedPlayer(){
+        return attachedPlayer;
+    }
+
+    public void SetAttachedPlayer(Player player){
+        attachedPlayer = player;
+    }
+
+    
+
+    private void RegisterHit(Hittable hitObject, Vector3 relativeVelocity, Vector3 hitLocation){
+        // Tells the hit hittable that it has been hit, passing along information about damage and knockback given
+        // "Output" variables are used to handle hitters that don't scale damage with speed, i.e. deal instant damage on contact
+
+        float hitSpeedGradientInput = relativeVelocity.magnitude.GetGradientClamped(minHitSpeed, maxHitSpeed);
+
+        float hitDamageOutput;
+        float hitSpeedGradientOutput;
+        
+        // For a normal speed-based hit, scale hit power by the speed gradient
+        if(scaleHitPowerBySpeed){
+            hitSpeedGradientOutput = hitSpeedGradientInput;
+            hitDamageOutput = hitSpeedGradientInput.MapPercentClamped(minDamage, maxDamage);           
+        }
+        // Otherwise, damage and effects are constant (use range maximum) regardless of hit speed
+        else{  
+            hitSpeedGradientOutput = 1;
+            hitDamageOutput = maxDamage;
+        }
+        
+        
+        // Tell the hit Hittable that it has been hit, receive whether the hittable was able to be hit
+        bool hitSuccessful = hitObject.HitWithRelativeVelocity(hitLocation, relativeVelocity, hitDamageOutput, knockbackMultiplier, hitSpeedGradientOutput, attachedPlayer, alwaysForceRagdoll);
+        if(hitSuccessful){
+            // Play impact sound at hit location
+            if(playerHitSounds.Count > 0){
+                audioSource.PlayClipPitchShifted(RandomExtensions.RandomChoice(playerHitSounds), playerHitVolume, playerHitPitchMin, playerHitPitchMax);
+            }
+
+            // Create hit particle effects
+
+
+            
         }
     }
 }
