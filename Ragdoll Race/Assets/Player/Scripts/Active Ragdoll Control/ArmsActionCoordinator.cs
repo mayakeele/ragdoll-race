@@ -41,6 +41,8 @@ public class ArmsActionCoordinator : MonoBehaviour
 
 
     // Private Variables
+    bool isActionButtonHeld = false;
+
 
 
     // Unity Functions
@@ -57,22 +59,29 @@ public class ArmsActionCoordinator : MonoBehaviour
     public void OnArmActionButtonPressed(){
         // Stiffen the arm and torso joints when the action button is first held
 
-        SetArmJointsState(true);
-        SetTorsoJointsState(true);
+        isActionButtonHeld = true;
+        UpdateArmTorsoJoints();
     }
-
 
     public void OnArmActionButtonReleased(){
         // Unstiffen the arm and torso joints when the action button is released
 
-        SetArmJointsState(false);
-        SetTorsoJointsState(false);
+        isActionButtonHeld = false;
+        UpdateArmTorsoJoints();
     }
 
 
 
-    // Private Functions
+    public void UpdateArmTorsoJoints(){
+        // Updates the sprigng and damping values for the arms and torso based on whether the action button is being held
+        SetArmJointsState(isActionButtonHeld);
+        SetTorsoJointsState(isActionButtonHeld);
+    }
 
+
+
+
+    // Private Functions
 
     private void SetArmJointsState(bool setHigh){
         // Sets the joint drive properties on each arm either high or low

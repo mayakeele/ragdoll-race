@@ -186,6 +186,9 @@ public class ActiveRagdoll : MonoBehaviour
                 }
             }
         }
+
+        // Tell the arm action coordingator to update its own joint values
+        armsActionCoordinator.UpdateArmTorsoJoints();
     }
 
 
