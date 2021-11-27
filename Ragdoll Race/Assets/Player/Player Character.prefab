@@ -1364,15 +1364,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1146630454572903015}
   walkSpeed: 2
-  runSpeed: 3.8
+  runSpeed: 3.9
   boostSpeed: 10
   airSpeed: 7
   walkAcceleration: 3
-  runAcceleration: 10
+  runAcceleration: 13
   boostAcceleration: 40
-  airAcceleration: 2.8
+  airAcceleration: 3.2
   sharpTurnMinAngle: 90
-  sharpTurnDeceleration: 18
+  sharpTurnDeceleration: 19
   jumpSpeed: 5.5
   jumpSpringDisableTime: 0.11
   jumpPhysicsFrames: 8
@@ -1530,6 +1530,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c0bd7d00-2f87-40dc-9b27-f00a54db90c0
     m_ActionName: Gameplay/Activate Powerup[/XInputControllerWindows/buttonEast,/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 05ba3bbc-7b69-43c3-98dd-e4a460061a1f
+    m_ActionName: Gameplay/Rotate[/XInputControllerWindows/rightStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -2031,15 +2035,15 @@ MonoBehaviour:
   - {fileID: 8666473851824884715}
   armStrengthLow: 0
   armDampingLow: 0
-  armStrengthHigh: 200
-  armDampingHigh: 1
-  lowerTorsoStrengthLow: 6500
-  lowerTorsoDampingLow: 750
-  lowerTorsoStrengthHigh: 8000
+  armStrengthHigh: 250
+  armDampingHigh: 0.2
+  lowerTorsoStrengthLow: 8000
+  lowerTorsoDampingLow: 200
+  lowerTorsoStrengthHigh: 12000
   lowerTorsoDampingHigh: 10
-  upperTorsoStrengthLow: 4500
-  upperTorsoDampingLow: 750
-  upperTorsoStrengthHigh: 8000
+  upperTorsoStrengthLow: 8000
+  upperTorsoDampingLow: 200
+  upperTorsoStrengthHigh: 12000
   upperTorsoDampingHigh: 10
 --- !u!1 &2801381557178443521
 GameObject:
