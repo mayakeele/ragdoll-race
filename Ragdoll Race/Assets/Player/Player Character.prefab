@@ -1369,13 +1369,15 @@ MonoBehaviour:
   groundTurnMinAngle: 90
   airSpeed: 7
   airAcceleration: 3.2
-  airDeceleration: 1
-  airTurnMinAngle: 90
+  airDeceleration: 7.2
+  airDecelerationNoInput: 0
+  airTurnMinAngle: 135
   jumpSpeed: 5.5
   jumpSpringDisableTime: 0.11
   jumpPhysicsFrames: 8
   turnSpringConstant: 130
   turnDampingConstant: 23
+  moveInputStickThreshold: 0.5
   ragdollGetupStickThreshold: 0.8
   currMoveSpeedLimit: 0
   currMoveAcceleration: 0

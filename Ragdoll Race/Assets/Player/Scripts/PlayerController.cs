@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float airAcceleration;
     [SerializeField] private float airDeceleration;
     [Space]
+    [SerializeField] private float airDecelerationNoInput;
+    [Space]
     [SerializeField] private float airTurnMinAngle;
  
     
@@ -40,7 +42,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float turnDampingConstant;
 
 
-    [Header("Ragdoll Getup Settings")]
+    [Header("Threshold Settings")]
+    [SerializeField] private float moveInputStickThreshold;
     [SerializeField] private float ragdollGetupStickThreshold;
 
 
@@ -73,8 +76,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Update current speed and acceleration limits 
-        UpdateMovementSpeed();
+        // Set current speed limit
+        currMoveSpeedLimit = SetIdealSpeed();
 
 
         // Get camera space
@@ -88,15 +91,11 @@ public class PlayerController : MonoBehaviour
 
         // Determine whether the player is accelerating or decelerating based on the angle between velocity and acceleration
         Vector3 requiredVelocityChange = (idealVelocityWorld - currentVelocityWorld);
-        float angleVA = Vector3.Angle(currentVelocityWorld, requiredVelocityChange);
+        
+        
+        // Set current acceleration value
+        currMoveAcceleration = SetIdealAcceleration(currentVelocityWorld, requiredVelocityChange);
 
-        // If angle is greater than 90 degrees and grounded, player is decelerating
-        if(player.isGrounded && angleVA > groundTurnMinAngle){
-            currMoveAcceleration = groundDeceleration;
-        }
-        if(!player.isGrounded && angleVA > airTurnMinAngle){
-            currMoveAcceleration = airDeceleration;
-        }
 
         float perFrameSpeedChange = currMoveAcceleration * Time.fixedDeltaTime;
 
@@ -192,18 +191,66 @@ public class PlayerController : MonoBehaviour
 
     // Private Functions
 
-    private void UpdateMovementSpeed(){
-        // Updates the current speed and acceleration limit
+    private float SetIdealSpeed(){
+        // Updates the ideal player speed based on player condition and inputs
         
+        float speed = 0;
+
+        // Grounded movement
+        if(player.isGrounded){          
+            speed = groundSpeed;
+            
+        }
+        // Air movement
+        else{       
+            speed = airSpeed; 
+        }
+
+        return speed;
+    }
+
+    private float SetIdealAcceleration(Vector3 currentVelocity, Vector3 deltaVelocity){
+        // Sets the ideal acceleration value based on the player condition and inputs
+
+        float accelerationAngle = Vector3.Angle(currentVelocity, deltaVelocity);
+
+        float accel = 0;
+        
+        // Ground movement
         if(player.isGrounded){
-            // Grounded movement
-            currMoveSpeedLimit = groundSpeed;
-            currMoveAcceleration = groundAcceleration;
+
+            // Continuing in same direction
+            if(accelerationAngle < groundTurnMinAngle){
+                accel = groundAcceleration;
+            }
+            
+            // Sharp turn
+            else{
+                accel = groundDeceleration;
+            }  
         }
-        else{
-            // Air movement
-            currMoveSpeedLimit = airSpeed;
-            currMoveAcceleration = airAcceleration;
+
+        // In the air, only accelerate if the player specifically inputs it. Otherwise continue with the same velocity
+        else{    
+            
+            // Input is below threshold
+            if(moveInput.magnitude < moveInputStickThreshold){
+                accel = airDecelerationNoInput;
+            }
+
+            // Player is inputting a direction
+            else{
+                // Forward
+                if(accelerationAngle < airTurnMinAngle){
+                    accel = airAcceleration;
+                }
+                // Sharp turn
+                else{
+                    accel = airDeceleration;
+                }
+            }
         }
+
+        return accel;
     }
 }
