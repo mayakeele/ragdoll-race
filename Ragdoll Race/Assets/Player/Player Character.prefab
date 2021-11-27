@@ -1363,16 +1363,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1146630454572903015}
-  walkSpeed: 2
-  runSpeed: 3.9
-  boostSpeed: 10
+  groundSpeed: 3.9
+  groundAcceleration: 13
+  groundDeceleration: 19
+  groundTurnMinAngle: 90
   airSpeed: 7
-  walkAcceleration: 3
-  runAcceleration: 13
-  boostAcceleration: 40
   airAcceleration: 3.2
-  sharpTurnMinAngle: 90
-  sharpTurnDeceleration: 19
+  airDeceleration: 1
+  airTurnMinAngle: 90
   jumpSpeed: 5.5
   jumpSpringDisableTime: 0.11
   jumpPhysicsFrames: 8

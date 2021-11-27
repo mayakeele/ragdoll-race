@@ -11,23 +11,24 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Player player;
 
 
-    [Header("Movement Settings")]
-    [SerializeField] private float walkSpeed;
-    [SerializeField] private float runSpeed;
-    [SerializeField] private float boostSpeed;
-    [SerializeField] private float airSpeed;
-
+    [Header("Ground Movement Settings")]
+    [SerializeField] private float groundSpeed;
     [Space]
-    [SerializeField] private float walkAcceleration;
-    [SerializeField] private float runAcceleration;
-    [SerializeField] private float boostAcceleration;
-    [SerializeField] private float airAcceleration;
-
+    [SerializeField] private float groundAcceleration;
+    [SerializeField] private float groundDeceleration;
     [Space]
-    [SerializeField] private float sharpTurnMinAngle;
-    [SerializeField] private float sharpTurnDeceleration;
+    [SerializeField] private float groundTurnMinAngle;
     
 
+    [Header("Air Movement Settings")]
+    [SerializeField] private float airSpeed;
+    [Space]
+    [SerializeField] private float airAcceleration;
+    [SerializeField] private float airDeceleration;
+    [Space]
+    [SerializeField] private float airTurnMinAngle;
+ 
+    
     [Header("Jump Settings")]
     [SerializeField] private float jumpSpeed;
     [SerializeField] private float jumpSpringDisableTime;
@@ -65,8 +66,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        currMoveSpeedLimit = runSpeed;
-        currMoveAcceleration = runAcceleration;
+        currMoveSpeedLimit = groundSpeed;
+        currMoveAcceleration = groundAcceleration;
     }
 
 
@@ -90,8 +91,11 @@ public class PlayerController : MonoBehaviour
         float angleVA = Vector3.Angle(currentVelocityWorld, requiredVelocityChange);
 
         // If angle is greater than 90 degrees and grounded, player is decelerating
-        if(angleVA > sharpTurnMinAngle && player.isGrounded){
-            currMoveAcceleration = sharpTurnDeceleration;
+        if(player.isGrounded && angleVA > groundTurnMinAngle){
+            currMoveAcceleration = groundDeceleration;
+        }
+        if(!player.isGrounded && angleVA > airTurnMinAngle){
+            currMoveAcceleration = airDeceleration;
         }
 
         float perFrameSpeedChange = currMoveAcceleration * Time.fixedDeltaTime;
@@ -193,8 +197,8 @@ public class PlayerController : MonoBehaviour
         
         if(player.isGrounded){
             // Grounded movement
-            currMoveSpeedLimit = runSpeed;
-            currMoveAcceleration = runAcceleration;
+            currMoveSpeedLimit = groundSpeed;
+            currMoveAcceleration = groundAcceleration;
         }
         else{
             // Air movement
