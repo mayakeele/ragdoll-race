@@ -391,7 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockoutOnEnter: 0
   knockoutOnExit: 1
-  collider: {fileID: 0}
+  knockoutEffectPrefab: {fileID: 0}
 --- !u!65 &91918731
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2060,6 +2060,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraController: {fileID: 1144723278}
   allPlayers: []
+  playerMaterials: []
+  defaultKnockoutEffectPrefab: {fileID: 7306722852800413837, guid: c9ba7d6fa0593494387ae60e157b787c, type: 3}
+  KOCameraShakeAmount: 0
+  postKOCameraLingerDuration: 0
   characterHeadHeight: 1.3
   characterPelvisHeight: 0.45
   characterRadius: 0.5
@@ -2968,7 +2972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockoutOnEnter: 0
   knockoutOnExit: 1
-  collider: {fileID: 0}
+  knockoutEffectPrefab: {fileID: 0}
 --- !u!65 &976625938
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4266,7 +4270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockoutOnEnter: 0
   knockoutOnExit: 1
-  collider: {fileID: 0}
+  knockoutEffectPrefab: {fileID: 0}
 --- !u!65 &1376128675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5318,7 +5322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockoutOnEnter: 1
   knockoutOnExit: 0
-  collider: {fileID: 0}
+  knockoutEffectPrefab: {fileID: 0}
 --- !u!1001 &1748457504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5489,7 +5493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockoutOnEnter: 0
   knockoutOnExit: 1
-  collider: {fileID: 0}
+  knockoutEffectPrefab: {fileID: 0}
 --- !u!65 &1761285150
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7237,7 +7241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockoutOnEnter: 0
   knockoutOnExit: 1
-  collider: {fileID: 0}
+  knockoutEffectPrefab: {fileID: 0}
 --- !u!65 &2093318230
 BoxCollider:
   m_ObjectHideFlags: 0

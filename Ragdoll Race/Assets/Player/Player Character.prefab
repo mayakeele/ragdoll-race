@@ -633,9 +633,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
-  bodyPartKnockbackMultiplier: 1.5
+  bodyPartKnockbackMultiplier: 1.2
   canForceRagdollOnHit: 1
-  forceRagdollDurationMin: 0.15
+  forceRagdollDurationMin: 0.1
   forceRagdollDurationMax: 0.6
   minCameraShakeOnHit: 0.13
   maxCameraShakeOnHit: 0.35
@@ -1135,9 +1135,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
   bodyPartKnockbackMultiplier: 1
-  canForceRagdollOnHit: 0
+  canForceRagdollOnHit: 1
   forceRagdollDurationMin: 0.08
-  forceRagdollDurationMax: 0.25
+  forceRagdollDurationMax: 0.2
   minCameraShakeOnHit: 0.03
   maxCameraShakeOnHit: 0.28
   hitSoundClips:
@@ -1271,7 +1271,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &4896568345423242097
@@ -1364,20 +1364,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1146630454572903015}
   groundSpeed: 3.9
-  groundAcceleration: 13
+  groundAcceleration: 14.5
   groundDeceleration: 19
   groundTurnMinAngle: 90
   airSpeed: 7
-  airAcceleration: 3.2
-  airDeceleration: 7.2
+  airAcceleration: 3.8
+  airDeceleration: 8
   airDecelerationNoInput: 0
   airTurnMinAngle: 135
-  jumpSpeed: 5.5
+  jumpSpeed: 5.2
   jumpSpringDisableTime: 0.11
   jumpPhysicsFrames: 8
-  turnSpringConstant: 130
-  turnDampingConstant: 23
+  turnSpringConstant: 150
+  turnDampingConstant: 30
   moveInputStickThreshold: 0.5
+  rotateInputStickThreshold: 0
   ragdollGetupStickThreshold: 0.8
   currMoveSpeedLimit: 0
   currMoveAcceleration: 0
@@ -1531,7 +1532,19 @@ MonoBehaviour:
     m_ActionId: c0bd7d00-2f87-40dc-9b27-f00a54db90c0
     m_ActionName: Gameplay/Activate Powerup[/XInputControllerWindows/buttonEast,/Keyboard/tab]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8450690294800486267}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnRotate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 05ba3bbc-7b69-43c3-98dd-e4a460061a1f
     m_ActionName: Gameplay/Rotate[/XInputControllerWindows/rightStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
@@ -1620,10 +1633,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
-  bodyPartKnockbackMultiplier: 1.5
+  bodyPartKnockbackMultiplier: 1.2
   canForceRagdollOnHit: 1
   forceRagdollDurationMin: 0.1
-  forceRagdollDurationMax: 0.5
+  forceRagdollDurationMax: 0.6
   minCameraShakeOnHit: 0.13
   maxCameraShakeOnHit: 0.35
   hitSoundClips:
@@ -2282,7 +2295,7 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 220
+    positionSpring: 22
     positionDamper: 4
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
@@ -2293,7 +2306,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!135 &5777025272728063903
@@ -3394,7 +3407,7 @@ MonoBehaviour:
   scaleHitPowerBySpeed: 1
   minHitSpeed: 1.5
   maxHitSpeed: 6
-  knockbackMultiplier: 2.5
+  knockbackMultiplier: 2
   minDamage: 5
   maxDamage: 15
   alwaysForceRagdoll: 0
@@ -3427,7 +3440,7 @@ MonoBehaviour:
   bodyPartKnockbackMultiplier: 2
   canForceRagdollOnHit: 1
   forceRagdollDurationMin: 0.5
-  forceRagdollDurationMax: 2
+  forceRagdollDurationMax: 1.5
   minCameraShakeOnHit: 0.15
   maxCameraShakeOnHit: 0.38
   hitSoundClips:
@@ -4078,7 +4091,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!135 &2771833753989446284
@@ -4371,9 +4384,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
   bodyPartKnockbackMultiplier: 1
-  canForceRagdollOnHit: 0
+  canForceRagdollOnHit: 1
   forceRagdollDurationMin: 0.08
-  forceRagdollDurationMax: 0.25
+  forceRagdollDurationMax: 0.2
   minCameraShakeOnHit: 0.03
   maxCameraShakeOnHit: 0.28
   hitSoundClips:
@@ -4507,7 +4520,7 @@ ConfigurableJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &8120054403801222163
@@ -4688,10 +4701,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyPartDamageMultiplier: 1
-  bodyPartKnockbackMultiplier: 1.5
+  bodyPartKnockbackMultiplier: 1.2
   canForceRagdollOnHit: 1
-  forceRagdollDurationMin: 0.05
-  forceRagdollDurationMax: 0.4
+  forceRagdollDurationMin: 0.1
+  forceRagdollDurationMax: 0.6
   minCameraShakeOnHit: 0.13
   maxCameraShakeOnHit: 0.35
   hitSoundClips:

@@ -30,11 +30,28 @@ public static class ListExtensions
         return indices;
     }
 
+
+
     public static void SetAllValues<T>(this List<T> list, T value){
+        // Sets all values in a list
         for(int i = 0; i < list.Count; i++){
             list[i] = value;
         }
     }
+    public static void SetAllValues<T>(this List<T> list, T value, int num){
+        // Clears the list and sets a given amount of spaces
+        list.Clear();
+        for(int i = 0; i < num; i++){
+            list.Add(value);
+        }
+    }
+
+    public static void SetAllValues<T>(this Queue<T> queue, T value, int num){
+        for(int i = 0; i < num; i++){
+            queue.Enqueue(value);
+        }
+    }
+
 
 
     public static void ActivateOneDeactivateOthers(this List<GameObject> objectList, int activeIndex){

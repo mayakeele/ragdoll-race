@@ -45,7 +45,8 @@ public class Hitter : MonoBehaviour
 
     // Private Variables
 
-    private Vector3 preCollisionVelocity = Vector3.zero;
+    private int numVelocitySamples = 3;
+    private Queue<Vector3> preCollisionVelocities = new Queue<Vector3>();
 
 
     // Unity Functions
@@ -53,6 +54,8 @@ public class Hitter : MonoBehaviour
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
+
+        preCollisionVelocities.SetAllValues(Vector3.zero, numVelocitySamples);
     }
 
 
@@ -69,7 +72,8 @@ public class Hitter : MonoBehaviour
     private void FixedUpdate()
     {
         // Keep track of the velocity before collision occurs
-        preCollisionVelocity = rigidbody.velocity;
+        preCollisionVelocities.Dequeue();
+        preCollisionVelocities.Enqueue(rigidbody.velocity);     
     }
     
 
@@ -83,8 +87,10 @@ public class Hitter : MonoBehaviour
         // Make sure the player isn't hitting themself
         if(hitObject && hitObject.player != attachedPlayer){
 
+            Vector3 averageVelocity = preCollisionVelocities.ToArray().Average();
+
             // Register hit if the RELATIVE speed is fast enough and THIS speed is fast enough (hitter is active, not passive)
-            if(preCollisionVelocity.magnitude >= minHitSpeed && relativeVelocity.magnitude >= minHitSpeed){
+            if(averageVelocity.magnitude >= minHitSpeed && relativeVelocity.magnitude >= minHitSpeed){
                 
                 RegisterHit(hitObject, relativeVelocity, other.GetContact(0).point);
             }

@@ -44,12 +44,14 @@ public class PlayerController : MonoBehaviour
 
     [Header("Threshold Settings")]
     [SerializeField] private float moveInputStickThreshold;
+    [SerializeField] private float rotateInputStickThreshold;
     [SerializeField] private float ragdollGetupStickThreshold;
 
 
 
     // Input Variables
     Vector2 moveInput = Vector2.zero;
+    Vector2 rotateInput = Vector2.zero;
     bool jumpInput = false;
 
 
@@ -59,6 +61,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isDecelerating;
 
+    private Vector3 currLookDirection = Vector3.one;
 
 
     // Main Functions
@@ -76,32 +79,30 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Set current speed limit
-        currMoveSpeedLimit = SetIdealSpeed();
-
-
-        // Get camera space
-        Vector3 cameraForward = player.manager.cameraController.GetCameraForwardDirection();
-        Vector3 cameraRight = Vector3.Cross(Vector3.up, cameraForward);
-
-        // Calculate the ideal velocity both relative to the ground and in world space
-        Vector3 idealVelocityRelative = ((cameraForward * moveInput.y) + (cameraRight * moveInput.x)) * currMoveSpeedLimit;
-        Vector3 idealVelocityWorld = idealVelocityRelative + player.groundVelocity.ProjectHorizontal();
-        Vector3 currentVelocityWorld = player.rootRigidbody.velocity.ProjectHorizontal();
-
-        // Determine whether the player is accelerating or decelerating based on the angle between velocity and acceleration
-        Vector3 requiredVelocityChange = (idealVelocityWorld - currentVelocityWorld);
-        
-        
-        // Set current acceleration value
-        currMoveAcceleration = SetIdealAcceleration(currentVelocityWorld, requiredVelocityChange);
-
-
-        float perFrameSpeedChange = currMoveAcceleration * Time.fixedDeltaTime;
-
-
-        // Disables player movement if they are in the ragdoll state
+        // Only allow player to move if not in ragdoll state
         if(!player.isRagdoll){
+
+            // Set current speed limit
+            currMoveSpeedLimit = SetIdealSpeed();
+
+
+            // Get camera space
+            Vector3 cameraForward = player.manager.cameraController.GetCameraForwardDirection();
+            Vector3 cameraRight = Vector3.Cross(Vector3.up, cameraForward);
+
+
+            // Calculate the ideal velocity both relative to the ground and in world space
+            Vector3 idealVelocityRelative = ((cameraForward * moveInput.y) + (cameraRight * moveInput.x)) * currMoveSpeedLimit;
+            Vector3 idealVelocityWorld = idealVelocityRelative + player.groundVelocity.ProjectHorizontal();
+            Vector3 currentVelocityWorld = player.rootRigidbody.velocity.ProjectHorizontal();
+
+            // Determine whether the player is accelerating or decelerating based on the angle between velocity and acceleration
+            Vector3 requiredVelocityChange = (idealVelocityWorld - currentVelocityWorld);
+            
+            // Set current acceleration value and delta v
+            currMoveAcceleration = SetIdealAcceleration(currentVelocityWorld, requiredVelocityChange);
+            float perFrameSpeedChange = currMoveAcceleration * Time.fixedDeltaTime;
+
 
             // Calculate force required to move towards or exactly equal the target velocity without overshoot
             Vector3 movementForce = Vector3.zero;
@@ -112,27 +113,24 @@ public class PlayerController : MonoBehaviour
                 movementForce = player.activeRagdoll.GetBodyMass() * requiredVelocityChange / Time.fixedDeltaTime;
             }
 
-            // Apply movement force to player
+            // Apply movement force to player, and if applicable, the rigidbody they are standing on
             player.rootRigidbody.AddForce(player.activeRagdoll.GetBodyMass() * currMoveAcceleration * requiredVelocityChange.normalized);
-
-            // If the player is standing on an object with a rigidbody, apply equal and opposite force
             if(player.groundRigidbody){
                 player.groundRigidbody.AddForceAtPosition(-movementForce, player.groundPosition);
             }
-        }
 
 
-        // Turn the ragdoll towards the current movement direction by applying torque
-        if(!player.isRagdoll){     
-            Vector3 currLookDirection = player.rootForward.transform.forward.ProjectHorizontal();
-            Vector3 idealLookDirection = idealVelocityRelative.ProjectHorizontal();
-            Vector3 turningTorque = DampedSpring.GetDampedSpringTorque(currLookDirection, idealLookDirection, player.rootRigidbody.angularVelocity, turnSpringConstant, turnDampingConstant);
+            // Determine where the character should rotate, then turn towards that
+            if(rotateInput.magnitude > rotateInputStickThreshold){
+                currLookDirection = rotateInput.ProjectHorizontalNormalized();
+            }
+            else{
+                currLookDirection = idealVelocityRelative.ProjectHorizontal();
+            }
 
-            player.rootRigidbody.AddTorque(turningTorque);
-        }
-       
 
-        
+            TurnTowardsDirection(currLookDirection);
+        }   
     }
 
 
@@ -152,6 +150,15 @@ public class PlayerController : MonoBehaviour
 
         // If the stick input exceeds a threshold, try to make player stand upright if they are ragdolled
         if(player.isRagdoll && moveInput.magnitude > ragdollGetupStickThreshold){
+            player.TrySetRagdollState(false);
+        }
+    }
+
+    public void OnRotate(InputAction.CallbackContext context){
+        rotateInput = context.action.ReadValue<Vector2>();
+
+        // If the stick input exceeds a threshold, try to make player stand upright if they are ragdolled
+        if(player.isRagdoll && rotateInput.magnitude > ragdollGetupStickThreshold){
             player.TrySetRagdollState(false);
         }
     }
@@ -252,5 +259,15 @@ public class PlayerController : MonoBehaviour
         }
 
         return accel;
+    }
+
+
+    private void TurnTowardsDirection(Vector3 targetDirection){
+        // Applies a torque to the root rigidbody around the vertical axis to face a given direction
+
+        Vector3 currDirection = player.rootForward.transform.forward.ProjectHorizontal();
+        Vector3 turningTorque = DampedSpring.GetDampedSpringTorque(currDirection, targetDirection, player.rootRigidbody.angularVelocity, turnSpringConstant, turnDampingConstant);
+
+        player.rootRigidbody.AddTorque(turningTorque);
     }
 }

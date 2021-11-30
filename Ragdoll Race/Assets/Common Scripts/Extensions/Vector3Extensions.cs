@@ -46,6 +46,18 @@ public static class Vector3Extensions
         return sum / numItems;
     }
 
+    public static Vector3 Average(this Vector3[] vectorArray){
+        // Calculates the average of all vectors in the list
+        Vector3 sum = Vector3.zero;
+        int numItems = vectorArray.Length;
+
+        foreach(Vector3 item in vectorArray){
+            sum += item;
+        }
+
+        return sum / numItems;
+    }
+
 
     public static Vector3 MaxComponents(this List<Vector3> vectorList){
         // Returns the maximum x, y, and z component of the Vectors contained in the given list
