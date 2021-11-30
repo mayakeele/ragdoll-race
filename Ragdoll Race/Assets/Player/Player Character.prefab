@@ -1375,10 +1375,10 @@ MonoBehaviour:
   jumpSpeed: 5.2
   jumpSpringDisableTime: 0.11
   jumpPhysicsFrames: 8
-  turnSpringConstant: 150
-  turnDampingConstant: 30
+  turnSpringConstant: 130
+  turnDampingConstant: 12
   moveInputStickThreshold: 0.5
-  rotateInputStickThreshold: 0
+  rotateInputStickThreshold: 0.5
   ragdollGetupStickThreshold: 0.8
   currMoveSpeedLimit: 0
   currMoveAcceleration: 0
@@ -3853,7 +3853,7 @@ MonoBehaviour:
   buoyancyMultiplier: 1
   legsSpringConstant: 100
   legsSpringDamping: 0.8
-  pelvisRotationSpringConstant: 1100
+  pelvisRotationSpringConstant: 1600
   pelvisRotationDampingConstant: 29
   pelvisRotationSnapAngle: 5
   legJointTargetFollowers:
