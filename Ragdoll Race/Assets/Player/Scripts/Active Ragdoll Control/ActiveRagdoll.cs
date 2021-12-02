@@ -202,11 +202,11 @@ public class ActiveRagdoll : MonoBehaviour
     }
 
 
-    public IEnumerator PerformJump(float finalSpeed, int numPhysicsFrames, float jumpSpringDisableTime){
+    public IEnumerator PerformJump(float speedChange, int numPhysicsFrames, float jumpSpringDisableTime){
         // Sets the 'performing jump' flag true for a bit to prevent the damping spring from stopping jump momentum
         isPerformingJump = true;
 
-        float jumpForce = GetBodyMass() * finalSpeed / (Time.fixedDeltaTime * numPhysicsFrames);
+        float jumpForce = GetBodyMass() * speedChange / (Time.fixedDeltaTime * numPhysicsFrames);
         
         for(int i = 0; i < numPhysicsFrames; i++){
             pelvisRigidbody.AddForce(jumpForce * Vector3.up);

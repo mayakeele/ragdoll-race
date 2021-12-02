@@ -1363,18 +1363,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1146630454572903015}
-  groundSpeed: 3.9
-  groundAcceleration: 14.5
+  groundSpeed: 3.5
+  groundAcceleration: 13
   groundDeceleration: 19
   groundTurnMinAngle: 90
-  airSpeed: 7
-  airAcceleration: 3.8
-  airDeceleration: 8
+  airSpeed: 6
+  airAcceleration: 4.4
+  airDeceleration: 12.5
   airDecelerationNoInput: 0
-  airTurnMinAngle: 135
-  jumpSpeed: 5.2
+  airTurnMinAngle: 130
+  jumpSpeedGrounded: 3.45
+  jumpSpeedAir: 4.3
   jumpSpringDisableTime: 0.11
-  jumpPhysicsFrames: 8
+  jumpPhysicsFrames: 3
   turnSpringConstant: 130
   turnDampingConstant: 12
   moveInputStickThreshold: 0.5
@@ -1412,7 +1413,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8450690294800486267}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnMove
+        m_MethodName: OnMoveInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1441,7 +1442,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8450690294800486267}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnJump
+        m_MethodName: OnJumpInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1475,7 +1476,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8450690294800486267}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnToggleRagdoll
+        m_MethodName: OnToggleRagdollInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1491,7 +1492,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8450690294800486267}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnArmAction
+        m_MethodName: OnArmActionInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1535,7 +1536,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8450690294800486267}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnRotate
+        m_MethodName: OnRotateInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

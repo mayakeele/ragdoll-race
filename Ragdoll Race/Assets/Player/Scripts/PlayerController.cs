@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
  
     
     [Header("Jump Settings")]
-    [SerializeField] private float jumpSpeed;
+    [SerializeField] private float jumpSpeedGrounded;
+    [SerializeField] private float jumpSpeedAir;
     [SerializeField] private float jumpSpringDisableTime;
     [SerializeField] private int jumpPhysicsFrames;
 
@@ -145,7 +146,7 @@ public class PlayerController : MonoBehaviour
 
     // Input Events
 
-    public void OnMove(InputAction.CallbackContext context){
+    public void OnMoveInput(InputAction.CallbackContext context){
         moveInput = context.action.ReadValue<Vector2>();
 
         // If the stick input exceeds a threshold, try to make player stand upright if they are ragdolled
@@ -154,7 +155,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnRotate(InputAction.CallbackContext context){
+    public void OnRotateInput(InputAction.CallbackContext context){
         rotateInput = context.action.ReadValue<Vector2>();
 
         // If the stick input exceeds a threshold, try to make player stand upright if they are ragdolled
@@ -163,28 +164,31 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnJump(InputAction.CallbackContext context){
+    public void OnJumpInput(InputAction.CallbackContext context){
 
         // Try to make player stand upright if they are ragdolled
-        player.TrySetRagdollState(false);
 
         //jumpInput = context.action.triggered;
         jumpInput = context.started;
 
-        if(jumpInput && player.isGrounded && !player.isRagdoll){
-            StartCoroutine(player.activeRagdoll.PerformJump(jumpSpeed, jumpPhysicsFrames, jumpSpringDisableTime));
+        if(jumpInput && !player.isRagdoll){
+            if(player.isGrounded){
+                JumpGrounded();
+            }
+            else{
+                JumpAir();
+            }
         }
-
     }
 
-    public void OnToggleRagdoll(InputAction.CallbackContext context){
+    public void OnToggleRagdollInput(InputAction.CallbackContext context){
         // Tell the player script that the user wants to toggle ragdoll mode
         if(context.started){
             player.TrySetRagdollState(!player.isRagdoll);
         }
     }
 
-    public void OnArmAction(InputAction.CallbackContext context){
+    public void OnArmActionInput(InputAction.CallbackContext context){
         // Tell the Arms Action Coordinator that the user wants to use the left arm
         if(context.started){
             player.activeRagdoll.armsActionCoordinator.OnArmActionButtonPressed();
@@ -269,5 +273,30 @@ public class PlayerController : MonoBehaviour
         Vector3 turningTorque = DampedSpring.GetDampedSpringTorque(currDirection, targetDirection, player.rootRigidbody.angularVelocity, turnSpringConstant, turnDampingConstant);
 
         player.rootRigidbody.AddTorque(turningTorque);
+    }
+
+
+    private void JumpGrounded(){
+        player.TrySetRagdollState(false);
+        StartCoroutine(player.activeRagdoll.PerformJump(jumpSpeedGrounded, jumpPhysicsFrames, jumpSpringDisableTime));
+    }
+
+    private void JumpAir(){
+
+        player.TrySetRagdollState(false);
+
+        float yVelocity = player.activeRagdoll.GetRelativeVelocity().y;
+
+        // If player is falling or moving up, cancel fall and set vertical velocity to jump speed
+        if(yVelocity < jumpSpeedAir){
+
+            StartCoroutine(player.activeRagdoll.PerformJump(jumpSpeedAir - yVelocity, jumpPhysicsFrames, 0));
+        }
+        // If moving up any faster, don't do anything
+        else{
+            
+        }
+
+        
     }
 }
