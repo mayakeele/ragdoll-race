@@ -11,9 +11,11 @@ public class Player : MonoBehaviour
     public PlayerController controller;
     public PlayerPowerupManager powerupManager;
     public ActiveRagdoll activeRagdoll;
+    public PlayerVFX vfx;
+    public AudioSource audioSource;
     public Rigidbody rootRigidbody;
     public Transform rootForward;
-    public AudioSource audioSource;
+    
     [SerializeField] private string managerTag = "PlayersManager";
     private PlayerInput playerInput;
 
@@ -198,6 +200,7 @@ public class Player : MonoBehaviour
         SetRagdollState(false);
         activeRagdoll.MoveToPosition(spawnPosition);
         
+        controller.ResetAirJumpCount();
     }
 
 

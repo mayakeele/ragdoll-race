@@ -1109,3 +1109,2833 @@ System memory in use after: 174.5 MB.
 Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4501.
 Total: 7.826700 ms (FindLiveObjects: 0.796400 ms CreateObjectMapping: 0.332100 ms MarkObjects: 4.577500 ms  DeleteObjects: 2.118600 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001554 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.462 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 176.3 MB.
+System memory in use after: 174.5 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4504.
+Total: 4.293600 ms (FindLiveObjects: 0.471000 ms CreateObjectMapping: 0.157700 ms MarkObjects: 2.419900 ms  DeleteObjects: 1.243800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001245 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.961 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 176.3 MB.
+System memory in use after: 174.5 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4507.
+Total: 5.257400 ms (FindLiveObjects: 1.044900 ms CreateObjectMapping: 0.248400 ms MarkObjects: 2.629800 ms  DeleteObjects: 1.331400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001123 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.918 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 176.4 MB.
+System memory in use after: 174.5 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4510.
+Total: 8.098900 ms (FindLiveObjects: 1.129000 ms CreateObjectMapping: 0.315700 ms MarkObjects: 4.646700 ms  DeleteObjects: 2.005000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 47911.362188 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95bdbb274fdde9292dcb5e8dcde93570') in 0.335730 seconds
+  Import took 0.398411 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.115147 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6209cf75207053d9a9d75970fac6877b') in 0.030220 seconds
+  Import took 0.046881 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001242 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.985 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 176.5 MB.
+System memory in use after: 174.7 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4549.
+Total: 5.243600 ms (FindLiveObjects: 0.565200 ms CreateObjectMapping: 0.210800 ms MarkObjects: 3.020400 ms  DeleteObjects: 1.446100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 143.858881 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56ec3b3f27994325de41ef7c003c306b') in 0.204513 seconds
+  Import took 0.241007 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001134 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.61 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.036 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 176.7 MB.
+System memory in use after: 174.8 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4588.
+Total: 4.842100 ms (FindLiveObjects: 0.501100 ms CreateObjectMapping: 0.179900 ms MarkObjects: 2.810200 ms  DeleteObjects: 1.350000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.447333 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2230daf62ae802f9b208d3507bb2155b') in 0.199767 seconds
+  Import took 0.245336 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001327 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.985 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 176.7 MB.
+System memory in use after: 174.9 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4627.
+Total: 10.725100 ms (FindLiveObjects: 0.999500 ms CreateObjectMapping: 0.488900 ms MarkObjects: 6.719300 ms  DeleteObjects: 2.515200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 35.102733 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08ab1d0936a026f071ce0b393efc5dee') in 0.177871 seconds
+  Import took 0.228950 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.182872 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '644f4a6baf6faf210bae621ff8b5cb47') in 0.022576 seconds
+  Import took 0.043800 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001234 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.115 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.61 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 176.9 MB.
+System memory in use after: 175.1 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4666.
+Total: 5.416700 ms (FindLiveObjects: 0.467600 ms CreateObjectMapping: 0.171300 ms MarkObjects: 3.314900 ms  DeleteObjects: 1.461400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001258 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.986 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 176.9 MB.
+System memory in use after: 175.1 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4669.
+Total: 4.502200 ms (FindLiveObjects: 0.557500 ms CreateObjectMapping: 0.182900 ms MarkObjects: 2.495900 ms  DeleteObjects: 1.264800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001172 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.000 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 176.9 MB.
+System memory in use after: 175.1 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4672.
+Total: 5.756400 ms (FindLiveObjects: 0.677600 ms CreateObjectMapping: 0.206100 ms MarkObjects: 3.352800 ms  DeleteObjects: 1.517800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 290.202666 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8d27989e2da44827f939bacb35c2f86') in 0.179668 seconds
+  Import took 0.243640 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.255089 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96cfda8bcf6d21b880bc67917baca17f') in 0.022312 seconds
+  Import took 0.045616 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001231 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.964 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 177.0 MB.
+System memory in use after: 175.2 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4711.
+Total: 9.954100 ms (FindLiveObjects: 0.906200 ms CreateObjectMapping: 0.488500 ms MarkObjects: 6.197500 ms  DeleteObjects: 2.359600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.512808 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c6474b1daac1891cdcbda7e9b288b00') in 0.199214 seconds
+  Import took 0.210448 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.544208 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98219e05a67ce80d091d3f960ed2685d') in 0.016894 seconds
+  Import took 0.047285 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001155 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.017 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 177.2 MB.
+System memory in use after: 175.3 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4750.
+Total: 11.798500 ms (FindLiveObjects: 0.916500 ms CreateObjectMapping: 0.448600 ms MarkObjects: 7.969100 ms  DeleteObjects: 2.462000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 82.442765 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a92eb7d7e5641992400e15ef7e6e94bc') in 0.195674 seconds
+  Import took 0.240118 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.891281 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44152d9970eb927c573b390aa08503bc') in 0.027610 seconds
+  Import took 0.033468 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.599974 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7da6888c59f703936d9cc8527468cea') in 0.023013 seconds
+  Import took 0.041797 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001233 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.055 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.61 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 177.6 MB.
+System memory in use after: 175.8 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4789.
+Total: 4.647500 ms (FindLiveObjects: 0.509900 ms CreateObjectMapping: 0.174900 ms MarkObjects: 2.735600 ms  DeleteObjects: 1.225800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.030479 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c411d3ae9a787103264256bbd34f0323') in 0.211268 seconds
+  Import took 0.258102 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001192 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.146 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 177.7 MB.
+System memory in use after: 175.9 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4828.
+Total: 5.673900 ms (FindLiveObjects: 0.482600 ms CreateObjectMapping: 0.196100 ms MarkObjects: 3.505100 ms  DeleteObjects: 1.489000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.279856 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e22e90958ad5f513d8a55875abbf1a4') in 0.225548 seconds
+  Import took 0.249034 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001190 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.019 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 177.9 MB.
+System memory in use after: 176.0 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4867.
+Total: 10.022200 ms (FindLiveObjects: 1.235600 ms CreateObjectMapping: 0.474900 ms MarkObjects: 5.788100 ms  DeleteObjects: 2.521200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.515646 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73718f023ae3a1942e511c24bd15ed1f') in 0.187323 seconds
+  Import took 0.307409 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001230 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.533 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.88 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.0 MB.
+System memory in use after: 176.2 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4906.
+Total: 13.827900 ms (FindLiveObjects: 1.737300 ms CreateObjectMapping: 0.767600 ms MarkObjects: 9.168100 ms  DeleteObjects: 2.150500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001188 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.281 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.0 MB.
+System memory in use after: 176.2 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4909.
+Total: 4.482200 ms (FindLiveObjects: 0.563400 ms CreateObjectMapping: 0.164200 ms MarkObjects: 2.492800 ms  DeleteObjects: 1.260500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001201 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.918 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.11 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.0 MB.
+System memory in use after: 176.2 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4912.
+Total: 4.985800 ms (FindLiveObjects: 0.526600 ms CreateObjectMapping: 0.200900 ms MarkObjects: 2.883300 ms  DeleteObjects: 1.373300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 3369.731508 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9b407fe7c14e56fc7c03d26bbd3c5e5') in 0.306016 seconds
+  Import took 0.326490 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001146 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.51 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.940 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.2 MB.
+System memory in use after: 176.3 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4951.
+Total: 4.760300 ms (FindLiveObjects: 0.438100 ms CreateObjectMapping: 0.156200 ms MarkObjects: 2.938500 ms  DeleteObjects: 1.226600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001156 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.043 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.1 MB.
+System memory in use after: 176.3 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4954.
+Total: 6.367000 ms (FindLiveObjects: 0.899500 ms CreateObjectMapping: 0.338100 ms MarkObjects: 3.664000 ms  DeleteObjects: 1.463700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 137.730417 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d3b1737b08ff68f514184dff5ab3516') in 0.223270 seconds
+  Import took 0.269642 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003077 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 3.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.798 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.40 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.3 MB.
+System memory in use after: 176.5 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4993.
+Total: 13.241300 ms (FindLiveObjects: 2.156200 ms CreateObjectMapping: 2.023900 ms MarkObjects: 6.523300 ms  DeleteObjects: 2.533600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 197.846168 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ec55a97188b37a34c8d554bff72380c') in 0.192108 seconds
+  Import took 0.236473 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.488304 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7909fdc0683b1bc97b97b7666761e945') in 0.028890 seconds
+  Import took 0.075624 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001233 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.119 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.97 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.4 MB.
+System memory in use after: 176.6 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5032.
+Total: 12.674600 ms (FindLiveObjects: 3.057600 ms CreateObjectMapping: 0.933300 ms MarkObjects: 5.591200 ms  DeleteObjects: 3.089300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 232.672759 seconds.
+  path: Assets/Testing/Shader Testing.unity
+  artifactKey: Guid(1aa29fdb55d2bd34eb1fb07b1b408fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Testing/Shader Testing.unity using Guid(1aa29fdb55d2bd34eb1fb07b1b408fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd480ad9fab6d1ebe16da468abea507a2') in 0.019457 seconds
+  Import took 0.097070 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8051.170131 seconds.
+  path: Assets/Player/VFX/Jump/Ring.shadergraph
+  artifactKey: Guid(20cffa1b68d86e143a96237306124492) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Ring.shadergraph using Guid(20cffa1b68d86e143a96237306124492) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '261d1ad0264a09a57fe7763b95437977') in 0.048347 seconds
+  Import took 0.196596 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2638.732016 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b1f77c688fc090998d54ed368007146') in 0.023807 seconds
+  Import took 0.071258 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 34.432772 seconds.
+  path: Packages/com.unity.visualeffectgraph/Textures/DefaultParticle.tga
+  artifactKey: Guid(276d9e395ae18fe40a9b4988549f2349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.visualeffectgraph/Textures/DefaultParticle.tga using Guid(276d9e395ae18fe40a9b4988549f2349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7494a36ea057504fe0414b735d2bc14a') in 0.106957 seconds
+  Import took 0.164250 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000542 seconds.
+  path: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/EditStolen.png
+  artifactKey: Guid(3aadaa8d8c0ae984c9dd23e939a8b7d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/EditStolen.png using Guid(3aadaa8d8c0ae984c9dd23e939a8b7d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '160ff7e823435d5dc506a537d61a234f') in 0.117694 seconds
+  Import took 0.145583 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000376 seconds.
+  path: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/Execution.png
+  artifactKey: Guid(746e7bd2948ee424aa581a91b823b535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/Execution.png using Guid(746e7bd2948ee424aa581a91b823b535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77d88f6750495c8698b5eb672baa41e3') in 0.013427 seconds
+  Import took 0.032931 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/EditStolen.png
+  artifactKey: Guid(3aadaa8d8c0ae984c9dd23e939a8b7d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/EditStolen.png using Guid(3aadaa8d8c0ae984c9dd23e939a8b7d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '160ff7e823435d5dc506a537d61a234f') in 0.004096 seconds
+  Import took 0.040905 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/exposed dot.png
+  artifactKey: Guid(53f2a7e5f246da14c87a9fd92ecb804c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/exposed dot.png using Guid(53f2a7e5f246da14c87a9fd92ecb804c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dcd0a57da5ddd6eae6dd6c67ff4d9e8') in 0.010151 seconds
+  Import took 0.040421 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.912186 seconds.
+  path: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/cat-background-dark.png
+  artifactKey: Guid(d333db22a2cc31e48a5aba38045265db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/cat-background-dark.png using Guid(d333db22a2cc31e48a5aba38045265db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ec8153cbf15101d6c68ddc98966209e') in 0.030978 seconds
+  Import took 0.051465 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/cat-background-light.png
+  artifactKey: Guid(ccda2131ef139a440a193699457e1561) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/cat-background-light.png using Guid(ccda2131ef139a440a193699457e1561) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3229118e1c42d7ac19ed0de1f3049a86') in 0.030642 seconds
+  Import took 0.051485 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Player/VFX/KO/Default/Blast Ring/Blast_Ring_1.png
+  artifactKey: Guid(1cdb6c122af2b51418e26881fe1747d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/KO/Default/Blast Ring/Blast_Ring_1.png using Guid(1cdb6c122af2b51418e26881fe1747d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aab1647ef6fa174214bc2127b09fc5f6') in 0.112366 seconds
+  Import took 0.122209 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Player/VFX/KO/Default/Blast Ring/Blast_Ring_0.png
+  artifactKey: Guid(1b5f8f1f17823df43bf5764fe7b5339f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/KO/Default/Blast Ring/Blast_Ring_0.png using Guid(1b5f8f1f17823df43bf5764fe7b5339f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68fdf45eab047d1c3c40cf56e0cda836') in 0.167090 seconds
+  Import took 0.174711 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/bitfield-bkgnd.png
+  artifactKey: Guid(e9f17ea2d74564042b3d527ab3cbc14c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/bitfield-bkgnd.png using Guid(e9f17ea2d74564042b3d527ab3cbc14c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3be82c578e169e584eed7b0a1811333') in 0.010301 seconds
+  Import took 0.028260 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/bitfield-bit.png
+  artifactKey: Guid(dba25e3261c16e34b848637315b82d6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.visualeffectgraph/Editor Default Resources/VFX/bitfield-bit.png using Guid(dba25e3261c16e34b848637315b82d6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c50536eebbe9ae1bd52fb03ec01c138b') in 0.009008 seconds
+  Import took 0.028161 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.612375 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3d226022933112fa9010e559a767123') in 0.007158 seconds
+  Import took 0.041202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 161.818898 seconds.
+  path: Assets/Player/VFX/Jump/Ring.shadergraph
+  artifactKey: Guid(20cffa1b68d86e143a96237306124492) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Ring.shadergraph using Guid(20cffa1b68d86e143a96237306124492) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9c1cd03d409427cf73365b46fd93ba6') in 0.006625 seconds
+  Import took 0.076383 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 649.297035 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.007229 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.015323 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.033239 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.002041 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.008646 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.026244 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.002048 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.008807 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.026915 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.002027 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.007561 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.026959 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.002120 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.009091 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.028451 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.003860 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.011579 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.020106 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.002998 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.009418 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.024172 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.002777 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.009126 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.023567 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.002856 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.009836 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.023923 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.002896 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.008795 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.023451 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.002858 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.008852 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.024342 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.002690 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.008656 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.023000 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.001969 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.009243 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.023835 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.002088 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.008764 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.024960 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.001946 seconds
+  ERROR: Build asset version error: assets/player/vfx/jump/air jump.vfx in SourceAssetDB has modification time of '2021-12-02T21:38:22.9206813Z' while content on disk has modification time of '2021-12-02T21:38:47.5021975Z'
+  Import took 0.008956 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.724270 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b00987fcc854d3c029ef5a5d7bdf961f') in 0.004784 seconds
+  Import took 0.046191 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.775310 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84928fcc3b028cdea3f42ef082ebc44c') in 0.004557 seconds
+  Import took 0.048794 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.060946 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c6bb0d607590afbb4accc4a59ff1d56') in 0.003802 seconds
+  Import took 0.040067 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.929687 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4f3da85be40e66eba2df3e27e884dfb') in 0.006766 seconds
+  Import took 0.017505 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.761760 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b42939ebd5e3b71660796a396228212b') in 0.003744 seconds
+  Import took 0.023070 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002974 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b42939ebd5e3b71660796a396228212b') in 0.004414 seconds
+  Import took 0.015914 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.012622 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa5cf7c0e6a87dd4b91fe67c13c9d615') in 0.005493 seconds
+  Import took 0.026322 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003717 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa5cf7c0e6a87dd4b91fe67c13c9d615') in 0.004312 seconds
+  Import took 0.014033 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 132.376101 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78b90a92f6e030aed946120959e1b5fa') in 0.003999 seconds
+  Import took 0.030812 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003328 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78b90a92f6e030aed946120959e1b5fa') in 0.007042 seconds
+  Import took 0.016156 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.052141 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2ae6c3bb7303019b4136f91debbef2f') in 0.004928 seconds
+  Import took 0.066875 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 48.122133 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1099a110bf81e5e36ce3260fad5f1501') in 0.004029 seconds
+  Import took 0.013270 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.646278 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf40b74fb5e4442c40335d2256989107') in 0.003634 seconds
+  Import took 0.050404 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.743148 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4694ca730311f449b9ced9bcdc63c49a') in 0.004128 seconds
+  Import took 0.032528 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000697 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4694ca730311f449b9ced9bcdc63c49a') in 0.004263 seconds
+  Import took 0.014321 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.152717 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ef49ce72774cfa534398b165a0faf88') in 0.005906 seconds
+  Import took 0.046218 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.737715 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f41f5fc252b26fc8469f75f7b26a31d') in 0.004919 seconds
+  Import took 0.049478 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 35.966672 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b1ec05de28ca7e34e9945978326dcca') in 0.003641 seconds
+  Import took 0.048241 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 80.904435 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9ddeb579246ee64de9c41e1770f20da') in 0.003807 seconds
+  Import took 0.047408 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.566598 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c0cc43839a0c55b2d1644155c85db80') in 0.003738 seconds
+  Import took 0.036262 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000451 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c0cc43839a0c55b2d1644155c85db80') in 0.006494 seconds
+  Import took 0.014062 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 59.665360 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f836b07d8481308c56bc15cc18d5d158') in 0.005367 seconds
+  Import took 0.013731 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.706683 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b5569f1b8c3205bfa970ab4b60496f7') in 0.005474 seconds
+  Import took 0.034744 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.937614 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '681a13bac4e2e0da63790741cf8fa6a5') in 0.004086 seconds
+  Import took 0.010034 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.965715 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '498cf2b1ce288c9e1834e131c0c21f0f') in 0.004588 seconds
+  Import took 0.037027 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.493687 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '163f25d160f64bc28958d29e303f7f18') in 0.004075 seconds
+  Import took 0.011321 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.617423 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e209727296f25fe01996c9b87bb004ec') in 0.003980 seconds
+  Import took 0.010245 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.884665 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '007d3730bbb539f2cd76cd104fde605f') in 0.005484 seconds
+  Import took 0.032520 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003000 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '007d3730bbb539f2cd76cd104fde605f') in 0.009995 seconds
+  Import took 0.017995 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.141216 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '212bcbb03a39d32b54a5045de33ab683') in 0.003836 seconds
+  Import took 0.038437 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '212bcbb03a39d32b54a5045de33ab683') in 0.005457 seconds
+  Import took 0.017277 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.867104 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5b94906162af54d1f554998c2c70197') in 0.005092 seconds
+  Import took 0.026620 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001737 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5b94906162af54d1f554998c2c70197') in 0.003940 seconds
+  Import took 0.013645 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.849181 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da49840828b4c2e546c7606c4aedc13c') in 0.003924 seconds
+  Import took 0.040583 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.716375 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3313cc953f7431b87fca14844c82c77') in 0.004775 seconds
+  Import took 0.047811 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.333417 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b77f7f2d1d6304f7e86c7401997c2978') in 0.003787 seconds
+  Import took 0.012473 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.062022 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b86219ec4d5f4839c04752f31a50aec8') in 0.003772 seconds
+  Import took 0.011058 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.695341 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7f79d1c330890385ae4ba1e54e25177') in 0.003660 seconds
+  Import took 0.008934 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.953168 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86b688143b1c3542f03c526eed2ff9af') in 0.003583 seconds
+  Import took 0.026795 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000689 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86b688143b1c3542f03c526eed2ff9af') in 0.009555 seconds
+  Import took 0.021403 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 298.144389 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab49dacafb36837f9237a54921912450') in 0.009350 seconds
+  Import took 0.064196 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.497561 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58ca2d0a39fdcfefd3aaca7bd9ac2c3a') in 0.004010 seconds
+  Import took 0.090021 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.532534 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14f956b5f5ee0e4c9fafe0887c14b8bb') in 0.005220 seconds
+  Import took 0.012582 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.526627 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ff7c870505d85f0de04db52d37754ad') in 0.003890 seconds
+  Import took 0.024936 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003159 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ff7c870505d85f0de04db52d37754ad') in 0.008438 seconds
+  Import took 0.017332 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.628608 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e05b60da048a825f84e1dcf6a498e3e') in 0.003776 seconds
+  Import took 0.135105 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.471715 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5eff6295669f22f7db0f4b5033af15c9') in 0.004248 seconds
+  Import took 0.026376 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010120 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5eff6295669f22f7db0f4b5033af15c9') in 0.004208 seconds
+  Import took 0.012416 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.744573 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db10786d5e0dc62aae3c6eb424c07688') in 0.004391 seconds
+  Import took 0.031170 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000873 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db10786d5e0dc62aae3c6eb424c07688') in 0.003587 seconds
+  Import took 0.009952 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.334702 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5544f948d213e17d8a5d4622ce53274b') in 0.003813 seconds
+  Import took 0.100345 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.958205 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3c9170f3b8261bb834b3f5460b2c27e') in 0.004917 seconds
+  Import took 0.010797 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.312532 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dc2eaacb058225f2bd5954ac85c185f') in 0.004065 seconds
+  Import took 0.009548 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.351691 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a3cb6411845d85c65b986e281aafa49') in 0.004025 seconds
+  Import took 0.043872 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.928949 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8584ae8c6cd9874ffd4737fded5c454c') in 0.003883 seconds
+  Import took 0.034755 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000639 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8584ae8c6cd9874ffd4737fded5c454c') in 0.005742 seconds
+  Import took 0.014061 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.049577 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4c25d85554a4536bebfd6032b500c61') in 0.004766 seconds
+  Import took 0.010930 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.630425 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abc7310e9d8d7f7348bf3ce4b4e8a789') in 0.003729 seconds
+  Import took 0.019179 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 37.420051 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32e8bc87edfaea45c59868181c9394d2') in 0.004292 seconds
+  Import took 0.051255 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.448354 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a03a30d43079611b1b711a3363b58cf0') in 0.004005 seconds
+  Import took 0.009454 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.778846 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a04fea9dc0be68822973a90181ae0fb') in 0.004920 seconds
+  Import took 0.030417 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001604 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a04fea9dc0be68822973a90181ae0fb') in 0.005906 seconds
+  Import took 0.014274 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.446261 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c53011a091bc53b6f7dd61ea80d9bd49') in 0.003792 seconds
+  Import took 0.025618 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.230382 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db4009a19f56b3fce496695beecdf06b') in 0.006999 seconds
+  Import took 0.027465 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015404 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db4009a19f56b3fce496695beecdf06b') in 0.004696 seconds
+  Import took 0.015433 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.270225 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15e59332cbaffc78a3d02140b486d07b') in 0.003924 seconds
+  Import took 0.009716 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.538224 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8e5ed619330e3713e20747a59fba029') in 0.003888 seconds
+  Import took 0.012454 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 37.256497 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a276320af9a69864df5bf1c48009cbde') in 0.004130 seconds
+  Import took 0.090347 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.914588 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68ad50e1d752cc8fa9659c1c075e03b6') in 0.004154 seconds
+  Import took 0.019811 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003191 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68ad50e1d752cc8fa9659c1c075e03b6') in 0.003634 seconds
+  Import took 0.012002 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.472637 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '757d77718561329fa0fcc95912b9aae1') in 0.003696 seconds
+  Import took 0.020786 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010429 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '757d77718561329fa0fcc95912b9aae1') in 0.003503 seconds
+  Import took 0.012832 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.698909 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bfbcd8266f30a6667e06bb3a7ba2e79') in 0.004332 seconds
+  Import took 0.023474 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.826116 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16fcbcc551e3e956c5e5365b58a2e663') in 0.003708 seconds
+  Import took 0.017492 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.505242 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ae166b1faa872ac8c8bdfb413e31d87') in 0.004377 seconds
+  Import took 0.029513 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000570 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ae166b1faa872ac8c8bdfb413e31d87') in 0.003734 seconds
+  Import took 0.017513 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 228.613607 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7c024350cb5d9b175e737aebdfc0889') in 0.004149 seconds
+  Import took 0.021596 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.603396 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc48131353e828301a29d4c1f3fd0a1a') in 0.003681 seconds
+  Import took 0.009238 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.235519 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1d15e5b9abf5fbd6d5303d0248bfc74') in 0.003830 seconds
+  Import took 0.046175 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 115.869796 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c285dc2ca7a88c052de703d2a84c616') in 0.003658 seconds
+  Import took 0.048487 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.269959 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b7a575a5defa17b67ff4d0d8684d7fb') in 0.003310 seconds
+  Import took 0.049880 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.530364 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca5d0e4c27408df6b7de22499609b69c') in 0.004565 seconds
+  Import took 0.026388 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004312 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca5d0e4c27408df6b7de22499609b69c') in 0.003887 seconds
+  Import took 0.016455 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.758960 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68ad0af751fa6b97c0faec89fb0e0262') in 0.003527 seconds
+  Import took 0.024389 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001654 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68ad0af751fa6b97c0faec89fb0e0262') in 0.007337 seconds
+  Import took 0.017538 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 60.077122 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62e1d6463d38bfcf08415c8ab8fa534c') in 0.003555 seconds
+  Import took 0.009158 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.968977 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f551c43e34b50eadb4d2109e4299d0d') in 0.003524 seconds
+  Import took 0.045714 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.837564 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb1804acd2c1dab5a8e5b0075282fa4d') in 0.003495 seconds
+  Import took 0.030654 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.923156 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ad6b8701f891a460cd6b0e71389b22f') in 0.003657 seconds
+  Import took 0.017337 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010849 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ad6b8701f891a460cd6b0e71389b22f') in 0.006933 seconds
+  Import took 0.015919 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.176946 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae7c541231fc37da229db8c04825a3a9') in 0.003713 seconds
+  Import took 0.035693 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000918 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae7c541231fc37da229db8c04825a3a9') in 0.005743 seconds
+  Import took 0.015323 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.739696 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aaf0c84fd2b9b8dcf1d10f7ad62dda47') in 0.003762 seconds
+  Import took 0.009420 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.133861 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0980d3d2c1d0ea998e08480baee16810') in 0.003826 seconds
+  Import took 0.066285 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 34.168027 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45a89abd054e94882dbd1dfc71d0fe0e') in 0.008180 seconds
+  Import took 0.015494 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.017429 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45a89abd054e94882dbd1dfc71d0fe0e') in 0.005314 seconds
+  Import took 0.012165 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.268105 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fac3dd62e32de072b68adfd433873df5') in 0.004096 seconds
+  Import took 0.010131 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.042165 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abccac7216d51589845190f9343dd17f') in 0.003915 seconds
+  Import took 0.010664 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 78.742208 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85357b215688faaa48ce8f7f6177a6ae') in 0.003747 seconds
+  Import took 0.044932 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.948390 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa8a35ff23bd9b4cabbca51b73cd1d0b') in 0.003734 seconds
+  Import took 0.027231 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007385 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa8a35ff23bd9b4cabbca51b73cd1d0b') in 0.005378 seconds
+  Import took 0.011945 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.205142 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62e1272e702e3a4a23231d1691c07619') in 0.005921 seconds
+  Import took 0.011508 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.720820 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b7f599b230f6df29e8a4129b18e3dd8') in 0.003853 seconds
+  Import took 0.010674 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.028290 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66fe8a42439e2de5b2f60bcca5219a17') in 0.003968 seconds
+  Import took 0.030476 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.808883 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91fd13f46836f9ff057a07e7d65d1075') in 0.003760 seconds
+  Import took 0.027735 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.892239 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4776b217d5049d34e6b6a6bd3bfe0e50') in 0.003896 seconds
+  Import took 0.038261 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 43.434637 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '408e0b1504fdb23a2715cbbae83fbf7c') in 0.004691 seconds
+  Import took 0.031114 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002244 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '408e0b1504fdb23a2715cbbae83fbf7c') in 0.007251 seconds
+  Import took 0.019980 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 321.532360 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f227b467fe4b56e3e0c4f04c848c2f3e') in 0.004129 seconds
+  Import took 0.009835 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.977935 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e108b1339dae78f9f016d640ead741ee') in 0.003681 seconds
+  Import took 0.040677 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.480242 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cf6c626cbd0f9a6f648491f3f3c1350') in 0.003556 seconds
+  Import took 0.025412 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002797 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cf6c626cbd0f9a6f648491f3f3c1350') in 0.004924 seconds
+  Import took 0.015115 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 58.392877 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18e716c9db1c81649656e9aaa859f765') in 0.003957 seconds
+  Import took 0.011812 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 62.981506 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '533102df6243746ee5eccd2bee797bb7') in 0.004041 seconds
+  Import took 0.037235 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.055444 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51748d14ec3229404b084ec97781531f') in 0.003580 seconds
+  Import took 0.013655 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010090 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51748d14ec3229404b084ec97781531f') in 0.004179 seconds
+  Import took 0.013252 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.366478 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01353b680134c703cc825140c8ea1ed5') in 0.004125 seconds
+  Import took 0.026440 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.203104 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3956822af729936d1927eb1feebaf666') in 0.003297 seconds
+  Import took 0.025597 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002762 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3956822af729936d1927eb1feebaf666') in 0.010969 seconds
+  Import took 0.017530 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 112.044946 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4af24bc69d33416f585505a1ec1dde8a') in 0.003608 seconds
+  Import took 0.008978 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.890911 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09251cde60cce3f427c70ea853cc364f') in 0.004479 seconds
+  Import took 0.010400 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.922310 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82fffb68644eb9e5cbef652b2635e00e') in 0.003498 seconds
+  Import took 0.014700 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006558 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82fffb68644eb9e5cbef652b2635e00e') in 0.003821 seconds
+  Import took 0.014448 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.768077 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '277a91524b7f667ff007e6c56cd7fed3') in 0.003755 seconds
+  Import took 0.051278 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 52.625453 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '123efce5a32819913a342c6ff7a3fcea') in 0.004007 seconds
+  Import took 0.048557 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.574151 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f0c94730ece7ccf1c9bf8a6ac6df847') in 0.003669 seconds
+  Import took 0.010790 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.090357 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29f68a435ed330317f3f5bffed2ff61d') in 0.010682 seconds
+  Import took 0.034958 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001011 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29f68a435ed330317f3f5bffed2ff61d') in 0.008621 seconds
+  Import took 0.018985 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.612555 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7d479f87556746ad8b44fd9bce924b5') in 0.003676 seconds
+  Import took 0.011132 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 104.704635 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4178ae7af5e5a4bebb01a80deb7da00a') in 0.004145 seconds
+  Import took 0.059612 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.063355 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f660e2942435de108b8b067446f7466') in 0.004913 seconds
+  Import took 0.035917 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.036701 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eaf938149bbe2ce4a73c39d76efe3be2') in 0.003698 seconds
+  Import took 0.038251 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.616776 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '771feae822f864163291168a3896242c') in 0.004268 seconds
+  Import took 0.055019 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.171807 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18cbb69eea4e0022e59cb1c7401a3a21') in 0.003740 seconds
+  Import took 0.011145 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.521497 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6da2968436ab305d9e513e0d0d07b268') in 0.003902 seconds
+  Import took 0.034911 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000606 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6da2968436ab305d9e513e0d0d07b268') in 0.003997 seconds
+  Import took 0.013758 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.780196 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7774723d52608394ba1e9e6b7e736364') in 0.005348 seconds
+  Import took 0.011084 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.562732 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fee8208c0cc797fa80eee67c39741f5') in 0.004006 seconds
+  Import took 0.010080 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.554961 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8dfb41ece4f22f79032a28de01444665') in 0.004396 seconds
+  Import took 0.082006 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.970085 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e053a50ca5161b2aee4232c97cf7d28') in 0.004958 seconds
+  Import took 0.026305 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021055 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e053a50ca5161b2aee4232c97cf7d28') in 0.004250 seconds
+  Import took 0.017468 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.974600 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3de0edd2e027b9ad42460ff14db624f') in 0.004677 seconds
+  Import took 0.012821 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.963156 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6868f5c2b16c7a8a0c2e8d829735afe9') in 0.004099 seconds
+  Import took 0.023480 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013432 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6868f5c2b16c7a8a0c2e8d829735afe9') in 0.004525 seconds
+  Import took 0.017268 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.286401 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c6bef520f7877c836a6c1a5e4dc907f') in 0.005842 seconds
+  Import took 0.031718 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003752 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c6bef520f7877c836a6c1a5e4dc907f') in 0.015706 seconds
+  Import took 0.023256 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.309488 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1930b35c6992d13488b5da5c26f0fff5') in 0.006639 seconds
+  Import took 0.039383 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.666105 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ce43d80590f9e1a45cf9b2ea54f3487') in 0.003904 seconds
+  Import took 0.023294 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016464 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ce43d80590f9e1a45cf9b2ea54f3487') in 0.004007 seconds
+  Import took 0.014325 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001279 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.485 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.7 MB.
+System memory in use after: 176.8 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5043.
+Total: 9.311000 ms (FindLiveObjects: 0.982700 ms CreateObjectMapping: 0.308100 ms MarkObjects: 5.616700 ms  DeleteObjects: 2.401900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 481.791754 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b095eebe63c461973f9b6a42fffba00c') in 0.020307 seconds
+  Import took 0.045610 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 65.394268 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de35658ec1faea390a2698ad3ab2ffdb') in 0.003282 seconds
+  Import took 0.174465 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001237 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.93 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.420 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3220 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.6 MB.
+System memory in use after: 176.8 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5046.
+Total: 8.882800 ms (FindLiveObjects: 1.013000 ms CreateObjectMapping: 0.197400 ms MarkObjects: 4.138600 ms  DeleteObjects: 3.528800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 134.727329 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump VFX.prefab
+  artifactKey: Guid(caa2f435114cc9045b5e97f1b363b7fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump VFX.prefab using Guid(caa2f435114cc9045b5e97f1b363b7fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70749fa5df28297eb833b111a246a185') in 0.121382 seconds
+  Import took 0.145685 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 298.192239 seconds.
+  path: Assets/Player/Scripts/PlayerEffectSpawner.cs
+  artifactKey: Guid(4e8dd5140ef7f9c4ea8a9fea79d2e6cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Scripts/PlayerEffectSpawner.cs using Guid(4e8dd5140ef7f9c4ea8a9fea79d2e6cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50381bc2d149197e09cc2f220dda6821') in 0.029766 seconds
+  Import took 0.075197 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001366 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.001 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.61 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.7 MB.
+System memory in use after: 176.9 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5050.
+Total: 12.676300 ms (FindLiveObjects: 5.971300 ms CreateObjectMapping: 0.693700 ms MarkObjects: 4.335300 ms  DeleteObjects: 1.670000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.992732 seconds.
+  path: Assets/Player/Scripts/Player.cs
+  artifactKey: Guid(5f8ae5b428c384f458bcdd14c478d77e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Scripts/Player.cs using Guid(5f8ae5b428c384f458bcdd14c478d77e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72efdccd775ed5cff2f3b2bbd1f489b9') in 0.014604 seconds
+  Import took 0.051745 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001257 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.324 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.7 MB.
+System memory in use after: 176.9 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5053.
+Total: 9.728300 ms (FindLiveObjects: 1.030800 ms CreateObjectMapping: 0.549000 ms MarkObjects: 5.953500 ms  DeleteObjects: 2.192300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 155.366290 seconds.
+  path: Assets/Player/Scripts/Player.cs
+  artifactKey: Guid(5f8ae5b428c384f458bcdd14c478d77e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Scripts/Player.cs using Guid(5f8ae5b428c384f458bcdd14c478d77e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dad925405c6efb26a4a21b3fe0bcc72') in 0.010269 seconds
+  Import took 0.038484 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.511863 seconds.
+  path: Assets/Player/Scripts/PlayerVFX.cs
+  artifactKey: Guid(c761c3b30fa459e4e846052dc9b13ee3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Scripts/PlayerVFX.cs using Guid(c761c3b30fa459e4e846052dc9b13ee3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2382d5e1cff3513c0034b615fc248525') in 0.008641 seconds
+  Import took 0.044152 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001231 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.22 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.517 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3222 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.7 MB.
+System memory in use after: 176.9 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5057.
+Total: 13.638700 ms (FindLiveObjects: 0.861100 ms CreateObjectMapping: 0.221500 ms MarkObjects: 11.021500 ms  DeleteObjects: 1.531200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001227 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.74 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.337 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3222 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.7 MB.
+System memory in use after: 176.9 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5060.
+Total: 14.529600 ms (FindLiveObjects: 1.875900 ms CreateObjectMapping: 0.649900 ms MarkObjects: 9.820400 ms  DeleteObjects: 2.179400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 29.027873 seconds.
+  path: Assets/Player/Scripts/PlayerVFX.cs
+  artifactKey: Guid(c761c3b30fa459e4e846052dc9b13ee3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Scripts/PlayerVFX.cs using Guid(c761c3b30fa459e4e846052dc9b13ee3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8407d950a47e3f6260a118a71fc09c2d') in 0.012306 seconds
+  Import took 0.048915 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Player/Scripts/PlayerEffectSpawner.cs
+  artifactKey: Guid(4e8dd5140ef7f9c4ea8a9fea79d2e6cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Scripts/PlayerEffectSpawner.cs using Guid(4e8dd5140ef7f9c4ea8a9fea79d2e6cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb2c5a405da85e899c8feca81f2d8515') in 0.003321 seconds
+  Import took 0.017150 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001179 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.930 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 2.31 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.7 MB.
+System memory in use after: 176.9 MB.
+
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 5062.
+Total: 13.729000 ms (FindLiveObjects: 2.533000 ms CreateObjectMapping: 0.917100 ms MarkObjects: 8.123700 ms  DeleteObjects: 2.147500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1479.135285 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18a36696c0085703b1c3bd6c9cbead02') in 0.342105 seconds
+  Import took 0.387010 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.690886 seconds.
+  path: Assets/Player/VFX
+  artifactKey: Guid(cc3478992c2eea64d9af0bc5b7796b5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX using Guid(cc3478992c2eea64d9af0bc5b7796b5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5e882d939b51fc917507faa3bd5eab1') in 0.012086 seconds
+  Import took 0.022900 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.144690 seconds.
+  path: Assets/Player/VFX/Jump
+  artifactKey: Guid(c2a64e3c5f996d44098e9611d52b3faa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump using Guid(c2a64e3c5f996d44098e9611d52b3faa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '599b1e8154b8b234a53522c09b74de63') in 0.011462 seconds
+  Import took 0.021217 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.068671 seconds.
+  path: Assets/Player/VFX/Jump/Grounded Jump.vfx
+  artifactKey: Guid(527f501d6d1e5b6469ebd6cdad504b5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Grounded Jump.vfx using Guid(527f501d6d1e5b6469ebd6cdad504b5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6356fd23c58a489a87eb61764220b9cb') in 0.006304 seconds
+  Import took 0.011500 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.833835 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump
+  artifactKey: Guid(39f8c3744f350984c8bd25174748d431) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump using Guid(39f8c3744f350984c8bd25174748d431) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7aaa3bc85939ea6a465e2643a2f8c16c') in 0.003960 seconds
+  Import took 0.064340 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.034089 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump Ring.shadergraph
+  artifactKey: Guid(39619bb99b7fc134e90812eea509e980) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump Ring.shadergraph using Guid(39619bb99b7fc134e90812eea509e980) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f44ec79224037638740e15dbc4e9a84') in 0.267305 seconds
+  Import took 0.278959 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '762a2c3be161c0bc68c3ea50a19c1d21') in 0.004430 seconds
+  Import took 0.033223 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002307 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.533 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.01 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.9 MB.
+System memory in use after: 177.0 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5101.
+Total: 13.713300 ms (FindLiveObjects: 2.641000 ms CreateObjectMapping: 0.673200 ms MarkObjects: 7.908600 ms  DeleteObjects: 2.484300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001128 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.033 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 178.9 MB.
+System memory in use after: 177.1 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5104.
+Total: 10.599800 ms (FindLiveObjects: 1.403900 ms CreateObjectMapping: 0.613300 ms MarkObjects: 6.304700 ms  DeleteObjects: 2.275500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 163.903759 seconds.
+  path: Assets/Player/Player Character.prefab
+  artifactKey: Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/Player Character.prefab using Guid(8ecb230fd7f74b2469ff8debaa37476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88ec51ad9820fa2d8f4546fe8035f996') in 0.183983 seconds
+  Import took 0.190786 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.865187 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61268eb65d82834b29536ad69840b736') in 0.003266 seconds
+  Import took 0.027896 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001958 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61268eb65d82834b29536ad69840b736') in 0.003369 seconds
+  Import took 0.011181 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 55.424132 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3570e3303b7cf841af61560e26931646') in 0.004143 seconds
+  Import took 0.138469 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.626878 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e75416c903aebd111ae7287f6dd021d') in 0.003701 seconds
+  Import took 0.038579 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.026592 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fb145149c20376f1e540d177223be71') in 0.005649 seconds
+  Import took 0.021555 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007092 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fb145149c20376f1e540d177223be71') in 0.004067 seconds
+  Import took 0.015244 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.980701 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c086fb36d8a1768d71922d57a2049e9') in 0.003760 seconds
+  Import took 0.041716 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000901 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c086fb36d8a1768d71922d57a2049e9') in 0.008974 seconds
+  Import took 0.016918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.862727 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2b0083aefed21acd9b13d55816fbf28') in 0.004079 seconds
+  Import took 0.037089 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011235 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2b0083aefed21acd9b13d55816fbf28') in 0.003963 seconds
+  Import took 0.013263 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.846043 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9a0e487bfa9a0883a1079ce9e765896') in 0.003938 seconds
+  Import took 0.028317 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005018 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9a0e487bfa9a0883a1079ce9e765896') in 0.004844 seconds
+  Import took 0.015256 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.684427 seconds.
+  path: Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx
+  artifactKey: Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/VFX/Jump/Air Jump/Air Jump.vfx using Guid(1d91f1806256d0c489c744f367b12135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c9dff72d70bbb6f8caf6beac7e2e5c6') in 0.004373 seconds
+  Import took 0.012317 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001422 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.47 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.925 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.0 MB.
+System memory in use after: 177.2 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5143.
+Total: 12.487800 ms (FindLiveObjects: 1.028200 ms CreateObjectMapping: 0.368000 ms MarkObjects: 8.260000 ms  DeleteObjects: 2.826400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001341 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 3.05 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.908 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.48 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.1 MB.
+System memory in use after: 177.2 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5146.
+Total: 12.388000 ms (FindLiveObjects: 2.027900 ms CreateObjectMapping: 0.551800 ms MarkObjects: 7.005900 ms  DeleteObjects: 2.796700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001209 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.944 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.0 MB.
+System memory in use after: 177.2 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5149.
+Total: 5.500300 ms (FindLiveObjects: 0.792500 ms CreateObjectMapping: 0.221100 ms MarkObjects: 3.195900 ms  DeleteObjects: 1.289900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001182 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.484 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.11 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.0 MB.
+System memory in use after: 177.2 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5152.
+Total: 13.199400 ms (FindLiveObjects: 1.070800 ms CreateObjectMapping: 0.272800 ms MarkObjects: 9.937500 ms  DeleteObjects: 1.915600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001249 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.004 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.0 MB.
+System memory in use after: 177.2 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5155.
+Total: 6.460000 ms (FindLiveObjects: 0.783300 ms CreateObjectMapping: 0.269600 ms MarkObjects: 3.881100 ms  DeleteObjects: 1.524300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001152 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.970 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.0 MB.
+System memory in use after: 177.3 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5158.
+Total: 5.487400 ms (FindLiveObjects: 0.670200 ms CreateObjectMapping: 0.213400 ms MarkObjects: 3.184100 ms  DeleteObjects: 1.418600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001162 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.98 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.463 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 2.64 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.1 MB.
+System memory in use after: 177.3 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5161.
+Total: 11.298700 ms (FindLiveObjects: 2.277900 ms CreateObjectMapping: 0.405600 ms MarkObjects: 5.288500 ms  DeleteObjects: 3.317800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001362 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.932 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.1 MB.
+System memory in use after: 177.3 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5164.
+Total: 5.309300 ms (FindLiveObjects: 0.760100 ms CreateObjectMapping: 0.215000 ms MarkObjects: 3.000100 ms  DeleteObjects: 1.332900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001178 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.409 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3221 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.1 MB.
+System memory in use after: 177.3 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 5167.
+Total: 9.032200 ms (FindLiveObjects: 3.140200 ms CreateObjectMapping: 0.488000 ms MarkObjects: 3.909400 ms  DeleteObjects: 1.489700 ms)
+

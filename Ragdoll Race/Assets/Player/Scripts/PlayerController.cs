@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
  
     
     [Header("Jump Settings")]
+    [SerializeField] private int numAirJumpsTotal;
     [SerializeField] private float jumpSpeedGrounded;
     [SerializeField] private float jumpSpeedAir;
     [SerializeField] private float jumpSpringDisableTime;
@@ -63,6 +64,8 @@ public class PlayerController : MonoBehaviour
     public bool isDecelerating;
 
     private Vector3 currLookDirection = Vector3.one;
+
+    private int numAirJumpsRemaining;
 
 
     // Main Functions
@@ -171,12 +174,17 @@ public class PlayerController : MonoBehaviour
         //jumpInput = context.action.triggered;
         jumpInput = context.started;
 
+        player.TrySetRagdollState(false);
+
         if(jumpInput && !player.isRagdoll){
             if(player.isGrounded){
                 JumpGrounded();
             }
             else{
-                JumpAir();
+                if(numAirJumpsRemaining > 0){
+                    numAirJumpsRemaining--;
+                    JumpAir();
+                }             
             }
         }
     }
@@ -196,6 +204,12 @@ public class PlayerController : MonoBehaviour
         else if(context.canceled){
             player.activeRagdoll.armsActionCoordinator.OnArmActionButtonReleased();
         }
+    }
+
+
+
+    public void ResetAirJumpCount(){
+        numAirJumpsRemaining = numAirJumpsTotal;
     }
     
 
@@ -277,13 +291,10 @@ public class PlayerController : MonoBehaviour
 
 
     private void JumpGrounded(){
-        player.TrySetRagdollState(false);
         StartCoroutine(player.activeRagdoll.PerformJump(jumpSpeedGrounded, jumpPhysicsFrames, jumpSpringDisableTime));
     }
 
     private void JumpAir(){
-
-        player.TrySetRagdollState(false);
 
         float yVelocity = player.activeRagdoll.GetRelativeVelocity().y;
 
@@ -297,6 +308,9 @@ public class PlayerController : MonoBehaviour
             
         }
 
-        
+
+        // Spawns ring VFX below the player's feet
+        Vector3 ringPosition = (player.activeRagdoll.leftLegOuterTransform.position + player.activeRagdoll.rightArmOuterTransform.position)/2;
+        player.vfx.SpawnAirJumpVFX(ringPosition + (0.1f * Vector3.down));
     }
 }

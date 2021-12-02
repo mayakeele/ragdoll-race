@@ -62,6 +62,7 @@ Transform:
   - {fileID: 3480036356828148909}
   - {fileID: 6826366817965464653}
   - {fileID: 5281402915875966497}
+  - {fileID: 3852582115163443011}
   - {fileID: 4812255934038809146}
   - {fileID: 8304472216952777454}
   m_Father: {fileID: 0}
@@ -84,9 +85,10 @@ MonoBehaviour:
   controller: {fileID: 8450690294800486267}
   powerupManager: {fileID: 1584728442163640374}
   activeRagdoll: {fileID: 5327272404548169525}
+  vfx: {fileID: 6666999502015724874}
+  audioSource: {fileID: 7919443795128758726}
   rootRigidbody: {fileID: 4661580775540585530}
   rootForward: {fileID: 3304757144567379501}
-  audioSource: {fileID: 7919443795128758726}
   managerTag: PlayersManager
   knockbackMultiplierCurve:
     serializedVersion: 2
@@ -552,6 +554,52 @@ ConfigurableJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!1 &864712842195915600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3852582115163443011}
+  - component: {fileID: 6666999502015724874}
+  m_Layer: 6
+  m_Name: VFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3852582115163443011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864712842195915600}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1121321718870833776}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6666999502015724874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864712842195915600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c761c3b30fa459e4e846052dc9b13ee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1146630454572903015}
+  defaultKOVFX: {fileID: 0}
+  airJumpVFX: {fileID: 3285694273033536253, guid: caa2f435114cc9045b5e97f1b363b7fc, type: 3}
 --- !u!1 &1631317394147680009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,15 +1415,16 @@ MonoBehaviour:
   groundAcceleration: 13
   groundDeceleration: 19
   groundTurnMinAngle: 90
-  airSpeed: 6
+  airSpeed: 5
   airAcceleration: 4.4
   airDeceleration: 12.5
   airDecelerationNoInput: 0
   airTurnMinAngle: 130
-  jumpSpeedGrounded: 3.45
-  jumpSpeedAir: 4.3
-  jumpSpringDisableTime: 0.11
-  jumpPhysicsFrames: 3
+  numAirJumpsTotal: 2
+  jumpSpeedGrounded: 4.55
+  jumpSpeedAir: 5.25
+  jumpSpringDisableTime: 0.08
+  jumpPhysicsFrames: 2
   turnSpringConstant: 130
   turnDampingConstant: 12
   moveInputStickThreshold: 0.5
@@ -3798,7 +3847,7 @@ Transform:
   m_Children:
   - {fileID: 5290909471116892973}
   m_Father: {fileID: 1121321718870833776}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &5327272404548169525
 MonoBehaviour:
@@ -4617,7 +4666,7 @@ Transform:
   - {fileID: 1564797017027049950}
   - {fileID: 3051902190544631363}
   m_Father: {fileID: 1121321718870833776}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8666473851824884713
 GameObject:

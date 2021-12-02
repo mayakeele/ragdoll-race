@@ -130,6 +130,8 @@ public class ActiveRagdoll : MonoBehaviour
                 }
 
 
+                // Reset air jumps on contact with the ground
+                player.controller.ResetAirJumpCount();
                 
             }
             else{
