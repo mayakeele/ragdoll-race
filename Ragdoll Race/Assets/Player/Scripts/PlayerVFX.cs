@@ -12,6 +12,7 @@ public class PlayerVFX : MonoBehaviour
 
     [Header("Ground Indicator")]
     [SerializeField] private Transform groundIndicator;
+    [SerializeField] private Material groundIndicatorMaterial;
     [SerializeField] private LayerMask groundLayers;
     [SerializeField] private float groundDetectionRadius;
     [SerializeField] private float groundDetectionDistance;
@@ -37,28 +38,49 @@ public class PlayerVFX : MonoBehaviour
     //[Header("Trail VFX")]
 
 
-
+    private void Start()
+    {
+        groundIndicatorMaterial.SetColor("_Color", player.skinnedMeshRenderer.material.color);
+    }
 
     void Update()
     {
-        groundIndicator.position = DetectGroundSphereCast();
+        // if grounded, snap to stored ground position and give it a more discreet look
+        // If in the air, scale by distance to the ground and make more obvious
+        // offset from the ground a bit
+        // have it follow player root instead of feet average
+
+        PlaceGroundIndicator();
+        
     }
 
 
 
 
-    private Vector3 DetectGroundSphereCast(){
+    private void PlaceGroundIndicator(){
         // Spherecasts down from the player's feet to find ground to place the indicator
         // Returns a point at the detected height centered below the player's feet
-        Vector3 startingPosition = player.activeRagdoll.GetLowerFootCentered();
 
-        if(Physics.SphereCast(startingPosition, groundDetectionRadius, Vector3.down, out RaycastHit hitInfo, groundDetectionDistance, groundLayers)){
-            Vector3 detectedPosition = hitInfo.point;
-            return new Vector3(startingPosition.x, detectedPosition.y, startingPosition.z);
+        // When grounded, simply place on the ground at full expansion
+        if(player.isGrounded){
+            groundIndicator.gameObject.SetActive(true);
+
+            groundIndicator.position = player.groundPosition + (Vector3.up * groundIndicatorOffset);
         }
+        // In the air, scale the indicator down to a certain point, then don't display at all
         else{
-            return startingPosition;
-        }
+            Vector3 startingPosition = player.activeRagdoll.GetLowerFootCenteredRoot() + (groundDetectionRadius * Vector3.up);
+
+            if(Physics.SphereCast(startingPosition, groundDetectionRadius, Vector3.down, out RaycastHit hitInfo, groundDetectionDistance, groundLayers)){
+                groundIndicator.gameObject.SetActive(true);
+
+                float detectedHeight = hitInfo.point.y;
+                groundIndicator.position = new Vector3(player.rootRigidbody.position.x, detectedHeight + groundIndicatorOffset, player.rootRigidbody.position.z);
+            }
+            else{
+                groundIndicator.gameObject.SetActive(false);
+            }
+        }    
     }
 
 

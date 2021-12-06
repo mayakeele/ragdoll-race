@@ -600,13 +600,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1146630454572903015}
   groundIndicator: {fileID: 5110712175880447235}
+  groundIndicatorMaterial: {fileID: 2100000, guid: e1371daf6ca890c4db37eccd10a28f26, type: 2}
   groundLayers:
     serializedVersion: 2
     m_Bits: 384
   groundDetectionRadius: 0.6
-  groundDetectionDistance: 10
-  groundIndicatorSize: 0
-  groundIndicatorOffset: 0
+  groundDetectionDistance: 5
+  groundIndicatorSize: 1
+  groundIndicatorOffset: 0.1
   defaultKOVFX: {fileID: 0}
   airJumpVFX: {fileID: 3285694273033536253, guid: caa2f435114cc9045b5e97f1b363b7fc, type: 3}
   airJumpFootOffset: 0.2
@@ -2355,7 +2356,7 @@ ConfigurableJoint:
     maximumForce: 0
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 22
+    positionSpring: 220
     positionDamper: 4
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
@@ -3908,11 +3909,11 @@ MonoBehaviour:
   standableLayers:
     serializedVersion: 2
     m_Bits: 384
-  groundedRayLength: 0.37
-  targetPelvisHeight: 0.315
-  buoyancyMultiplier: 1
-  legsSpringConstant: 100
-  legsSpringDamping: 0.8
+  groundedRayLength: 0.39
+  targetPelvisHeight: 0.31
+  buoyancyMultiplier: 0.93
+  legsSpringConstant: 500
+  legsSpringDamping: 1
   pelvisRotationSpringConstant: 1600
   pelvisRotationDampingConstant: 29
   pelvisRotationSnapAngle: 5
@@ -5001,21 +5002,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground Indicator Quad
       objectReference: {fileID: 0}
+    - target: {fileID: 2097295892086035399, guid: b678864598fe98a4aa3295bb18ca3fb6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2097295892086035419, guid: b678864598fe98a4aa3295bb18ca3fb6, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2097295892086035419, guid: b678864598fe98a4aa3295bb18ca3fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.699173
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2097295892086035419, guid: b678864598fe98a4aa3295bb18ca3fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.975
+      value: -0.494
       objectReference: {fileID: 0}
     - target: {fileID: 2097295892086035419, guid: b678864598fe98a4aa3295bb18ca3fb6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.367
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2097295892086035419, guid: b678864598fe98a4aa3295bb18ca3fb6, type: 3}
       propertyPath: m_LocalRotation.w

@@ -104,7 +104,7 @@ public class ActiveRagdoll : MonoBehaviour
 
         if(!isPerformingJump && !player.isRagdoll){
 
-            if(Physics.Raycast(pelvisRigidbody.worldCenterOfMass, Vector3.down, out RaycastHit hitInfo, groundedRayLength, standableLayers)){
+            if(Physics.Raycast(pelvisRigidbody.position, Vector3.down, out RaycastHit hitInfo, groundedRayLength, standableLayers)){
 
                 // Update the relative speed of the ground (frame of reference)
 
@@ -118,7 +118,7 @@ public class ActiveRagdoll : MonoBehaviour
                 // Add an extra spring force which increases as legs compress, also provides damping
                 float targetHeight = player.groundPosition.y + targetPelvisHeight;
                 //float targetHeight = legsIKCalculator.GetFootAnchors().MaxComponents().y + targetPelvisHeight;
-                pelvisForce += CalculateUpwardForce(pelvisRigidbody.worldCenterOfMass.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping, false);    
+                pelvisForce += CalculateUpwardForce(pelvisRigidbody.position.y, targetHeight, pelvisRigidbody.velocity.y, bodyMass, legsSpringConstant, legsSpringDamping, true);    
                 
 
                 // Apply the total upwards force to the pelvis
@@ -250,9 +250,13 @@ public class ActiveRagdoll : MonoBehaviour
         return leftLegOuterTransform.position.y < rightLegOuterTransform.position.y ? leftLegOuterTransform.position : rightLegOuterTransform.position;
     }
 
-    public Vector3 GetLowerFootCentered(){
+    public Vector3 GetLowerFootCenteredLegs(){
         
         return new Vector3(GetAverageFeetPosition().x, GetLowerFootPosition().y, GetAverageFeetPosition().z);
+    }
+    public Vector3 GetLowerFootCenteredRoot(){
+        
+        return new Vector3(player.rootRigidbody.position.x, GetLowerFootPosition().y, player.rootRigidbody.position.z);
     }
     
 

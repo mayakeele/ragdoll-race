@@ -1574,21 +1574,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground Indicator Quad
       objectReference: {fileID: 0}
+    - target: {fileID: 2097295892086035417, guid: b678864598fe98a4aa3295bb18ca3fb6, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2097295892086035419, guid: b678864598fe98a4aa3295bb18ca3fb6, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2097295892086035419, guid: b678864598fe98a4aa3295bb18ca3fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.699173
+      value: 4.842
       objectReference: {fileID: 0}
     - target: {fileID: 2097295892086035419, guid: b678864598fe98a4aa3295bb18ca3fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.975
+      value: 8.06
       objectReference: {fileID: 0}
     - target: {fileID: 2097295892086035419, guid: b678864598fe98a4aa3295bb18ca3fb6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.367
+      value: 1.446
       objectReference: {fileID: 0}
     - target: {fileID: 2097295892086035419, guid: b678864598fe98a4aa3295bb18ca3fb6, type: 3}
       propertyPath: m_LocalRotation.w
