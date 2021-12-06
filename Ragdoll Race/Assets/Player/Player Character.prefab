@@ -600,13 +600,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1146630454572903015}
   groundIndicator: {fileID: 5110712175880447235}
-  groundIndicatorMaterial: {fileID: 2100000, guid: e1371daf6ca890c4db37eccd10a28f26, type: 2}
   groundLayers:
     serializedVersion: 2
     m_Bits: 384
-  groundDetectionRadius: 0.6
+  groundDetectionRadius: 0.55
   groundDetectionDistance: 5
-  groundIndicatorSize: 1
+  groundIndicatorExpansionRangeDefault: {x: 0.82, y: 1}
+  groundIndicatorSizeOverDistance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -1.4544708
+      outSlope: -1.7822587
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.1728251
+    - serializedVersion: 3
+      time: 0.19958557
+      value: 0.6442869
+      inSlope: -1.7822587
+      outSlope: -0.52107036
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.16564013
+      outWeight: 0.07217841
+    - serializedVersion: 3
+      time: 0.89926094
+      value: 0.27970678
+      inSlope: -0.52107036
+      outSlope: -1.9824165
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.08
+      inSlope: -1.9824165
+      outSlope: -1.296468
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.057531927
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   groundIndicatorOffset: 0.1
   defaultKOVFX: {fileID: 0}
   airJumpVFX: {fileID: 3285694273033536253, guid: caa2f435114cc9045b5e97f1b363b7fc, type: 3}
@@ -3913,7 +3954,7 @@ MonoBehaviour:
   targetPelvisHeight: 0.31
   buoyancyMultiplier: 0.93
   legsSpringConstant: 500
-  legsSpringDamping: 1
+  legsSpringDamping: 0.8
   pelvisRotationSpringConstant: 1600
   pelvisRotationDampingConstant: 29
   pelvisRotationSnapAngle: 5

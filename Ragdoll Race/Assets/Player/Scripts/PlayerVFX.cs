@@ -12,12 +12,13 @@ public class PlayerVFX : MonoBehaviour
 
     [Header("Ground Indicator")]
     [SerializeField] private Transform groundIndicator;
-    [SerializeField] private Material groundIndicatorMaterial;
+    private Material groundIndicatorMaterial;
     [SerializeField] private LayerMask groundLayers;
     [SerializeField] private float groundDetectionRadius;
     [SerializeField] private float groundDetectionDistance;
     [Space]
-    [SerializeField] private float groundIndicatorSize;
+    [SerializeField] private Vector2 groundIndicatorExpansionRangeDefault;
+    [SerializeField] private AnimationCurve groundIndicatorSizeOverDistance;
     [SerializeField] private float groundIndicatorOffset;
 
     [Space]
@@ -40,6 +41,7 @@ public class PlayerVFX : MonoBehaviour
 
     private void Start()
     {
+        groundIndicatorMaterial = groundIndicator.GetComponent<MeshRenderer>().material;
         groundIndicatorMaterial.SetColor("_Color", player.skinnedMeshRenderer.material.color);
     }
 
@@ -65,7 +67,10 @@ public class PlayerVFX : MonoBehaviour
         if(player.isGrounded){
             groundIndicator.gameObject.SetActive(true);
 
+            groundIndicatorMaterial.SetVector("_ExpansionAmplitudeRange", groundIndicatorExpansionRangeDefault);
+
             groundIndicator.position = player.groundPosition + (Vector3.up * groundIndicatorOffset);
+
         }
         // In the air, scale the indicator down to a certain point, then don't display at all
         else{
@@ -73,6 +78,10 @@ public class PlayerVFX : MonoBehaviour
 
             if(Physics.SphereCast(startingPosition, groundDetectionRadius, Vector3.down, out RaycastHit hitInfo, groundDetectionDistance, groundLayers)){
                 groundIndicator.gameObject.SetActive(true);
+
+                float distance = hitInfo.distance - groundDetectionRadius;
+                float scaleFactor = groundIndicatorSizeOverDistance.Evaluate(distance / groundDetectionDistance);
+                groundIndicatorMaterial.SetVector("_ExpansionAmplitudeRange", groundIndicatorExpansionRangeDefault * scaleFactor);
 
                 float detectedHeight = hitInfo.point.y;
                 groundIndicator.position = new Vector3(player.rootRigidbody.position.x, detectedHeight + groundIndicatorOffset, player.rootRigidbody.position.z);
