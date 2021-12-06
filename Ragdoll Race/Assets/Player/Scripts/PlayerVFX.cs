@@ -11,9 +11,10 @@ public class PlayerVFX : MonoBehaviour
     [Space]
 
     [Header("Ground Indicator")]
-    [SerializeField] private Material groundIndicator;
+    [SerializeField] private Transform groundIndicator;
     [SerializeField] private LayerMask groundLayers;
     [SerializeField] private float groundDetectionRadius;
+    [SerializeField] private float groundDetectionDistance;
     [Space]
     [SerializeField] private float groundIndicatorSize;
     [SerializeField] private float groundIndicatorOffset;
@@ -36,8 +37,28 @@ public class PlayerVFX : MonoBehaviour
     //[Header("Trail VFX")]
 
 
-    private void DetectGround(){
 
+
+    void Update()
+    {
+        groundIndicator.position = DetectGroundSphereCast();
+    }
+
+
+
+
+    private Vector3 DetectGroundSphereCast(){
+        // Spherecasts down from the player's feet to find ground to place the indicator
+        // Returns a point at the detected height centered below the player's feet
+        Vector3 startingPosition = player.activeRagdoll.GetLowerFootCentered();
+
+        if(Physics.SphereCast(startingPosition, groundDetectionRadius, Vector3.down, out RaycastHit hitInfo, groundDetectionDistance, groundLayers)){
+            Vector3 detectedPosition = hitInfo.point;
+            return new Vector3(startingPosition.x, detectedPosition.y, startingPosition.z);
+        }
+        else{
+            return startingPosition;
+        }
     }
 
 

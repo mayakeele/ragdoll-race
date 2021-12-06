@@ -310,8 +310,7 @@ public class PlayerController : MonoBehaviour
 
 
         // Spawns ring VFX below the player's feet
-        Vector3 averageFeetPosition = player.activeRagdoll.GetAverageFeetPosition();
-        Vector3 ringPosition = new Vector3(averageFeetPosition.x, player.activeRagdoll.GetLowerFootPosition().y, averageFeetPosition.z);
+        Vector3 ringPosition = player.activeRagdoll.GetLowerFootCentered();
         player.vfx.SpawnAirJumpVFX(ringPosition);
     }
 }

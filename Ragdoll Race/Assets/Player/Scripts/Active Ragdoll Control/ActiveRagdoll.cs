@@ -249,6 +249,11 @@ public class ActiveRagdoll : MonoBehaviour
         
         return leftLegOuterTransform.position.y < rightLegOuterTransform.position.y ? leftLegOuterTransform.position : rightLegOuterTransform.position;
     }
+
+    public Vector3 GetLowerFootCentered(){
+        
+        return new Vector3(GetAverageFeetPosition().x, GetLowerFootPosition().y, GetAverageFeetPosition().z);
+    }
     
 
 
