@@ -241,6 +241,17 @@ public class ActiveRagdoll : MonoBehaviour
     }
 
 
+    public Vector3 GetAverageFeetPosition(){
+        return (leftLegOuterTransform.position + rightLegOuterTransform.position)/2;
+    }
+
+    public Vector3 GetLowerFootPosition(){
+        
+        return leftLegOuterTransform.position.y < rightLegOuterTransform.position.y ? leftLegOuterTransform.position : rightLegOuterTransform.position;
+    }
+    
+
+
 
     // Private Functions
 

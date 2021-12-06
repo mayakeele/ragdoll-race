@@ -6,6 +6,17 @@ public class PlayerVFX : MonoBehaviour
 {
     [Header("Component References")]
     public Player player;
+    
+
+    [Space]
+
+    [Header("Ground Indicator")]
+    [SerializeField] private Material groundIndicator;
+    [SerializeField] private LayerMask groundLayers;
+    [SerializeField] private float groundDetectionRadius;
+    [Space]
+    [SerializeField] private float groundIndicatorSize;
+    [SerializeField] private float groundIndicatorOffset;
 
     [Space]
 
@@ -14,7 +25,7 @@ public class PlayerVFX : MonoBehaviour
 
     [Header("Jump VFX")]
     [SerializeField] private GameObject airJumpVFX;
-    [SerializeField] private float airJumpFootOffset = 0.3f;
+    [SerializeField] private float airJumpFootOffset = 0.2f;
 
     //[Header("Running VFX")]
 
@@ -25,8 +36,13 @@ public class PlayerVFX : MonoBehaviour
     //[Header("Trail VFX")]
 
 
+    private void DetectGround(){
+
+    }
+
 
     public void SpawnAirJumpVFX(Vector3 position){
         GameObject.Instantiate(airJumpVFX, position + (airJumpFootOffset * Vector3.down), Quaternion.identity);
     }
+
 }
