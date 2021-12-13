@@ -47,10 +47,15 @@ public class Player : MonoBehaviour
 
 
 
-    [Header("Grounded Variables")]
+    [Header("Ground Variables")]
     [HideInInspector] public Transform groundTransform = null;
     [HideInInspector] public Rigidbody groundRigidbody = null;
     [HideInInspector] public Vector3 groundPosition = Vector3.zero;
+
+    [HideInInspector] public Vector3 groundPositionAverage = Vector3.zero;
+    private const int numAveragePositions = 3;
+    private Queue<Vector3> groundPositionAverages = new Queue<Vector3>();
+
     [HideInInspector] public Vector3 groundVelocity = Vector3.zero;
     [HideInInspector] public Vector3 groundNormal = Vector3.zero;
 
@@ -68,6 +73,8 @@ public class Player : MonoBehaviour
         manager.AddPlayer(this);
 
         skinnedMeshRenderer.material = manager.GetPlayerMaterial(playerIndex);
+
+        groundPositionAverages.SetAllValues(Vector3.zero, numAveragePositions);
     }
 
 
@@ -123,6 +130,8 @@ public class Player : MonoBehaviour
     {
         knockedOutThisFrame = false;
     }
+
+
 
 
     // Public Functions
@@ -204,8 +213,37 @@ public class Player : MonoBehaviour
     }
 
 
+    public void UpdateGroundTrackingVariables(RaycastHit hitInfo){
+        // Updates the player's varables which track the ground
+        groundTransform = hitInfo.transform;
+        groundNormal = hitInfo.normal;
 
-    // Private Functions
+        groundPosition = hitInfo.point;
+        UpdateAverageGroundPosition(groundPosition);
+
+        MovingPlatform movingPlatform = hitInfo.transform.GetComponent<MovingPlatform>();
+
+        if(movingPlatform){
+            groundRigidbody = movingPlatform.rigidbody;
+            groundVelocity = movingPlatform.GetPointVelocity(groundPosition);
+        }
+        else if(hitInfo.rigidbody){
+            groundRigidbody = hitInfo.rigidbody;
+            groundVelocity = groundRigidbody.GetPointVelocity(groundPosition);
+
+        }
+        else{
+            groundRigidbody = null;
+            groundVelocity = Vector3.zero;
+        }
+    }
+    private void UpdateAverageGroundPosition(Vector3 newPosition){
+        groundPositionAverages.Enqueue(newPosition);
+        groundPositionAverages.Dequeue();
+        groundPositionAverage = groundPositionAverages.ToArray().Average();
+    }
+
+
 
     private void SetRagdollState(bool ragdollState){
         // Update ragdoll flag state

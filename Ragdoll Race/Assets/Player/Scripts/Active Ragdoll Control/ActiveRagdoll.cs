@@ -109,7 +109,7 @@ public class ActiveRagdoll : MonoBehaviour
                 // Update the relative speed of the ground (frame of reference)
 
                 player.isGrounded = true;
-                UpdateGroundTrackingVariables(hitInfo);
+                player.UpdateGroundTrackingVariables(hitInfo);
 
 
                 // Calculate buoyancy force, as a fraction of the total body mass to provide "neutral buoyancy"
@@ -287,28 +287,6 @@ public class ActiveRagdoll : MonoBehaviour
     }
 
 
-    private void UpdateGroundTrackingVariables(RaycastHit hitInfo){
-        // Updates the player's varables which track the ground
-        player.groundTransform = hitInfo.transform;
-        player.groundPosition = hitInfo.point;
-        player.groundNormal = hitInfo.normal;
-
-        MovingPlatform movingPlatform = hitInfo.transform.GetComponent<MovingPlatform>();
-
-        if(movingPlatform){
-            player.groundRigidbody = movingPlatform.rigidbody;
-            player.groundVelocity = movingPlatform.GetPointVelocity(player.groundPosition);
-        }
-        else if(hitInfo.rigidbody){
-            player.groundRigidbody = hitInfo.rigidbody;
-            player.groundVelocity = player.groundRigidbody.GetPointVelocity(player.groundPosition);
-
-        }
-        else{
-            player.groundRigidbody = null;
-            player.groundVelocity = Vector3.zero;
-        }
-    }
 
 
     private Vector3 CalculateUpwardForce(float currentHeight, float targetHeight, float verticalSpeed, float liftedMass, float springConstant, float dampingConstant, bool ignoreAboveTarget){

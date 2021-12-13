@@ -157,6 +157,7 @@ MonoBehaviour:
   groundTransform: {fileID: 0}
   groundRigidbody: {fileID: 0}
   groundPosition: {x: 0, y: 0, z: 0}
+  groundPositionAverage: {x: 0, y: 0, z: 0}
   groundVelocity: {x: 0, y: 0, z: 0}
   groundNormal: {x: 0, y: 0, z: 0}
 --- !u!1 &622215080718869483
@@ -540,8 +541,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 500
-    positionDamper: 2
+    positionSpring: 100
+    positionDamper: 3
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
@@ -2586,8 +2587,8 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 500
-    positionDamper: 2
+    positionSpring: 100
+    positionDamper: 3
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
